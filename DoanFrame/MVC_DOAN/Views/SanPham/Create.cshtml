@@ -1,0 +1,30 @@
+﻿@using MVC_DOAN.ViewModels;
+@model CreateSanPhamViewModel
+@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+<form method="post" asp-action="Create" enctype="multipart/form-data">
+    <div class="form-group">  
+        <label asp-for="Masp">Ma san pham</label>
+        <input asp-for="Masp" class="form-control"  placeholder="Enter Ma san pham">
+        <span asp-validation-for="Malsp" class="text-danger"> </span>
+    </div>
+    <div class="form-group">
+        <label asp-for="Masp">Ma loai san pham</label>
+        <input asp-for="Malsp" class="form-control" placeholder="Enter Ma Loai san pham">
+        <span asp-validation-for="Malsp" class="text-danger"> </span>
+    </div>
+    <div class="form-group">
+        <label asp-for="Tensp">Ten san pham</label>
+        <input asp-for="Tensp" class="form-control" placeholder="Enter Tensan pham">
+        <span asp-validation-for="Tensp" class="text-danger"> </span>
+    </div>
+    <div class="form-group">
+        <label asp-for="Img">link anh</label>
+        <input asp-for="Img" type="file" class="form-control" placeholder="Enter link anh san pham">
+        <span asp-validation-for="Img" class="text-danger"> </span>
+    </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
+</form>

@@ -1,0 +1,22 @@
+﻿@model IEnumerable<Sanpham>
+
+@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+<h1>Day la Page San pham</h1>
+@foreach (var item in Model)
+{
+    <div>@item.Masp</div>
+    <div>@item.Tensp</div>
+    <div>
+        <a type="button" class="btn btn-sm btn-outline-info" asp-controller="SanPham" asp-action="Edit" asp-route-id="@item.Masp">
+            Edit
+        </a>
+        <a type="button" class="btn btn-sm btn-outline-danger" asp-controller="SanPham" asp-action="Detail" asp-route-id="@item.Masp">
+           Detail
+        </a>
+    </div>
+    <div>------------------------</div>
+}
