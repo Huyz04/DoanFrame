@@ -29,12 +29,12 @@ namespace MVC_DOAN.Repository
             return await _context.Sanphams.ToListAsync();
         }
 
-        public async Task<Sanpham> GetById(string Id)
+        public async Task<Sanpham> GetByIdAsync(string Id)
         {
             return await _context.Sanphams.FirstOrDefaultAsync(c => c.Masp == Id);
         }
 
-        public async Task<Sanpham> GetByIdNoTracking(string Id)
+        public async Task<Sanpham> GetByIdAsyncNoTracking(string Id)
         {
             return await _context.Sanphams.AsNoTracking().FirstOrDefaultAsync(c => c.Masp == Id);
         }

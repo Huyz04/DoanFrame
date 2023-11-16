@@ -23,7 +23,7 @@ namespace MVC_DOAN.Controllers
         public async Task<IActionResult> Detail(string Id)
         {
 
-            Sanpham SP = await _SPI.GetById(Id);
+            Sanpham SP = await _SPI.GetByIdAsync(Id);
             return View(SP);
         }
         public IActionResult Create()
@@ -59,23 +59,60 @@ namespace MVC_DOAN.Controllers
 
         public async Task<IActionResult> Edit(string Id)
         {
-            var SP = await _SPI.GetById(Id);
+            var SP = await _SPI.GetByIdAsync(Id);
             if (SP == null) return View("Error");
-            return View(SP);
+            var SPVM = new EditSanPhamViewModel
+            {
+                Masp = SP.Masp,
+                Malsp = SP.Malsp,
+                Tensp = SP.Tensp,
+                Dongia = SP.Dongia,
+                Soluongtonkho = SP.Soluongtonkho,
+                Tinhtrang = SP.Tinhtrang,
+                URL = SP.Img
+            };
+            return View(SPVM);
         }
         [HttpPost]
-        public async Task<IActionResult> Edit(string Id, Sanpham SP)
+        public async Task<IActionResult> Edit(string Id, EditSanPhamViewModel SPVM)
         {
             if (!ModelState.IsValid)
             {
                 ModelState.AddModelError("", "Failed to edit LoaiSanPham");
-                return View("Edit", SP);
+                return View("Edit", SPVM);
             }
+            var DSP = await _SPI.GetByIdAsyncNoTracking(Id);
+            if (DSP != null)
+            {
+                try
+                {
+                    await _PhoToService.DeletePhotoAsync(DSP.Img);
+                }
+                catch (Exception ex)
+                {
+                    ModelState.AddModelError("", "Could not delete Photo");
+                    return View(SPVM);
+                }
+                var photoResult = await _PhoToService.AddPhotoAsync(SPVM.Img);
 
-            _SPI.Update(SP);
-            return RedirectToAction("Index");
+                var SP = new Sanpham
+                {
+                    Masp = Id,
+                    Tensp = SPVM.Tensp,
+                    Malsp = SPVM.Malsp,
+                    Dongia = SPVM.Dongia,
+                    Soluongtonkho = SPVM.Soluongtonkho,
+                    Tinhtrang = SPVM.Tinhtrang,
+                    Img = photoResult.Url.ToString()
+                };
+                _SPI.Update(SP);
+                return RedirectToAction("Index"); 
 
-
+             }
+        else
+            {
+                return View(SPVM);
+            }
         }
     }
 }

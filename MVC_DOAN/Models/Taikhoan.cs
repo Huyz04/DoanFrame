@@ -1,10 +1,11 @@
-﻿using System;
+﻿using Microsoft.AspNetCore.Identity;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 
 namespace MVC_DOAN.Models;
 
-public partial class Taikhoan
+public partial class Taikhoan : IdentityUser    
 {
     public string Matk { get; set; } = null!;
 

@@ -6,12 +6,7 @@
 @{
 }
 <form method="post" asp-action="Edit" enctype="multipart/form-data">
-    <div class="form-group">
-        <label asp-for="Malsp">Ma loai san pham</label>
-        <input asp-for="Malsp" class="form-control" placeholder="Enter Ma Loai san pham">
-        <span asp-validation-for="Malsp" class="text-danger"> </span>
-    </div>
-    <input type ="hidden" value="Malsp" id="Malsp"/>
+    <input type="hidden" asp-for="Malsp" id="Malsp" />
     <div class="form-group">
         <label asp-for="Tenlsp">Ma loai san pham</label>
         <input asp-for="Tenlsp" class="form-control" placeholder="Enter Ten Loai san pham">

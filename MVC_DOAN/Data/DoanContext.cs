@@ -1,11 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 using MVC_DOAN.Models;
 
 namespace MVC_DOAN.Data;
 
-public partial class DoanContext : DbContext
+public partial class DoanContext : IdentityDbContext<Taikhoan>
 {
     public DoanContext()
     {
@@ -311,7 +312,7 @@ public partial class DoanContext : DbContext
                 .IsFixedLength()
                 .HasColumnName("phanloai");
         });
-
+        base.OnModelCreating(modelBuilder);
         OnModelCreatingPartial(modelBuilder);
     }
 

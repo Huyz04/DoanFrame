@@ -20,7 +20,6 @@ namespace MVC_DOAN.Controllers
         }
         public async Task<IActionResult> Detail(string Id)
         {
-
             Loaisanpham LSP = await _LSPI.GetById(Id);
             return View(LSP);
         }
@@ -56,8 +55,6 @@ namespace MVC_DOAN.Controllers
 
             _LSPI.Update(LSP);
             return RedirectToAction("Index");
-
-
         }
     }
 }

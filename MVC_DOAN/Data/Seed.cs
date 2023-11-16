@@ -4,7 +4,7 @@ using MVC_DOAN.Models;
 using System.Diagnostics;
 using System.Net;
 
-namespace RunGroopWebApp.Data
+namespace MVC_DOAN.Data
 {
     public class Seed
     {

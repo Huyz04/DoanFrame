@@ -16,6 +16,6 @@
 
         public string? Tinhtrang { get; set; }
 
-        public IFormFile Img { get; set; }
+        public IFormFile? Img { get; set; }
     }
 }
