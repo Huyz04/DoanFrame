@@ -7,9 +7,8 @@ namespace MVC_DOAN.Models;
 
 public partial class Sanpham
 {
-    public string Masp { get; set; } = null!;
-
-    public string? Malsp { get; set; }
+    [Key]
+    public int Id { get; set; }
 
     public string? Tensp { get; set; }
 
@@ -22,12 +21,12 @@ public partial class Sanpham
     public string? Tinhtrang { get; set; }
 
     public string? Img { get; set; }
+    [ForeignKey("LoaiSanPham")]
+    public int LoaisanphamId { get; set; }
+    public Loaisanpham?  Loaisanpham { get; set; }
+    [ForeignKey("Taikhoan")]
+    public string? TaikhoanId { get; set; }
+    public Taikhoan? Taikhoan { get; set; }
 
-    public virtual ICollection<Chitietdon> Chitietdons { get; set; } = new List<Chitietdon>();
 
-    public virtual ICollection<Ctgh> Ctghs { get; set; } = new List<Ctgh>();
-
-    public virtual ICollection<Danhgium> Danhgia { get; set; } = new List<Danhgium>();
-
-    public virtual Loaisanpham? MalspNavigation { get; set; }
 }

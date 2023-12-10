@@ -5,8 +5,8 @@ namespace MVC_DOAN.Interface
     public interface ISanPham
     {
         Task<IEnumerable<Sanpham>> GetAll();
-        Task<Sanpham> GetByIdAsync(string Id);
-        Task<Sanpham> GetByIdAsyncNoTracking(string Id);
+        Task<Sanpham> GetByIdAsync(int Id);
+        Task<Sanpham> GetByIdAsyncNoTracking(int Id);
 
         bool Add(Sanpham SP);
         bool Update(Sanpham SP);

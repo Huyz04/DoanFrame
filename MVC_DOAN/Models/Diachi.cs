@@ -7,9 +7,8 @@ namespace MVC_DOAN.Models;
 
 public partial class Diachi
 {
-    public string Madc { get; set; } = null!;
-
-    public string? Matk { get; set; }
+    [Key]
+    public int Id { get; set; }
 
     public string? Hotennguoinhan { get; set; }
 
@@ -20,6 +19,7 @@ public partial class Diachi
     public string? Huyen { get; set; }
 
     public string? Diachichitiet { get; set; }
-
-    public virtual ICollection<Donhang> Donhangs { get; set; } = new List<Donhang>();
+    [ForeignKey("Taikhoan")]
+    public string? TaikhoanId { get; set; }
+    public Taikhoan? Taikhoan { get; set; }
 }

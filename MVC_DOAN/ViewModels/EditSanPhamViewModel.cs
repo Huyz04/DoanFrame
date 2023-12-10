@@ -2,9 +2,9 @@
 {
     public class EditSanPhamViewModel
     {
-        public string Masp { get; set; } 
+        public int Id { get; set; } 
 
-        public string? Malsp { get; set; }
+        public int LoaisanphamId { get; set; }
 
         public string? Tensp { get; set; }
 

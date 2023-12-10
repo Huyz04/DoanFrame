@@ -29,14 +29,14 @@ namespace MVC_DOAN.Repository
             return await _context.Sanphams.ToListAsync();
         }
 
-        public async Task<Sanpham> GetByIdAsync(string Id)
+        public async Task<Sanpham> GetByIdAsync(int Id)
         {
-            return await _context.Sanphams.FirstOrDefaultAsync(c => c.Masp == Id);
+            return await _context.Sanphams.FirstOrDefaultAsync(c => c.Id == Id);
         }
 
-        public async Task<Sanpham> GetByIdAsyncNoTracking(string Id)
+        public async Task<Sanpham> GetByIdAsyncNoTracking(int Id)
         {
-            return await _context.Sanphams.AsNoTracking().FirstOrDefaultAsync(c => c.Masp == Id);
+            return await _context.Sanphams.AsNoTracking().FirstOrDefaultAsync(c => c.Id == Id);
         }
 
         public bool Save()

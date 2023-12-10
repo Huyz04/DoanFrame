@@ -1,7 +1,9 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using MVC_DOAN.Interface;
 using MVC_DOAN.Models;
+using MVC_DOAN.Service;
 using MVC_DOAN.ViewModels;
+using System.Net;
 
 namespace MVC_DOAN.Controllers
 {
@@ -9,62 +11,70 @@ namespace MVC_DOAN.Controllers
     {
         private readonly ISanPham _SPI;
         private readonly IPhotoService _PhoToService;
+        private readonly IHttpContextAccessor _httpContextAccessor;
 
-        public SanPhamController(ISanPham SPI, IPhotoService photoService)
+        public SanPhamController(ISanPham SPI, IPhotoService photoService, IHttpContextAccessor httpContextAccessor)
         {
             _SPI = SPI;
             _PhoToService = photoService;
+            _httpContextAccessor = httpContextAccessor;
         }
         public async Task<IActionResult> Index()
         {
             IEnumerable<Sanpham> SanPhams = await _SPI.GetAll();
             return View(SanPhams);
         }
-        public async Task<IActionResult> Detail(string Id)
+        public async Task<IActionResult> Detail(int Id)
         {
 
             Sanpham SP = await _SPI.GetByIdAsync(Id);
             return View(SP);
         }
+        [HttpGet]
         public IActionResult Create()
         {
-            return View();
+            var curUserId = _httpContextAccessor.HttpContext.User.GetUserId();
+            var createSanPhamViewModel = new CreateSanPhamViewModel { TaikhoanId = curUserId };
+            return View(createSanPhamViewModel);
         }
+
         [HttpPost]
-        public async Task<IActionResult> Create(CreateSanPhamViewModel SPVM)
+        public async Task<IActionResult> Create(CreateSanPhamViewModel SanphamVM)
         {
             if (ModelState.IsValid)
             {
-                var result = await _PhoToService.AddPhotoAsync(SPVM.Img);
-                var SP = new Sanpham
+                var result = await _PhoToService.AddPhotoAsync(SanphamVM.Img);
+
+                var club = new Sanpham
                 {
-                    Masp = SPVM.Masp,
-                    Malsp = SPVM.Malsp,
-                    Tensp = SPVM.Tensp,
-                    Dongia = SPVM.Dongia,
-                    Soluongdaban = SPVM.Soluongdaban,
-                    Soluongtonkho = SPVM.Soluongtonkho,
-                    Tinhtrang = SPVM.Tinhtrang,
+                    LoaisanphamId = SanphamVM.LoaisanphamId,
+                    Tensp = SanphamVM.Tensp,
+                    Dongia = SanphamVM.Dongia,
+                    Soluongdaban = SanphamVM.Soluongdaban,
+                    Soluongtonkho = SanphamVM.Soluongtonkho,
+                    Tinhtrang = SanphamVM.Tinhtrang,
+                    TaikhoanId = SanphamVM.TaikhoanId,
                     Img = result.Url.ToString()
                 };
-                _SPI.Add(SP);
+                _SPI.Add(club);
                 return RedirectToAction("Index");
             }
             else
             {
-                ModelState.AddModelError("","Photo upload failed");
+                ModelState.AddModelError("", "Photo upload failed");
             }
-            return View(SPVM);
+
+            return View(SanphamVM);
         }
 
-        public async Task<IActionResult> Edit(string Id)
+        public async Task<IActionResult> Edit(int Id)
         {
             var SP = await _SPI.GetByIdAsync(Id);
             if (SP == null) return View("Error");
             var SPVM = new EditSanPhamViewModel
             {
-                Masp = SP.Masp,
-                Malsp = SP.Malsp,
+                Id = SP.Id,
+                LoaisanphamId = SP.LoaisanphamId, 
                 Tensp = SP.Tensp,
                 Dongia = SP.Dongia,
                 Soluongtonkho = SP.Soluongtonkho,
@@ -74,7 +84,7 @@ namespace MVC_DOAN.Controllers
             return View(SPVM);
         }
         [HttpPost]
-        public async Task<IActionResult> Edit(string Id, EditSanPhamViewModel SPVM)
+        public async Task<IActionResult> Edit(int Id, EditSanPhamViewModel SPVM)
         {
             if (!ModelState.IsValid)
             {
@@ -97,9 +107,9 @@ namespace MVC_DOAN.Controllers
 
                 var SP = new Sanpham
                 {
-                    Masp = Id,
+                    Id = Id,
                     Tensp = SPVM.Tensp,
-                    Malsp = SPVM.Malsp,
+                    LoaisanphamId = SPVM.LoaisanphamId,
                     Dongia = SPVM.Dongia,
                     Soluongtonkho = SPVM.Soluongtonkho,
                     Tinhtrang = SPVM.Tinhtrang,

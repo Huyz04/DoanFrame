@@ -7,11 +7,8 @@ namespace MVC_DOAN.Models;
 
 public partial class Donhang
 {
-
-    public string Madon { get; set; } = null!;
-
-    public string? Madc { get; set; }
-
+    [Key]
+    public int Id { get; set; }
     public int? Tongtien { get; set; }
 
     public DateTime? Ngaytao { get; set; }
@@ -24,7 +21,10 @@ public partial class Donhang
 
     public string? Trangthaidonhang { get; set; }
 
-    public virtual ICollection<Chitietdon> Chitietdons { get; set; } = new List<Chitietdon>();
-
-    public virtual Diachi? MadcNavigation { get; set; }
+    [ForeignKey("Diachi")]
+    public int? DiachiId { get; set; }
+    public Diachi? Diachi { get; set; }
+    [ForeignKey("Taikhoan")]
+    public string? TaikhoanId { get; set; }
+    public Taikhoan? Taikhoan { get; set; }
 }

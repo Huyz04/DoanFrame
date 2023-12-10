@@ -258,3 +258,4 @@ D:\HUY\DAIHOC\NAM3\KY1\Framework\DOAN\MVC_DOAN\MVC_DOAN\bin\Debug\net7.0\ru\Micr
 D:\HUY\DAIHOC\NAM3\KY1\Framework\DOAN\MVC_DOAN\MVC_DOAN\bin\Debug\net7.0\tr\Microsoft.CodeAnalysis.Workspaces.resources.dll
 D:\HUY\DAIHOC\NAM3\KY1\Framework\DOAN\MVC_DOAN\MVC_DOAN\bin\Debug\net7.0\zh-Hans\Microsoft.CodeAnalysis.Workspaces.resources.dll
 D:\HUY\DAIHOC\NAM3\KY1\Framework\DOAN\MVC_DOAN\MVC_DOAN\bin\Debug\net7.0\zh-Hant\Microsoft.CodeAnalysis.Workspaces.resources.dll
+D:\HUY\DAIHOC\NAM3\KY1\Framework\DOAN\MVC_DOAN\MVC_DOAN\bin\Debug\net7.0\nuget.config

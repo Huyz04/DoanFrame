@@ -8,13 +8,16 @@
 <h1>DDaay laf Page Loai San pham</h1>
 @foreach (var item in Model)
 {
-    <div>@item.Malsp</div>
+    <div>@item.Id</div>
     <div>@item.Tenlsp</div>
     <div>
-        <a type="button" class="btn btn-sm btn-outline-info" asp-controller="LoaiSanPham" asp-action="Edit" asp-route-id="@item.Malsp">
-            Edit
-        </a>
-        <a type="button" class="btn btn-sm btn-outline-danger" asp-controller="LoaiSanPham" asp-action="Detail" asp-route-id="@item.Malsp">
+        @if (User.Identity.IsAuthenticated && User.IsInRole("admin"))
+        {
+            <a type="button" class="btn btn-sm btn-outline-info" asp-controller="LoaiSanPham" asp-action="Edit" asp-route-id="@item.Id">
+                Edit
+            </a>
+        }
+        <a type="button" class="btn btn-sm btn-outline-danger" asp-controller="LoaiSanPham" asp-action="Detail" asp-route-id="@item.Id">
            Detail
         </a>
     </div>

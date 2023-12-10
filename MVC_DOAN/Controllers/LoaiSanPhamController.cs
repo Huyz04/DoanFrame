@@ -2,16 +2,18 @@
 using Microsoft.AspNetCore.Mvc;
 using MVC_DOAN.Data;
 using MVC_DOAN.Models;
+using MVC_DOAN.ViewModels;
 
 namespace MVC_DOAN.Controllers
 {
     public class LoaiSanPhamController : Controller
     {
         private readonly ILoaiSanPham _LSPI;
-
-        public LoaiSanPhamController(ILoaiSanPham LSPI)
+        private readonly IHttpContextAccessor _httpContextAccesor;
+        public LoaiSanPhamController(ILoaiSanPham LSPI, IHttpContextAccessor httpContextAccessor)
         {
             _LSPI = LSPI;
+            _httpContextAccesor = httpContextAccessor;
         }
         public async Task<IActionResult> Index()
         {
@@ -25,18 +27,31 @@ namespace MVC_DOAN.Controllers
         }
         public IActionResult Create()
         {
-            return View();
+            var curUserId = _httpContextAccesor.HttpContext.User.GetUserId();
+            var createLoaisanphamVM = new CreateLoaiSanPhamVM { TaikhoanId = curUserId };
+            return View(createLoaisanphamVM);
         }
         [HttpPost]
-        public async Task<IActionResult> Create(Loaisanpham LSP)
-        {
-            if (!ModelState.IsValid)
+         public async Task<IActionResult> Create(CreateLoaiSanPhamVM LoaiSanphamVM)
             {
-                return View(LSP);
+                if (ModelState.IsValid)
+                {
+                var Loaisanphams = new Loaisanpham
+                {
+                    Tenlsp = LoaiSanphamVM.Tenlsp,
+                    Tinhtrang = LoaiSanphamVM.Tinhtrang,
+                    TaikhoanId = LoaiSanphamVM.TaikhoanId
+                };
+                    _LSPI.Add(Loaisanphams);
+                    return RedirectToAction("Index");
+                }
+                else
+                {
+                    ModelState.AddModelError("", "Upload failed");
+                }
+
+                return View(LoaiSanphamVM);
             }
-            _LSPI.Add(LSP);
-            return RedirectToAction("Index");
-        }
 
         public async Task<IActionResult> Edit(string Id)
         {

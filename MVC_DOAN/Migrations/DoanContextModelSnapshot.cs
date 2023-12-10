@@ -24,315 +24,251 @@ namespace MVC_DOAN.Migrations
 
             modelBuilder.Entity("MVC_DOAN.Models.Chitietdon", b =>
                 {
-                    b.Property<string>("Madon")
-                        .HasMaxLength(20)
-                        .IsUnicode(false)
-                        .HasColumnType("varchar(20)")
-                        .HasColumnName("madon");
+                    b.Property<int>("Madon")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
 
-                    b.Property<string>("Masp")
-                        .HasMaxLength(20)
-                        .IsUnicode(false)
-                        .HasColumnType("varchar(20)")
-                        .HasColumnName("masp");
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Madon"));
 
                     b.Property<int?>("Dongia")
-                        .HasColumnType("int")
-                        .HasColumnName("dongia");
+                        .HasColumnType("int");
+
+                    b.Property<int?>("SanphamId")
+                        .HasColumnType("int");
 
                     b.Property<int?>("Soluong")
-                        .HasColumnType("int")
-                        .HasColumnName("soluong");
+                        .HasColumnType("int");
 
-                    b.HasKey("Madon", "Masp")
-                        .HasName("PK__CHITIETD__3C460110B16E51DC");
+                    b.Property<string>("TaikhoanId")
+                        .HasColumnType("nvarchar(450)");
 
-                    b.HasIndex("Masp");
+                    b.HasKey("Madon");
 
-                    b.ToTable("CHITIETDON", (string)null);
+                    b.HasIndex("TaikhoanId");
+
+                    b.ToTable("Chitietdons");
                 });
 
             modelBuilder.Entity("MVC_DOAN.Models.Ctgh", b =>
                 {
-                    b.Property<string>("Matk")
-                        .HasMaxLength(20)
-                        .IsUnicode(false)
-                        .HasColumnType("varchar(20)")
-                        .HasColumnName("matk");
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
 
-                    b.Property<string>("Masp")
-                        .HasMaxLength(20)
-                        .IsUnicode(false)
-                        .HasColumnType("varchar(20)")
-                        .HasColumnName("masp");
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<int?>("SanphamId")
+                        .HasColumnType("int");
 
                     b.Property<int?>("Soluong")
-                        .HasColumnType("int")
-                        .HasColumnName("soluong");
+                        .HasColumnType("int");
 
-                    b.HasKey("Matk", "Masp")
-                        .HasName("PK__CTGH__4D83697130C5FD7B");
+                    b.Property<string>("TaikhoanId")
+                        .HasColumnType("nvarchar(450)");
 
-                    b.HasIndex("Masp");
+                    b.HasKey("Id");
 
-                    b.ToTable("CTGH", (string)null);
+                    b.HasIndex("TaikhoanId");
+
+                    b.ToTable("Ctghs");
                 });
 
-            modelBuilder.Entity("MVC_DOAN.Models.Danhgium", b =>
+            modelBuilder.Entity("MVC_DOAN.Models.Danhgia", b =>
                 {
-                    b.Property<string>("Madg")
-                        .HasMaxLength(20)
-                        .IsUnicode(false)
-                        .HasColumnType("varchar(20)")
-                        .HasColumnName("madg");
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
                     b.Property<string>("Danhgiaa")
-                        .HasColumnType("text")
-                        .HasColumnName("danhgiaa");
-
-                    b.Property<string>("Masp")
-                        .HasMaxLength(20)
-                        .IsUnicode(false)
-                        .HasColumnType("varchar(20)")
-                        .HasColumnName("masp");
-
-                    b.Property<string>("Matk")
-                        .HasMaxLength(20)
-                        .IsUnicode(false)
-                        .HasColumnType("varchar(20)")
-                        .HasColumnName("matk");
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<int?>("Rate")
-                        .HasColumnType("int")
-                        .HasColumnName("rate");
+                        .HasColumnType("int");
 
-                    b.HasKey("Madg")
-                        .HasName("PK__DANHGIA__7A21E026E8F4641C");
+                    b.Property<int?>("SanphamId")
+                        .HasColumnType("int");
 
-                    b.HasIndex("Masp");
+                    b.Property<string>("TaikhoanId")
+                        .HasColumnType("nvarchar(450)");
 
-                    b.HasIndex("Matk");
+                    b.HasKey("Id");
 
-                    b.ToTable("DANHGIA", (string)null);
+                    b.HasIndex("SanphamId");
+
+                    b.HasIndex("TaikhoanId");
+
+                    b.ToTable("Danhgias");
                 });
 
             modelBuilder.Entity("MVC_DOAN.Models.Diachi", b =>
                 {
-                    b.Property<string>("Madc")
-                        .HasMaxLength(20)
-                        .IsUnicode(false)
-                        .HasColumnType("varchar(20)")
-                        .HasColumnName("madc");
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
                     b.Property<string>("Diachichitiet")
-                        .HasMaxLength(255)
-                        .IsUnicode(false)
-                        .HasColumnType("varchar(255)")
-                        .HasColumnName("diachichitiet");
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Hotennguoinhan")
-                        .HasMaxLength(255)
-                        .IsUnicode(false)
-                        .HasColumnType("varchar(255)")
-                        .HasColumnName("hotennguoinhan");
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Huyen")
-                        .HasMaxLength(255)
-                        .IsUnicode(false)
-                        .HasColumnType("varchar(255)")
-                        .HasColumnName("huyen");
-
-                    b.Property<string>("Matk")
-                        .HasMaxLength(20)
-                        .IsUnicode(false)
-                        .HasColumnType("varchar(20)")
-                        .HasColumnName("matk");
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Sdt")
-                        .HasMaxLength(15)
-                        .IsUnicode(false)
-                        .HasColumnType("varchar(15)")
-                        .HasColumnName("sdt");
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("TaikhoanId")
+                        .HasColumnType("nvarchar(450)");
 
                     b.Property<string>("Tinh")
-                        .HasMaxLength(255)
-                        .IsUnicode(false)
-                        .HasColumnType("varchar(255)")
-                        .HasColumnName("tinh");
+                        .HasColumnType("nvarchar(max)");
 
-                    b.HasKey("Madc")
-                        .HasName("PK__DIACHI__7A21E05ACDDAFB12");
+                    b.HasKey("Id");
 
-                    b.ToTable("DIACHI", (string)null);
+                    b.HasIndex("TaikhoanId");
+
+                    b.ToTable("Diachis");
                 });
 
             modelBuilder.Entity("MVC_DOAN.Models.Donhang", b =>
                 {
-                    b.Property<string>("Madon")
-                        .HasMaxLength(20)
-                        .IsUnicode(false)
-                        .HasColumnType("varchar(20)")
-                        .HasColumnName("madon");
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
 
-                    b.Property<string>("Madc")
-                        .HasMaxLength(20)
-                        .IsUnicode(false)
-                        .HasColumnType("varchar(20)")
-                        .HasColumnName("madc");
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<int?>("DiachiId")
+                        .HasColumnType("int");
 
                     b.Property<DateTime?>("Ngaygiao")
-                        .HasColumnType("date")
-                        .HasColumnName("ngaygiao");
+                        .HasColumnType("datetime2");
 
                     b.Property<DateTime?>("Ngaytao")
-                        .HasColumnType("date")
-                        .HasColumnName("ngaytao");
+                        .HasColumnType("datetime2");
 
                     b.Property<string>("Phuongthucthanhtoan")
-                        .HasMaxLength(1)
-                        .IsUnicode(false)
-                        .HasColumnType("char(1)")
-                        .HasColumnName("phuongthucthanhtoan")
-                        .IsFixedLength();
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("TaikhoanId")
+                        .HasColumnType("nvarchar(450)");
 
                     b.Property<int?>("Tongtien")
-                        .HasColumnType("int")
-                        .HasColumnName("tongtien");
+                        .HasColumnType("int");
 
                     b.Property<string>("Trangthaidonhang")
-                        .HasMaxLength(1)
-                        .IsUnicode(false)
-                        .HasColumnType("char(1)")
-                        .HasColumnName("trangthaidonhang")
-                        .IsFixedLength();
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Trangthaithanhtoan")
-                        .HasMaxLength(1)
-                        .IsUnicode(false)
-                        .HasColumnType("char(1)")
-                        .HasColumnName("trangthaithanhtoan")
-                        .IsFixedLength();
+                        .HasColumnType("nvarchar(max)");
 
-                    b.HasKey("Madon")
-                        .HasName("PK__DONHANG__0BE41677DB87ED07");
+                    b.HasKey("Id");
 
-                    b.HasIndex("Madc");
+                    b.HasIndex("DiachiId");
 
-                    b.ToTable("DONHANG", (string)null);
+                    b.HasIndex("TaikhoanId");
+
+                    b.ToTable("Donhangs");
                 });
 
             modelBuilder.Entity("MVC_DOAN.Models.Loaisanpham", b =>
                 {
-                    b.Property<string>("Malsp")
-                        .HasMaxLength(20)
-                        .IsUnicode(false)
-                        .HasColumnType("varchar(20)")
-                        .HasColumnName("malsp");
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<string>("TaikhoanId")
+                        .HasColumnType("nvarchar(450)");
 
                     b.Property<string>("Tenlsp")
-                        .HasMaxLength(100)
-                        .IsUnicode(false)
-                        .HasColumnType("varchar(100)")
-                        .HasColumnName("tenlsp");
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Tinhtrang")
-                        .HasMaxLength(1)
-                        .IsUnicode(false)
-                        .HasColumnType("char(1)")
-                        .HasColumnName("tinhtrang")
-                        .IsFixedLength();
+                        .HasColumnType("nvarchar(max)");
 
-                    b.HasKey("Malsp")
-                        .HasName("PK__LOAISANP__15F47678578B3695");
+                    b.HasKey("Id");
 
-                    b.ToTable("LOAISANPHAM", (string)null);
+                    b.HasIndex("TaikhoanId");
+
+                    b.ToTable("Loaisanphams");
                 });
 
             modelBuilder.Entity("MVC_DOAN.Models.Phiship", b =>
                 {
-                    b.Property<string>("Maphi")
-                        .HasMaxLength(20)
-                        .IsUnicode(false)
-                        .HasColumnType("varchar(20)")
-                        .HasColumnName("maphi");
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
                     b.Property<int?>("Phi")
-                        .HasColumnType("int")
-                        .HasColumnName("phi");
+                        .HasColumnType("int");
 
                     b.Property<string>("Quan")
-                        .HasMaxLength(255)
-                        .IsUnicode(false)
-                        .HasColumnType("varchar(255)")
-                        .HasColumnName("quan");
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("TaikhoanId")
+                        .HasColumnType("nvarchar(450)");
 
                     b.Property<int?>("Thoigian")
-                        .HasColumnType("int")
-                        .HasColumnName("thoigian");
+                        .HasColumnType("int");
 
                     b.Property<string>("Tinh")
-                        .HasMaxLength(255)
-                        .IsUnicode(false)
-                        .HasColumnType("varchar(255)")
-                        .HasColumnName("tinh");
+                        .HasColumnType("nvarchar(max)");
 
-                    b.HasKey("Maphi")
-                        .HasName("PK__PHISHIP__0AFFEDDB0F87A23F");
+                    b.HasKey("Id");
 
-                    b.ToTable("PHISHIP", (string)null);
+                    b.HasIndex("TaikhoanId");
+
+                    b.ToTable("Phiships");
                 });
 
             modelBuilder.Entity("MVC_DOAN.Models.Sanpham", b =>
                 {
-                    b.Property<string>("Masp")
-                        .HasMaxLength(20)
-                        .IsUnicode(false)
-                        .HasColumnType("varchar(20)")
-                        .HasColumnName("masp");
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
                     b.Property<int?>("Dongia")
-                        .HasColumnType("int")
-                        .HasColumnName("dongia");
+                        .HasColumnType("int");
 
                     b.Property<string>("Img")
-                        .HasMaxLength(100)
-                        .IsUnicode(false)
-                        .HasColumnType("varchar(100)")
-                        .HasColumnName("img");
+                        .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("Malsp")
-                        .HasMaxLength(20)
-                        .IsUnicode(false)
-                        .HasColumnType("varchar(20)")
-                        .HasColumnName("malsp");
+                    b.Property<int>("LoaisanphamId")
+                        .HasColumnType("int");
 
                     b.Property<int?>("Soluongdaban")
-                        .HasColumnType("int")
-                        .HasColumnName("soluongdaban");
+                        .HasColumnType("int");
 
                     b.Property<int?>("Soluongtonkho")
-                        .HasColumnType("int")
-                        .HasColumnName("soluongtonkho");
+                        .HasColumnType("int");
+
+                    b.Property<string>("TaikhoanId")
+                        .HasColumnType("nvarchar(450)");
 
                     b.Property<string>("Tensp")
-                        .HasMaxLength(100)
-                        .IsUnicode(false)
-                        .HasColumnType("varchar(100)")
-                        .HasColumnName("tensp");
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Tinhtrang")
-                        .HasMaxLength(1)
-                        .IsUnicode(false)
-                        .HasColumnType("char(1)")
-                        .HasColumnName("tinhtrang")
-                        .IsFixedLength();
+                        .HasColumnType("nvarchar(max)");
 
-                    b.HasKey("Masp")
-                        .HasName("PK__SANPHAM__7A217672565A9A74");
+                    b.HasKey("Id");
 
-                    b.HasIndex("Malsp");
+                    b.HasIndex("LoaisanphamId");
 
-                    b.ToTable("SANPHAM", (string)null);
+                    b.HasIndex("TaikhoanId");
+
+                    b.ToTable("Sanphams");
                 });
 
             modelBuilder.Entity("MVC_DOAN.Models.Taikhoan", b =>
@@ -349,9 +285,7 @@ namespace MVC_DOAN.Migrations
 
                     b.Property<string>("Email")
                         .HasMaxLength(256)
-                        .IsUnicode(false)
-                        .HasColumnType("varchar(256)")
-                        .HasColumnName("email");
+                        .HasColumnType("nvarchar(256)");
 
                     b.Property<bool>("EmailConfirmed")
                         .HasColumnType("bit");
@@ -362,22 +296,14 @@ namespace MVC_DOAN.Migrations
                     b.Property<DateTimeOffset?>("LockoutEnd")
                         .HasColumnType("datetimeoffset");
 
-                    b.Property<string>("Matk")
-                        .HasMaxLength(20)
-                        .IsUnicode(false)
-                        .HasColumnType("varchar(20)")
-                        .HasColumnName("matk");
+                    b.Property<string>("Mail")
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Matkhau")
-                        .HasMaxLength(100)
-                        .IsUnicode(false)
-                        .HasColumnType("varchar(100)")
-                        .HasColumnName("matkhau");
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Nickname")
-                        .HasMaxLength(100)
-                        .HasColumnType("nvarchar(100)")
-                        .HasColumnName("nickname");
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("NormalizedEmail")
                         .HasMaxLength(256)
@@ -391,11 +317,7 @@ namespace MVC_DOAN.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Phanloai")
-                        .HasMaxLength(1)
-                        .IsUnicode(false)
-                        .HasColumnType("char(1)")
-                        .HasColumnName("phanloai")
-                        .IsFixedLength();
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("PhoneNumber")
                         .HasColumnType("nvarchar(max)");
@@ -561,77 +483,94 @@ namespace MVC_DOAN.Migrations
 
             modelBuilder.Entity("MVC_DOAN.Models.Chitietdon", b =>
                 {
-                    b.HasOne("MVC_DOAN.Models.Donhang", "MadonNavigation")
+                    b.HasOne("MVC_DOAN.Models.Taikhoan", "Taikhoan")
                         .WithMany("Chitietdons")
-                        .HasForeignKey("Madon")
-                        .IsRequired()
-                        .HasConstraintName("FK_DH_CTD");
+                        .HasForeignKey("TaikhoanId");
 
-                    b.HasOne("MVC_DOAN.Models.Sanpham", "MaspNavigation")
-                        .WithMany("Chitietdons")
-                        .HasForeignKey("Masp")
-                        .IsRequired()
-                        .HasConstraintName("FK_SP_CTD");
-
-                    b.Navigation("MadonNavigation");
-
-                    b.Navigation("MaspNavigation");
+                    b.Navigation("Taikhoan");
                 });
 
             modelBuilder.Entity("MVC_DOAN.Models.Ctgh", b =>
                 {
-                    b.HasOne("MVC_DOAN.Models.Sanpham", "MaspNavigation")
+                    b.HasOne("MVC_DOAN.Models.Taikhoan", "Taikhoan")
                         .WithMany("Ctghs")
-                        .HasForeignKey("Masp")
-                        .IsRequired()
-                        .HasConstraintName("FK_SP_GH");
+                        .HasForeignKey("TaikhoanId");
 
-                    b.HasOne("MVC_DOAN.Models.Taikhoan", "MatkNavigation")
-                        .WithMany("Ctghs")
-                        .HasForeignKey("Matk")
-                        .IsRequired()
-                        .HasConstraintName("FK_TK_GH");
-
-                    b.Navigation("MaspNavigation");
-
-                    b.Navigation("MatkNavigation");
+                    b.Navigation("Taikhoan");
                 });
 
-            modelBuilder.Entity("MVC_DOAN.Models.Danhgium", b =>
+            modelBuilder.Entity("MVC_DOAN.Models.Danhgia", b =>
                 {
-                    b.HasOne("MVC_DOAN.Models.Sanpham", "MaspNavigation")
-                        .WithMany("Danhgia")
-                        .HasForeignKey("Masp")
-                        .HasConstraintName("FK_SP_DG");
+                    b.HasOne("MVC_DOAN.Models.Sanpham", "Sanpham")
+                        .WithMany()
+                        .HasForeignKey("SanphamId");
 
-                    b.HasOne("MVC_DOAN.Models.Taikhoan", "MatkNavigation")
-                        .WithMany("Danhgia")
-                        .HasForeignKey("Matk")
-                        .HasConstraintName("FK_TK_DG");
+                    b.HasOne("MVC_DOAN.Models.Taikhoan", "Taikhoan")
+                        .WithMany("Danhgias")
+                        .HasForeignKey("TaikhoanId");
 
-                    b.Navigation("MaspNavigation");
+                    b.Navigation("Sanpham");
 
-                    b.Navigation("MatkNavigation");
+                    b.Navigation("Taikhoan");
+                });
+
+            modelBuilder.Entity("MVC_DOAN.Models.Diachi", b =>
+                {
+                    b.HasOne("MVC_DOAN.Models.Taikhoan", "Taikhoan")
+                        .WithMany("Diachi")
+                        .HasForeignKey("TaikhoanId");
+
+                    b.Navigation("Taikhoan");
                 });
 
             modelBuilder.Entity("MVC_DOAN.Models.Donhang", b =>
                 {
-                    b.HasOne("MVC_DOAN.Models.Diachi", "MadcNavigation")
-                        .WithMany("Donhangs")
-                        .HasForeignKey("Madc")
-                        .HasConstraintName("FK_DH_DC");
+                    b.HasOne("MVC_DOAN.Models.Diachi", "Diachi")
+                        .WithMany()
+                        .HasForeignKey("DiachiId");
 
-                    b.Navigation("MadcNavigation");
+                    b.HasOne("MVC_DOAN.Models.Taikhoan", "Taikhoan")
+                        .WithMany("Donhangs")
+                        .HasForeignKey("TaikhoanId");
+
+                    b.Navigation("Diachi");
+
+                    b.Navigation("Taikhoan");
+                });
+
+            modelBuilder.Entity("MVC_DOAN.Models.Loaisanpham", b =>
+                {
+                    b.HasOne("MVC_DOAN.Models.Taikhoan", "Taikhoan")
+                        .WithMany("Loaisanphams")
+                        .HasForeignKey("TaikhoanId");
+
+                    b.Navigation("Taikhoan");
+                });
+
+            modelBuilder.Entity("MVC_DOAN.Models.Phiship", b =>
+                {
+                    b.HasOne("MVC_DOAN.Models.Taikhoan", "Taikhoan")
+                        .WithMany("Phiships")
+                        .HasForeignKey("TaikhoanId");
+
+                    b.Navigation("Taikhoan");
                 });
 
             modelBuilder.Entity("MVC_DOAN.Models.Sanpham", b =>
                 {
-                    b.HasOne("MVC_DOAN.Models.Loaisanpham", "MalspNavigation")
-                        .WithMany("Sanphams")
-                        .HasForeignKey("Malsp")
-                        .HasConstraintName("FK_SP_LSP");
+                    b.HasOne("MVC_DOAN.Models.Loaisanpham", "Loaisanpham")
+                        .WithMany()
+                        .HasForeignKey("LoaisanphamId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
 
-                    b.Navigation("MalspNavigation");
+                    b.HasOne("MVC_DOAN.Models.Taikhoan", "Taikhoan")
+                        .WithMany("Sanphams")
+                        .HasForeignKey("TaikhoanId");
+
+                    b.Navigation("Loaisanpham");
+
+                    b.Navigation("Taikhoan");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>
@@ -685,35 +624,23 @@ namespace MVC_DOAN.Migrations
                         .IsRequired();
                 });
 
-            modelBuilder.Entity("MVC_DOAN.Models.Diachi", b =>
-                {
-                    b.Navigation("Donhangs");
-                });
-
-            modelBuilder.Entity("MVC_DOAN.Models.Donhang", b =>
-                {
-                    b.Navigation("Chitietdons");
-                });
-
-            modelBuilder.Entity("MVC_DOAN.Models.Loaisanpham", b =>
-                {
-                    b.Navigation("Sanphams");
-                });
-
-            modelBuilder.Entity("MVC_DOAN.Models.Sanpham", b =>
-                {
-                    b.Navigation("Chitietdons");
-
-                    b.Navigation("Ctghs");
-
-                    b.Navigation("Danhgia");
-                });
-
             modelBuilder.Entity("MVC_DOAN.Models.Taikhoan", b =>
                 {
+                    b.Navigation("Chitietdons");
+
                     b.Navigation("Ctghs");
 
-                    b.Navigation("Danhgia");
+                    b.Navigation("Danhgias");
+
+                    b.Navigation("Diachi");
+
+                    b.Navigation("Donhangs");
+
+                    b.Navigation("Loaisanphams");
+
+                    b.Navigation("Phiships");
+
+                    b.Navigation("Sanphams");
                 });
 #pragma warning restore 612, 618
         }

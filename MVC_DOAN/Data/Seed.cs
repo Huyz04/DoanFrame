@@ -22,37 +22,32 @@ namespace MVC_DOAN.Data
                     {
                         new Loaisanpham()
                         {
-                            Malsp = "LSP5",
                             Tenlsp = "Kem nền",
-                            Tinhtrang = "1",
+                            Tinhtrang = "1"
                         
                          },
                        new Loaisanpham()
                         {
-                            Malsp = "LSP6",
                             Tenlsp = "Phấn mắt",
-                            Tinhtrang = "1",
+                            Tinhtrang = "1"
 
                          },
                        new Loaisanpham()
                         {
-                            Malsp = "LSP7",
                             Tenlsp = "Dưỡng ẩm",
-                            Tinhtrang = "0",
+                            Tinhtrang = "0"
 
                          },
                        new Loaisanpham()
                         {
-                            Malsp = "LSP8",
                             Tenlsp = "Son",
-                            Tinhtrang = "1",
+                            Tinhtrang = "1"
 
                          },
                        new Loaisanpham()
                         {
-                            Malsp = "LSP9",
                             Tenlsp = "Nước tẩy trang",
-                            Tinhtrang = "0",
+                            Tinhtrang = "0"
 
                          }
                     });
@@ -62,62 +57,52 @@ namespace MVC_DOAN.Data
             }
         }
 
-        //public static async Task SeedUsersAndRolesAsync(IApplicationBuilder applicationBuilder)
-        //{
-        //    using (var serviceScope = applicationBuilder.ApplicationServices.CreateScope())
-        //    {
-        //        //Roles
-        //        var roleManager = serviceScope.ServiceProvider.GetRequiredService<RoleManager<IdentityRole>>();
+        public static async Task SeedUsersAndRolesAsync(IApplicationBuilder applicationBuilder)
+        {
+            using (var serviceScope = applicationBuilder.ApplicationServices.CreateScope())
+            {
+                //Roles
+                var roleManager = serviceScope.ServiceProvider.GetRequiredService<RoleManager<IdentityRole>>();
 
-        //        if (!await roleManager.RoleExistsAsync(UserRoles.Admin))
-        //            await roleManager.CreateAsync(new IdentityRole(UserRoles.Admin));
-        //        if (!await roleManager.RoleExistsAsync(UserRoles.User))
-        //            await roleManager.CreateAsync(new IdentityRole(UserRoles.User));
+                if (!await roleManager.RoleExistsAsync(UserRoles.Admin))
+                    await roleManager.CreateAsync(new IdentityRole(UserRoles.Admin));
+                if (!await roleManager.RoleExistsAsync(UserRoles.User))
+                    await roleManager.CreateAsync(new IdentityRole(UserRoles.User));
 
-        //        //Users
-        //        var userManager = serviceScope.ServiceProvider.GetRequiredService<UserManager<AppUser>>();
-        //        string adminUserEmail = "teddysmithdeveloper@gmail.com";
+                //Users
+                var userManager = serviceScope.ServiceProvider.GetRequiredService<UserManager<Taikhoan>>();
+                string adminUserEmail = "huy@.com";
 
-        //        var adminUser = await userManager.FindByEmailAsync(adminUserEmail);
-        //        if (adminUser == null)
-        //        {
-        //            var newAdminUser = new AppUser()
-        //            {
-        //                UserName = "teddysmithdev",
-        //                Email = adminUserEmail,
-        //                EmailConfirmed = true,
-        //                Address = new Address()
-        //                {
-        //                    Street = "123 Main St",
-        //                    City = "Charlotte",
-        //                    State = "NC"
-        //                }
-        //            };
-        //            await userManager.CreateAsync(newAdminUser, "Coding@1234?");
-        //            await userManager.AddToRoleAsync(newAdminUser, UserRoles.Admin);
-        //        }
+                var adminUser = await userManager.FindByEmailAsync(adminUserEmail);
+                if (adminUser == null)
+                {
+                    var newAdminUser = new Taikhoan()
+                    {
+                        UserName = "huy",
+                        Email = adminUserEmail,
+                        EmailConfirmed = true,
+                        Matkhau = "C@123"
+                    };
+                    await userManager.CreateAsync(newAdminUser, "Coding@1234?");
+                    await userManager.AddToRoleAsync(newAdminUser, UserRoles.Admin);
+                }
 
-        //        string appUserEmail = "user@etickets.com";
+                string appUserEmail = "user@.com";
 
-        //        var appUser = await userManager.FindByEmailAsync(appUserEmail);
-        //        if (appUser == null)
-        //        {
-        //            var newAppUser = new AppUser()
-        //            {
-        //                UserName = "app-user",
-        //                Email = appUserEmail,
-        //                EmailConfirmed = true,
-        //                Address = new Address()
-        //                {
-        //                    Street = "123 Main St",
-        //                    City = "Charlotte",
-        //                    State = "NC"
-        //                }
-        //            };
-        //            await userManager.CreateAsync(newAppUser, "Coding@1234?");
-        //            await userManager.AddToRoleAsync(newAppUser, UserRoles.User);
-        //        }
-        //    }
-        //}
+                var appUser = await userManager.FindByEmailAsync(appUserEmail);
+                if (appUser == null)
+                {
+                    var newAppUser = new Taikhoan()
+                    {
+                        UserName = "user",
+                        Email = appUserEmail,
+                        EmailConfirmed = true,
+                        Matkhau = "C@123"
+                    };
+                    await userManager.CreateAsync(newAppUser, "Coding@1234?");
+                    await userManager.AddToRoleAsync(newAppUser, UserRoles.User);
+                }
+            }
+        }
     }
 }

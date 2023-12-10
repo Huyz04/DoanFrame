@@ -32,14 +32,26 @@ namespace MVC_DOAN.Repository
             //_context.Loaisanphams.Where(c => c.Tinhtrang.Contains(xx)).TolistAsync();
         }
 
-        public async Task<Loaisanpham> GetById(string Id)
+        public async Task<Loaisanpham> GetById(int Id)
         {
-            return await _context.Loaisanphams.FirstOrDefaultAsync(c => c.Malsp == Id);
+            return await _context.Loaisanphams.FirstOrDefaultAsync(c => c.Id == Id);
         }
-        public async Task<Loaisanpham> GetByIdNoTracking(string Id)
+
+        public Task<Loaisanpham> GetById(string Id)
         {
-            return await _context.Loaisanphams.AsNoTracking().FirstOrDefaultAsync(c => c.Malsp == Id);
+            throw new NotImplementedException();
         }
+
+        public async Task<Loaisanpham> GetByIdNoTracking(int Id)
+        {
+            return await _context.Loaisanphams.AsNoTracking().FirstOrDefaultAsync(c => c.Id == Id);
+        }
+
+        public Task<Loaisanpham> GetByIdNoTracking(string Id)
+        {
+            throw new NotImplementedException();
+        }
+
         public bool Save()
         {
             var saved = _context.SaveChanges();

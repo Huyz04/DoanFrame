@@ -2,9 +2,10 @@
 {
     public class CreateSanPhamViewModel
     {
-        public string Masp { get; set; } = null!;
+        
+        public int Id { get; set; }
 
-        public string? Malsp { get; set; }
+        public int LoaisanphamId { get; set; }
 
         public string? Tensp { get; set; }
 
@@ -17,5 +18,6 @@
         public string? Tinhtrang { get; set; }
 
         public IFormFile? Img { get; set; }
+        public string TaikhoanId { get; set; }
     }
 }

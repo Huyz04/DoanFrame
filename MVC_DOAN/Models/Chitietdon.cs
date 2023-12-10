@@ -7,16 +7,16 @@ namespace MVC_DOAN.Models;
 
 public partial class Chitietdon
 {
-    public string Madon { get; set; } = null!;
-
-    public string Masp { get; set; } = null!;
+    [Key]
+    public int Madon { get; set; }
 
     public int? Soluong { get; set; }
 
     public int? Dongia { get; set; }
-
-    public virtual Donhang MadonNavigation { get; set; } = null!;
-
-    public virtual Sanpham MaspNavigation { get; set; } = null!;
+    [ForeignKey("Sanpham")]
+    public int? SanphamId { get; set; }
+    [ForeignKey("Taikhoan")]
+    public string? TaikhoanId { get; set; }
+    public Taikhoan? Taikhoan { get; set; }
 
 }

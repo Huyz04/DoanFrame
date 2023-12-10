@@ -6,16 +6,14 @@ using System.ComponentModel.DataAnnotations.Schema;
 namespace MVC_DOAN.Models;
 
 public partial class Ctgh
-{ 
-
-    public string Matk { get; set; } = null!;
-
-    public string Masp { get; set; } = null!;
+{
+    [Key]
+    public int Id { get; set; }
 
     public int? Soluong { get; set; }
-
-    public virtual Sanpham MaspNavigation { get; set; } = null!;
-
-    public virtual Taikhoan MatkNavigation { get; set; } = null!;
-
+    [ForeignKey("Sanpham")]
+    public int? SanphamId { get; set; }
+    [ForeignKey("Taikhoan")]
+    public string? TaikhoanId { get; set; }
+    public Taikhoan? Taikhoan { get; set; }
 }

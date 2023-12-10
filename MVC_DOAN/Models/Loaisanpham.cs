@@ -6,11 +6,14 @@ namespace MVC_DOAN.Models;
 
 public partial class Loaisanpham
 {
-    public string Malsp { get; set; } = null!;
+    [Key]
+    public int Id { get; set; }
 
     public string? Tenlsp { get; set; }
 
     public string? Tinhtrang { get; set; }
+    [ForeignKey("Taikhoan")]
+    public string? TaikhoanId { get; set; }
+    public Taikhoan? Taikhoan { get; set; }
 
-    public virtual ICollection<Sanpham> Sanphams { get; set; } = new List<Sanpham>();
 }
