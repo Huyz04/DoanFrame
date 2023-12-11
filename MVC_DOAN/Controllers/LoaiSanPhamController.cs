@@ -7,7 +7,7 @@ using MVC_DOAN.ViewModels;
 namespace MVC_DOAN.Controllers
 {
     public class LoaiSanPhamController : Controller
-    {
+    {   
         private readonly ILoaiSanPham _LSPI;
         private readonly IHttpContextAccessor _httpContextAccesor;
         public LoaiSanPhamController(ILoaiSanPham LSPI, IHttpContextAccessor httpContextAccessor)
@@ -20,7 +20,12 @@ namespace MVC_DOAN.Controllers
             IEnumerable<Loaisanpham> loaiSanPhams = await _LSPI.GetAll();
             return View(loaiSanPhams);
         }
-        public async Task<IActionResult> Detail(string Id)
+        public async Task<IActionResult> GetTinhtrang()
+        {
+            IEnumerable<Loaisanpham> loaiSanPhams = await _LSPI.GetTinhtrang();
+            return View(loaiSanPhams);
+        }
+        public async Task<IActionResult> Detail(int Id)
         {
             Loaisanpham LSP = await _LSPI.GetById(Id);
             return View(LSP);
@@ -53,14 +58,14 @@ namespace MVC_DOAN.Controllers
                 return View(LoaiSanphamVM);
             }
 
-        public async Task<IActionResult> Edit(string Id)
+        public async Task<IActionResult> Edit(int Id)
         {
             var LSP = await _LSPI.GetById(Id);
             if (LSP == null) return View("Error");
             return View(LSP);
         }
         [HttpPost]
-        public async Task<IActionResult> Edit(string Id, Loaisanpham LSP)
+        public async Task<IActionResult> Edit(int Id, Loaisanpham LSP)
         {
             if (!ModelState.IsValid)
             {

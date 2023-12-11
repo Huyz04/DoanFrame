@@ -19,17 +19,16 @@ namespace MVC_DOAN.Controllers
             _PhoToService = photoService;
             _httpContextAccessor = httpContextAccessor;
         }
-        public async Task<IActionResult> Index()
+        public async Task<IActionResult> All()
         {
             IEnumerable<Sanpham> SanPhams = await _SPI.GetAll();
             return View(SanPhams);
         }
         public async Task<IActionResult> Detail(int Id)
         {
-
-            Sanpham SP = await _SPI.GetByIdAsync(Id);
-            return View(SP);
-        }
+			IEnumerable<Sanpham> SanPhams = await _SPI.GetAll();
+			return View(SanPhams);
+		}
         [HttpGet]
         public IActionResult Create()
         {

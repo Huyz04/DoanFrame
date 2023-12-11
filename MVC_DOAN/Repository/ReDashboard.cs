@@ -29,5 +29,9 @@ namespace MVC_DOAN.Repository
             var userSanPham = _context.Sanphams.Where(r => r.Taikhoan.Id == curUser);
             return userSanPham.ToList();
         }
+        public async Task<Taikhoan> GetUserById(string Id)
+        {
+            return await _context.Users.FindAsync(Id);
+        }
     }
 }

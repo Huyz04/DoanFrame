@@ -9,7 +9,8 @@ public partial class Taikhoan : IdentityUser
 
 {
     public string? Mail { get; set; }
-
+    public string? Img { get; set; }
+        
     public string? Matkhau { get; set; }
 
     public string? Phanloai { get; set; }

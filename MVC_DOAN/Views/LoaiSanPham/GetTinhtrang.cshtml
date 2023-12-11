@@ -10,7 +10,7 @@
 {
     <div>@item.Id</div>
     <div>@item.Tenlsp</div>
-    <div>@item.Tinhtrang</div>
+    <div>@item.Tinhtrang   </div>
     <div>
         @if (User.Identity.IsAuthenticated && User.IsInRole("admin"))
         {
@@ -19,7 +19,7 @@
             </a>
         }
         <a type="button" class="btn btn-sm btn-outline-danger" asp-controller="LoaiSanPham" asp-action="Detail" asp-route-id="@item.Id">
-           Detail
+            Detail
         </a>
     </div>
     <div>------------------------</div>

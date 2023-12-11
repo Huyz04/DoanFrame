@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using EntityFrameworkCore.Triggers;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 using MVC_DOAN.Models;
@@ -32,5 +33,9 @@ public partial class DoanContext : IdentityDbContext<Taikhoan>
     public virtual DbSet<Phiship> Phiships { get; set; }
 
     public virtual DbSet<Sanpham> Sanphams { get; set; }
+    public override Task<int> SaveChangesAsync(CancellationToken cancellationToken = default(CancellationToken))
+    {
+        return this.SaveChangesWithTriggersAsync(base.SaveChangesAsync, acceptAllChangesOnSuccess: true, cancellationToken: cancellationToken);
+    }
 
 }

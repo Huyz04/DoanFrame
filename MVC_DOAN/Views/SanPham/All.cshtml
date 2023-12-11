@@ -2,7 +2,6 @@
 @{
 	ViewData["Title"] = "San Pham";
 }
-
 <div>
 	<div class="top-header-area" id="sticker">
 		<div class="container">
@@ -19,27 +18,15 @@
 						<!-- menu start -->
 						<nav class="main-menu">
 							<ul>
-								<li>
+								<li >
 									<a asp-area="" asp-controller="Home" asp-action="Index">Trang chủ</a>
 								</li>
-								<li class="current-list-item"> <a asp-area="" asp-controller="SanPham" asp-action="Index">Sản phẩm</a></li>
-								@* <li>
-								<a href="#">Pages</a>
-								<ul class="sub-menu">
-								<li><a href="404.html">404 page</a></li>
-								<li><a href="about.html">About</a></li>
-								<li><a href="cart.html">Cart</a></li>
-								<li><a href="checkout.html">Check Out</a></li>
-								<li><a href="contact.html">Contact</a></li>
-								<li><a href="news.html">News</a></li>
-								<li><a href="shop.html">Shop</a></li>
-								</ul>
-								</li> *@
+								<li class ="current-list-item"> <a asp-area="" asp-controller="SanPham" asp-action="Index">Sản phẩm</a></li>
 								<li><a href="contact.html">Cẩm nang</a></li>
 								<li>
 									<a asp-area="" asp-controller="Tinh" asp-action="Lienhe">Liên hệ	</a>
 								</li>
-
+								
 								<li>
 									<a href="shop.html">Đơn hàng của bạn</a>
 									<ul class="sub-menu">
@@ -108,7 +95,7 @@
 <!-- products -->
 <div class="product-section mt-150 mb-150">
 	<div class="container">
-
+			
 		<div class="row">
 			<div class="col-md-12">
 				<div class="product-filters">
@@ -140,16 +127,16 @@
 		<div class="row product-lists">
 			@foreach (var item in Model)
 			{
-				<div class="col-lg-4 col-md-6 text-center strawberry">
-					<div class="single-product-item">
-						<div class="product-image">
-							<a href="single-product.html"><img src="@item.Img" alt=""></a>
-						</div>
-						<h3>@item.Tensp</h3>
-						<p class="product-price">@item.Dongia<span>VND</span></p>
-						<a href="cart.html" class="cart-btn"><i class="fas fa-shopping-cart"></i> Add to Cart</a>
+			<div class="col-lg-4 col-md-6 text-center strawberry">
+				<div class="single-product-item">
+					<div class="product-image">
+						<a href="single-product.html"><img src="@item.Img" alt=""></a>
 					</div>
+					<h3>@item.Tensp</h3>
+					<p class="product-price">@item.Dongia<span>VND</span></p>
+					<a href="cart.html" class="cart-btn"><i class="fas fa-shopping-cart"></i> Add to Cart</a>
 				</div>
+			</div>
 			}
 			<div class="col-lg-4 col-md-6 text-center berry">
 				<div class="single-product-item">
@@ -219,17 +206,18 @@
 	</div>
 </div>
 <!-- end products -->
+
 @* {
-	<div>@item.Masp</div>
-	<div>@item.Tensp</div>
-	<div>
-		<a type="button" class="btn btn-sm btn-outline-info" asp-controller="SanPham" asp-action="Edit" asp-route-id="@item.Masp">
-			Edit
-		</a>
-		<a type="button" class="btn btn-sm btn-outline-danger" asp-controller="SanPham" asp-action="Detail" asp-route-id="@item.Masp">
-		   Detail
-		</a>
-  <a ></a>
-	</div>
-	<div>------------------------</div>
+    <div>@item.Masp</div>
+    <div>@item.Tensp</div>
+    <div>
+        <a type="button" class="btn btn-sm btn-outline-info" asp-controller="SanPham" asp-action="Edit" asp-route-id="@item.Masp">
+            Edit
+        </a>
+        <a type="button" class="btn btn-sm btn-outline-danger" asp-controller="SanPham" asp-action="Detail" asp-route-id="@item.Masp">
+           Detail
+        </a>
+		<a ></a>
+    </div>
+    <div>------------------------</div>
 } *@

@@ -9,10 +9,12 @@ namespace MVC_DOAN.Controllers
     public class DashboardController : Controller
     {
         private readonly IDashboard _dashboard;
+        private readonly IHttpContextAccessor _httpContextAccessor;
 
-        public DashboardController(IDashboard dashboard)
+        public DashboardController(IDashboard dashboard, IHttpContextAccessor httpContextAccessor)
         {
             _dashboard = dashboard;
+            _httpContextAccessor = httpContextAccessor;
         }
         public async Task<IActionResult> Index()
         {
@@ -25,5 +27,12 @@ namespace MVC_DOAN.Controllers
             };
             return View(dashboardVM);
         }
+        //public async Task<IActionResult> EditUserProfile()
+        //{
+        //    var curUserId = _httpContextAccessor.HttpContext.User.GetUserId();
+        //    var user = await _dashboard.GetUserById(curUserId);
+        //    if (user == null) return View("Error");
+        //    var 
+        //}
     }
 }

@@ -37,19 +37,14 @@ namespace MVC_DOAN.Repository
             return await _context.Loaisanphams.FirstOrDefaultAsync(c => c.Id == Id);
         }
 
-        public Task<Loaisanpham> GetById(string Id)
-        {
-            throw new NotImplementedException();
-        }
 
         public async Task<Loaisanpham> GetByIdNoTracking(int Id)
         {
             return await _context.Loaisanphams.AsNoTracking().FirstOrDefaultAsync(c => c.Id == Id);
         }
-
-        public Task<Loaisanpham> GetByIdNoTracking(string Id)
+        public async Task<IEnumerable<Loaisanpham>> GetTinhtrang()
         {
-            throw new NotImplementedException();
+            return await _context.Loaisanphams.Where(c => c.Tinhtrang == "1").ToListAsync();
         }
 
         public bool Save()

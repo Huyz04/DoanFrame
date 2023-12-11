@@ -6,6 +6,6 @@ namespace MVC_DOAN.Interface
     {
         Task<List<Loaisanpham>> GetAllUserLoaiSanPham();
         Task<List<Sanpham>> GetAllUserSanPham();
-
+        Task<Taikhoan> GetUserById(string Id);
     }
 }

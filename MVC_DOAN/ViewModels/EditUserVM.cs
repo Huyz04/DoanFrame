@@ -1,6 +1,6 @@
 ﻿namespace MVC_DOAN.ViewModels
 {
-    public class UserDetailVM
+    public class EditUserVM
     {
         public string Id { get; set; }
         public string? Mail { get; set; }
