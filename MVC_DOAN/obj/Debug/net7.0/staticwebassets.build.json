@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "4XUEiquiOgQuNTeSQxSzDNEfT0EVMZFXasgXnSkTGAo=",
+  "Hash": "bHJY/XcM9BrTjT2Rn1/LFGTcEaC05dKOew9LF1rZreQ=",
   "Source": "MVC_DOAN",
   "BasePath": "_content/MVC_DOAN",
   "Mode": "Default",
@@ -10,17 +10,17 @@
     {
       "Name": "MVC_DOAN\\wwwroot",
       "Source": "MVC_DOAN",
-      "ContentRoot": "D:\\HUY\\DAIHOC\\NAM3\\KY1\\Framework\\DOAN\\MVC_DOAN\\MVC_DOAN\\wwwroot\\",
+      "ContentRoot": "D:\\HUY\\DAIHOC\\NAM3\\KY1\\Framework\\DOAN_MAIN\\MVC_DOAN\\wwwroot\\",
       "BasePath": "_content/MVC_DOAN",
       "Pattern": "**"
     }
   ],
   "Assets": [
     {
-      "Identity": "D:\\HUY\\DAIHOC\\NAM3\\KY1\\Framework\\DOAN\\MVC_DOAN\\MVC_DOAN\\obj\\Debug\\net7.0\\scopedcss\\bundle\\MVC_DOAN.styles.css",
+      "Identity": "D:\\HUY\\DAIHOC\\NAM3\\KY1\\Framework\\DOAN_MAIN\\MVC_DOAN\\obj\\Debug\\net7.0\\scopedcss\\bundle\\MVC_DOAN.styles.css",
       "SourceId": "MVC_DOAN",
       "SourceType": "Computed",
-      "ContentRoot": "D:\\HUY\\DAIHOC\\NAM3\\KY1\\Framework\\DOAN\\MVC_DOAN\\MVC_DOAN\\obj\\Debug\\net7.0\\scopedcss\\bundle\\",
+      "ContentRoot": "D:\\HUY\\DAIHOC\\NAM3\\KY1\\Framework\\DOAN_MAIN\\MVC_DOAN\\obj\\Debug\\net7.0\\scopedcss\\bundle\\",
       "BasePath": "_content/MVC_DOAN",
       "RelativePath": "MVC_DOAN.styles.css",
       "AssetKind": "All",
@@ -31,13 +31,13 @@
       "AssetTraitValue": "ApplicationBundle",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "D:\\HUY\\DAIHOC\\NAM3\\KY1\\Framework\\DOAN\\MVC_DOAN\\MVC_DOAN\\obj\\Debug\\net7.0\\scopedcss\\bundle\\MVC_DOAN.styles.css"
+      "OriginalItemSpec": "D:\\HUY\\DAIHOC\\NAM3\\KY1\\Framework\\DOAN_MAIN\\MVC_DOAN\\obj\\Debug\\net7.0\\scopedcss\\bundle\\MVC_DOAN.styles.css"
     },
     {
-      "Identity": "D:\\HUY\\DAIHOC\\NAM3\\KY1\\Framework\\DOAN\\MVC_DOAN\\MVC_DOAN\\obj\\Debug\\net7.0\\scopedcss\\projectbundle\\MVC_DOAN.bundle.scp.css",
+      "Identity": "D:\\HUY\\DAIHOC\\NAM3\\KY1\\Framework\\DOAN_MAIN\\MVC_DOAN\\obj\\Debug\\net7.0\\scopedcss\\projectbundle\\MVC_DOAN.bundle.scp.css",
       "SourceId": "MVC_DOAN",
       "SourceType": "Computed",
-      "ContentRoot": "D:\\HUY\\DAIHOC\\NAM3\\KY1\\Framework\\DOAN\\MVC_DOAN\\MVC_DOAN\\obj\\Debug\\net7.0\\scopedcss\\projectbundle\\",
+      "ContentRoot": "D:\\HUY\\DAIHOC\\NAM3\\KY1\\Framework\\DOAN_MAIN\\MVC_DOAN\\obj\\Debug\\net7.0\\scopedcss\\projectbundle\\",
       "BasePath": "_content/MVC_DOAN",
       "RelativePath": "MVC_DOAN.bundle.scp.css",
       "AssetKind": "All",
@@ -48,13 +48,13 @@
       "AssetTraitValue": "ProjectBundle",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "D:\\HUY\\DAIHOC\\NAM3\\KY1\\Framework\\DOAN\\MVC_DOAN\\MVC_DOAN\\obj\\Debug\\net7.0\\scopedcss\\projectbundle\\MVC_DOAN.bundle.scp.css"
+      "OriginalItemSpec": "D:\\HUY\\DAIHOC\\NAM3\\KY1\\Framework\\DOAN_MAIN\\MVC_DOAN\\obj\\Debug\\net7.0\\scopedcss\\projectbundle\\MVC_DOAN.bundle.scp.css"
     },
     {
-      "Identity": "D:\\HUY\\DAIHOC\\NAM3\\KY1\\Framework\\DOAN\\MVC_DOAN\\MVC_DOAN\\wwwroot\\assets\\bootstrap\\css\\bootstrap.css",
+      "Identity": "D:\\HUY\\DAIHOC\\NAM3\\KY1\\Framework\\DOAN_MAIN\\MVC_DOAN\\wwwroot\\assets\\bootstrap\\css\\bootstrap.css",
       "SourceId": "MVC_DOAN",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\HUY\\DAIHOC\\NAM3\\KY1\\Framework\\DOAN\\MVC_DOAN\\MVC_DOAN\\wwwroot\\",
+      "ContentRoot": "D:\\HUY\\DAIHOC\\NAM3\\KY1\\Framework\\DOAN_MAIN\\MVC_DOAN\\wwwroot\\",
       "BasePath": "_content/MVC_DOAN",
       "RelativePath": "assets/bootstrap/css/bootstrap.css",
       "AssetKind": "All",
@@ -68,10 +68,10 @@
       "OriginalItemSpec": "wwwroot\\assets\\bootstrap\\css\\bootstrap.css"
     },
     {
-      "Identity": "D:\\HUY\\DAIHOC\\NAM3\\KY1\\Framework\\DOAN\\MVC_DOAN\\MVC_DOAN\\wwwroot\\assets\\bootstrap\\css\\bootstrap.css.map",
+      "Identity": "D:\\HUY\\DAIHOC\\NAM3\\KY1\\Framework\\DOAN_MAIN\\MVC_DOAN\\wwwroot\\assets\\bootstrap\\css\\bootstrap.css.map",
       "SourceId": "MVC_DOAN",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\HUY\\DAIHOC\\NAM3\\KY1\\Framework\\DOAN\\MVC_DOAN\\MVC_DOAN\\wwwroot\\",
+      "ContentRoot": "D:\\HUY\\DAIHOC\\NAM3\\KY1\\Framework\\DOAN_MAIN\\MVC_DOAN\\wwwroot\\",
       "BasePath": "_content/MVC_DOAN",
       "RelativePath": "assets/bootstrap/css/bootstrap.css.map",
       "AssetKind": "All",
@@ -85,10 +85,10 @@
       "OriginalItemSpec": "wwwroot\\assets\\bootstrap\\css\\bootstrap.css.map"
     },
     {
-      "Identity": "D:\\HUY\\DAIHOC\\NAM3\\KY1\\Framework\\DOAN\\MVC_DOAN\\MVC_DOAN\\wwwroot\\assets\\bootstrap\\css\\bootstrap.min.css",
+      "Identity": "D:\\HUY\\DAIHOC\\NAM3\\KY1\\Framework\\DOAN_MAIN\\MVC_DOAN\\wwwroot\\assets\\bootstrap\\css\\bootstrap.min.css",
       "SourceId": "MVC_DOAN",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\HUY\\DAIHOC\\NAM3\\KY1\\Framework\\DOAN\\MVC_DOAN\\MVC_DOAN\\wwwroot\\",
+      "ContentRoot": "D:\\HUY\\DAIHOC\\NAM3\\KY1\\Framework\\DOAN_MAIN\\MVC_DOAN\\wwwroot\\",
       "BasePath": "_content/MVC_DOAN",
       "RelativePath": "assets/bootstrap/css/bootstrap.min.css",
       "AssetKind": "All",
@@ -102,10 +102,10 @@
       "OriginalItemSpec": "wwwroot\\assets\\bootstrap\\css\\bootstrap.min.css"
     },
     {
-      "Identity": "D:\\HUY\\DAIHOC\\NAM3\\KY1\\Framework\\DOAN\\MVC_DOAN\\MVC_DOAN\\wwwroot\\assets\\bootstrap\\css\\bootstrap.min.css.map",
+      "Identity": "D:\\HUY\\DAIHOC\\NAM3\\KY1\\Framework\\DOAN_MAIN\\MVC_DOAN\\wwwroot\\assets\\bootstrap\\css\\bootstrap.min.css.map",
       "SourceId": "MVC_DOAN",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\HUY\\DAIHOC\\NAM3\\KY1\\Framework\\DOAN\\MVC_DOAN\\MVC_DOAN\\wwwroot\\",
+      "ContentRoot": "D:\\HUY\\DAIHOC\\NAM3\\KY1\\Framework\\DOAN_MAIN\\MVC_DOAN\\wwwroot\\",
       "BasePath": "_content/MVC_DOAN",
       "RelativePath": "assets/bootstrap/css/bootstrap.min.css.map",
       "AssetKind": "All",
@@ -119,10 +119,10 @@
       "OriginalItemSpec": "wwwroot\\assets\\bootstrap\\css\\bootstrap.min.css.map"
     },
     {
-      "Identity": "D:\\HUY\\DAIHOC\\NAM3\\KY1\\Framework\\DOAN\\MVC_DOAN\\MVC_DOAN\\wwwroot\\assets\\bootstrap\\css\\bootstrap-grid.css",
+      "Identity": "D:\\HUY\\DAIHOC\\NAM3\\KY1\\Framework\\DOAN_MAIN\\MVC_DOAN\\wwwroot\\assets\\bootstrap\\css\\bootstrap-grid.css",
       "SourceId": "MVC_DOAN",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\HUY\\DAIHOC\\NAM3\\KY1\\Framework\\DOAN\\MVC_DOAN\\MVC_DOAN\\wwwroot\\",
+      "ContentRoot": "D:\\HUY\\DAIHOC\\NAM3\\KY1\\Framework\\DOAN_MAIN\\MVC_DOAN\\wwwroot\\",
       "BasePath": "_content/MVC_DOAN",
       "RelativePath": "assets/bootstrap/css/bootstrap-grid.css",
       "AssetKind": "All",
@@ -136,10 +136,10 @@
       "OriginalItemSpec": "wwwroot\\assets\\bootstrap\\css\\bootstrap-grid.css"
     },
     {
-      "Identity": "D:\\HUY\\DAIHOC\\NAM3\\KY1\\Framework\\DOAN\\MVC_DOAN\\MVC_DOAN\\wwwroot\\assets\\bootstrap\\css\\bootstrap-grid.css.map",
+      "Identity": "D:\\HUY\\DAIHOC\\NAM3\\KY1\\Framework\\DOAN_MAIN\\MVC_DOAN\\wwwroot\\assets\\bootstrap\\css\\bootstrap-grid.css.map",
       "SourceId": "MVC_DOAN",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\HUY\\DAIHOC\\NAM3\\KY1\\Framework\\DOAN\\MVC_DOAN\\MVC_DOAN\\wwwroot\\",
+      "ContentRoot": "D:\\HUY\\DAIHOC\\NAM3\\KY1\\Framework\\DOAN_MAIN\\MVC_DOAN\\wwwroot\\",
       "BasePath": "_content/MVC_DOAN",
       "RelativePath": "assets/bootstrap/css/bootstrap-grid.css.map",
       "AssetKind": "All",
@@ -153,10 +153,10 @@
       "OriginalItemSpec": "wwwroot\\assets\\bootstrap\\css\\bootstrap-grid.css.map"
     },
     {
-      "Identity": "D:\\HUY\\DAIHOC\\NAM3\\KY1\\Framework\\DOAN\\MVC_DOAN\\MVC_DOAN\\wwwroot\\assets\\bootstrap\\css\\bootstrap-grid.min.css",
+      "Identity": "D:\\HUY\\DAIHOC\\NAM3\\KY1\\Framework\\DOAN_MAIN\\MVC_DOAN\\wwwroot\\assets\\bootstrap\\css\\bootstrap-grid.min.css",
       "SourceId": "MVC_DOAN",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\HUY\\DAIHOC\\NAM3\\KY1\\Framework\\DOAN\\MVC_DOAN\\MVC_DOAN\\wwwroot\\",
+      "ContentRoot": "D:\\HUY\\DAIHOC\\NAM3\\KY1\\Framework\\DOAN_MAIN\\MVC_DOAN\\wwwroot\\",
       "BasePath": "_content/MVC_DOAN",
       "RelativePath": "assets/bootstrap/css/bootstrap-grid.min.css",
       "AssetKind": "All",
@@ -170,10 +170,10 @@
       "OriginalItemSpec": "wwwroot\\assets\\bootstrap\\css\\bootstrap-grid.min.css"
     },
     {
-      "Identity": "D:\\HUY\\DAIHOC\\NAM3\\KY1\\Framework\\DOAN\\MVC_DOAN\\MVC_DOAN\\wwwroot\\assets\\bootstrap\\css\\bootstrap-grid.min.css.map",
+      "Identity": "D:\\HUY\\DAIHOC\\NAM3\\KY1\\Framework\\DOAN_MAIN\\MVC_DOAN\\wwwroot\\assets\\bootstrap\\css\\bootstrap-grid.min.css.map",
       "SourceId": "MVC_DOAN",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\HUY\\DAIHOC\\NAM3\\KY1\\Framework\\DOAN\\MVC_DOAN\\MVC_DOAN\\wwwroot\\",
+      "ContentRoot": "D:\\HUY\\DAIHOC\\NAM3\\KY1\\Framework\\DOAN_MAIN\\MVC_DOAN\\wwwroot\\",
       "BasePath": "_content/MVC_DOAN",
       "RelativePath": "assets/bootstrap/css/bootstrap-grid.min.css.map",
       "AssetKind": "All",
@@ -187,10 +187,10 @@
       "OriginalItemSpec": "wwwroot\\assets\\bootstrap\\css\\bootstrap-grid.min.css.map"
     },
     {
-      "Identity": "D:\\HUY\\DAIHOC\\NAM3\\KY1\\Framework\\DOAN\\MVC_DOAN\\MVC_DOAN\\wwwroot\\assets\\bootstrap\\css\\bootstrap-reboot.css",
+      "Identity": "D:\\HUY\\DAIHOC\\NAM3\\KY1\\Framework\\DOAN_MAIN\\MVC_DOAN\\wwwroot\\assets\\bootstrap\\css\\bootstrap-reboot.css",
       "SourceId": "MVC_DOAN",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\HUY\\DAIHOC\\NAM3\\KY1\\Framework\\DOAN\\MVC_DOAN\\MVC_DOAN\\wwwroot\\",
+      "ContentRoot": "D:\\HUY\\DAIHOC\\NAM3\\KY1\\Framework\\DOAN_MAIN\\MVC_DOAN\\wwwroot\\",
       "BasePath": "_content/MVC_DOAN",
       "RelativePath": "assets/bootstrap/css/bootstrap-reboot.css",
       "AssetKind": "All",
@@ -204,10 +204,10 @@
       "OriginalItemSpec": "wwwroot\\assets\\bootstrap\\css\\bootstrap-reboot.css"
     },
     {
-      "Identity": "D:\\HUY\\DAIHOC\\NAM3\\KY1\\Framework\\DOAN\\MVC_DOAN\\MVC_DOAN\\wwwroot\\assets\\bootstrap\\css\\bootstrap-reboot.css.map",
+      "Identity": "D:\\HUY\\DAIHOC\\NAM3\\KY1\\Framework\\DOAN_MAIN\\MVC_DOAN\\wwwroot\\assets\\bootstrap\\css\\bootstrap-reboot.css.map",
       "SourceId": "MVC_DOAN",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\HUY\\DAIHOC\\NAM3\\KY1\\Framework\\DOAN\\MVC_DOAN\\MVC_DOAN\\wwwroot\\",
+      "ContentRoot": "D:\\HUY\\DAIHOC\\NAM3\\KY1\\Framework\\DOAN_MAIN\\MVC_DOAN\\wwwroot\\",
       "BasePath": "_content/MVC_DOAN",
       "RelativePath": "assets/bootstrap/css/bootstrap-reboot.css.map",
       "AssetKind": "All",
@@ -221,10 +221,10 @@
       "OriginalItemSpec": "wwwroot\\assets\\bootstrap\\css\\bootstrap-reboot.css.map"
     },
     {
-      "Identity": "D:\\HUY\\DAIHOC\\NAM3\\KY1\\Framework\\DOAN\\MVC_DOAN\\MVC_DOAN\\wwwroot\\assets\\bootstrap\\css\\bootstrap-reboot.min.css",
+      "Identity": "D:\\HUY\\DAIHOC\\NAM3\\KY1\\Framework\\DOAN_MAIN\\MVC_DOAN\\wwwroot\\assets\\bootstrap\\css\\bootstrap-reboot.min.css",
       "SourceId": "MVC_DOAN",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\HUY\\DAIHOC\\NAM3\\KY1\\Framework\\DOAN\\MVC_DOAN\\MVC_DOAN\\wwwroot\\",
+      "ContentRoot": "D:\\HUY\\DAIHOC\\NAM3\\KY1\\Framework\\DOAN_MAIN\\MVC_DOAN\\wwwroot\\",
       "BasePath": "_content/MVC_DOAN",
       "RelativePath": "assets/bootstrap/css/bootstrap-reboot.min.css",
       "AssetKind": "All",
@@ -238,10 +238,10 @@
       "OriginalItemSpec": "wwwroot\\assets\\bootstrap\\css\\bootstrap-reboot.min.css"
     },
     {
-      "Identity": "D:\\HUY\\DAIHOC\\NAM3\\KY1\\Framework\\DOAN\\MVC_DOAN\\MVC_DOAN\\wwwroot\\assets\\bootstrap\\css\\bootstrap-reboot.min.css.map",
+      "Identity": "D:\\HUY\\DAIHOC\\NAM3\\KY1\\Framework\\DOAN_MAIN\\MVC_DOAN\\wwwroot\\assets\\bootstrap\\css\\bootstrap-reboot.min.css.map",
       "SourceId": "MVC_DOAN",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\HUY\\DAIHOC\\NAM3\\KY1\\Framework\\DOAN\\MVC_DOAN\\MVC_DOAN\\wwwroot\\",
+      "ContentRoot": "D:\\HUY\\DAIHOC\\NAM3\\KY1\\Framework\\DOAN_MAIN\\MVC_DOAN\\wwwroot\\",
       "BasePath": "_content/MVC_DOAN",
       "RelativePath": "assets/bootstrap/css/bootstrap-reboot.min.css.map",
       "AssetKind": "All",
@@ -255,10 +255,10 @@
       "OriginalItemSpec": "wwwroot\\assets\\bootstrap\\css\\bootstrap-reboot.min.css.map"
     },
     {
-      "Identity": "D:\\HUY\\DAIHOC\\NAM3\\KY1\\Framework\\DOAN\\MVC_DOAN\\MVC_DOAN\\wwwroot\\assets\\bootstrap\\js\\bootstrap.bundle.js",
+      "Identity": "D:\\HUY\\DAIHOC\\NAM3\\KY1\\Framework\\DOAN_MAIN\\MVC_DOAN\\wwwroot\\assets\\bootstrap\\js\\bootstrap.bundle.js",
       "SourceId": "MVC_DOAN",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\HUY\\DAIHOC\\NAM3\\KY1\\Framework\\DOAN\\MVC_DOAN\\MVC_DOAN\\wwwroot\\",
+      "ContentRoot": "D:\\HUY\\DAIHOC\\NAM3\\KY1\\Framework\\DOAN_MAIN\\MVC_DOAN\\wwwroot\\",
       "BasePath": "_content/MVC_DOAN",
       "RelativePath": "assets/bootstrap/js/bootstrap.bundle.js",
       "AssetKind": "All",
@@ -272,10 +272,10 @@
       "OriginalItemSpec": "wwwroot\\assets\\bootstrap\\js\\bootstrap.bundle.js"
     },
     {
-      "Identity": "D:\\HUY\\DAIHOC\\NAM3\\KY1\\Framework\\DOAN\\MVC_DOAN\\MVC_DOAN\\wwwroot\\assets\\bootstrap\\js\\bootstrap.bundle.js.map",
+      "Identity": "D:\\HUY\\DAIHOC\\NAM3\\KY1\\Framework\\DOAN_MAIN\\MVC_DOAN\\wwwroot\\assets\\bootstrap\\js\\bootstrap.bundle.js.map",
       "SourceId": "MVC_DOAN",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\HUY\\DAIHOC\\NAM3\\KY1\\Framework\\DOAN\\MVC_DOAN\\MVC_DOAN\\wwwroot\\",
+      "ContentRoot": "D:\\HUY\\DAIHOC\\NAM3\\KY1\\Framework\\DOAN_MAIN\\MVC_DOAN\\wwwroot\\",
       "BasePath": "_content/MVC_DOAN",
       "RelativePath": "assets/bootstrap/js/bootstrap.bundle.js.map",
       "AssetKind": "All",
@@ -289,10 +289,10 @@
       "OriginalItemSpec": "wwwroot\\assets\\bootstrap\\js\\bootstrap.bundle.js.map"
     },
     {
-      "Identity": "D:\\HUY\\DAIHOC\\NAM3\\KY1\\Framework\\DOAN\\MVC_DOAN\\MVC_DOAN\\wwwroot\\assets\\bootstrap\\js\\bootstrap.bundle.min.js",
+      "Identity": "D:\\HUY\\DAIHOC\\NAM3\\KY1\\Framework\\DOAN_MAIN\\MVC_DOAN\\wwwroot\\assets\\bootstrap\\js\\bootstrap.bundle.min.js",
       "SourceId": "MVC_DOAN",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\HUY\\DAIHOC\\NAM3\\KY1\\Framework\\DOAN\\MVC_DOAN\\MVC_DOAN\\wwwroot\\",
+      "ContentRoot": "D:\\HUY\\DAIHOC\\NAM3\\KY1\\Framework\\DOAN_MAIN\\MVC_DOAN\\wwwroot\\",
       "BasePath": "_content/MVC_DOAN",
       "RelativePath": "assets/bootstrap/js/bootstrap.bundle.min.js",
       "AssetKind": "All",
@@ -306,10 +306,10 @@
       "OriginalItemSpec": "wwwroot\\assets\\bootstrap\\js\\bootstrap.bundle.min.js"
     },
     {
-      "Identity": "D:\\HUY\\DAIHOC\\NAM3\\KY1\\Framework\\DOAN\\MVC_DOAN\\MVC_DOAN\\wwwroot\\assets\\bootstrap\\js\\bootstrap.bundle.min.js.map",
+      "Identity": "D:\\HUY\\DAIHOC\\NAM3\\KY1\\Framework\\DOAN_MAIN\\MVC_DOAN\\wwwroot\\assets\\bootstrap\\js\\bootstrap.bundle.min.js.map",
       "SourceId": "MVC_DOAN",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\HUY\\DAIHOC\\NAM3\\KY1\\Framework\\DOAN\\MVC_DOAN\\MVC_DOAN\\wwwroot\\",
+      "ContentRoot": "D:\\HUY\\DAIHOC\\NAM3\\KY1\\Framework\\DOAN_MAIN\\MVC_DOAN\\wwwroot\\",
       "BasePath": "_content/MVC_DOAN",
       "RelativePath": "assets/bootstrap/js/bootstrap.bundle.min.js.map",
       "AssetKind": "All",
@@ -323,10 +323,10 @@
       "OriginalItemSpec": "wwwroot\\assets\\bootstrap\\js\\bootstrap.bundle.min.js.map"
     },
     {
-      "Identity": "D:\\HUY\\DAIHOC\\NAM3\\KY1\\Framework\\DOAN\\MVC_DOAN\\MVC_DOAN\\wwwroot\\assets\\bootstrap\\js\\bootstrap.js",
+      "Identity": "D:\\HUY\\DAIHOC\\NAM3\\KY1\\Framework\\DOAN_MAIN\\MVC_DOAN\\wwwroot\\assets\\bootstrap\\js\\bootstrap.js",
       "SourceId": "MVC_DOAN",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\HUY\\DAIHOC\\NAM3\\KY1\\Framework\\DOAN\\MVC_DOAN\\MVC_DOAN\\wwwroot\\",
+      "ContentRoot": "D:\\HUY\\DAIHOC\\NAM3\\KY1\\Framework\\DOAN_MAIN\\MVC_DOAN\\wwwroot\\",
       "BasePath": "_content/MVC_DOAN",
       "RelativePath": "assets/bootstrap/js/bootstrap.js",
       "AssetKind": "All",
@@ -340,10 +340,10 @@
       "OriginalItemSpec": "wwwroot\\assets\\bootstrap\\js\\bootstrap.js"
     },
     {
-      "Identity": "D:\\HUY\\DAIHOC\\NAM3\\KY1\\Framework\\DOAN\\MVC_DOAN\\MVC_DOAN\\wwwroot\\assets\\bootstrap\\js\\bootstrap.js.map",
+      "Identity": "D:\\HUY\\DAIHOC\\NAM3\\KY1\\Framework\\DOAN_MAIN\\MVC_DOAN\\wwwroot\\assets\\bootstrap\\js\\bootstrap.js.map",
       "SourceId": "MVC_DOAN",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\HUY\\DAIHOC\\NAM3\\KY1\\Framework\\DOAN\\MVC_DOAN\\MVC_DOAN\\wwwroot\\",
+      "ContentRoot": "D:\\HUY\\DAIHOC\\NAM3\\KY1\\Framework\\DOAN_MAIN\\MVC_DOAN\\wwwroot\\",
       "BasePath": "_content/MVC_DOAN",
       "RelativePath": "assets/bootstrap/js/bootstrap.js.map",
       "AssetKind": "All",
@@ -357,10 +357,10 @@
       "OriginalItemSpec": "wwwroot\\assets\\bootstrap\\js\\bootstrap.js.map"
     },
     {
-      "Identity": "D:\\HUY\\DAIHOC\\NAM3\\KY1\\Framework\\DOAN\\MVC_DOAN\\MVC_DOAN\\wwwroot\\assets\\bootstrap\\js\\bootstrap.min.js",
+      "Identity": "D:\\HUY\\DAIHOC\\NAM3\\KY1\\Framework\\DOAN_MAIN\\MVC_DOAN\\wwwroot\\assets\\bootstrap\\js\\bootstrap.min.js",
       "SourceId": "MVC_DOAN",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\HUY\\DAIHOC\\NAM3\\KY1\\Framework\\DOAN\\MVC_DOAN\\MVC_DOAN\\wwwroot\\",
+      "ContentRoot": "D:\\HUY\\DAIHOC\\NAM3\\KY1\\Framework\\DOAN_MAIN\\MVC_DOAN\\wwwroot\\",
       "BasePath": "_content/MVC_DOAN",
       "RelativePath": "assets/bootstrap/js/bootstrap.min.js",
       "AssetKind": "All",
@@ -374,10 +374,10 @@
       "OriginalItemSpec": "wwwroot\\assets\\bootstrap\\js\\bootstrap.min.js"
     },
     {
-      "Identity": "D:\\HUY\\DAIHOC\\NAM3\\KY1\\Framework\\DOAN\\MVC_DOAN\\MVC_DOAN\\wwwroot\\assets\\bootstrap\\js\\bootstrap.min.js.map",
+      "Identity": "D:\\HUY\\DAIHOC\\NAM3\\KY1\\Framework\\DOAN_MAIN\\MVC_DOAN\\wwwroot\\assets\\bootstrap\\js\\bootstrap.min.js.map",
       "SourceId": "MVC_DOAN",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\HUY\\DAIHOC\\NAM3\\KY1\\Framework\\DOAN\\MVC_DOAN\\MVC_DOAN\\wwwroot\\",
+      "ContentRoot": "D:\\HUY\\DAIHOC\\NAM3\\KY1\\Framework\\DOAN_MAIN\\MVC_DOAN\\wwwroot\\",
       "BasePath": "_content/MVC_DOAN",
       "RelativePath": "assets/bootstrap/js/bootstrap.min.js.map",
       "AssetKind": "All",
@@ -391,10 +391,10 @@
       "OriginalItemSpec": "wwwroot\\assets\\bootstrap\\js\\bootstrap.min.js.map"
     },
     {
-      "Identity": "D:\\HUY\\DAIHOC\\NAM3\\KY1\\Framework\\DOAN\\MVC_DOAN\\MVC_DOAN\\wwwroot\\assets\\css\\all.min.css",
+      "Identity": "D:\\HUY\\DAIHOC\\NAM3\\KY1\\Framework\\DOAN_MAIN\\MVC_DOAN\\wwwroot\\assets\\css\\all.min.css",
       "SourceId": "MVC_DOAN",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\HUY\\DAIHOC\\NAM3\\KY1\\Framework\\DOAN\\MVC_DOAN\\MVC_DOAN\\wwwroot\\",
+      "ContentRoot": "D:\\HUY\\DAIHOC\\NAM3\\KY1\\Framework\\DOAN_MAIN\\MVC_DOAN\\wwwroot\\",
       "BasePath": "_content/MVC_DOAN",
       "RelativePath": "assets/css/all.min.css",
       "AssetKind": "All",
@@ -408,10 +408,10 @@
       "OriginalItemSpec": "wwwroot\\assets\\css\\all.min.css"
     },
     {
-      "Identity": "D:\\HUY\\DAIHOC\\NAM3\\KY1\\Framework\\DOAN\\MVC_DOAN\\MVC_DOAN\\wwwroot\\assets\\css\\animate.css",
+      "Identity": "D:\\HUY\\DAIHOC\\NAM3\\KY1\\Framework\\DOAN_MAIN\\MVC_DOAN\\wwwroot\\assets\\css\\animate.css",
       "SourceId": "MVC_DOAN",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\HUY\\DAIHOC\\NAM3\\KY1\\Framework\\DOAN\\MVC_DOAN\\MVC_DOAN\\wwwroot\\",
+      "ContentRoot": "D:\\HUY\\DAIHOC\\NAM3\\KY1\\Framework\\DOAN_MAIN\\MVC_DOAN\\wwwroot\\",
       "BasePath": "_content/MVC_DOAN",
       "RelativePath": "assets/css/animate.css",
       "AssetKind": "All",
@@ -425,10 +425,10 @@
       "OriginalItemSpec": "wwwroot\\assets\\css\\animate.css"
     },
     {
-      "Identity": "D:\\HUY\\DAIHOC\\NAM3\\KY1\\Framework\\DOAN\\MVC_DOAN\\MVC_DOAN\\wwwroot\\assets\\css\\magnific-popup.css",
+      "Identity": "D:\\HUY\\DAIHOC\\NAM3\\KY1\\Framework\\DOAN_MAIN\\MVC_DOAN\\wwwroot\\assets\\css\\magnific-popup.css",
       "SourceId": "MVC_DOAN",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\HUY\\DAIHOC\\NAM3\\KY1\\Framework\\DOAN\\MVC_DOAN\\MVC_DOAN\\wwwroot\\",
+      "ContentRoot": "D:\\HUY\\DAIHOC\\NAM3\\KY1\\Framework\\DOAN_MAIN\\MVC_DOAN\\wwwroot\\",
       "BasePath": "_content/MVC_DOAN",
       "RelativePath": "assets/css/magnific-popup.css",
       "AssetKind": "All",
@@ -442,10 +442,10 @@
       "OriginalItemSpec": "wwwroot\\assets\\css\\magnific-popup.css"
     },
     {
-      "Identity": "D:\\HUY\\DAIHOC\\NAM3\\KY1\\Framework\\DOAN\\MVC_DOAN\\MVC_DOAN\\wwwroot\\assets\\css\\main.css",
+      "Identity": "D:\\HUY\\DAIHOC\\NAM3\\KY1\\Framework\\DOAN_MAIN\\MVC_DOAN\\wwwroot\\assets\\css\\main.css",
       "SourceId": "MVC_DOAN",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\HUY\\DAIHOC\\NAM3\\KY1\\Framework\\DOAN\\MVC_DOAN\\MVC_DOAN\\wwwroot\\",
+      "ContentRoot": "D:\\HUY\\DAIHOC\\NAM3\\KY1\\Framework\\DOAN_MAIN\\MVC_DOAN\\wwwroot\\",
       "BasePath": "_content/MVC_DOAN",
       "RelativePath": "assets/css/main.css",
       "AssetKind": "All",
@@ -459,10 +459,10 @@
       "OriginalItemSpec": "wwwroot\\assets\\css\\main.css"
     },
     {
-      "Identity": "D:\\HUY\\DAIHOC\\NAM3\\KY1\\Framework\\DOAN\\MVC_DOAN\\MVC_DOAN\\wwwroot\\assets\\css\\meanmenu.min.css",
+      "Identity": "D:\\HUY\\DAIHOC\\NAM3\\KY1\\Framework\\DOAN_MAIN\\MVC_DOAN\\wwwroot\\assets\\css\\meanmenu.min.css",
       "SourceId": "MVC_DOAN",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\HUY\\DAIHOC\\NAM3\\KY1\\Framework\\DOAN\\MVC_DOAN\\MVC_DOAN\\wwwroot\\",
+      "ContentRoot": "D:\\HUY\\DAIHOC\\NAM3\\KY1\\Framework\\DOAN_MAIN\\MVC_DOAN\\wwwroot\\",
       "BasePath": "_content/MVC_DOAN",
       "RelativePath": "assets/css/meanmenu.min.css",
       "AssetKind": "All",
@@ -476,10 +476,10 @@
       "OriginalItemSpec": "wwwroot\\assets\\css\\meanmenu.min.css"
     },
     {
-      "Identity": "D:\\HUY\\DAIHOC\\NAM3\\KY1\\Framework\\DOAN\\MVC_DOAN\\MVC_DOAN\\wwwroot\\assets\\css\\owl.carousel.css",
+      "Identity": "D:\\HUY\\DAIHOC\\NAM3\\KY1\\Framework\\DOAN_MAIN\\MVC_DOAN\\wwwroot\\assets\\css\\owl.carousel.css",
       "SourceId": "MVC_DOAN",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\HUY\\DAIHOC\\NAM3\\KY1\\Framework\\DOAN\\MVC_DOAN\\MVC_DOAN\\wwwroot\\",
+      "ContentRoot": "D:\\HUY\\DAIHOC\\NAM3\\KY1\\Framework\\DOAN_MAIN\\MVC_DOAN\\wwwroot\\",
       "BasePath": "_content/MVC_DOAN",
       "RelativePath": "assets/css/owl.carousel.css",
       "AssetKind": "All",
@@ -493,10 +493,10 @@
       "OriginalItemSpec": "wwwroot\\assets\\css\\owl.carousel.css"
     },
     {
-      "Identity": "D:\\HUY\\DAIHOC\\NAM3\\KY1\\Framework\\DOAN\\MVC_DOAN\\MVC_DOAN\\wwwroot\\assets\\css\\responsive.css",
+      "Identity": "D:\\HUY\\DAIHOC\\NAM3\\KY1\\Framework\\DOAN_MAIN\\MVC_DOAN\\wwwroot\\assets\\css\\responsive.css",
       "SourceId": "MVC_DOAN",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\HUY\\DAIHOC\\NAM3\\KY1\\Framework\\DOAN\\MVC_DOAN\\MVC_DOAN\\wwwroot\\",
+      "ContentRoot": "D:\\HUY\\DAIHOC\\NAM3\\KY1\\Framework\\DOAN_MAIN\\MVC_DOAN\\wwwroot\\",
       "BasePath": "_content/MVC_DOAN",
       "RelativePath": "assets/css/responsive.css",
       "AssetKind": "All",
@@ -510,10 +510,10 @@
       "OriginalItemSpec": "wwwroot\\assets\\css\\responsive.css"
     },
     {
-      "Identity": "D:\\HUY\\DAIHOC\\NAM3\\KY1\\Framework\\DOAN\\MVC_DOAN\\MVC_DOAN\\wwwroot\\assets\\css\\scss\\base\\_mixins.scss",
+      "Identity": "D:\\HUY\\DAIHOC\\NAM3\\KY1\\Framework\\DOAN_MAIN\\MVC_DOAN\\wwwroot\\assets\\css\\scss\\base\\_mixins.scss",
       "SourceId": "MVC_DOAN",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\HUY\\DAIHOC\\NAM3\\KY1\\Framework\\DOAN\\MVC_DOAN\\MVC_DOAN\\wwwroot\\",
+      "ContentRoot": "D:\\HUY\\DAIHOC\\NAM3\\KY1\\Framework\\DOAN_MAIN\\MVC_DOAN\\wwwroot\\",
       "BasePath": "_content/MVC_DOAN",
       "RelativePath": "assets/css/scss/base/_mixins.scss",
       "AssetKind": "All",
@@ -527,10 +527,10 @@
       "OriginalItemSpec": "wwwroot\\assets\\css\\scss\\base\\_mixins.scss"
     },
     {
-      "Identity": "D:\\HUY\\DAIHOC\\NAM3\\KY1\\Framework\\DOAN\\MVC_DOAN\\MVC_DOAN\\wwwroot\\assets\\css\\scss\\base\\_typography.scss",
+      "Identity": "D:\\HUY\\DAIHOC\\NAM3\\KY1\\Framework\\DOAN_MAIN\\MVC_DOAN\\wwwroot\\assets\\css\\scss\\base\\_typography.scss",
       "SourceId": "MVC_DOAN",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\HUY\\DAIHOC\\NAM3\\KY1\\Framework\\DOAN\\MVC_DOAN\\MVC_DOAN\\wwwroot\\",
+      "ContentRoot": "D:\\HUY\\DAIHOC\\NAM3\\KY1\\Framework\\DOAN_MAIN\\MVC_DOAN\\wwwroot\\",
       "BasePath": "_content/MVC_DOAN",
       "RelativePath": "assets/css/scss/base/_typography.scss",
       "AssetKind": "All",
@@ -544,10 +544,10 @@
       "OriginalItemSpec": "wwwroot\\assets\\css\\scss\\base\\_typography.scss"
     },
     {
-      "Identity": "D:\\HUY\\DAIHOC\\NAM3\\KY1\\Framework\\DOAN\\MVC_DOAN\\MVC_DOAN\\wwwroot\\assets\\css\\scss\\base\\_variables.scss",
+      "Identity": "D:\\HUY\\DAIHOC\\NAM3\\KY1\\Framework\\DOAN_MAIN\\MVC_DOAN\\wwwroot\\assets\\css\\scss\\base\\_variables.scss",
       "SourceId": "MVC_DOAN",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\HUY\\DAIHOC\\NAM3\\KY1\\Framework\\DOAN\\MVC_DOAN\\MVC_DOAN\\wwwroot\\",
+      "ContentRoot": "D:\\HUY\\DAIHOC\\NAM3\\KY1\\Framework\\DOAN_MAIN\\MVC_DOAN\\wwwroot\\",
       "BasePath": "_content/MVC_DOAN",
       "RelativePath": "assets/css/scss/base/_variables.scss",
       "AssetKind": "All",
@@ -561,10 +561,10 @@
       "OriginalItemSpec": "wwwroot\\assets\\css\\scss\\base\\_variables.scss"
     },
     {
-      "Identity": "D:\\HUY\\DAIHOC\\NAM3\\KY1\\Framework\\DOAN\\MVC_DOAN\\MVC_DOAN\\wwwroot\\assets\\css\\scss\\common\\_common.scss",
+      "Identity": "D:\\HUY\\DAIHOC\\NAM3\\KY1\\Framework\\DOAN_MAIN\\MVC_DOAN\\wwwroot\\assets\\css\\scss\\common\\_common.scss",
       "SourceId": "MVC_DOAN",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\HUY\\DAIHOC\\NAM3\\KY1\\Framework\\DOAN\\MVC_DOAN\\MVC_DOAN\\wwwroot\\",
+      "ContentRoot": "D:\\HUY\\DAIHOC\\NAM3\\KY1\\Framework\\DOAN_MAIN\\MVC_DOAN\\wwwroot\\",
       "BasePath": "_content/MVC_DOAN",
       "RelativePath": "assets/css/scss/common/_common.scss",
       "AssetKind": "All",
@@ -578,10 +578,10 @@
       "OriginalItemSpec": "wwwroot\\assets\\css\\scss\\common\\_common.scss"
     },
     {
-      "Identity": "D:\\HUY\\DAIHOC\\NAM3\\KY1\\Framework\\DOAN\\MVC_DOAN\\MVC_DOAN\\wwwroot\\assets\\css\\scss\\common\\_footer.scss",
+      "Identity": "D:\\HUY\\DAIHOC\\NAM3\\KY1\\Framework\\DOAN_MAIN\\MVC_DOAN\\wwwroot\\assets\\css\\scss\\common\\_footer.scss",
       "SourceId": "MVC_DOAN",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\HUY\\DAIHOC\\NAM3\\KY1\\Framework\\DOAN\\MVC_DOAN\\MVC_DOAN\\wwwroot\\",
+      "ContentRoot": "D:\\HUY\\DAIHOC\\NAM3\\KY1\\Framework\\DOAN_MAIN\\MVC_DOAN\\wwwroot\\",
       "BasePath": "_content/MVC_DOAN",
       "RelativePath": "assets/css/scss/common/_footer.scss",
       "AssetKind": "All",
@@ -595,10 +595,10 @@
       "OriginalItemSpec": "wwwroot\\assets\\css\\scss\\common\\_footer.scss"
     },
     {
-      "Identity": "D:\\HUY\\DAIHOC\\NAM3\\KY1\\Framework\\DOAN\\MVC_DOAN\\MVC_DOAN\\wwwroot\\assets\\css\\scss\\common\\_header.scss",
+      "Identity": "D:\\HUY\\DAIHOC\\NAM3\\KY1\\Framework\\DOAN_MAIN\\MVC_DOAN\\wwwroot\\assets\\css\\scss\\common\\_header.scss",
       "SourceId": "MVC_DOAN",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\HUY\\DAIHOC\\NAM3\\KY1\\Framework\\DOAN\\MVC_DOAN\\MVC_DOAN\\wwwroot\\",
+      "ContentRoot": "D:\\HUY\\DAIHOC\\NAM3\\KY1\\Framework\\DOAN_MAIN\\MVC_DOAN\\wwwroot\\",
       "BasePath": "_content/MVC_DOAN",
       "RelativePath": "assets/css/scss/common/_header.scss",
       "AssetKind": "All",
@@ -612,10 +612,10 @@
       "OriginalItemSpec": "wwwroot\\assets\\css\\scss\\common\\_header.scss"
     },
     {
-      "Identity": "D:\\HUY\\DAIHOC\\NAM3\\KY1\\Framework\\DOAN\\MVC_DOAN\\MVC_DOAN\\wwwroot\\assets\\css\\scss\\common\\_hover.scss",
+      "Identity": "D:\\HUY\\DAIHOC\\NAM3\\KY1\\Framework\\DOAN_MAIN\\MVC_DOAN\\wwwroot\\assets\\css\\scss\\common\\_hover.scss",
       "SourceId": "MVC_DOAN",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\HUY\\DAIHOC\\NAM3\\KY1\\Framework\\DOAN\\MVC_DOAN\\MVC_DOAN\\wwwroot\\",
+      "ContentRoot": "D:\\HUY\\DAIHOC\\NAM3\\KY1\\Framework\\DOAN_MAIN\\MVC_DOAN\\wwwroot\\",
       "BasePath": "_content/MVC_DOAN",
       "RelativePath": "assets/css/scss/common/_hover.scss",
       "AssetKind": "All",
@@ -629,10 +629,10 @@
       "OriginalItemSpec": "wwwroot\\assets\\css\\scss\\common\\_hover.scss"
     },
     {
-      "Identity": "D:\\HUY\\DAIHOC\\NAM3\\KY1\\Framework\\DOAN\\MVC_DOAN\\MVC_DOAN\\wwwroot\\assets\\css\\scss\\main.scss",
+      "Identity": "D:\\HUY\\DAIHOC\\NAM3\\KY1\\Framework\\DOAN_MAIN\\MVC_DOAN\\wwwroot\\assets\\css\\scss\\main.scss",
       "SourceId": "MVC_DOAN",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\HUY\\DAIHOC\\NAM3\\KY1\\Framework\\DOAN\\MVC_DOAN\\MVC_DOAN\\wwwroot\\",
+      "ContentRoot": "D:\\HUY\\DAIHOC\\NAM3\\KY1\\Framework\\DOAN_MAIN\\MVC_DOAN\\wwwroot\\",
       "BasePath": "_content/MVC_DOAN",
       "RelativePath": "assets/css/scss/main.scss",
       "AssetKind": "All",
@@ -646,10 +646,10 @@
       "OriginalItemSpec": "wwwroot\\assets\\css\\scss\\main.scss"
     },
     {
-      "Identity": "D:\\HUY\\DAIHOC\\NAM3\\KY1\\Framework\\DOAN\\MVC_DOAN\\MVC_DOAN\\wwwroot\\assets\\css\\scss\\pages\\_404.css",
+      "Identity": "D:\\HUY\\DAIHOC\\NAM3\\KY1\\Framework\\DOAN_MAIN\\MVC_DOAN\\wwwroot\\assets\\css\\scss\\pages\\_404.css",
       "SourceId": "MVC_DOAN",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\HUY\\DAIHOC\\NAM3\\KY1\\Framework\\DOAN\\MVC_DOAN\\MVC_DOAN\\wwwroot\\",
+      "ContentRoot": "D:\\HUY\\DAIHOC\\NAM3\\KY1\\Framework\\DOAN_MAIN\\MVC_DOAN\\wwwroot\\",
       "BasePath": "_content/MVC_DOAN",
       "RelativePath": "assets/css/scss/pages/_404.css",
       "AssetKind": "All",
@@ -663,10 +663,10 @@
       "OriginalItemSpec": "wwwroot\\assets\\css\\scss\\pages\\_404.css"
     },
     {
-      "Identity": "D:\\HUY\\DAIHOC\\NAM3\\KY1\\Framework\\DOAN\\MVC_DOAN\\MVC_DOAN\\wwwroot\\assets\\css\\scss\\pages\\_404.scss",
+      "Identity": "D:\\HUY\\DAIHOC\\NAM3\\KY1\\Framework\\DOAN_MAIN\\MVC_DOAN\\wwwroot\\assets\\css\\scss\\pages\\_404.scss",
       "SourceId": "MVC_DOAN",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\HUY\\DAIHOC\\NAM3\\KY1\\Framework\\DOAN\\MVC_DOAN\\MVC_DOAN\\wwwroot\\",
+      "ContentRoot": "D:\\HUY\\DAIHOC\\NAM3\\KY1\\Framework\\DOAN_MAIN\\MVC_DOAN\\wwwroot\\",
       "BasePath": "_content/MVC_DOAN",
       "RelativePath": "assets/css/scss/pages/_404.scss",
       "AssetKind": "All",
@@ -680,10 +680,10 @@
       "OriginalItemSpec": "wwwroot\\assets\\css\\scss\\pages\\_404.scss"
     },
     {
-      "Identity": "D:\\HUY\\DAIHOC\\NAM3\\KY1\\Framework\\DOAN\\MVC_DOAN\\MVC_DOAN\\wwwroot\\assets\\css\\scss\\pages\\_about.scss",
+      "Identity": "D:\\HUY\\DAIHOC\\NAM3\\KY1\\Framework\\DOAN_MAIN\\MVC_DOAN\\wwwroot\\assets\\css\\scss\\pages\\_about.scss",
       "SourceId": "MVC_DOAN",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\HUY\\DAIHOC\\NAM3\\KY1\\Framework\\DOAN\\MVC_DOAN\\MVC_DOAN\\wwwroot\\",
+      "ContentRoot": "D:\\HUY\\DAIHOC\\NAM3\\KY1\\Framework\\DOAN_MAIN\\MVC_DOAN\\wwwroot\\",
       "BasePath": "_content/MVC_DOAN",
       "RelativePath": "assets/css/scss/pages/_about.scss",
       "AssetKind": "All",
@@ -697,10 +697,10 @@
       "OriginalItemSpec": "wwwroot\\assets\\css\\scss\\pages\\_about.scss"
     },
     {
-      "Identity": "D:\\HUY\\DAIHOC\\NAM3\\KY1\\Framework\\DOAN\\MVC_DOAN\\MVC_DOAN\\wwwroot\\assets\\css\\scss\\pages\\_contact.scss",
+      "Identity": "D:\\HUY\\DAIHOC\\NAM3\\KY1\\Framework\\DOAN_MAIN\\MVC_DOAN\\wwwroot\\assets\\css\\scss\\pages\\_contact.scss",
       "SourceId": "MVC_DOAN",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\HUY\\DAIHOC\\NAM3\\KY1\\Framework\\DOAN\\MVC_DOAN\\MVC_DOAN\\wwwroot\\",
+      "ContentRoot": "D:\\HUY\\DAIHOC\\NAM3\\KY1\\Framework\\DOAN_MAIN\\MVC_DOAN\\wwwroot\\",
       "BasePath": "_content/MVC_DOAN",
       "RelativePath": "assets/css/scss/pages/_contact.scss",
       "AssetKind": "All",
@@ -714,10 +714,10 @@
       "OriginalItemSpec": "wwwroot\\assets\\css\\scss\\pages\\_contact.scss"
     },
     {
-      "Identity": "D:\\HUY\\DAIHOC\\NAM3\\KY1\\Framework\\DOAN\\MVC_DOAN\\MVC_DOAN\\wwwroot\\assets\\css\\scss\\pages\\_shop.scss",
+      "Identity": "D:\\HUY\\DAIHOC\\NAM3\\KY1\\Framework\\DOAN_MAIN\\MVC_DOAN\\wwwroot\\assets\\css\\scss\\pages\\_shop.scss",
       "SourceId": "MVC_DOAN",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\HUY\\DAIHOC\\NAM3\\KY1\\Framework\\DOAN\\MVC_DOAN\\MVC_DOAN\\wwwroot\\",
+      "ContentRoot": "D:\\HUY\\DAIHOC\\NAM3\\KY1\\Framework\\DOAN_MAIN\\MVC_DOAN\\wwwroot\\",
       "BasePath": "_content/MVC_DOAN",
       "RelativePath": "assets/css/scss/pages/_shop.scss",
       "AssetKind": "All",
@@ -731,10 +731,10 @@
       "OriginalItemSpec": "wwwroot\\assets\\css\\scss\\pages\\_shop.scss"
     },
     {
-      "Identity": "D:\\HUY\\DAIHOC\\NAM3\\KY1\\Framework\\DOAN\\MVC_DOAN\\MVC_DOAN\\wwwroot\\assets\\css\\scss\\prepros-6.config",
+      "Identity": "D:\\HUY\\DAIHOC\\NAM3\\KY1\\Framework\\DOAN_MAIN\\MVC_DOAN\\wwwroot\\assets\\css\\scss\\prepros-6.config",
       "SourceId": "MVC_DOAN",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\HUY\\DAIHOC\\NAM3\\KY1\\Framework\\DOAN\\MVC_DOAN\\MVC_DOAN\\wwwroot\\",
+      "ContentRoot": "D:\\HUY\\DAIHOC\\NAM3\\KY1\\Framework\\DOAN_MAIN\\MVC_DOAN\\wwwroot\\",
       "BasePath": "_content/MVC_DOAN",
       "RelativePath": "assets/css/scss/prepros-6.config",
       "AssetKind": "All",
@@ -748,10 +748,10 @@
       "OriginalItemSpec": "wwwroot\\assets\\css\\scss\\prepros-6.config"
     },
     {
-      "Identity": "D:\\HUY\\DAIHOC\\NAM3\\KY1\\Framework\\DOAN\\MVC_DOAN\\MVC_DOAN\\wwwroot\\assets\\css\\scss\\sections\\_about.scss",
+      "Identity": "D:\\HUY\\DAIHOC\\NAM3\\KY1\\Framework\\DOAN_MAIN\\MVC_DOAN\\wwwroot\\assets\\css\\scss\\sections\\_about.scss",
       "SourceId": "MVC_DOAN",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\HUY\\DAIHOC\\NAM3\\KY1\\Framework\\DOAN\\MVC_DOAN\\MVC_DOAN\\wwwroot\\",
+      "ContentRoot": "D:\\HUY\\DAIHOC\\NAM3\\KY1\\Framework\\DOAN_MAIN\\MVC_DOAN\\wwwroot\\",
       "BasePath": "_content/MVC_DOAN",
       "RelativePath": "assets/css/scss/sections/_about.scss",
       "AssetKind": "All",
@@ -765,10 +765,10 @@
       "OriginalItemSpec": "wwwroot\\assets\\css\\scss\\sections\\_about.scss"
     },
     {
-      "Identity": "D:\\HUY\\DAIHOC\\NAM3\\KY1\\Framework\\DOAN\\MVC_DOAN\\MVC_DOAN\\wwwroot\\assets\\css\\scss\\sections\\_cart-banner.scss",
+      "Identity": "D:\\HUY\\DAIHOC\\NAM3\\KY1\\Framework\\DOAN_MAIN\\MVC_DOAN\\wwwroot\\assets\\css\\scss\\sections\\_cart-banner.scss",
       "SourceId": "MVC_DOAN",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\HUY\\DAIHOC\\NAM3\\KY1\\Framework\\DOAN\\MVC_DOAN\\MVC_DOAN\\wwwroot\\",
+      "ContentRoot": "D:\\HUY\\DAIHOC\\NAM3\\KY1\\Framework\\DOAN_MAIN\\MVC_DOAN\\wwwroot\\",
       "BasePath": "_content/MVC_DOAN",
       "RelativePath": "assets/css/scss/sections/_cart-banner.scss",
       "AssetKind": "All",
@@ -782,10 +782,10 @@
       "OriginalItemSpec": "wwwroot\\assets\\css\\scss\\sections\\_cart-banner.scss"
     },
     {
-      "Identity": "D:\\HUY\\DAIHOC\\NAM3\\KY1\\Framework\\DOAN\\MVC_DOAN\\MVC_DOAN\\wwwroot\\assets\\css\\scss\\sections\\_hero.scss",
+      "Identity": "D:\\HUY\\DAIHOC\\NAM3\\KY1\\Framework\\DOAN_MAIN\\MVC_DOAN\\wwwroot\\assets\\css\\scss\\sections\\_hero.scss",
       "SourceId": "MVC_DOAN",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\HUY\\DAIHOC\\NAM3\\KY1\\Framework\\DOAN\\MVC_DOAN\\MVC_DOAN\\wwwroot\\",
+      "ContentRoot": "D:\\HUY\\DAIHOC\\NAM3\\KY1\\Framework\\DOAN_MAIN\\MVC_DOAN\\wwwroot\\",
       "BasePath": "_content/MVC_DOAN",
       "RelativePath": "assets/css/scss/sections/_hero.scss",
       "AssetKind": "All",
@@ -799,10 +799,10 @@
       "OriginalItemSpec": "wwwroot\\assets\\css\\scss\\sections\\_hero.scss"
     },
     {
-      "Identity": "D:\\HUY\\DAIHOC\\NAM3\\KY1\\Framework\\DOAN\\MVC_DOAN\\MVC_DOAN\\wwwroot\\assets\\css\\scss\\sections\\_list.scss",
+      "Identity": "D:\\HUY\\DAIHOC\\NAM3\\KY1\\Framework\\DOAN_MAIN\\MVC_DOAN\\wwwroot\\assets\\css\\scss\\sections\\_list.scss",
       "SourceId": "MVC_DOAN",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\HUY\\DAIHOC\\NAM3\\KY1\\Framework\\DOAN\\MVC_DOAN\\MVC_DOAN\\wwwroot\\",
+      "ContentRoot": "D:\\HUY\\DAIHOC\\NAM3\\KY1\\Framework\\DOAN_MAIN\\MVC_DOAN\\wwwroot\\",
       "BasePath": "_content/MVC_DOAN",
       "RelativePath": "assets/css/scss/sections/_list.scss",
       "AssetKind": "All",
@@ -816,10 +816,10 @@
       "OriginalItemSpec": "wwwroot\\assets\\css\\scss\\sections\\_list.scss"
     },
     {
-      "Identity": "D:\\HUY\\DAIHOC\\NAM3\\KY1\\Framework\\DOAN\\MVC_DOAN\\MVC_DOAN\\wwwroot\\assets\\css\\scss\\sections\\_news.scss",
+      "Identity": "D:\\HUY\\DAIHOC\\NAM3\\KY1\\Framework\\DOAN_MAIN\\MVC_DOAN\\wwwroot\\assets\\css\\scss\\sections\\_news.scss",
       "SourceId": "MVC_DOAN",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\HUY\\DAIHOC\\NAM3\\KY1\\Framework\\DOAN\\MVC_DOAN\\MVC_DOAN\\wwwroot\\",
+      "ContentRoot": "D:\\HUY\\DAIHOC\\NAM3\\KY1\\Framework\\DOAN_MAIN\\MVC_DOAN\\wwwroot\\",
       "BasePath": "_content/MVC_DOAN",
       "RelativePath": "assets/css/scss/sections/_news.scss",
       "AssetKind": "All",
@@ -833,10 +833,10 @@
       "OriginalItemSpec": "wwwroot\\assets\\css\\scss\\sections\\_news.scss"
     },
     {
-      "Identity": "D:\\HUY\\DAIHOC\\NAM3\\KY1\\Framework\\DOAN\\MVC_DOAN\\MVC_DOAN\\wwwroot\\assets\\css\\scss\\sections\\_shop-banner.scss",
+      "Identity": "D:\\HUY\\DAIHOC\\NAM3\\KY1\\Framework\\DOAN_MAIN\\MVC_DOAN\\wwwroot\\assets\\css\\scss\\sections\\_shop-banner.scss",
       "SourceId": "MVC_DOAN",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\HUY\\DAIHOC\\NAM3\\KY1\\Framework\\DOAN\\MVC_DOAN\\MVC_DOAN\\wwwroot\\",
+      "ContentRoot": "D:\\HUY\\DAIHOC\\NAM3\\KY1\\Framework\\DOAN_MAIN\\MVC_DOAN\\wwwroot\\",
       "BasePath": "_content/MVC_DOAN",
       "RelativePath": "assets/css/scss/sections/_shop-banner.scss",
       "AssetKind": "All",
@@ -850,10 +850,10 @@
       "OriginalItemSpec": "wwwroot\\assets\\css\\scss\\sections\\_shop-banner.scss"
     },
     {
-      "Identity": "D:\\HUY\\DAIHOC\\NAM3\\KY1\\Framework\\DOAN\\MVC_DOAN\\MVC_DOAN\\wwwroot\\assets\\css\\scss\\sections\\_testimonials.scss",
+      "Identity": "D:\\HUY\\DAIHOC\\NAM3\\KY1\\Framework\\DOAN_MAIN\\MVC_DOAN\\wwwroot\\assets\\css\\scss\\sections\\_testimonials.scss",
       "SourceId": "MVC_DOAN",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\HUY\\DAIHOC\\NAM3\\KY1\\Framework\\DOAN\\MVC_DOAN\\MVC_DOAN\\wwwroot\\",
+      "ContentRoot": "D:\\HUY\\DAIHOC\\NAM3\\KY1\\Framework\\DOAN_MAIN\\MVC_DOAN\\wwwroot\\",
       "BasePath": "_content/MVC_DOAN",
       "RelativePath": "assets/css/scss/sections/_testimonials.scss",
       "AssetKind": "All",
@@ -867,10 +867,10 @@
       "OriginalItemSpec": "wwwroot\\assets\\css\\scss\\sections\\_testimonials.scss"
     },
     {
-      "Identity": "D:\\HUY\\DAIHOC\\NAM3\\KY1\\Framework\\DOAN\\MVC_DOAN\\MVC_DOAN\\wwwroot\\assets\\img\\1.jpg",
+      "Identity": "D:\\HUY\\DAIHOC\\NAM3\\KY1\\Framework\\DOAN_MAIN\\MVC_DOAN\\wwwroot\\assets\\img\\1.jpg",
       "SourceId": "MVC_DOAN",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\HUY\\DAIHOC\\NAM3\\KY1\\Framework\\DOAN\\MVC_DOAN\\MVC_DOAN\\wwwroot\\",
+      "ContentRoot": "D:\\HUY\\DAIHOC\\NAM3\\KY1\\Framework\\DOAN_MAIN\\MVC_DOAN\\wwwroot\\",
       "BasePath": "_content/MVC_DOAN",
       "RelativePath": "assets/img/1.jpg",
       "AssetKind": "All",
@@ -884,10 +884,10 @@
       "OriginalItemSpec": "wwwroot\\assets\\img\\1.jpg"
     },
     {
-      "Identity": "D:\\HUY\\DAIHOC\\NAM3\\KY1\\Framework\\DOAN\\MVC_DOAN\\MVC_DOAN\\wwwroot\\assets\\img\\a.jpg",
+      "Identity": "D:\\HUY\\DAIHOC\\NAM3\\KY1\\Framework\\DOAN_MAIN\\MVC_DOAN\\wwwroot\\assets\\img\\a.jpg",
       "SourceId": "MVC_DOAN",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\HUY\\DAIHOC\\NAM3\\KY1\\Framework\\DOAN\\MVC_DOAN\\MVC_DOAN\\wwwroot\\",
+      "ContentRoot": "D:\\HUY\\DAIHOC\\NAM3\\KY1\\Framework\\DOAN_MAIN\\MVC_DOAN\\wwwroot\\",
       "BasePath": "_content/MVC_DOAN",
       "RelativePath": "assets/img/a.jpg",
       "AssetKind": "All",
@@ -901,10 +901,10 @@
       "OriginalItemSpec": "wwwroot\\assets\\img\\a.jpg"
     },
     {
-      "Identity": "D:\\HUY\\DAIHOC\\NAM3\\KY1\\Framework\\DOAN\\MVC_DOAN\\MVC_DOAN\\wwwroot\\assets\\img\\abt.jpg",
+      "Identity": "D:\\HUY\\DAIHOC\\NAM3\\KY1\\Framework\\DOAN_MAIN\\MVC_DOAN\\wwwroot\\assets\\img\\abt.jpg",
       "SourceId": "MVC_DOAN",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\HUY\\DAIHOC\\NAM3\\KY1\\Framework\\DOAN\\MVC_DOAN\\MVC_DOAN\\wwwroot\\",
+      "ContentRoot": "D:\\HUY\\DAIHOC\\NAM3\\KY1\\Framework\\DOAN_MAIN\\MVC_DOAN\\wwwroot\\",
       "BasePath": "_content/MVC_DOAN",
       "RelativePath": "assets/img/abt.jpg",
       "AssetKind": "All",
@@ -918,10 +918,10 @@
       "OriginalItemSpec": "wwwroot\\assets\\img\\abt.jpg"
     },
     {
-      "Identity": "D:\\HUY\\DAIHOC\\NAM3\\KY1\\Framework\\DOAN\\MVC_DOAN\\MVC_DOAN\\wwwroot\\assets\\img\\avaters\\avatar1.png",
+      "Identity": "D:\\HUY\\DAIHOC\\NAM3\\KY1\\Framework\\DOAN_MAIN\\MVC_DOAN\\wwwroot\\assets\\img\\avaters\\avatar1.png",
       "SourceId": "MVC_DOAN",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\HUY\\DAIHOC\\NAM3\\KY1\\Framework\\DOAN\\MVC_DOAN\\MVC_DOAN\\wwwroot\\",
+      "ContentRoot": "D:\\HUY\\DAIHOC\\NAM3\\KY1\\Framework\\DOAN_MAIN\\MVC_DOAN\\wwwroot\\",
       "BasePath": "_content/MVC_DOAN",
       "RelativePath": "assets/img/avaters/avatar1.png",
       "AssetKind": "All",
@@ -935,10 +935,10 @@
       "OriginalItemSpec": "wwwroot\\assets\\img\\avaters\\avatar1.png"
     },
     {
-      "Identity": "D:\\HUY\\DAIHOC\\NAM3\\KY1\\Framework\\DOAN\\MVC_DOAN\\MVC_DOAN\\wwwroot\\assets\\img\\avaters\\avatar2.png",
+      "Identity": "D:\\HUY\\DAIHOC\\NAM3\\KY1\\Framework\\DOAN_MAIN\\MVC_DOAN\\wwwroot\\assets\\img\\avaters\\avatar2.png",
       "SourceId": "MVC_DOAN",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\HUY\\DAIHOC\\NAM3\\KY1\\Framework\\DOAN\\MVC_DOAN\\MVC_DOAN\\wwwroot\\",
+      "ContentRoot": "D:\\HUY\\DAIHOC\\NAM3\\KY1\\Framework\\DOAN_MAIN\\MVC_DOAN\\wwwroot\\",
       "BasePath": "_content/MVC_DOAN",
       "RelativePath": "assets/img/avaters/avatar2.png",
       "AssetKind": "All",
@@ -952,10 +952,10 @@
       "OriginalItemSpec": "wwwroot\\assets\\img\\avaters\\avatar2.png"
     },
     {
-      "Identity": "D:\\HUY\\DAIHOC\\NAM3\\KY1\\Framework\\DOAN\\MVC_DOAN\\MVC_DOAN\\wwwroot\\assets\\img\\avaters\\avatar3.png",
+      "Identity": "D:\\HUY\\DAIHOC\\NAM3\\KY1\\Framework\\DOAN_MAIN\\MVC_DOAN\\wwwroot\\assets\\img\\avaters\\avatar3.png",
       "SourceId": "MVC_DOAN",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\HUY\\DAIHOC\\NAM3\\KY1\\Framework\\DOAN\\MVC_DOAN\\MVC_DOAN\\wwwroot\\",
+      "ContentRoot": "D:\\HUY\\DAIHOC\\NAM3\\KY1\\Framework\\DOAN_MAIN\\MVC_DOAN\\wwwroot\\",
       "BasePath": "_content/MVC_DOAN",
       "RelativePath": "assets/img/avaters/avatar3.png",
       "AssetKind": "All",
@@ -969,10 +969,10 @@
       "OriginalItemSpec": "wwwroot\\assets\\img\\avaters\\avatar3.png"
     },
     {
-      "Identity": "D:\\HUY\\DAIHOC\\NAM3\\KY1\\Framework\\DOAN\\MVC_DOAN\\MVC_DOAN\\wwwroot\\assets\\img\\breadcrumb-bg.jpg",
+      "Identity": "D:\\HUY\\DAIHOC\\NAM3\\KY1\\Framework\\DOAN_MAIN\\MVC_DOAN\\wwwroot\\assets\\img\\breadcrumb-bg.jpg",
       "SourceId": "MVC_DOAN",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\HUY\\DAIHOC\\NAM3\\KY1\\Framework\\DOAN\\MVC_DOAN\\MVC_DOAN\\wwwroot\\",
+      "ContentRoot": "D:\\HUY\\DAIHOC\\NAM3\\KY1\\Framework\\DOAN_MAIN\\MVC_DOAN\\wwwroot\\",
       "BasePath": "_content/MVC_DOAN",
       "RelativePath": "assets/img/breadcrumb-bg.jpg",
       "AssetKind": "All",
@@ -986,10 +986,10 @@
       "OriginalItemSpec": "wwwroot\\assets\\img\\breadcrumb-bg.jpg"
     },
     {
-      "Identity": "D:\\HUY\\DAIHOC\\NAM3\\KY1\\Framework\\DOAN\\MVC_DOAN\\MVC_DOAN\\wwwroot\\assets\\img\\company-logos\\1.png",
+      "Identity": "D:\\HUY\\DAIHOC\\NAM3\\KY1\\Framework\\DOAN_MAIN\\MVC_DOAN\\wwwroot\\assets\\img\\company-logos\\1.png",
       "SourceId": "MVC_DOAN",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\HUY\\DAIHOC\\NAM3\\KY1\\Framework\\DOAN\\MVC_DOAN\\MVC_DOAN\\wwwroot\\",
+      "ContentRoot": "D:\\HUY\\DAIHOC\\NAM3\\KY1\\Framework\\DOAN_MAIN\\MVC_DOAN\\wwwroot\\",
       "BasePath": "_content/MVC_DOAN",
       "RelativePath": "assets/img/company-logos/1.png",
       "AssetKind": "All",
@@ -1003,10 +1003,10 @@
       "OriginalItemSpec": "wwwroot\\assets\\img\\company-logos\\1.png"
     },
     {
-      "Identity": "D:\\HUY\\DAIHOC\\NAM3\\KY1\\Framework\\DOAN\\MVC_DOAN\\MVC_DOAN\\wwwroot\\assets\\img\\company-logos\\2.png",
+      "Identity": "D:\\HUY\\DAIHOC\\NAM3\\KY1\\Framework\\DOAN_MAIN\\MVC_DOAN\\wwwroot\\assets\\img\\company-logos\\2.png",
       "SourceId": "MVC_DOAN",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\HUY\\DAIHOC\\NAM3\\KY1\\Framework\\DOAN\\MVC_DOAN\\MVC_DOAN\\wwwroot\\",
+      "ContentRoot": "D:\\HUY\\DAIHOC\\NAM3\\KY1\\Framework\\DOAN_MAIN\\MVC_DOAN\\wwwroot\\",
       "BasePath": "_content/MVC_DOAN",
       "RelativePath": "assets/img/company-logos/2.png",
       "AssetKind": "All",
@@ -1020,10 +1020,10 @@
       "OriginalItemSpec": "wwwroot\\assets\\img\\company-logos\\2.png"
     },
     {
-      "Identity": "D:\\HUY\\DAIHOC\\NAM3\\KY1\\Framework\\DOAN\\MVC_DOAN\\MVC_DOAN\\wwwroot\\assets\\img\\company-logos\\3.png",
+      "Identity": "D:\\HUY\\DAIHOC\\NAM3\\KY1\\Framework\\DOAN_MAIN\\MVC_DOAN\\wwwroot\\assets\\img\\company-logos\\3.png",
       "SourceId": "MVC_DOAN",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\HUY\\DAIHOC\\NAM3\\KY1\\Framework\\DOAN\\MVC_DOAN\\MVC_DOAN\\wwwroot\\",
+      "ContentRoot": "D:\\HUY\\DAIHOC\\NAM3\\KY1\\Framework\\DOAN_MAIN\\MVC_DOAN\\wwwroot\\",
       "BasePath": "_content/MVC_DOAN",
       "RelativePath": "assets/img/company-logos/3.png",
       "AssetKind": "All",
@@ -1037,10 +1037,10 @@
       "OriginalItemSpec": "wwwroot\\assets\\img\\company-logos\\3.png"
     },
     {
-      "Identity": "D:\\HUY\\DAIHOC\\NAM3\\KY1\\Framework\\DOAN\\MVC_DOAN\\MVC_DOAN\\wwwroot\\assets\\img\\company-logos\\4.png",
+      "Identity": "D:\\HUY\\DAIHOC\\NAM3\\KY1\\Framework\\DOAN_MAIN\\MVC_DOAN\\wwwroot\\assets\\img\\company-logos\\4.png",
       "SourceId": "MVC_DOAN",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\HUY\\DAIHOC\\NAM3\\KY1\\Framework\\DOAN\\MVC_DOAN\\MVC_DOAN\\wwwroot\\",
+      "ContentRoot": "D:\\HUY\\DAIHOC\\NAM3\\KY1\\Framework\\DOAN_MAIN\\MVC_DOAN\\wwwroot\\",
       "BasePath": "_content/MVC_DOAN",
       "RelativePath": "assets/img/company-logos/4.png",
       "AssetKind": "All",
@@ -1054,10 +1054,10 @@
       "OriginalItemSpec": "wwwroot\\assets\\img\\company-logos\\4.png"
     },
     {
-      "Identity": "D:\\HUY\\DAIHOC\\NAM3\\KY1\\Framework\\DOAN\\MVC_DOAN\\MVC_DOAN\\wwwroot\\assets\\img\\company-logos\\5.png",
+      "Identity": "D:\\HUY\\DAIHOC\\NAM3\\KY1\\Framework\\DOAN_MAIN\\MVC_DOAN\\wwwroot\\assets\\img\\company-logos\\5.png",
       "SourceId": "MVC_DOAN",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\HUY\\DAIHOC\\NAM3\\KY1\\Framework\\DOAN\\MVC_DOAN\\MVC_DOAN\\wwwroot\\",
+      "ContentRoot": "D:\\HUY\\DAIHOC\\NAM3\\KY1\\Framework\\DOAN_MAIN\\MVC_DOAN\\wwwroot\\",
       "BasePath": "_content/MVC_DOAN",
       "RelativePath": "assets/img/company-logos/5.png",
       "AssetKind": "All",
@@ -1071,10 +1071,10 @@
       "OriginalItemSpec": "wwwroot\\assets\\img\\company-logos\\5.png"
     },
     {
-      "Identity": "D:\\HUY\\DAIHOC\\NAM3\\KY1\\Framework\\DOAN\\MVC_DOAN\\MVC_DOAN\\wwwroot\\assets\\img\\dd.jpg",
+      "Identity": "D:\\HUY\\DAIHOC\\NAM3\\KY1\\Framework\\DOAN_MAIN\\MVC_DOAN\\wwwroot\\assets\\img\\dd.jpg",
       "SourceId": "MVC_DOAN",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\HUY\\DAIHOC\\NAM3\\KY1\\Framework\\DOAN\\MVC_DOAN\\MVC_DOAN\\wwwroot\\",
+      "ContentRoot": "D:\\HUY\\DAIHOC\\NAM3\\KY1\\Framework\\DOAN_MAIN\\MVC_DOAN\\wwwroot\\",
       "BasePath": "_content/MVC_DOAN",
       "RelativePath": "assets/img/dd.jpg",
       "AssetKind": "All",
@@ -1088,10 +1088,10 @@
       "OriginalItemSpec": "wwwroot\\assets\\img\\dd.jpg"
     },
     {
-      "Identity": "D:\\HUY\\DAIHOC\\NAM3\\KY1\\Framework\\DOAN\\MVC_DOAN\\MVC_DOAN\\wwwroot\\assets\\img\\favicon.png",
+      "Identity": "D:\\HUY\\DAIHOC\\NAM3\\KY1\\Framework\\DOAN_MAIN\\MVC_DOAN\\wwwroot\\assets\\img\\favicon.png",
       "SourceId": "MVC_DOAN",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\HUY\\DAIHOC\\NAM3\\KY1\\Framework\\DOAN\\MVC_DOAN\\MVC_DOAN\\wwwroot\\",
+      "ContentRoot": "D:\\HUY\\DAIHOC\\NAM3\\KY1\\Framework\\DOAN_MAIN\\MVC_DOAN\\wwwroot\\",
       "BasePath": "_content/MVC_DOAN",
       "RelativePath": "assets/img/favicon.png",
       "AssetKind": "All",
@@ -1105,10 +1105,10 @@
       "OriginalItemSpec": "wwwroot\\assets\\img\\favicon.png"
     },
     {
-      "Identity": "D:\\HUY\\DAIHOC\\NAM3\\KY1\\Framework\\DOAN\\MVC_DOAN\\MVC_DOAN\\wwwroot\\assets\\img\\feature-bg.jpg",
+      "Identity": "D:\\HUY\\DAIHOC\\NAM3\\KY1\\Framework\\DOAN_MAIN\\MVC_DOAN\\wwwroot\\assets\\img\\feature-bg.jpg",
       "SourceId": "MVC_DOAN",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\HUY\\DAIHOC\\NAM3\\KY1\\Framework\\DOAN\\MVC_DOAN\\MVC_DOAN\\wwwroot\\",
+      "ContentRoot": "D:\\HUY\\DAIHOC\\NAM3\\KY1\\Framework\\DOAN_MAIN\\MVC_DOAN\\wwwroot\\",
       "BasePath": "_content/MVC_DOAN",
       "RelativePath": "assets/img/feature-bg.jpg",
       "AssetKind": "All",
@@ -1122,10 +1122,10 @@
       "OriginalItemSpec": "wwwroot\\assets\\img\\feature-bg.jpg"
     },
     {
-      "Identity": "D:\\HUY\\DAIHOC\\NAM3\\KY1\\Framework\\DOAN\\MVC_DOAN\\MVC_DOAN\\wwwroot\\assets\\img\\hero-bg.jpg",
+      "Identity": "D:\\HUY\\DAIHOC\\NAM3\\KY1\\Framework\\DOAN_MAIN\\MVC_DOAN\\wwwroot\\assets\\img\\hero-bg.jpg",
       "SourceId": "MVC_DOAN",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\HUY\\DAIHOC\\NAM3\\KY1\\Framework\\DOAN\\MVC_DOAN\\MVC_DOAN\\wwwroot\\",
+      "ContentRoot": "D:\\HUY\\DAIHOC\\NAM3\\KY1\\Framework\\DOAN_MAIN\\MVC_DOAN\\wwwroot\\",
       "BasePath": "_content/MVC_DOAN",
       "RelativePath": "assets/img/hero-bg.jpg",
       "AssetKind": "All",
@@ -1139,10 +1139,10 @@
       "OriginalItemSpec": "wwwroot\\assets\\img\\hero-bg.jpg"
     },
     {
-      "Identity": "D:\\HUY\\DAIHOC\\NAM3\\KY1\\Framework\\DOAN\\MVC_DOAN\\MVC_DOAN\\wwwroot\\assets\\img\\hero-bg-2.jpg",
+      "Identity": "D:\\HUY\\DAIHOC\\NAM3\\KY1\\Framework\\DOAN_MAIN\\MVC_DOAN\\wwwroot\\assets\\img\\hero-bg-2.jpg",
       "SourceId": "MVC_DOAN",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\HUY\\DAIHOC\\NAM3\\KY1\\Framework\\DOAN\\MVC_DOAN\\MVC_DOAN\\wwwroot\\",
+      "ContentRoot": "D:\\HUY\\DAIHOC\\NAM3\\KY1\\Framework\\DOAN_MAIN\\MVC_DOAN\\wwwroot\\",
       "BasePath": "_content/MVC_DOAN",
       "RelativePath": "assets/img/hero-bg-2.jpg",
       "AssetKind": "All",
@@ -1156,10 +1156,10 @@
       "OriginalItemSpec": "wwwroot\\assets\\img\\hero-bg-2.jpg"
     },
     {
-      "Identity": "D:\\HUY\\DAIHOC\\NAM3\\KY1\\Framework\\DOAN\\MVC_DOAN\\MVC_DOAN\\wwwroot\\assets\\img\\hero-bg-3.jpg",
+      "Identity": "D:\\HUY\\DAIHOC\\NAM3\\KY1\\Framework\\DOAN_MAIN\\MVC_DOAN\\wwwroot\\assets\\img\\hero-bg-3.jpg",
       "SourceId": "MVC_DOAN",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\HUY\\DAIHOC\\NAM3\\KY1\\Framework\\DOAN\\MVC_DOAN\\MVC_DOAN\\wwwroot\\",
+      "ContentRoot": "D:\\HUY\\DAIHOC\\NAM3\\KY1\\Framework\\DOAN_MAIN\\MVC_DOAN\\wwwroot\\",
       "BasePath": "_content/MVC_DOAN",
       "RelativePath": "assets/img/hero-bg-3.jpg",
       "AssetKind": "All",
@@ -1173,10 +1173,10 @@
       "OriginalItemSpec": "wwwroot\\assets\\img\\hero-bg-3.jpg"
     },
     {
-      "Identity": "D:\\HUY\\DAIHOC\\NAM3\\KY1\\Framework\\DOAN\\MVC_DOAN\\MVC_DOAN\\wwwroot\\assets\\img\\homepage-bg-pattern.png",
+      "Identity": "D:\\HUY\\DAIHOC\\NAM3\\KY1\\Framework\\DOAN_MAIN\\MVC_DOAN\\wwwroot\\assets\\img\\homepage-bg-pattern.png",
       "SourceId": "MVC_DOAN",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\HUY\\DAIHOC\\NAM3\\KY1\\Framework\\DOAN\\MVC_DOAN\\MVC_DOAN\\wwwroot\\",
+      "ContentRoot": "D:\\HUY\\DAIHOC\\NAM3\\KY1\\Framework\\DOAN_MAIN\\MVC_DOAN\\wwwroot\\",
       "BasePath": "_content/MVC_DOAN",
       "RelativePath": "assets/img/homepage-bg-pattern.png",
       "AssetKind": "All",
@@ -1190,10 +1190,10 @@
       "OriginalItemSpec": "wwwroot\\assets\\img\\homepage-bg-pattern.png"
     },
     {
-      "Identity": "D:\\HUY\\DAIHOC\\NAM3\\KY1\\Framework\\DOAN\\MVC_DOAN\\MVC_DOAN\\wwwroot\\assets\\img\\latest-news\\news-bg-1.jpg",
+      "Identity": "D:\\HUY\\DAIHOC\\NAM3\\KY1\\Framework\\DOAN_MAIN\\MVC_DOAN\\wwwroot\\assets\\img\\latest-news\\news-bg-1.jpg",
       "SourceId": "MVC_DOAN",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\HUY\\DAIHOC\\NAM3\\KY1\\Framework\\DOAN\\MVC_DOAN\\MVC_DOAN\\wwwroot\\",
+      "ContentRoot": "D:\\HUY\\DAIHOC\\NAM3\\KY1\\Framework\\DOAN_MAIN\\MVC_DOAN\\wwwroot\\",
       "BasePath": "_content/MVC_DOAN",
       "RelativePath": "assets/img/latest-news/news-bg-1.jpg",
       "AssetKind": "All",
@@ -1207,10 +1207,10 @@
       "OriginalItemSpec": "wwwroot\\assets\\img\\latest-news\\news-bg-1.jpg"
     },
     {
-      "Identity": "D:\\HUY\\DAIHOC\\NAM3\\KY1\\Framework\\DOAN\\MVC_DOAN\\MVC_DOAN\\wwwroot\\assets\\img\\latest-news\\news-bg-2.jpg",
+      "Identity": "D:\\HUY\\DAIHOC\\NAM3\\KY1\\Framework\\DOAN_MAIN\\MVC_DOAN\\wwwroot\\assets\\img\\latest-news\\news-bg-2.jpg",
       "SourceId": "MVC_DOAN",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\HUY\\DAIHOC\\NAM3\\KY1\\Framework\\DOAN\\MVC_DOAN\\MVC_DOAN\\wwwroot\\",
+      "ContentRoot": "D:\\HUY\\DAIHOC\\NAM3\\KY1\\Framework\\DOAN_MAIN\\MVC_DOAN\\wwwroot\\",
       "BasePath": "_content/MVC_DOAN",
       "RelativePath": "assets/img/latest-news/news-bg-2.jpg",
       "AssetKind": "All",
@@ -1224,10 +1224,10 @@
       "OriginalItemSpec": "wwwroot\\assets\\img\\latest-news\\news-bg-2.jpg"
     },
     {
-      "Identity": "D:\\HUY\\DAIHOC\\NAM3\\KY1\\Framework\\DOAN\\MVC_DOAN\\MVC_DOAN\\wwwroot\\assets\\img\\latest-news\\news-bg-3.jpg",
+      "Identity": "D:\\HUY\\DAIHOC\\NAM3\\KY1\\Framework\\DOAN_MAIN\\MVC_DOAN\\wwwroot\\assets\\img\\latest-news\\news-bg-3.jpg",
       "SourceId": "MVC_DOAN",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\HUY\\DAIHOC\\NAM3\\KY1\\Framework\\DOAN\\MVC_DOAN\\MVC_DOAN\\wwwroot\\",
+      "ContentRoot": "D:\\HUY\\DAIHOC\\NAM3\\KY1\\Framework\\DOAN_MAIN\\MVC_DOAN\\wwwroot\\",
       "BasePath": "_content/MVC_DOAN",
       "RelativePath": "assets/img/latest-news/news-bg-3.jpg",
       "AssetKind": "All",
@@ -1241,10 +1241,10 @@
       "OriginalItemSpec": "wwwroot\\assets\\img\\latest-news\\news-bg-3.jpg"
     },
     {
-      "Identity": "D:\\HUY\\DAIHOC\\NAM3\\KY1\\Framework\\DOAN\\MVC_DOAN\\MVC_DOAN\\wwwroot\\assets\\img\\latest-news\\news-bg-4.jpg",
+      "Identity": "D:\\HUY\\DAIHOC\\NAM3\\KY1\\Framework\\DOAN_MAIN\\MVC_DOAN\\wwwroot\\assets\\img\\latest-news\\news-bg-4.jpg",
       "SourceId": "MVC_DOAN",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\HUY\\DAIHOC\\NAM3\\KY1\\Framework\\DOAN\\MVC_DOAN\\MVC_DOAN\\wwwroot\\",
+      "ContentRoot": "D:\\HUY\\DAIHOC\\NAM3\\KY1\\Framework\\DOAN_MAIN\\MVC_DOAN\\wwwroot\\",
       "BasePath": "_content/MVC_DOAN",
       "RelativePath": "assets/img/latest-news/news-bg-4.jpg",
       "AssetKind": "All",
@@ -1258,10 +1258,10 @@
       "OriginalItemSpec": "wwwroot\\assets\\img\\latest-news\\news-bg-4.jpg"
     },
     {
-      "Identity": "D:\\HUY\\DAIHOC\\NAM3\\KY1\\Framework\\DOAN\\MVC_DOAN\\MVC_DOAN\\wwwroot\\assets\\img\\latest-news\\news-bg-5.jpg",
+      "Identity": "D:\\HUY\\DAIHOC\\NAM3\\KY1\\Framework\\DOAN_MAIN\\MVC_DOAN\\wwwroot\\assets\\img\\latest-news\\news-bg-5.jpg",
       "SourceId": "MVC_DOAN",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\HUY\\DAIHOC\\NAM3\\KY1\\Framework\\DOAN\\MVC_DOAN\\MVC_DOAN\\wwwroot\\",
+      "ContentRoot": "D:\\HUY\\DAIHOC\\NAM3\\KY1\\Framework\\DOAN_MAIN\\MVC_DOAN\\wwwroot\\",
       "BasePath": "_content/MVC_DOAN",
       "RelativePath": "assets/img/latest-news/news-bg-5.jpg",
       "AssetKind": "All",
@@ -1275,10 +1275,10 @@
       "OriginalItemSpec": "wwwroot\\assets\\img\\latest-news\\news-bg-5.jpg"
     },
     {
-      "Identity": "D:\\HUY\\DAIHOC\\NAM3\\KY1\\Framework\\DOAN\\MVC_DOAN\\MVC_DOAN\\wwwroot\\assets\\img\\latest-news\\news-bg-6.jpg",
+      "Identity": "D:\\HUY\\DAIHOC\\NAM3\\KY1\\Framework\\DOAN_MAIN\\MVC_DOAN\\wwwroot\\assets\\img\\latest-news\\news-bg-6.jpg",
       "SourceId": "MVC_DOAN",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\HUY\\DAIHOC\\NAM3\\KY1\\Framework\\DOAN\\MVC_DOAN\\MVC_DOAN\\wwwroot\\",
+      "ContentRoot": "D:\\HUY\\DAIHOC\\NAM3\\KY1\\Framework\\DOAN_MAIN\\MVC_DOAN\\wwwroot\\",
       "BasePath": "_content/MVC_DOAN",
       "RelativePath": "assets/img/latest-news/news-bg-6.jpg",
       "AssetKind": "All",
@@ -1292,10 +1292,10 @@
       "OriginalItemSpec": "wwwroot\\assets\\img\\latest-news\\news-bg-6.jpg"
     },
     {
-      "Identity": "D:\\HUY\\DAIHOC\\NAM3\\KY1\\Framework\\DOAN\\MVC_DOAN\\MVC_DOAN\\wwwroot\\assets\\img\\logo.png",
+      "Identity": "D:\\HUY\\DAIHOC\\NAM3\\KY1\\Framework\\DOAN_MAIN\\MVC_DOAN\\wwwroot\\assets\\img\\logo.png",
       "SourceId": "MVC_DOAN",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\HUY\\DAIHOC\\NAM3\\KY1\\Framework\\DOAN\\MVC_DOAN\\MVC_DOAN\\wwwroot\\",
+      "ContentRoot": "D:\\HUY\\DAIHOC\\NAM3\\KY1\\Framework\\DOAN_MAIN\\MVC_DOAN\\wwwroot\\",
       "BasePath": "_content/MVC_DOAN",
       "RelativePath": "assets/img/logo.png",
       "AssetKind": "All",
@@ -1309,10 +1309,10 @@
       "OriginalItemSpec": "wwwroot\\assets\\img\\logo.png"
     },
     {
-      "Identity": "D:\\HUY\\DAIHOC\\NAM3\\KY1\\Framework\\DOAN\\MVC_DOAN\\MVC_DOAN\\wwwroot\\assets\\img\\products\\product-img-1.jpg",
+      "Identity": "D:\\HUY\\DAIHOC\\NAM3\\KY1\\Framework\\DOAN_MAIN\\MVC_DOAN\\wwwroot\\assets\\img\\products\\product-img-1.jpg",
       "SourceId": "MVC_DOAN",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\HUY\\DAIHOC\\NAM3\\KY1\\Framework\\DOAN\\MVC_DOAN\\MVC_DOAN\\wwwroot\\",
+      "ContentRoot": "D:\\HUY\\DAIHOC\\NAM3\\KY1\\Framework\\DOAN_MAIN\\MVC_DOAN\\wwwroot\\",
       "BasePath": "_content/MVC_DOAN",
       "RelativePath": "assets/img/products/product-img-1.jpg",
       "AssetKind": "All",
@@ -1326,10 +1326,10 @@
       "OriginalItemSpec": "wwwroot\\assets\\img\\products\\product-img-1.jpg"
     },
     {
-      "Identity": "D:\\HUY\\DAIHOC\\NAM3\\KY1\\Framework\\DOAN\\MVC_DOAN\\MVC_DOAN\\wwwroot\\assets\\img\\products\\product-img-2.jpg",
+      "Identity": "D:\\HUY\\DAIHOC\\NAM3\\KY1\\Framework\\DOAN_MAIN\\MVC_DOAN\\wwwroot\\assets\\img\\products\\product-img-2.jpg",
       "SourceId": "MVC_DOAN",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\HUY\\DAIHOC\\NAM3\\KY1\\Framework\\DOAN\\MVC_DOAN\\MVC_DOAN\\wwwroot\\",
+      "ContentRoot": "D:\\HUY\\DAIHOC\\NAM3\\KY1\\Framework\\DOAN_MAIN\\MVC_DOAN\\wwwroot\\",
       "BasePath": "_content/MVC_DOAN",
       "RelativePath": "assets/img/products/product-img-2.jpg",
       "AssetKind": "All",
@@ -1343,10 +1343,10 @@
       "OriginalItemSpec": "wwwroot\\assets\\img\\products\\product-img-2.jpg"
     },
     {
-      "Identity": "D:\\HUY\\DAIHOC\\NAM3\\KY1\\Framework\\DOAN\\MVC_DOAN\\MVC_DOAN\\wwwroot\\assets\\img\\products\\product-img-3.jpg",
+      "Identity": "D:\\HUY\\DAIHOC\\NAM3\\KY1\\Framework\\DOAN_MAIN\\MVC_DOAN\\wwwroot\\assets\\img\\products\\product-img-3.jpg",
       "SourceId": "MVC_DOAN",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\HUY\\DAIHOC\\NAM3\\KY1\\Framework\\DOAN\\MVC_DOAN\\MVC_DOAN\\wwwroot\\",
+      "ContentRoot": "D:\\HUY\\DAIHOC\\NAM3\\KY1\\Framework\\DOAN_MAIN\\MVC_DOAN\\wwwroot\\",
       "BasePath": "_content/MVC_DOAN",
       "RelativePath": "assets/img/products/product-img-3.jpg",
       "AssetKind": "All",
@@ -1360,10 +1360,10 @@
       "OriginalItemSpec": "wwwroot\\assets\\img\\products\\product-img-3.jpg"
     },
     {
-      "Identity": "D:\\HUY\\DAIHOC\\NAM3\\KY1\\Framework\\DOAN\\MVC_DOAN\\MVC_DOAN\\wwwroot\\assets\\img\\products\\product-img-4.jpg",
+      "Identity": "D:\\HUY\\DAIHOC\\NAM3\\KY1\\Framework\\DOAN_MAIN\\MVC_DOAN\\wwwroot\\assets\\img\\products\\product-img-4.jpg",
       "SourceId": "MVC_DOAN",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\HUY\\DAIHOC\\NAM3\\KY1\\Framework\\DOAN\\MVC_DOAN\\MVC_DOAN\\wwwroot\\",
+      "ContentRoot": "D:\\HUY\\DAIHOC\\NAM3\\KY1\\Framework\\DOAN_MAIN\\MVC_DOAN\\wwwroot\\",
       "BasePath": "_content/MVC_DOAN",
       "RelativePath": "assets/img/products/product-img-4.jpg",
       "AssetKind": "All",
@@ -1377,10 +1377,10 @@
       "OriginalItemSpec": "wwwroot\\assets\\img\\products\\product-img-4.jpg"
     },
     {
-      "Identity": "D:\\HUY\\DAIHOC\\NAM3\\KY1\\Framework\\DOAN\\MVC_DOAN\\MVC_DOAN\\wwwroot\\assets\\img\\products\\product-img-5.jpg",
+      "Identity": "D:\\HUY\\DAIHOC\\NAM3\\KY1\\Framework\\DOAN_MAIN\\MVC_DOAN\\wwwroot\\assets\\img\\products\\product-img-5.jpg",
       "SourceId": "MVC_DOAN",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\HUY\\DAIHOC\\NAM3\\KY1\\Framework\\DOAN\\MVC_DOAN\\MVC_DOAN\\wwwroot\\",
+      "ContentRoot": "D:\\HUY\\DAIHOC\\NAM3\\KY1\\Framework\\DOAN_MAIN\\MVC_DOAN\\wwwroot\\",
       "BasePath": "_content/MVC_DOAN",
       "RelativePath": "assets/img/products/product-img-5.jpg",
       "AssetKind": "All",
@@ -1394,10 +1394,10 @@
       "OriginalItemSpec": "wwwroot\\assets\\img\\products\\product-img-5.jpg"
     },
     {
-      "Identity": "D:\\HUY\\DAIHOC\\NAM3\\KY1\\Framework\\DOAN\\MVC_DOAN\\MVC_DOAN\\wwwroot\\assets\\img\\products\\product-img-6.jpg",
+      "Identity": "D:\\HUY\\DAIHOC\\NAM3\\KY1\\Framework\\DOAN_MAIN\\MVC_DOAN\\wwwroot\\assets\\img\\products\\product-img-6.jpg",
       "SourceId": "MVC_DOAN",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\HUY\\DAIHOC\\NAM3\\KY1\\Framework\\DOAN\\MVC_DOAN\\MVC_DOAN\\wwwroot\\",
+      "ContentRoot": "D:\\HUY\\DAIHOC\\NAM3\\KY1\\Framework\\DOAN_MAIN\\MVC_DOAN\\wwwroot\\",
       "BasePath": "_content/MVC_DOAN",
       "RelativePath": "assets/img/products/product-img-6.jpg",
       "AssetKind": "All",
@@ -1411,10 +1411,10 @@
       "OriginalItemSpec": "wwwroot\\assets\\img\\products\\product-img-6.jpg"
     },
     {
-      "Identity": "D:\\HUY\\DAIHOC\\NAM3\\KY1\\Framework\\DOAN\\MVC_DOAN\\MVC_DOAN\\wwwroot\\assets\\img\\team\\team-1.jpg",
+      "Identity": "D:\\HUY\\DAIHOC\\NAM3\\KY1\\Framework\\DOAN_MAIN\\MVC_DOAN\\wwwroot\\assets\\img\\team\\team-1.jpg",
       "SourceId": "MVC_DOAN",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\HUY\\DAIHOC\\NAM3\\KY1\\Framework\\DOAN\\MVC_DOAN\\MVC_DOAN\\wwwroot\\",
+      "ContentRoot": "D:\\HUY\\DAIHOC\\NAM3\\KY1\\Framework\\DOAN_MAIN\\MVC_DOAN\\wwwroot\\",
       "BasePath": "_content/MVC_DOAN",
       "RelativePath": "assets/img/team/team-1.jpg",
       "AssetKind": "All",
@@ -1428,10 +1428,10 @@
       "OriginalItemSpec": "wwwroot\\assets\\img\\team\\team-1.jpg"
     },
     {
-      "Identity": "D:\\HUY\\DAIHOC\\NAM3\\KY1\\Framework\\DOAN\\MVC_DOAN\\MVC_DOAN\\wwwroot\\assets\\img\\team\\team-2.jpg",
+      "Identity": "D:\\HUY\\DAIHOC\\NAM3\\KY1\\Framework\\DOAN_MAIN\\MVC_DOAN\\wwwroot\\assets\\img\\team\\team-2.jpg",
       "SourceId": "MVC_DOAN",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\HUY\\DAIHOC\\NAM3\\KY1\\Framework\\DOAN\\MVC_DOAN\\MVC_DOAN\\wwwroot\\",
+      "ContentRoot": "D:\\HUY\\DAIHOC\\NAM3\\KY1\\Framework\\DOAN_MAIN\\MVC_DOAN\\wwwroot\\",
       "BasePath": "_content/MVC_DOAN",
       "RelativePath": "assets/img/team/team-2.jpg",
       "AssetKind": "All",
@@ -1445,10 +1445,10 @@
       "OriginalItemSpec": "wwwroot\\assets\\img\\team\\team-2.jpg"
     },
     {
-      "Identity": "D:\\HUY\\DAIHOC\\NAM3\\KY1\\Framework\\DOAN\\MVC_DOAN\\MVC_DOAN\\wwwroot\\assets\\img\\team\\team-3.jpg",
+      "Identity": "D:\\HUY\\DAIHOC\\NAM3\\KY1\\Framework\\DOAN_MAIN\\MVC_DOAN\\wwwroot\\assets\\img\\team\\team-3.jpg",
       "SourceId": "MVC_DOAN",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\HUY\\DAIHOC\\NAM3\\KY1\\Framework\\DOAN\\MVC_DOAN\\MVC_DOAN\\wwwroot\\",
+      "ContentRoot": "D:\\HUY\\DAIHOC\\NAM3\\KY1\\Framework\\DOAN_MAIN\\MVC_DOAN\\wwwroot\\",
       "BasePath": "_content/MVC_DOAN",
       "RelativePath": "assets/img/team/team-3.jpg",
       "AssetKind": "All",
@@ -1462,10 +1462,10 @@
       "OriginalItemSpec": "wwwroot\\assets\\img\\team\\team-3.jpg"
     },
     {
-      "Identity": "D:\\HUY\\DAIHOC\\NAM3\\KY1\\Framework\\DOAN\\MVC_DOAN\\MVC_DOAN\\wwwroot\\assets\\img\\us.jpg",
+      "Identity": "D:\\HUY\\DAIHOC\\NAM3\\KY1\\Framework\\DOAN_MAIN\\MVC_DOAN\\wwwroot\\assets\\img\\us.jpg",
       "SourceId": "MVC_DOAN",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\HUY\\DAIHOC\\NAM3\\KY1\\Framework\\DOAN\\MVC_DOAN\\MVC_DOAN\\wwwroot\\",
+      "ContentRoot": "D:\\HUY\\DAIHOC\\NAM3\\KY1\\Framework\\DOAN_MAIN\\MVC_DOAN\\wwwroot\\",
       "BasePath": "_content/MVC_DOAN",
       "RelativePath": "assets/img/us.jpg",
       "AssetKind": "All",
@@ -1479,10 +1479,10 @@
       "OriginalItemSpec": "wwwroot\\assets\\img\\us.jpg"
     },
     {
-      "Identity": "D:\\HUY\\DAIHOC\\NAM3\\KY1\\Framework\\DOAN\\MVC_DOAN\\MVC_DOAN\\wwwroot\\assets\\js\\form-validate.js",
+      "Identity": "D:\\HUY\\DAIHOC\\NAM3\\KY1\\Framework\\DOAN_MAIN\\MVC_DOAN\\wwwroot\\assets\\js\\form-validate.js",
       "SourceId": "MVC_DOAN",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\HUY\\DAIHOC\\NAM3\\KY1\\Framework\\DOAN\\MVC_DOAN\\MVC_DOAN\\wwwroot\\",
+      "ContentRoot": "D:\\HUY\\DAIHOC\\NAM3\\KY1\\Framework\\DOAN_MAIN\\MVC_DOAN\\wwwroot\\",
       "BasePath": "_content/MVC_DOAN",
       "RelativePath": "assets/js/form-validate.js",
       "AssetKind": "All",
@@ -1496,10 +1496,10 @@
       "OriginalItemSpec": "wwwroot\\assets\\js\\form-validate.js"
     },
     {
-      "Identity": "D:\\HUY\\DAIHOC\\NAM3\\KY1\\Framework\\DOAN\\MVC_DOAN\\MVC_DOAN\\wwwroot\\assets\\js\\jquery.countdown.js",
+      "Identity": "D:\\HUY\\DAIHOC\\NAM3\\KY1\\Framework\\DOAN_MAIN\\MVC_DOAN\\wwwroot\\assets\\js\\jquery.countdown.js",
       "SourceId": "MVC_DOAN",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\HUY\\DAIHOC\\NAM3\\KY1\\Framework\\DOAN\\MVC_DOAN\\MVC_DOAN\\wwwroot\\",
+      "ContentRoot": "D:\\HUY\\DAIHOC\\NAM3\\KY1\\Framework\\DOAN_MAIN\\MVC_DOAN\\wwwroot\\",
       "BasePath": "_content/MVC_DOAN",
       "RelativePath": "assets/js/jquery.countdown.js",
       "AssetKind": "All",
@@ -1513,10 +1513,10 @@
       "OriginalItemSpec": "wwwroot\\assets\\js\\jquery.countdown.js"
     },
     {
-      "Identity": "D:\\HUY\\DAIHOC\\NAM3\\KY1\\Framework\\DOAN\\MVC_DOAN\\MVC_DOAN\\wwwroot\\assets\\js\\jquery.isotope-3.0.6.min.js",
+      "Identity": "D:\\HUY\\DAIHOC\\NAM3\\KY1\\Framework\\DOAN_MAIN\\MVC_DOAN\\wwwroot\\assets\\js\\jquery.isotope-3.0.6.min.js",
       "SourceId": "MVC_DOAN",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\HUY\\DAIHOC\\NAM3\\KY1\\Framework\\DOAN\\MVC_DOAN\\MVC_DOAN\\wwwroot\\",
+      "ContentRoot": "D:\\HUY\\DAIHOC\\NAM3\\KY1\\Framework\\DOAN_MAIN\\MVC_DOAN\\wwwroot\\",
       "BasePath": "_content/MVC_DOAN",
       "RelativePath": "assets/js/jquery.isotope-3.0.6.min.js",
       "AssetKind": "All",
@@ -1530,10 +1530,10 @@
       "OriginalItemSpec": "wwwroot\\assets\\js\\jquery.isotope-3.0.6.min.js"
     },
     {
-      "Identity": "D:\\HUY\\DAIHOC\\NAM3\\KY1\\Framework\\DOAN\\MVC_DOAN\\MVC_DOAN\\wwwroot\\assets\\js\\jquery.magnific-popup.min.js",
+      "Identity": "D:\\HUY\\DAIHOC\\NAM3\\KY1\\Framework\\DOAN_MAIN\\MVC_DOAN\\wwwroot\\assets\\js\\jquery.magnific-popup.min.js",
       "SourceId": "MVC_DOAN",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\HUY\\DAIHOC\\NAM3\\KY1\\Framework\\DOAN\\MVC_DOAN\\MVC_DOAN\\wwwroot\\",
+      "ContentRoot": "D:\\HUY\\DAIHOC\\NAM3\\KY1\\Framework\\DOAN_MAIN\\MVC_DOAN\\wwwroot\\",
       "BasePath": "_content/MVC_DOAN",
       "RelativePath": "assets/js/jquery.magnific-popup.min.js",
       "AssetKind": "All",
@@ -1547,10 +1547,10 @@
       "OriginalItemSpec": "wwwroot\\assets\\js\\jquery.magnific-popup.min.js"
     },
     {
-      "Identity": "D:\\HUY\\DAIHOC\\NAM3\\KY1\\Framework\\DOAN\\MVC_DOAN\\MVC_DOAN\\wwwroot\\assets\\js\\jquery.meanmenu.min.js",
+      "Identity": "D:\\HUY\\DAIHOC\\NAM3\\KY1\\Framework\\DOAN_MAIN\\MVC_DOAN\\wwwroot\\assets\\js\\jquery.meanmenu.min.js",
       "SourceId": "MVC_DOAN",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\HUY\\DAIHOC\\NAM3\\KY1\\Framework\\DOAN\\MVC_DOAN\\MVC_DOAN\\wwwroot\\",
+      "ContentRoot": "D:\\HUY\\DAIHOC\\NAM3\\KY1\\Framework\\DOAN_MAIN\\MVC_DOAN\\wwwroot\\",
       "BasePath": "_content/MVC_DOAN",
       "RelativePath": "assets/js/jquery.meanmenu.min.js",
       "AssetKind": "All",
@@ -1564,10 +1564,10 @@
       "OriginalItemSpec": "wwwroot\\assets\\js\\jquery.meanmenu.min.js"
     },
     {
-      "Identity": "D:\\HUY\\DAIHOC\\NAM3\\KY1\\Framework\\DOAN\\MVC_DOAN\\MVC_DOAN\\wwwroot\\assets\\js\\jquery-1.11.3.min.js",
+      "Identity": "D:\\HUY\\DAIHOC\\NAM3\\KY1\\Framework\\DOAN_MAIN\\MVC_DOAN\\wwwroot\\assets\\js\\jquery-1.11.3.min.js",
       "SourceId": "MVC_DOAN",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\HUY\\DAIHOC\\NAM3\\KY1\\Framework\\DOAN\\MVC_DOAN\\MVC_DOAN\\wwwroot\\",
+      "ContentRoot": "D:\\HUY\\DAIHOC\\NAM3\\KY1\\Framework\\DOAN_MAIN\\MVC_DOAN\\wwwroot\\",
       "BasePath": "_content/MVC_DOAN",
       "RelativePath": "assets/js/jquery-1.11.3.min.js",
       "AssetKind": "All",
@@ -1581,10 +1581,10 @@
       "OriginalItemSpec": "wwwroot\\assets\\js\\jquery-1.11.3.min.js"
     },
     {
-      "Identity": "D:\\HUY\\DAIHOC\\NAM3\\KY1\\Framework\\DOAN\\MVC_DOAN\\MVC_DOAN\\wwwroot\\assets\\js\\main.js",
+      "Identity": "D:\\HUY\\DAIHOC\\NAM3\\KY1\\Framework\\DOAN_MAIN\\MVC_DOAN\\wwwroot\\assets\\js\\main.js",
       "SourceId": "MVC_DOAN",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\HUY\\DAIHOC\\NAM3\\KY1\\Framework\\DOAN\\MVC_DOAN\\MVC_DOAN\\wwwroot\\",
+      "ContentRoot": "D:\\HUY\\DAIHOC\\NAM3\\KY1\\Framework\\DOAN_MAIN\\MVC_DOAN\\wwwroot\\",
       "BasePath": "_content/MVC_DOAN",
       "RelativePath": "assets/js/main.js",
       "AssetKind": "All",
@@ -1598,10 +1598,10 @@
       "OriginalItemSpec": "wwwroot\\assets\\js\\main.js"
     },
     {
-      "Identity": "D:\\HUY\\DAIHOC\\NAM3\\KY1\\Framework\\DOAN\\MVC_DOAN\\MVC_DOAN\\wwwroot\\assets\\js\\owl.carousel.min.js",
+      "Identity": "D:\\HUY\\DAIHOC\\NAM3\\KY1\\Framework\\DOAN_MAIN\\MVC_DOAN\\wwwroot\\assets\\js\\owl.carousel.min.js",
       "SourceId": "MVC_DOAN",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\HUY\\DAIHOC\\NAM3\\KY1\\Framework\\DOAN\\MVC_DOAN\\MVC_DOAN\\wwwroot\\",
+      "ContentRoot": "D:\\HUY\\DAIHOC\\NAM3\\KY1\\Framework\\DOAN_MAIN\\MVC_DOAN\\wwwroot\\",
       "BasePath": "_content/MVC_DOAN",
       "RelativePath": "assets/js/owl.carousel.min.js",
       "AssetKind": "All",
@@ -1615,10 +1615,10 @@
       "OriginalItemSpec": "wwwroot\\assets\\js\\owl.carousel.min.js"
     },
     {
-      "Identity": "D:\\HUY\\DAIHOC\\NAM3\\KY1\\Framework\\DOAN\\MVC_DOAN\\MVC_DOAN\\wwwroot\\assets\\js\\sticker.js",
+      "Identity": "D:\\HUY\\DAIHOC\\NAM3\\KY1\\Framework\\DOAN_MAIN\\MVC_DOAN\\wwwroot\\assets\\js\\sticker.js",
       "SourceId": "MVC_DOAN",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\HUY\\DAIHOC\\NAM3\\KY1\\Framework\\DOAN\\MVC_DOAN\\MVC_DOAN\\wwwroot\\",
+      "ContentRoot": "D:\\HUY\\DAIHOC\\NAM3\\KY1\\Framework\\DOAN_MAIN\\MVC_DOAN\\wwwroot\\",
       "BasePath": "_content/MVC_DOAN",
       "RelativePath": "assets/js/sticker.js",
       "AssetKind": "All",
@@ -1632,10 +1632,10 @@
       "OriginalItemSpec": "wwwroot\\assets\\js\\sticker.js"
     },
     {
-      "Identity": "D:\\HUY\\DAIHOC\\NAM3\\KY1\\Framework\\DOAN\\MVC_DOAN\\MVC_DOAN\\wwwroot\\assets\\js\\waypoints.js",
+      "Identity": "D:\\HUY\\DAIHOC\\NAM3\\KY1\\Framework\\DOAN_MAIN\\MVC_DOAN\\wwwroot\\assets\\js\\waypoints.js",
       "SourceId": "MVC_DOAN",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\HUY\\DAIHOC\\NAM3\\KY1\\Framework\\DOAN\\MVC_DOAN\\MVC_DOAN\\wwwroot\\",
+      "ContentRoot": "D:\\HUY\\DAIHOC\\NAM3\\KY1\\Framework\\DOAN_MAIN\\MVC_DOAN\\wwwroot\\",
       "BasePath": "_content/MVC_DOAN",
       "RelativePath": "assets/js/waypoints.js",
       "AssetKind": "All",
@@ -1649,10 +1649,10 @@
       "OriginalItemSpec": "wwwroot\\assets\\js\\waypoints.js"
     },
     {
-      "Identity": "D:\\HUY\\DAIHOC\\NAM3\\KY1\\Framework\\DOAN\\MVC_DOAN\\MVC_DOAN\\wwwroot\\assets\\webfonts\\fa-brands-400.eot",
+      "Identity": "D:\\HUY\\DAIHOC\\NAM3\\KY1\\Framework\\DOAN_MAIN\\MVC_DOAN\\wwwroot\\assets\\webfonts\\fa-brands-400.eot",
       "SourceId": "MVC_DOAN",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\HUY\\DAIHOC\\NAM3\\KY1\\Framework\\DOAN\\MVC_DOAN\\MVC_DOAN\\wwwroot\\",
+      "ContentRoot": "D:\\HUY\\DAIHOC\\NAM3\\KY1\\Framework\\DOAN_MAIN\\MVC_DOAN\\wwwroot\\",
       "BasePath": "_content/MVC_DOAN",
       "RelativePath": "assets/webfonts/fa-brands-400.eot",
       "AssetKind": "All",
@@ -1666,10 +1666,10 @@
       "OriginalItemSpec": "wwwroot\\assets\\webfonts\\fa-brands-400.eot"
     },
     {
-      "Identity": "D:\\HUY\\DAIHOC\\NAM3\\KY1\\Framework\\DOAN\\MVC_DOAN\\MVC_DOAN\\wwwroot\\assets\\webfonts\\fa-brands-400.eot_",
+      "Identity": "D:\\HUY\\DAIHOC\\NAM3\\KY1\\Framework\\DOAN_MAIN\\MVC_DOAN\\wwwroot\\assets\\webfonts\\fa-brands-400.eot_",
       "SourceId": "MVC_DOAN",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\HUY\\DAIHOC\\NAM3\\KY1\\Framework\\DOAN\\MVC_DOAN\\MVC_DOAN\\wwwroot\\",
+      "ContentRoot": "D:\\HUY\\DAIHOC\\NAM3\\KY1\\Framework\\DOAN_MAIN\\MVC_DOAN\\wwwroot\\",
       "BasePath": "_content/MVC_DOAN",
       "RelativePath": "assets/webfonts/fa-brands-400.eot_",
       "AssetKind": "All",
@@ -1683,10 +1683,10 @@
       "OriginalItemSpec": "wwwroot\\assets\\webfonts\\fa-brands-400.eot_"
     },
     {
-      "Identity": "D:\\HUY\\DAIHOC\\NAM3\\KY1\\Framework\\DOAN\\MVC_DOAN\\MVC_DOAN\\wwwroot\\assets\\webfonts\\fa-brands-400.svg",
+      "Identity": "D:\\HUY\\DAIHOC\\NAM3\\KY1\\Framework\\DOAN_MAIN\\MVC_DOAN\\wwwroot\\assets\\webfonts\\fa-brands-400.svg",
       "SourceId": "MVC_DOAN",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\HUY\\DAIHOC\\NAM3\\KY1\\Framework\\DOAN\\MVC_DOAN\\MVC_DOAN\\wwwroot\\",
+      "ContentRoot": "D:\\HUY\\DAIHOC\\NAM3\\KY1\\Framework\\DOAN_MAIN\\MVC_DOAN\\wwwroot\\",
       "BasePath": "_content/MVC_DOAN",
       "RelativePath": "assets/webfonts/fa-brands-400.svg",
       "AssetKind": "All",
@@ -1700,10 +1700,10 @@
       "OriginalItemSpec": "wwwroot\\assets\\webfonts\\fa-brands-400.svg"
     },
     {
-      "Identity": "D:\\HUY\\DAIHOC\\NAM3\\KY1\\Framework\\DOAN\\MVC_DOAN\\MVC_DOAN\\wwwroot\\assets\\webfonts\\fa-brands-400.ttf",
+      "Identity": "D:\\HUY\\DAIHOC\\NAM3\\KY1\\Framework\\DOAN_MAIN\\MVC_DOAN\\wwwroot\\assets\\webfonts\\fa-brands-400.ttf",
       "SourceId": "MVC_DOAN",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\HUY\\DAIHOC\\NAM3\\KY1\\Framework\\DOAN\\MVC_DOAN\\MVC_DOAN\\wwwroot\\",
+      "ContentRoot": "D:\\HUY\\DAIHOC\\NAM3\\KY1\\Framework\\DOAN_MAIN\\MVC_DOAN\\wwwroot\\",
       "BasePath": "_content/MVC_DOAN",
       "RelativePath": "assets/webfonts/fa-brands-400.ttf",
       "AssetKind": "All",
@@ -1717,10 +1717,10 @@
       "OriginalItemSpec": "wwwroot\\assets\\webfonts\\fa-brands-400.ttf"
     },
     {
-      "Identity": "D:\\HUY\\DAIHOC\\NAM3\\KY1\\Framework\\DOAN\\MVC_DOAN\\MVC_DOAN\\wwwroot\\assets\\webfonts\\fa-brands-400.woff",
+      "Identity": "D:\\HUY\\DAIHOC\\NAM3\\KY1\\Framework\\DOAN_MAIN\\MVC_DOAN\\wwwroot\\assets\\webfonts\\fa-brands-400.woff",
       "SourceId": "MVC_DOAN",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\HUY\\DAIHOC\\NAM3\\KY1\\Framework\\DOAN\\MVC_DOAN\\MVC_DOAN\\wwwroot\\",
+      "ContentRoot": "D:\\HUY\\DAIHOC\\NAM3\\KY1\\Framework\\DOAN_MAIN\\MVC_DOAN\\wwwroot\\",
       "BasePath": "_content/MVC_DOAN",
       "RelativePath": "assets/webfonts/fa-brands-400.woff",
       "AssetKind": "All",
@@ -1734,10 +1734,10 @@
       "OriginalItemSpec": "wwwroot\\assets\\webfonts\\fa-brands-400.woff"
     },
     {
-      "Identity": "D:\\HUY\\DAIHOC\\NAM3\\KY1\\Framework\\DOAN\\MVC_DOAN\\MVC_DOAN\\wwwroot\\assets\\webfonts\\fa-brands-400.woff2",
+      "Identity": "D:\\HUY\\DAIHOC\\NAM3\\KY1\\Framework\\DOAN_MAIN\\MVC_DOAN\\wwwroot\\assets\\webfonts\\fa-brands-400.woff2",
       "SourceId": "MVC_DOAN",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\HUY\\DAIHOC\\NAM3\\KY1\\Framework\\DOAN\\MVC_DOAN\\MVC_DOAN\\wwwroot\\",
+      "ContentRoot": "D:\\HUY\\DAIHOC\\NAM3\\KY1\\Framework\\DOAN_MAIN\\MVC_DOAN\\wwwroot\\",
       "BasePath": "_content/MVC_DOAN",
       "RelativePath": "assets/webfonts/fa-brands-400.woff2",
       "AssetKind": "All",
@@ -1751,10 +1751,10 @@
       "OriginalItemSpec": "wwwroot\\assets\\webfonts\\fa-brands-400.woff2"
     },
     {
-      "Identity": "D:\\HUY\\DAIHOC\\NAM3\\KY1\\Framework\\DOAN\\MVC_DOAN\\MVC_DOAN\\wwwroot\\assets\\webfonts\\fa-regular-400.eot",
+      "Identity": "D:\\HUY\\DAIHOC\\NAM3\\KY1\\Framework\\DOAN_MAIN\\MVC_DOAN\\wwwroot\\assets\\webfonts\\fa-regular-400.eot",
       "SourceId": "MVC_DOAN",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\HUY\\DAIHOC\\NAM3\\KY1\\Framework\\DOAN\\MVC_DOAN\\MVC_DOAN\\wwwroot\\",
+      "ContentRoot": "D:\\HUY\\DAIHOC\\NAM3\\KY1\\Framework\\DOAN_MAIN\\MVC_DOAN\\wwwroot\\",
       "BasePath": "_content/MVC_DOAN",
       "RelativePath": "assets/webfonts/fa-regular-400.eot",
       "AssetKind": "All",
@@ -1768,10 +1768,10 @@
       "OriginalItemSpec": "wwwroot\\assets\\webfonts\\fa-regular-400.eot"
     },
     {
-      "Identity": "D:\\HUY\\DAIHOC\\NAM3\\KY1\\Framework\\DOAN\\MVC_DOAN\\MVC_DOAN\\wwwroot\\assets\\webfonts\\fa-regular-400.eot_",
+      "Identity": "D:\\HUY\\DAIHOC\\NAM3\\KY1\\Framework\\DOAN_MAIN\\MVC_DOAN\\wwwroot\\assets\\webfonts\\fa-regular-400.eot_",
       "SourceId": "MVC_DOAN",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\HUY\\DAIHOC\\NAM3\\KY1\\Framework\\DOAN\\MVC_DOAN\\MVC_DOAN\\wwwroot\\",
+      "ContentRoot": "D:\\HUY\\DAIHOC\\NAM3\\KY1\\Framework\\DOAN_MAIN\\MVC_DOAN\\wwwroot\\",
       "BasePath": "_content/MVC_DOAN",
       "RelativePath": "assets/webfonts/fa-regular-400.eot_",
       "AssetKind": "All",
@@ -1785,10 +1785,10 @@
       "OriginalItemSpec": "wwwroot\\assets\\webfonts\\fa-regular-400.eot_"
     },
     {
-      "Identity": "D:\\HUY\\DAIHOC\\NAM3\\KY1\\Framework\\DOAN\\MVC_DOAN\\MVC_DOAN\\wwwroot\\assets\\webfonts\\fa-regular-400.svg",
+      "Identity": "D:\\HUY\\DAIHOC\\NAM3\\KY1\\Framework\\DOAN_MAIN\\MVC_DOAN\\wwwroot\\assets\\webfonts\\fa-regular-400.svg",
       "SourceId": "MVC_DOAN",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\HUY\\DAIHOC\\NAM3\\KY1\\Framework\\DOAN\\MVC_DOAN\\MVC_DOAN\\wwwroot\\",
+      "ContentRoot": "D:\\HUY\\DAIHOC\\NAM3\\KY1\\Framework\\DOAN_MAIN\\MVC_DOAN\\wwwroot\\",
       "BasePath": "_content/MVC_DOAN",
       "RelativePath": "assets/webfonts/fa-regular-400.svg",
       "AssetKind": "All",
@@ -1802,10 +1802,10 @@
       "OriginalItemSpec": "wwwroot\\assets\\webfonts\\fa-regular-400.svg"
     },
     {
-      "Identity": "D:\\HUY\\DAIHOC\\NAM3\\KY1\\Framework\\DOAN\\MVC_DOAN\\MVC_DOAN\\wwwroot\\assets\\webfonts\\fa-regular-400.ttf",
+      "Identity": "D:\\HUY\\DAIHOC\\NAM3\\KY1\\Framework\\DOAN_MAIN\\MVC_DOAN\\wwwroot\\assets\\webfonts\\fa-regular-400.ttf",
       "SourceId": "MVC_DOAN",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\HUY\\DAIHOC\\NAM3\\KY1\\Framework\\DOAN\\MVC_DOAN\\MVC_DOAN\\wwwroot\\",
+      "ContentRoot": "D:\\HUY\\DAIHOC\\NAM3\\KY1\\Framework\\DOAN_MAIN\\MVC_DOAN\\wwwroot\\",
       "BasePath": "_content/MVC_DOAN",
       "RelativePath": "assets/webfonts/fa-regular-400.ttf",
       "AssetKind": "All",
@@ -1819,10 +1819,10 @@
       "OriginalItemSpec": "wwwroot\\assets\\webfonts\\fa-regular-400.ttf"
     },
     {
-      "Identity": "D:\\HUY\\DAIHOC\\NAM3\\KY1\\Framework\\DOAN\\MVC_DOAN\\MVC_DOAN\\wwwroot\\assets\\webfonts\\fa-regular-400.woff",
+      "Identity": "D:\\HUY\\DAIHOC\\NAM3\\KY1\\Framework\\DOAN_MAIN\\MVC_DOAN\\wwwroot\\assets\\webfonts\\fa-regular-400.woff",
       "SourceId": "MVC_DOAN",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\HUY\\DAIHOC\\NAM3\\KY1\\Framework\\DOAN\\MVC_DOAN\\MVC_DOAN\\wwwroot\\",
+      "ContentRoot": "D:\\HUY\\DAIHOC\\NAM3\\KY1\\Framework\\DOAN_MAIN\\MVC_DOAN\\wwwroot\\",
       "BasePath": "_content/MVC_DOAN",
       "RelativePath": "assets/webfonts/fa-regular-400.woff",
       "AssetKind": "All",
@@ -1836,10 +1836,10 @@
       "OriginalItemSpec": "wwwroot\\assets\\webfonts\\fa-regular-400.woff"
     },
     {
-      "Identity": "D:\\HUY\\DAIHOC\\NAM3\\KY1\\Framework\\DOAN\\MVC_DOAN\\MVC_DOAN\\wwwroot\\assets\\webfonts\\fa-regular-400.woff2",
+      "Identity": "D:\\HUY\\DAIHOC\\NAM3\\KY1\\Framework\\DOAN_MAIN\\MVC_DOAN\\wwwroot\\assets\\webfonts\\fa-regular-400.woff2",
       "SourceId": "MVC_DOAN",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\HUY\\DAIHOC\\NAM3\\KY1\\Framework\\DOAN\\MVC_DOAN\\MVC_DOAN\\wwwroot\\",
+      "ContentRoot": "D:\\HUY\\DAIHOC\\NAM3\\KY1\\Framework\\DOAN_MAIN\\MVC_DOAN\\wwwroot\\",
       "BasePath": "_content/MVC_DOAN",
       "RelativePath": "assets/webfonts/fa-regular-400.woff2",
       "AssetKind": "All",
@@ -1853,10 +1853,10 @@
       "OriginalItemSpec": "wwwroot\\assets\\webfonts\\fa-regular-400.woff2"
     },
     {
-      "Identity": "D:\\HUY\\DAIHOC\\NAM3\\KY1\\Framework\\DOAN\\MVC_DOAN\\MVC_DOAN\\wwwroot\\assets\\webfonts\\fa-solid-900.eot",
+      "Identity": "D:\\HUY\\DAIHOC\\NAM3\\KY1\\Framework\\DOAN_MAIN\\MVC_DOAN\\wwwroot\\assets\\webfonts\\fa-solid-900.eot",
       "SourceId": "MVC_DOAN",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\HUY\\DAIHOC\\NAM3\\KY1\\Framework\\DOAN\\MVC_DOAN\\MVC_DOAN\\wwwroot\\",
+      "ContentRoot": "D:\\HUY\\DAIHOC\\NAM3\\KY1\\Framework\\DOAN_MAIN\\MVC_DOAN\\wwwroot\\",
       "BasePath": "_content/MVC_DOAN",
       "RelativePath": "assets/webfonts/fa-solid-900.eot",
       "AssetKind": "All",
@@ -1870,10 +1870,10 @@
       "OriginalItemSpec": "wwwroot\\assets\\webfonts\\fa-solid-900.eot"
     },
     {
-      "Identity": "D:\\HUY\\DAIHOC\\NAM3\\KY1\\Framework\\DOAN\\MVC_DOAN\\MVC_DOAN\\wwwroot\\assets\\webfonts\\fa-solid-900.eot_",
+      "Identity": "D:\\HUY\\DAIHOC\\NAM3\\KY1\\Framework\\DOAN_MAIN\\MVC_DOAN\\wwwroot\\assets\\webfonts\\fa-solid-900.eot_",
       "SourceId": "MVC_DOAN",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\HUY\\DAIHOC\\NAM3\\KY1\\Framework\\DOAN\\MVC_DOAN\\MVC_DOAN\\wwwroot\\",
+      "ContentRoot": "D:\\HUY\\DAIHOC\\NAM3\\KY1\\Framework\\DOAN_MAIN\\MVC_DOAN\\wwwroot\\",
       "BasePath": "_content/MVC_DOAN",
       "RelativePath": "assets/webfonts/fa-solid-900.eot_",
       "AssetKind": "All",
@@ -1887,10 +1887,10 @@
       "OriginalItemSpec": "wwwroot\\assets\\webfonts\\fa-solid-900.eot_"
     },
     {
-      "Identity": "D:\\HUY\\DAIHOC\\NAM3\\KY1\\Framework\\DOAN\\MVC_DOAN\\MVC_DOAN\\wwwroot\\assets\\webfonts\\fa-solid-900.svg",
+      "Identity": "D:\\HUY\\DAIHOC\\NAM3\\KY1\\Framework\\DOAN_MAIN\\MVC_DOAN\\wwwroot\\assets\\webfonts\\fa-solid-900.svg",
       "SourceId": "MVC_DOAN",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\HUY\\DAIHOC\\NAM3\\KY1\\Framework\\DOAN\\MVC_DOAN\\MVC_DOAN\\wwwroot\\",
+      "ContentRoot": "D:\\HUY\\DAIHOC\\NAM3\\KY1\\Framework\\DOAN_MAIN\\MVC_DOAN\\wwwroot\\",
       "BasePath": "_content/MVC_DOAN",
       "RelativePath": "assets/webfonts/fa-solid-900.svg",
       "AssetKind": "All",
@@ -1904,10 +1904,10 @@
       "OriginalItemSpec": "wwwroot\\assets\\webfonts\\fa-solid-900.svg"
     },
     {
-      "Identity": "D:\\HUY\\DAIHOC\\NAM3\\KY1\\Framework\\DOAN\\MVC_DOAN\\MVC_DOAN\\wwwroot\\assets\\webfonts\\fa-solid-900.ttf",
+      "Identity": "D:\\HUY\\DAIHOC\\NAM3\\KY1\\Framework\\DOAN_MAIN\\MVC_DOAN\\wwwroot\\assets\\webfonts\\fa-solid-900.ttf",
       "SourceId": "MVC_DOAN",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\HUY\\DAIHOC\\NAM3\\KY1\\Framework\\DOAN\\MVC_DOAN\\MVC_DOAN\\wwwroot\\",
+      "ContentRoot": "D:\\HUY\\DAIHOC\\NAM3\\KY1\\Framework\\DOAN_MAIN\\MVC_DOAN\\wwwroot\\",
       "BasePath": "_content/MVC_DOAN",
       "RelativePath": "assets/webfonts/fa-solid-900.ttf",
       "AssetKind": "All",
@@ -1921,10 +1921,10 @@
       "OriginalItemSpec": "wwwroot\\assets\\webfonts\\fa-solid-900.ttf"
     },
     {
-      "Identity": "D:\\HUY\\DAIHOC\\NAM3\\KY1\\Framework\\DOAN\\MVC_DOAN\\MVC_DOAN\\wwwroot\\assets\\webfonts\\fa-solid-900.woff",
+      "Identity": "D:\\HUY\\DAIHOC\\NAM3\\KY1\\Framework\\DOAN_MAIN\\MVC_DOAN\\wwwroot\\assets\\webfonts\\fa-solid-900.woff",
       "SourceId": "MVC_DOAN",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\HUY\\DAIHOC\\NAM3\\KY1\\Framework\\DOAN\\MVC_DOAN\\MVC_DOAN\\wwwroot\\",
+      "ContentRoot": "D:\\HUY\\DAIHOC\\NAM3\\KY1\\Framework\\DOAN_MAIN\\MVC_DOAN\\wwwroot\\",
       "BasePath": "_content/MVC_DOAN",
       "RelativePath": "assets/webfonts/fa-solid-900.woff",
       "AssetKind": "All",
@@ -1938,10 +1938,10 @@
       "OriginalItemSpec": "wwwroot\\assets\\webfonts\\fa-solid-900.woff"
     },
     {
-      "Identity": "D:\\HUY\\DAIHOC\\NAM3\\KY1\\Framework\\DOAN\\MVC_DOAN\\MVC_DOAN\\wwwroot\\assets\\webfonts\\fa-solid-900.woff2",
+      "Identity": "D:\\HUY\\DAIHOC\\NAM3\\KY1\\Framework\\DOAN_MAIN\\MVC_DOAN\\wwwroot\\assets\\webfonts\\fa-solid-900.woff2",
       "SourceId": "MVC_DOAN",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\HUY\\DAIHOC\\NAM3\\KY1\\Framework\\DOAN\\MVC_DOAN\\MVC_DOAN\\wwwroot\\",
+      "ContentRoot": "D:\\HUY\\DAIHOC\\NAM3\\KY1\\Framework\\DOAN_MAIN\\MVC_DOAN\\wwwroot\\",
       "BasePath": "_content/MVC_DOAN",
       "RelativePath": "assets/webfonts/fa-solid-900.woff2",
       "AssetKind": "All",
@@ -1955,10 +1955,10 @@
       "OriginalItemSpec": "wwwroot\\assets\\webfonts\\fa-solid-900.woff2"
     },
     {
-      "Identity": "D:\\HUY\\DAIHOC\\NAM3\\KY1\\Framework\\DOAN\\MVC_DOAN\\MVC_DOAN\\wwwroot\\css\\site.css",
+      "Identity": "D:\\HUY\\DAIHOC\\NAM3\\KY1\\Framework\\DOAN_MAIN\\MVC_DOAN\\wwwroot\\css\\site.css",
       "SourceId": "MVC_DOAN",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\HUY\\DAIHOC\\NAM3\\KY1\\Framework\\DOAN\\MVC_DOAN\\MVC_DOAN\\wwwroot\\",
+      "ContentRoot": "D:\\HUY\\DAIHOC\\NAM3\\KY1\\Framework\\DOAN_MAIN\\MVC_DOAN\\wwwroot\\",
       "BasePath": "_content/MVC_DOAN",
       "RelativePath": "css/site.css",
       "AssetKind": "All",
@@ -1972,10 +1972,10 @@
       "OriginalItemSpec": "wwwroot\\css\\site.css"
     },
     {
-      "Identity": "D:\\HUY\\DAIHOC\\NAM3\\KY1\\Framework\\DOAN\\MVC_DOAN\\MVC_DOAN\\wwwroot\\favicon.ico",
+      "Identity": "D:\\HUY\\DAIHOC\\NAM3\\KY1\\Framework\\DOAN_MAIN\\MVC_DOAN\\wwwroot\\favicon.ico",
       "SourceId": "MVC_DOAN",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\HUY\\DAIHOC\\NAM3\\KY1\\Framework\\DOAN\\MVC_DOAN\\MVC_DOAN\\wwwroot\\",
+      "ContentRoot": "D:\\HUY\\DAIHOC\\NAM3\\KY1\\Framework\\DOAN_MAIN\\MVC_DOAN\\wwwroot\\",
       "BasePath": "_content/MVC_DOAN",
       "RelativePath": "favicon.ico",
       "AssetKind": "All",
@@ -1989,10 +1989,10 @@
       "OriginalItemSpec": "wwwroot\\favicon.ico"
     },
     {
-      "Identity": "D:\\HUY\\DAIHOC\\NAM3\\KY1\\Framework\\DOAN\\MVC_DOAN\\MVC_DOAN\\wwwroot\\js\\site.js",
+      "Identity": "D:\\HUY\\DAIHOC\\NAM3\\KY1\\Framework\\DOAN_MAIN\\MVC_DOAN\\wwwroot\\js\\site.js",
       "SourceId": "MVC_DOAN",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\HUY\\DAIHOC\\NAM3\\KY1\\Framework\\DOAN\\MVC_DOAN\\MVC_DOAN\\wwwroot\\",
+      "ContentRoot": "D:\\HUY\\DAIHOC\\NAM3\\KY1\\Framework\\DOAN_MAIN\\MVC_DOAN\\wwwroot\\",
       "BasePath": "_content/MVC_DOAN",
       "RelativePath": "js/site.js",
       "AssetKind": "All",
@@ -2006,10 +2006,10 @@
       "OriginalItemSpec": "wwwroot\\js\\site.js"
     },
     {
-      "Identity": "D:\\HUY\\DAIHOC\\NAM3\\KY1\\Framework\\DOAN\\MVC_DOAN\\MVC_DOAN\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css",
+      "Identity": "D:\\HUY\\DAIHOC\\NAM3\\KY1\\Framework\\DOAN_MAIN\\MVC_DOAN\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css",
       "SourceId": "MVC_DOAN",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\HUY\\DAIHOC\\NAM3\\KY1\\Framework\\DOAN\\MVC_DOAN\\MVC_DOAN\\wwwroot\\",
+      "ContentRoot": "D:\\HUY\\DAIHOC\\NAM3\\KY1\\Framework\\DOAN_MAIN\\MVC_DOAN\\wwwroot\\",
       "BasePath": "_content/MVC_DOAN",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap.css",
       "AssetKind": "All",
@@ -2023,10 +2023,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css"
     },
     {
-      "Identity": "D:\\HUY\\DAIHOC\\NAM3\\KY1\\Framework\\DOAN\\MVC_DOAN\\MVC_DOAN\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css.map",
+      "Identity": "D:\\HUY\\DAIHOC\\NAM3\\KY1\\Framework\\DOAN_MAIN\\MVC_DOAN\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css.map",
       "SourceId": "MVC_DOAN",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\HUY\\DAIHOC\\NAM3\\KY1\\Framework\\DOAN\\MVC_DOAN\\MVC_DOAN\\wwwroot\\",
+      "ContentRoot": "D:\\HUY\\DAIHOC\\NAM3\\KY1\\Framework\\DOAN_MAIN\\MVC_DOAN\\wwwroot\\",
       "BasePath": "_content/MVC_DOAN",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap.css.map",
       "AssetKind": "All",
@@ -2040,10 +2040,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css.map"
     },
     {
-      "Identity": "D:\\HUY\\DAIHOC\\NAM3\\KY1\\Framework\\DOAN\\MVC_DOAN\\MVC_DOAN\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css",
+      "Identity": "D:\\HUY\\DAIHOC\\NAM3\\KY1\\Framework\\DOAN_MAIN\\MVC_DOAN\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css",
       "SourceId": "MVC_DOAN",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\HUY\\DAIHOC\\NAM3\\KY1\\Framework\\DOAN\\MVC_DOAN\\MVC_DOAN\\wwwroot\\",
+      "ContentRoot": "D:\\HUY\\DAIHOC\\NAM3\\KY1\\Framework\\DOAN_MAIN\\MVC_DOAN\\wwwroot\\",
       "BasePath": "_content/MVC_DOAN",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap.min.css",
       "AssetKind": "All",
@@ -2057,10 +2057,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css"
     },
     {
-      "Identity": "D:\\HUY\\DAIHOC\\NAM3\\KY1\\Framework\\DOAN\\MVC_DOAN\\MVC_DOAN\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css.map",
+      "Identity": "D:\\HUY\\DAIHOC\\NAM3\\KY1\\Framework\\DOAN_MAIN\\MVC_DOAN\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css.map",
       "SourceId": "MVC_DOAN",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\HUY\\DAIHOC\\NAM3\\KY1\\Framework\\DOAN\\MVC_DOAN\\MVC_DOAN\\wwwroot\\",
+      "ContentRoot": "D:\\HUY\\DAIHOC\\NAM3\\KY1\\Framework\\DOAN_MAIN\\MVC_DOAN\\wwwroot\\",
       "BasePath": "_content/MVC_DOAN",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap.min.css.map",
       "AssetKind": "All",
@@ -2074,10 +2074,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css.map"
     },
     {
-      "Identity": "D:\\HUY\\DAIHOC\\NAM3\\KY1\\Framework\\DOAN\\MVC_DOAN\\MVC_DOAN\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css",
+      "Identity": "D:\\HUY\\DAIHOC\\NAM3\\KY1\\Framework\\DOAN_MAIN\\MVC_DOAN\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css",
       "SourceId": "MVC_DOAN",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\HUY\\DAIHOC\\NAM3\\KY1\\Framework\\DOAN\\MVC_DOAN\\MVC_DOAN\\wwwroot\\",
+      "ContentRoot": "D:\\HUY\\DAIHOC\\NAM3\\KY1\\Framework\\DOAN_MAIN\\MVC_DOAN\\wwwroot\\",
       "BasePath": "_content/MVC_DOAN",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap.rtl.css",
       "AssetKind": "All",
@@ -2091,10 +2091,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css"
     },
     {
-      "Identity": "D:\\HUY\\DAIHOC\\NAM3\\KY1\\Framework\\DOAN\\MVC_DOAN\\MVC_DOAN\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css.map",
+      "Identity": "D:\\HUY\\DAIHOC\\NAM3\\KY1\\Framework\\DOAN_MAIN\\MVC_DOAN\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css.map",
       "SourceId": "MVC_DOAN",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\HUY\\DAIHOC\\NAM3\\KY1\\Framework\\DOAN\\MVC_DOAN\\MVC_DOAN\\wwwroot\\",
+      "ContentRoot": "D:\\HUY\\DAIHOC\\NAM3\\KY1\\Framework\\DOAN_MAIN\\MVC_DOAN\\wwwroot\\",
       "BasePath": "_content/MVC_DOAN",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap.rtl.css.map",
       "AssetKind": "All",
@@ -2108,10 +2108,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css.map"
     },
     {
-      "Identity": "D:\\HUY\\DAIHOC\\NAM3\\KY1\\Framework\\DOAN\\MVC_DOAN\\MVC_DOAN\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css",
+      "Identity": "D:\\HUY\\DAIHOC\\NAM3\\KY1\\Framework\\DOAN_MAIN\\MVC_DOAN\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css",
       "SourceId": "MVC_DOAN",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\HUY\\DAIHOC\\NAM3\\KY1\\Framework\\DOAN\\MVC_DOAN\\MVC_DOAN\\wwwroot\\",
+      "ContentRoot": "D:\\HUY\\DAIHOC\\NAM3\\KY1\\Framework\\DOAN_MAIN\\MVC_DOAN\\wwwroot\\",
       "BasePath": "_content/MVC_DOAN",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap.rtl.min.css",
       "AssetKind": "All",
@@ -2125,10 +2125,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css"
     },
     {
-      "Identity": "D:\\HUY\\DAIHOC\\NAM3\\KY1\\Framework\\DOAN\\MVC_DOAN\\MVC_DOAN\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css.map",
+      "Identity": "D:\\HUY\\DAIHOC\\NAM3\\KY1\\Framework\\DOAN_MAIN\\MVC_DOAN\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css.map",
       "SourceId": "MVC_DOAN",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\HUY\\DAIHOC\\NAM3\\KY1\\Framework\\DOAN\\MVC_DOAN\\MVC_DOAN\\wwwroot\\",
+      "ContentRoot": "D:\\HUY\\DAIHOC\\NAM3\\KY1\\Framework\\DOAN_MAIN\\MVC_DOAN\\wwwroot\\",
       "BasePath": "_content/MVC_DOAN",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap.rtl.min.css.map",
       "AssetKind": "All",
@@ -2142,10 +2142,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css.map"
     },
     {
-      "Identity": "D:\\HUY\\DAIHOC\\NAM3\\KY1\\Framework\\DOAN\\MVC_DOAN\\MVC_DOAN\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css",
+      "Identity": "D:\\HUY\\DAIHOC\\NAM3\\KY1\\Framework\\DOAN_MAIN\\MVC_DOAN\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css",
       "SourceId": "MVC_DOAN",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\HUY\\DAIHOC\\NAM3\\KY1\\Framework\\DOAN\\MVC_DOAN\\MVC_DOAN\\wwwroot\\",
+      "ContentRoot": "D:\\HUY\\DAIHOC\\NAM3\\KY1\\Framework\\DOAN_MAIN\\MVC_DOAN\\wwwroot\\",
       "BasePath": "_content/MVC_DOAN",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-grid.css",
       "AssetKind": "All",
@@ -2159,10 +2159,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css"
     },
     {
-      "Identity": "D:\\HUY\\DAIHOC\\NAM3\\KY1\\Framework\\DOAN\\MVC_DOAN\\MVC_DOAN\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css.map",
+      "Identity": "D:\\HUY\\DAIHOC\\NAM3\\KY1\\Framework\\DOAN_MAIN\\MVC_DOAN\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css.map",
       "SourceId": "MVC_DOAN",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\HUY\\DAIHOC\\NAM3\\KY1\\Framework\\DOAN\\MVC_DOAN\\MVC_DOAN\\wwwroot\\",
+      "ContentRoot": "D:\\HUY\\DAIHOC\\NAM3\\KY1\\Framework\\DOAN_MAIN\\MVC_DOAN\\wwwroot\\",
       "BasePath": "_content/MVC_DOAN",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-grid.css.map",
       "AssetKind": "All",
@@ -2176,10 +2176,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css.map"
     },
     {
-      "Identity": "D:\\HUY\\DAIHOC\\NAM3\\KY1\\Framework\\DOAN\\MVC_DOAN\\MVC_DOAN\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css",
+      "Identity": "D:\\HUY\\DAIHOC\\NAM3\\KY1\\Framework\\DOAN_MAIN\\MVC_DOAN\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css",
       "SourceId": "MVC_DOAN",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\HUY\\DAIHOC\\NAM3\\KY1\\Framework\\DOAN\\MVC_DOAN\\MVC_DOAN\\wwwroot\\",
+      "ContentRoot": "D:\\HUY\\DAIHOC\\NAM3\\KY1\\Framework\\DOAN_MAIN\\MVC_DOAN\\wwwroot\\",
       "BasePath": "_content/MVC_DOAN",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-grid.min.css",
       "AssetKind": "All",
@@ -2193,10 +2193,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css"
     },
     {
-      "Identity": "D:\\HUY\\DAIHOC\\NAM3\\KY1\\Framework\\DOAN\\MVC_DOAN\\MVC_DOAN\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css.map",
+      "Identity": "D:\\HUY\\DAIHOC\\NAM3\\KY1\\Framework\\DOAN_MAIN\\MVC_DOAN\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css.map",
       "SourceId": "MVC_DOAN",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\HUY\\DAIHOC\\NAM3\\KY1\\Framework\\DOAN\\MVC_DOAN\\MVC_DOAN\\wwwroot\\",
+      "ContentRoot": "D:\\HUY\\DAIHOC\\NAM3\\KY1\\Framework\\DOAN_MAIN\\MVC_DOAN\\wwwroot\\",
       "BasePath": "_content/MVC_DOAN",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-grid.min.css.map",
       "AssetKind": "All",
@@ -2210,10 +2210,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css.map"
     },
     {
-      "Identity": "D:\\HUY\\DAIHOC\\NAM3\\KY1\\Framework\\DOAN\\MVC_DOAN\\MVC_DOAN\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css",
+      "Identity": "D:\\HUY\\DAIHOC\\NAM3\\KY1\\Framework\\DOAN_MAIN\\MVC_DOAN\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css",
       "SourceId": "MVC_DOAN",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\HUY\\DAIHOC\\NAM3\\KY1\\Framework\\DOAN\\MVC_DOAN\\MVC_DOAN\\wwwroot\\",
+      "ContentRoot": "D:\\HUY\\DAIHOC\\NAM3\\KY1\\Framework\\DOAN_MAIN\\MVC_DOAN\\wwwroot\\",
       "BasePath": "_content/MVC_DOAN",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-grid.rtl.css",
       "AssetKind": "All",
@@ -2227,10 +2227,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css"
     },
     {
-      "Identity": "D:\\HUY\\DAIHOC\\NAM3\\KY1\\Framework\\DOAN\\MVC_DOAN\\MVC_DOAN\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css.map",
+      "Identity": "D:\\HUY\\DAIHOC\\NAM3\\KY1\\Framework\\DOAN_MAIN\\MVC_DOAN\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css.map",
       "SourceId": "MVC_DOAN",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\HUY\\DAIHOC\\NAM3\\KY1\\Framework\\DOAN\\MVC_DOAN\\MVC_DOAN\\wwwroot\\",
+      "ContentRoot": "D:\\HUY\\DAIHOC\\NAM3\\KY1\\Framework\\DOAN_MAIN\\MVC_DOAN\\wwwroot\\",
       "BasePath": "_content/MVC_DOAN",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-grid.rtl.css.map",
       "AssetKind": "All",
@@ -2244,10 +2244,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css.map"
     },
     {
-      "Identity": "D:\\HUY\\DAIHOC\\NAM3\\KY1\\Framework\\DOAN\\MVC_DOAN\\MVC_DOAN\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css",
+      "Identity": "D:\\HUY\\DAIHOC\\NAM3\\KY1\\Framework\\DOAN_MAIN\\MVC_DOAN\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css",
       "SourceId": "MVC_DOAN",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\HUY\\DAIHOC\\NAM3\\KY1\\Framework\\DOAN\\MVC_DOAN\\MVC_DOAN\\wwwroot\\",
+      "ContentRoot": "D:\\HUY\\DAIHOC\\NAM3\\KY1\\Framework\\DOAN_MAIN\\MVC_DOAN\\wwwroot\\",
       "BasePath": "_content/MVC_DOAN",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-grid.rtl.min.css",
       "AssetKind": "All",
@@ -2261,10 +2261,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css"
     },
     {
-      "Identity": "D:\\HUY\\DAIHOC\\NAM3\\KY1\\Framework\\DOAN\\MVC_DOAN\\MVC_DOAN\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css.map",
+      "Identity": "D:\\HUY\\DAIHOC\\NAM3\\KY1\\Framework\\DOAN_MAIN\\MVC_DOAN\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css.map",
       "SourceId": "MVC_DOAN",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\HUY\\DAIHOC\\NAM3\\KY1\\Framework\\DOAN\\MVC_DOAN\\MVC_DOAN\\wwwroot\\",
+      "ContentRoot": "D:\\HUY\\DAIHOC\\NAM3\\KY1\\Framework\\DOAN_MAIN\\MVC_DOAN\\wwwroot\\",
       "BasePath": "_content/MVC_DOAN",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-grid.rtl.min.css.map",
       "AssetKind": "All",
@@ -2278,10 +2278,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css.map"
     },
     {
-      "Identity": "D:\\HUY\\DAIHOC\\NAM3\\KY1\\Framework\\DOAN\\MVC_DOAN\\MVC_DOAN\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css",
+      "Identity": "D:\\HUY\\DAIHOC\\NAM3\\KY1\\Framework\\DOAN_MAIN\\MVC_DOAN\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css",
       "SourceId": "MVC_DOAN",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\HUY\\DAIHOC\\NAM3\\KY1\\Framework\\DOAN\\MVC_DOAN\\MVC_DOAN\\wwwroot\\",
+      "ContentRoot": "D:\\HUY\\DAIHOC\\NAM3\\KY1\\Framework\\DOAN_MAIN\\MVC_DOAN\\wwwroot\\",
       "BasePath": "_content/MVC_DOAN",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-reboot.css",
       "AssetKind": "All",
@@ -2295,10 +2295,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css"
     },
     {
-      "Identity": "D:\\HUY\\DAIHOC\\NAM3\\KY1\\Framework\\DOAN\\MVC_DOAN\\MVC_DOAN\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css.map",
+      "Identity": "D:\\HUY\\DAIHOC\\NAM3\\KY1\\Framework\\DOAN_MAIN\\MVC_DOAN\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css.map",
       "SourceId": "MVC_DOAN",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\HUY\\DAIHOC\\NAM3\\KY1\\Framework\\DOAN\\MVC_DOAN\\MVC_DOAN\\wwwroot\\",
+      "ContentRoot": "D:\\HUY\\DAIHOC\\NAM3\\KY1\\Framework\\DOAN_MAIN\\MVC_DOAN\\wwwroot\\",
       "BasePath": "_content/MVC_DOAN",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-reboot.css.map",
       "AssetKind": "All",
@@ -2312,10 +2312,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css.map"
     },
     {
-      "Identity": "D:\\HUY\\DAIHOC\\NAM3\\KY1\\Framework\\DOAN\\MVC_DOAN\\MVC_DOAN\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css",
+      "Identity": "D:\\HUY\\DAIHOC\\NAM3\\KY1\\Framework\\DOAN_MAIN\\MVC_DOAN\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css",
       "SourceId": "MVC_DOAN",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\HUY\\DAIHOC\\NAM3\\KY1\\Framework\\DOAN\\MVC_DOAN\\MVC_DOAN\\wwwroot\\",
+      "ContentRoot": "D:\\HUY\\DAIHOC\\NAM3\\KY1\\Framework\\DOAN_MAIN\\MVC_DOAN\\wwwroot\\",
       "BasePath": "_content/MVC_DOAN",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-reboot.min.css",
       "AssetKind": "All",
@@ -2329,10 +2329,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css"
     },
     {
-      "Identity": "D:\\HUY\\DAIHOC\\NAM3\\KY1\\Framework\\DOAN\\MVC_DOAN\\MVC_DOAN\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css.map",
+      "Identity": "D:\\HUY\\DAIHOC\\NAM3\\KY1\\Framework\\DOAN_MAIN\\MVC_DOAN\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css.map",
       "SourceId": "MVC_DOAN",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\HUY\\DAIHOC\\NAM3\\KY1\\Framework\\DOAN\\MVC_DOAN\\MVC_DOAN\\wwwroot\\",
+      "ContentRoot": "D:\\HUY\\DAIHOC\\NAM3\\KY1\\Framework\\DOAN_MAIN\\MVC_DOAN\\wwwroot\\",
       "BasePath": "_content/MVC_DOAN",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-reboot.min.css.map",
       "AssetKind": "All",
@@ -2346,10 +2346,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css.map"
     },
     {
-      "Identity": "D:\\HUY\\DAIHOC\\NAM3\\KY1\\Framework\\DOAN\\MVC_DOAN\\MVC_DOAN\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css",
+      "Identity": "D:\\HUY\\DAIHOC\\NAM3\\KY1\\Framework\\DOAN_MAIN\\MVC_DOAN\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css",
       "SourceId": "MVC_DOAN",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\HUY\\DAIHOC\\NAM3\\KY1\\Framework\\DOAN\\MVC_DOAN\\MVC_DOAN\\wwwroot\\",
+      "ContentRoot": "D:\\HUY\\DAIHOC\\NAM3\\KY1\\Framework\\DOAN_MAIN\\MVC_DOAN\\wwwroot\\",
       "BasePath": "_content/MVC_DOAN",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-reboot.rtl.css",
       "AssetKind": "All",
@@ -2363,10 +2363,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css"
     },
     {
-      "Identity": "D:\\HUY\\DAIHOC\\NAM3\\KY1\\Framework\\DOAN\\MVC_DOAN\\MVC_DOAN\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css.map",
+      "Identity": "D:\\HUY\\DAIHOC\\NAM3\\KY1\\Framework\\DOAN_MAIN\\MVC_DOAN\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css.map",
       "SourceId": "MVC_DOAN",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\HUY\\DAIHOC\\NAM3\\KY1\\Framework\\DOAN\\MVC_DOAN\\MVC_DOAN\\wwwroot\\",
+      "ContentRoot": "D:\\HUY\\DAIHOC\\NAM3\\KY1\\Framework\\DOAN_MAIN\\MVC_DOAN\\wwwroot\\",
       "BasePath": "_content/MVC_DOAN",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-reboot.rtl.css.map",
       "AssetKind": "All",
@@ -2380,10 +2380,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css.map"
     },
     {
-      "Identity": "D:\\HUY\\DAIHOC\\NAM3\\KY1\\Framework\\DOAN\\MVC_DOAN\\MVC_DOAN\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css",
+      "Identity": "D:\\HUY\\DAIHOC\\NAM3\\KY1\\Framework\\DOAN_MAIN\\MVC_DOAN\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css",
       "SourceId": "MVC_DOAN",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\HUY\\DAIHOC\\NAM3\\KY1\\Framework\\DOAN\\MVC_DOAN\\MVC_DOAN\\wwwroot\\",
+      "ContentRoot": "D:\\HUY\\DAIHOC\\NAM3\\KY1\\Framework\\DOAN_MAIN\\MVC_DOAN\\wwwroot\\",
       "BasePath": "_content/MVC_DOAN",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-reboot.rtl.min.css",
       "AssetKind": "All",
@@ -2397,10 +2397,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css"
     },
     {
-      "Identity": "D:\\HUY\\DAIHOC\\NAM3\\KY1\\Framework\\DOAN\\MVC_DOAN\\MVC_DOAN\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css.map",
+      "Identity": "D:\\HUY\\DAIHOC\\NAM3\\KY1\\Framework\\DOAN_MAIN\\MVC_DOAN\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css.map",
       "SourceId": "MVC_DOAN",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\HUY\\DAIHOC\\NAM3\\KY1\\Framework\\DOAN\\MVC_DOAN\\MVC_DOAN\\wwwroot\\",
+      "ContentRoot": "D:\\HUY\\DAIHOC\\NAM3\\KY1\\Framework\\DOAN_MAIN\\MVC_DOAN\\wwwroot\\",
       "BasePath": "_content/MVC_DOAN",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-reboot.rtl.min.css.map",
       "AssetKind": "All",
@@ -2414,10 +2414,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css.map"
     },
     {
-      "Identity": "D:\\HUY\\DAIHOC\\NAM3\\KY1\\Framework\\DOAN\\MVC_DOAN\\MVC_DOAN\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css",
+      "Identity": "D:\\HUY\\DAIHOC\\NAM3\\KY1\\Framework\\DOAN_MAIN\\MVC_DOAN\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css",
       "SourceId": "MVC_DOAN",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\HUY\\DAIHOC\\NAM3\\KY1\\Framework\\DOAN\\MVC_DOAN\\MVC_DOAN\\wwwroot\\",
+      "ContentRoot": "D:\\HUY\\DAIHOC\\NAM3\\KY1\\Framework\\DOAN_MAIN\\MVC_DOAN\\wwwroot\\",
       "BasePath": "_content/MVC_DOAN",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-utilities.css",
       "AssetKind": "All",
@@ -2431,10 +2431,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css"
     },
     {
-      "Identity": "D:\\HUY\\DAIHOC\\NAM3\\KY1\\Framework\\DOAN\\MVC_DOAN\\MVC_DOAN\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css.map",
+      "Identity": "D:\\HUY\\DAIHOC\\NAM3\\KY1\\Framework\\DOAN_MAIN\\MVC_DOAN\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css.map",
       "SourceId": "MVC_DOAN",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\HUY\\DAIHOC\\NAM3\\KY1\\Framework\\DOAN\\MVC_DOAN\\MVC_DOAN\\wwwroot\\",
+      "ContentRoot": "D:\\HUY\\DAIHOC\\NAM3\\KY1\\Framework\\DOAN_MAIN\\MVC_DOAN\\wwwroot\\",
       "BasePath": "_content/MVC_DOAN",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-utilities.css.map",
       "AssetKind": "All",
@@ -2448,10 +2448,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css.map"
     },
     {
-      "Identity": "D:\\HUY\\DAIHOC\\NAM3\\KY1\\Framework\\DOAN\\MVC_DOAN\\MVC_DOAN\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css",
+      "Identity": "D:\\HUY\\DAIHOC\\NAM3\\KY1\\Framework\\DOAN_MAIN\\MVC_DOAN\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css",
       "SourceId": "MVC_DOAN",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\HUY\\DAIHOC\\NAM3\\KY1\\Framework\\DOAN\\MVC_DOAN\\MVC_DOAN\\wwwroot\\",
+      "ContentRoot": "D:\\HUY\\DAIHOC\\NAM3\\KY1\\Framework\\DOAN_MAIN\\MVC_DOAN\\wwwroot\\",
       "BasePath": "_content/MVC_DOAN",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-utilities.min.css",
       "AssetKind": "All",
@@ -2465,10 +2465,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css"
     },
     {
-      "Identity": "D:\\HUY\\DAIHOC\\NAM3\\KY1\\Framework\\DOAN\\MVC_DOAN\\MVC_DOAN\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css.map",
+      "Identity": "D:\\HUY\\DAIHOC\\NAM3\\KY1\\Framework\\DOAN_MAIN\\MVC_DOAN\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css.map",
       "SourceId": "MVC_DOAN",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\HUY\\DAIHOC\\NAM3\\KY1\\Framework\\DOAN\\MVC_DOAN\\MVC_DOAN\\wwwroot\\",
+      "ContentRoot": "D:\\HUY\\DAIHOC\\NAM3\\KY1\\Framework\\DOAN_MAIN\\MVC_DOAN\\wwwroot\\",
       "BasePath": "_content/MVC_DOAN",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-utilities.min.css.map",
       "AssetKind": "All",
@@ -2482,10 +2482,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css.map"
     },
     {
-      "Identity": "D:\\HUY\\DAIHOC\\NAM3\\KY1\\Framework\\DOAN\\MVC_DOAN\\MVC_DOAN\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css",
+      "Identity": "D:\\HUY\\DAIHOC\\NAM3\\KY1\\Framework\\DOAN_MAIN\\MVC_DOAN\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css",
       "SourceId": "MVC_DOAN",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\HUY\\DAIHOC\\NAM3\\KY1\\Framework\\DOAN\\MVC_DOAN\\MVC_DOAN\\wwwroot\\",
+      "ContentRoot": "D:\\HUY\\DAIHOC\\NAM3\\KY1\\Framework\\DOAN_MAIN\\MVC_DOAN\\wwwroot\\",
       "BasePath": "_content/MVC_DOAN",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-utilities.rtl.css",
       "AssetKind": "All",
@@ -2499,10 +2499,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css"
     },
     {
-      "Identity": "D:\\HUY\\DAIHOC\\NAM3\\KY1\\Framework\\DOAN\\MVC_DOAN\\MVC_DOAN\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css.map",
+      "Identity": "D:\\HUY\\DAIHOC\\NAM3\\KY1\\Framework\\DOAN_MAIN\\MVC_DOAN\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css.map",
       "SourceId": "MVC_DOAN",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\HUY\\DAIHOC\\NAM3\\KY1\\Framework\\DOAN\\MVC_DOAN\\MVC_DOAN\\wwwroot\\",
+      "ContentRoot": "D:\\HUY\\DAIHOC\\NAM3\\KY1\\Framework\\DOAN_MAIN\\MVC_DOAN\\wwwroot\\",
       "BasePath": "_content/MVC_DOAN",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-utilities.rtl.css.map",
       "AssetKind": "All",
@@ -2516,10 +2516,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css.map"
     },
     {
-      "Identity": "D:\\HUY\\DAIHOC\\NAM3\\KY1\\Framework\\DOAN\\MVC_DOAN\\MVC_DOAN\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css",
+      "Identity": "D:\\HUY\\DAIHOC\\NAM3\\KY1\\Framework\\DOAN_MAIN\\MVC_DOAN\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css",
       "SourceId": "MVC_DOAN",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\HUY\\DAIHOC\\NAM3\\KY1\\Framework\\DOAN\\MVC_DOAN\\MVC_DOAN\\wwwroot\\",
+      "ContentRoot": "D:\\HUY\\DAIHOC\\NAM3\\KY1\\Framework\\DOAN_MAIN\\MVC_DOAN\\wwwroot\\",
       "BasePath": "_content/MVC_DOAN",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-utilities.rtl.min.css",
       "AssetKind": "All",
@@ -2533,10 +2533,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css"
     },
     {
-      "Identity": "D:\\HUY\\DAIHOC\\NAM3\\KY1\\Framework\\DOAN\\MVC_DOAN\\MVC_DOAN\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css.map",
+      "Identity": "D:\\HUY\\DAIHOC\\NAM3\\KY1\\Framework\\DOAN_MAIN\\MVC_DOAN\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css.map",
       "SourceId": "MVC_DOAN",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\HUY\\DAIHOC\\NAM3\\KY1\\Framework\\DOAN\\MVC_DOAN\\MVC_DOAN\\wwwroot\\",
+      "ContentRoot": "D:\\HUY\\DAIHOC\\NAM3\\KY1\\Framework\\DOAN_MAIN\\MVC_DOAN\\wwwroot\\",
       "BasePath": "_content/MVC_DOAN",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-utilities.rtl.min.css.map",
       "AssetKind": "All",
@@ -2550,10 +2550,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css.map"
     },
     {
-      "Identity": "D:\\HUY\\DAIHOC\\NAM3\\KY1\\Framework\\DOAN\\MVC_DOAN\\MVC_DOAN\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js",
+      "Identity": "D:\\HUY\\DAIHOC\\NAM3\\KY1\\Framework\\DOAN_MAIN\\MVC_DOAN\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js",
       "SourceId": "MVC_DOAN",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\HUY\\DAIHOC\\NAM3\\KY1\\Framework\\DOAN\\MVC_DOAN\\MVC_DOAN\\wwwroot\\",
+      "ContentRoot": "D:\\HUY\\DAIHOC\\NAM3\\KY1\\Framework\\DOAN_MAIN\\MVC_DOAN\\wwwroot\\",
       "BasePath": "_content/MVC_DOAN",
       "RelativePath": "lib/bootstrap/dist/js/bootstrap.bundle.js",
       "AssetKind": "All",
@@ -2567,10 +2567,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js"
     },
     {
-      "Identity": "D:\\HUY\\DAIHOC\\NAM3\\KY1\\Framework\\DOAN\\MVC_DOAN\\MVC_DOAN\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js.map",
+      "Identity": "D:\\HUY\\DAIHOC\\NAM3\\KY1\\Framework\\DOAN_MAIN\\MVC_DOAN\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js.map",
       "SourceId": "MVC_DOAN",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\HUY\\DAIHOC\\NAM3\\KY1\\Framework\\DOAN\\MVC_DOAN\\MVC_DOAN\\wwwroot\\",
+      "ContentRoot": "D:\\HUY\\DAIHOC\\NAM3\\KY1\\Framework\\DOAN_MAIN\\MVC_DOAN\\wwwroot\\",
       "BasePath": "_content/MVC_DOAN",
       "RelativePath": "lib/bootstrap/dist/js/bootstrap.bundle.js.map",
       "AssetKind": "All",
@@ -2584,10 +2584,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js.map"
     },
     {
-      "Identity": "D:\\HUY\\DAIHOC\\NAM3\\KY1\\Framework\\DOAN\\MVC_DOAN\\MVC_DOAN\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js",
+      "Identity": "D:\\HUY\\DAIHOC\\NAM3\\KY1\\Framework\\DOAN_MAIN\\MVC_DOAN\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js",
       "SourceId": "MVC_DOAN",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\HUY\\DAIHOC\\NAM3\\KY1\\Framework\\DOAN\\MVC_DOAN\\MVC_DOAN\\wwwroot\\",
+      "ContentRoot": "D:\\HUY\\DAIHOC\\NAM3\\KY1\\Framework\\DOAN_MAIN\\MVC_DOAN\\wwwroot\\",
       "BasePath": "_content/MVC_DOAN",
       "RelativePath": "lib/bootstrap/dist/js/bootstrap.bundle.min.js",
       "AssetKind": "All",
@@ -2601,10 +2601,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js"
     },
     {
-      "Identity": "D:\\HUY\\DAIHOC\\NAM3\\KY1\\Framework\\DOAN\\MVC_DOAN\\MVC_DOAN\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js.map",
+      "Identity": "D:\\HUY\\DAIHOC\\NAM3\\KY1\\Framework\\DOAN_MAIN\\MVC_DOAN\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js.map",
       "SourceId": "MVC_DOAN",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\HUY\\DAIHOC\\NAM3\\KY1\\Framework\\DOAN\\MVC_DOAN\\MVC_DOAN\\wwwroot\\",
+      "ContentRoot": "D:\\HUY\\DAIHOC\\NAM3\\KY1\\Framework\\DOAN_MAIN\\MVC_DOAN\\wwwroot\\",
       "BasePath": "_content/MVC_DOAN",
       "RelativePath": "lib/bootstrap/dist/js/bootstrap.bundle.min.js.map",
       "AssetKind": "All",
@@ -2618,10 +2618,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js.map"
     },
     {
-      "Identity": "D:\\HUY\\DAIHOC\\NAM3\\KY1\\Framework\\DOAN\\MVC_DOAN\\MVC_DOAN\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js",
+      "Identity": "D:\\HUY\\DAIHOC\\NAM3\\KY1\\Framework\\DOAN_MAIN\\MVC_DOAN\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js",
       "SourceId": "MVC_DOAN",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\HUY\\DAIHOC\\NAM3\\KY1\\Framework\\DOAN\\MVC_DOAN\\MVC_DOAN\\wwwroot\\",
+      "ContentRoot": "D:\\HUY\\DAIHOC\\NAM3\\KY1\\Framework\\DOAN_MAIN\\MVC_DOAN\\wwwroot\\",
       "BasePath": "_content/MVC_DOAN",
       "RelativePath": "lib/bootstrap/dist/js/bootstrap.esm.js",
       "AssetKind": "All",
@@ -2635,10 +2635,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js"
     },
     {
-      "Identity": "D:\\HUY\\DAIHOC\\NAM3\\KY1\\Framework\\DOAN\\MVC_DOAN\\MVC_DOAN\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js.map",
+      "Identity": "D:\\HUY\\DAIHOC\\NAM3\\KY1\\Framework\\DOAN_MAIN\\MVC_DOAN\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js.map",
       "SourceId": "MVC_DOAN",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\HUY\\DAIHOC\\NAM3\\KY1\\Framework\\DOAN\\MVC_DOAN\\MVC_DOAN\\wwwroot\\",
+      "ContentRoot": "D:\\HUY\\DAIHOC\\NAM3\\KY1\\Framework\\DOAN_MAIN\\MVC_DOAN\\wwwroot\\",
       "BasePath": "_content/MVC_DOAN",
       "RelativePath": "lib/bootstrap/dist/js/bootstrap.esm.js.map",
       "AssetKind": "All",
@@ -2652,10 +2652,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js.map"
     },
     {
-      "Identity": "D:\\HUY\\DAIHOC\\NAM3\\KY1\\Framework\\DOAN\\MVC_DOAN\\MVC_DOAN\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js",
+      "Identity": "D:\\HUY\\DAIHOC\\NAM3\\KY1\\Framework\\DOAN_MAIN\\MVC_DOAN\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js",
       "SourceId": "MVC_DOAN",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\HUY\\DAIHOC\\NAM3\\KY1\\Framework\\DOAN\\MVC_DOAN\\MVC_DOAN\\wwwroot\\",
+      "ContentRoot": "D:\\HUY\\DAIHOC\\NAM3\\KY1\\Framework\\DOAN_MAIN\\MVC_DOAN\\wwwroot\\",
       "BasePath": "_content/MVC_DOAN",
       "RelativePath": "lib/bootstrap/dist/js/bootstrap.esm.min.js",
       "AssetKind": "All",
@@ -2669,10 +2669,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js"
     },
     {
-      "Identity": "D:\\HUY\\DAIHOC\\NAM3\\KY1\\Framework\\DOAN\\MVC_DOAN\\MVC_DOAN\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js.map",
+      "Identity": "D:\\HUY\\DAIHOC\\NAM3\\KY1\\Framework\\DOAN_MAIN\\MVC_DOAN\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js.map",
       "SourceId": "MVC_DOAN",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\HUY\\DAIHOC\\NAM3\\KY1\\Framework\\DOAN\\MVC_DOAN\\MVC_DOAN\\wwwroot\\",
+      "ContentRoot": "D:\\HUY\\DAIHOC\\NAM3\\KY1\\Framework\\DOAN_MAIN\\MVC_DOAN\\wwwroot\\",
       "BasePath": "_content/MVC_DOAN",
       "RelativePath": "lib/bootstrap/dist/js/bootstrap.esm.min.js.map",
       "AssetKind": "All",
@@ -2686,10 +2686,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js.map"
     },
     {
-      "Identity": "D:\\HUY\\DAIHOC\\NAM3\\KY1\\Framework\\DOAN\\MVC_DOAN\\MVC_DOAN\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js",
+      "Identity": "D:\\HUY\\DAIHOC\\NAM3\\KY1\\Framework\\DOAN_MAIN\\MVC_DOAN\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js",
       "SourceId": "MVC_DOAN",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\HUY\\DAIHOC\\NAM3\\KY1\\Framework\\DOAN\\MVC_DOAN\\MVC_DOAN\\wwwroot\\",
+      "ContentRoot": "D:\\HUY\\DAIHOC\\NAM3\\KY1\\Framework\\DOAN_MAIN\\MVC_DOAN\\wwwroot\\",
       "BasePath": "_content/MVC_DOAN",
       "RelativePath": "lib/bootstrap/dist/js/bootstrap.js",
       "AssetKind": "All",
@@ -2703,10 +2703,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js"
     },
     {
-      "Identity": "D:\\HUY\\DAIHOC\\NAM3\\KY1\\Framework\\DOAN\\MVC_DOAN\\MVC_DOAN\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js.map",
+      "Identity": "D:\\HUY\\DAIHOC\\NAM3\\KY1\\Framework\\DOAN_MAIN\\MVC_DOAN\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js.map",
       "SourceId": "MVC_DOAN",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\HUY\\DAIHOC\\NAM3\\KY1\\Framework\\DOAN\\MVC_DOAN\\MVC_DOAN\\wwwroot\\",
+      "ContentRoot": "D:\\HUY\\DAIHOC\\NAM3\\KY1\\Framework\\DOAN_MAIN\\MVC_DOAN\\wwwroot\\",
       "BasePath": "_content/MVC_DOAN",
       "RelativePath": "lib/bootstrap/dist/js/bootstrap.js.map",
       "AssetKind": "All",
@@ -2720,10 +2720,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js.map"
     },
     {
-      "Identity": "D:\\HUY\\DAIHOC\\NAM3\\KY1\\Framework\\DOAN\\MVC_DOAN\\MVC_DOAN\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js",
+      "Identity": "D:\\HUY\\DAIHOC\\NAM3\\KY1\\Framework\\DOAN_MAIN\\MVC_DOAN\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js",
       "SourceId": "MVC_DOAN",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\HUY\\DAIHOC\\NAM3\\KY1\\Framework\\DOAN\\MVC_DOAN\\MVC_DOAN\\wwwroot\\",
+      "ContentRoot": "D:\\HUY\\DAIHOC\\NAM3\\KY1\\Framework\\DOAN_MAIN\\MVC_DOAN\\wwwroot\\",
       "BasePath": "_content/MVC_DOAN",
       "RelativePath": "lib/bootstrap/dist/js/bootstrap.min.js",
       "AssetKind": "All",
@@ -2737,10 +2737,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js"
     },
     {
-      "Identity": "D:\\HUY\\DAIHOC\\NAM3\\KY1\\Framework\\DOAN\\MVC_DOAN\\MVC_DOAN\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js.map",
+      "Identity": "D:\\HUY\\DAIHOC\\NAM3\\KY1\\Framework\\DOAN_MAIN\\MVC_DOAN\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js.map",
       "SourceId": "MVC_DOAN",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\HUY\\DAIHOC\\NAM3\\KY1\\Framework\\DOAN\\MVC_DOAN\\MVC_DOAN\\wwwroot\\",
+      "ContentRoot": "D:\\HUY\\DAIHOC\\NAM3\\KY1\\Framework\\DOAN_MAIN\\MVC_DOAN\\wwwroot\\",
       "BasePath": "_content/MVC_DOAN",
       "RelativePath": "lib/bootstrap/dist/js/bootstrap.min.js.map",
       "AssetKind": "All",
@@ -2754,10 +2754,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js.map"
     },
     {
-      "Identity": "D:\\HUY\\DAIHOC\\NAM3\\KY1\\Framework\\DOAN\\MVC_DOAN\\MVC_DOAN\\wwwroot\\lib\\bootstrap\\LICENSE",
+      "Identity": "D:\\HUY\\DAIHOC\\NAM3\\KY1\\Framework\\DOAN_MAIN\\MVC_DOAN\\wwwroot\\lib\\bootstrap\\LICENSE",
       "SourceId": "MVC_DOAN",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\HUY\\DAIHOC\\NAM3\\KY1\\Framework\\DOAN\\MVC_DOAN\\MVC_DOAN\\wwwroot\\",
+      "ContentRoot": "D:\\HUY\\DAIHOC\\NAM3\\KY1\\Framework\\DOAN_MAIN\\MVC_DOAN\\wwwroot\\",
       "BasePath": "_content/MVC_DOAN",
       "RelativePath": "lib/bootstrap/LICENSE",
       "AssetKind": "All",
@@ -2771,10 +2771,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\LICENSE"
     },
     {
-      "Identity": "D:\\HUY\\DAIHOC\\NAM3\\KY1\\Framework\\DOAN\\MVC_DOAN\\MVC_DOAN\\wwwroot\\lib\\jquery\\dist\\jquery.js",
+      "Identity": "D:\\HUY\\DAIHOC\\NAM3\\KY1\\Framework\\DOAN_MAIN\\MVC_DOAN\\wwwroot\\lib\\jquery\\dist\\jquery.js",
       "SourceId": "MVC_DOAN",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\HUY\\DAIHOC\\NAM3\\KY1\\Framework\\DOAN\\MVC_DOAN\\MVC_DOAN\\wwwroot\\",
+      "ContentRoot": "D:\\HUY\\DAIHOC\\NAM3\\KY1\\Framework\\DOAN_MAIN\\MVC_DOAN\\wwwroot\\",
       "BasePath": "_content/MVC_DOAN",
       "RelativePath": "lib/jquery/dist/jquery.js",
       "AssetKind": "All",
@@ -2788,10 +2788,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\jquery\\dist\\jquery.js"
     },
     {
-      "Identity": "D:\\HUY\\DAIHOC\\NAM3\\KY1\\Framework\\DOAN\\MVC_DOAN\\MVC_DOAN\\wwwroot\\lib\\jquery\\dist\\jquery.min.js",
+      "Identity": "D:\\HUY\\DAIHOC\\NAM3\\KY1\\Framework\\DOAN_MAIN\\MVC_DOAN\\wwwroot\\lib\\jquery\\dist\\jquery.min.js",
       "SourceId": "MVC_DOAN",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\HUY\\DAIHOC\\NAM3\\KY1\\Framework\\DOAN\\MVC_DOAN\\MVC_DOAN\\wwwroot\\",
+      "ContentRoot": "D:\\HUY\\DAIHOC\\NAM3\\KY1\\Framework\\DOAN_MAIN\\MVC_DOAN\\wwwroot\\",
       "BasePath": "_content/MVC_DOAN",
       "RelativePath": "lib/jquery/dist/jquery.min.js",
       "AssetKind": "All",
@@ -2805,10 +2805,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\jquery\\dist\\jquery.min.js"
     },
     {
-      "Identity": "D:\\HUY\\DAIHOC\\NAM3\\KY1\\Framework\\DOAN\\MVC_DOAN\\MVC_DOAN\\wwwroot\\lib\\jquery\\dist\\jquery.min.map",
+      "Identity": "D:\\HUY\\DAIHOC\\NAM3\\KY1\\Framework\\DOAN_MAIN\\MVC_DOAN\\wwwroot\\lib\\jquery\\dist\\jquery.min.map",
       "SourceId": "MVC_DOAN",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\HUY\\DAIHOC\\NAM3\\KY1\\Framework\\DOAN\\MVC_DOAN\\MVC_DOAN\\wwwroot\\",
+      "ContentRoot": "D:\\HUY\\DAIHOC\\NAM3\\KY1\\Framework\\DOAN_MAIN\\MVC_DOAN\\wwwroot\\",
       "BasePath": "_content/MVC_DOAN",
       "RelativePath": "lib/jquery/dist/jquery.min.map",
       "AssetKind": "All",
@@ -2822,10 +2822,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\jquery\\dist\\jquery.min.map"
     },
     {
-      "Identity": "D:\\HUY\\DAIHOC\\NAM3\\KY1\\Framework\\DOAN\\MVC_DOAN\\MVC_DOAN\\wwwroot\\lib\\jquery\\LICENSE.txt",
+      "Identity": "D:\\HUY\\DAIHOC\\NAM3\\KY1\\Framework\\DOAN_MAIN\\MVC_DOAN\\wwwroot\\lib\\jquery\\LICENSE.txt",
       "SourceId": "MVC_DOAN",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\HUY\\DAIHOC\\NAM3\\KY1\\Framework\\DOAN\\MVC_DOAN\\MVC_DOAN\\wwwroot\\",
+      "ContentRoot": "D:\\HUY\\DAIHOC\\NAM3\\KY1\\Framework\\DOAN_MAIN\\MVC_DOAN\\wwwroot\\",
       "BasePath": "_content/MVC_DOAN",
       "RelativePath": "lib/jquery/LICENSE.txt",
       "AssetKind": "All",
@@ -2839,10 +2839,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\jquery\\LICENSE.txt"
     },
     {
-      "Identity": "D:\\HUY\\DAIHOC\\NAM3\\KY1\\Framework\\DOAN\\MVC_DOAN\\MVC_DOAN\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.js",
+      "Identity": "D:\\HUY\\DAIHOC\\NAM3\\KY1\\Framework\\DOAN_MAIN\\MVC_DOAN\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.js",
       "SourceId": "MVC_DOAN",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\HUY\\DAIHOC\\NAM3\\KY1\\Framework\\DOAN\\MVC_DOAN\\MVC_DOAN\\wwwroot\\",
+      "ContentRoot": "D:\\HUY\\DAIHOC\\NAM3\\KY1\\Framework\\DOAN_MAIN\\MVC_DOAN\\wwwroot\\",
       "BasePath": "_content/MVC_DOAN",
       "RelativePath": "lib/jquery-validation/dist/additional-methods.js",
       "AssetKind": "All",
@@ -2856,10 +2856,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\jquery-validation\\dist\\additional-methods.js"
     },
     {
-      "Identity": "D:\\HUY\\DAIHOC\\NAM3\\KY1\\Framework\\DOAN\\MVC_DOAN\\MVC_DOAN\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.min.js",
+      "Identity": "D:\\HUY\\DAIHOC\\NAM3\\KY1\\Framework\\DOAN_MAIN\\MVC_DOAN\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.min.js",
       "SourceId": "MVC_DOAN",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\HUY\\DAIHOC\\NAM3\\KY1\\Framework\\DOAN\\MVC_DOAN\\MVC_DOAN\\wwwroot\\",
+      "ContentRoot": "D:\\HUY\\DAIHOC\\NAM3\\KY1\\Framework\\DOAN_MAIN\\MVC_DOAN\\wwwroot\\",
       "BasePath": "_content/MVC_DOAN",
       "RelativePath": "lib/jquery-validation/dist/additional-methods.min.js",
       "AssetKind": "All",
@@ -2873,10 +2873,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\jquery-validation\\dist\\additional-methods.min.js"
     },
     {
-      "Identity": "D:\\HUY\\DAIHOC\\NAM3\\KY1\\Framework\\DOAN\\MVC_DOAN\\MVC_DOAN\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.js",
+      "Identity": "D:\\HUY\\DAIHOC\\NAM3\\KY1\\Framework\\DOAN_MAIN\\MVC_DOAN\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.js",
       "SourceId": "MVC_DOAN",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\HUY\\DAIHOC\\NAM3\\KY1\\Framework\\DOAN\\MVC_DOAN\\MVC_DOAN\\wwwroot\\",
+      "ContentRoot": "D:\\HUY\\DAIHOC\\NAM3\\KY1\\Framework\\DOAN_MAIN\\MVC_DOAN\\wwwroot\\",
       "BasePath": "_content/MVC_DOAN",
       "RelativePath": "lib/jquery-validation/dist/jquery.validate.js",
       "AssetKind": "All",
@@ -2890,10 +2890,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.js"
     },
     {
-      "Identity": "D:\\HUY\\DAIHOC\\NAM3\\KY1\\Framework\\DOAN\\MVC_DOAN\\MVC_DOAN\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.min.js",
+      "Identity": "D:\\HUY\\DAIHOC\\NAM3\\KY1\\Framework\\DOAN_MAIN\\MVC_DOAN\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.min.js",
       "SourceId": "MVC_DOAN",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\HUY\\DAIHOC\\NAM3\\KY1\\Framework\\DOAN\\MVC_DOAN\\MVC_DOAN\\wwwroot\\",
+      "ContentRoot": "D:\\HUY\\DAIHOC\\NAM3\\KY1\\Framework\\DOAN_MAIN\\MVC_DOAN\\wwwroot\\",
       "BasePath": "_content/MVC_DOAN",
       "RelativePath": "lib/jquery-validation/dist/jquery.validate.min.js",
       "AssetKind": "All",
@@ -2907,10 +2907,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.min.js"
     },
     {
-      "Identity": "D:\\HUY\\DAIHOC\\NAM3\\KY1\\Framework\\DOAN\\MVC_DOAN\\MVC_DOAN\\wwwroot\\lib\\jquery-validation\\LICENSE.md",
+      "Identity": "D:\\HUY\\DAIHOC\\NAM3\\KY1\\Framework\\DOAN_MAIN\\MVC_DOAN\\wwwroot\\lib\\jquery-validation\\LICENSE.md",
       "SourceId": "MVC_DOAN",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\HUY\\DAIHOC\\NAM3\\KY1\\Framework\\DOAN\\MVC_DOAN\\MVC_DOAN\\wwwroot\\",
+      "ContentRoot": "D:\\HUY\\DAIHOC\\NAM3\\KY1\\Framework\\DOAN_MAIN\\MVC_DOAN\\wwwroot\\",
       "BasePath": "_content/MVC_DOAN",
       "RelativePath": "lib/jquery-validation/LICENSE.md",
       "AssetKind": "All",
@@ -2924,10 +2924,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\jquery-validation\\LICENSE.md"
     },
     {
-      "Identity": "D:\\HUY\\DAIHOC\\NAM3\\KY1\\Framework\\DOAN\\MVC_DOAN\\MVC_DOAN\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.js",
+      "Identity": "D:\\HUY\\DAIHOC\\NAM3\\KY1\\Framework\\DOAN_MAIN\\MVC_DOAN\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.js",
       "SourceId": "MVC_DOAN",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\HUY\\DAIHOC\\NAM3\\KY1\\Framework\\DOAN\\MVC_DOAN\\MVC_DOAN\\wwwroot\\",
+      "ContentRoot": "D:\\HUY\\DAIHOC\\NAM3\\KY1\\Framework\\DOAN_MAIN\\MVC_DOAN\\wwwroot\\",
       "BasePath": "_content/MVC_DOAN",
       "RelativePath": "lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.js",
       "AssetKind": "All",
@@ -2941,10 +2941,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.js"
     },
     {
-      "Identity": "D:\\HUY\\DAIHOC\\NAM3\\KY1\\Framework\\DOAN\\MVC_DOAN\\MVC_DOAN\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.min.js",
+      "Identity": "D:\\HUY\\DAIHOC\\NAM3\\KY1\\Framework\\DOAN_MAIN\\MVC_DOAN\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.min.js",
       "SourceId": "MVC_DOAN",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\HUY\\DAIHOC\\NAM3\\KY1\\Framework\\DOAN\\MVC_DOAN\\MVC_DOAN\\wwwroot\\",
+      "ContentRoot": "D:\\HUY\\DAIHOC\\NAM3\\KY1\\Framework\\DOAN_MAIN\\MVC_DOAN\\wwwroot\\",
       "BasePath": "_content/MVC_DOAN",
       "RelativePath": "lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js",
       "AssetKind": "All",
@@ -2958,10 +2958,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.min.js"
     },
     {
-      "Identity": "D:\\HUY\\DAIHOC\\NAM3\\KY1\\Framework\\DOAN\\MVC_DOAN\\MVC_DOAN\\wwwroot\\lib\\jquery-validation-unobtrusive\\LICENSE.txt",
+      "Identity": "D:\\HUY\\DAIHOC\\NAM3\\KY1\\Framework\\DOAN_MAIN\\MVC_DOAN\\wwwroot\\lib\\jquery-validation-unobtrusive\\LICENSE.txt",
       "SourceId": "MVC_DOAN",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\HUY\\DAIHOC\\NAM3\\KY1\\Framework\\DOAN\\MVC_DOAN\\MVC_DOAN\\wwwroot\\",
+      "ContentRoot": "D:\\HUY\\DAIHOC\\NAM3\\KY1\\Framework\\DOAN_MAIN\\MVC_DOAN\\wwwroot\\",
       "BasePath": "_content/MVC_DOAN",
       "RelativePath": "lib/jquery-validation-unobtrusive/LICENSE.txt",
       "AssetKind": "All",

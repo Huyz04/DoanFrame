@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "JkpmgDNO1K/xtgH9JuzJCjF5V3Jw78xSIfx0TK9pUamQX3OHGRgX8pJvTOIJkiBJvu2GIp0eXbpfGxXWeiWydg==",
+  "dgSpecHash": "lLWuULe2OWPGVpx0KTuWRXDhXtafLyanuoQqWDPDjOnlio1Irt1TTiGboGuJGoGjDaiyg4VVgPxt8tffadLuTg==",
   "success": true,
-  "projectFilePath": "D:\\HUY\\DAIHOC\\NAM3\\KY1\\Framework\\DOAN\\MVC_DOAN\\MVC_DOAN\\MVC_DOAN.csproj",
+  "projectFilePath": "D:\\HUY\\DAIHOC\\NAM3\\KY1\\Framework\\DOAN_MAIN\\MVC_DOAN\\MVC_DOAN.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\HP\\.nuget\\packages\\azure.core\\1.25.0\\azure.core.1.25.0.nupkg.sha512",
     "C:\\Users\\HP\\.nuget\\packages\\azure.identity\\1.7.0\\azure.identity.1.7.0.nupkg.sha512",
