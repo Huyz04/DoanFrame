@@ -1,4 +1,11 @@
-/*Template Name: Fruitkha - Responsive Bootstrap4 Shop TemplateTemplate URI: Description: Bootstrap template for fruits or any other kind of shopAuthor: Imran HossainAuthor URI: https://imransdesign.com/Version: 1.0*/
+/*
+Template Name: Fruitkha - Responsive Bootstrap4 Shop Template
+Template URI: 
+Description: Bootstrap template for fruits or any other kind of shop
+Author: Imran Hossain
+Author URI: https://imransdesign.com/
+Version: 1.0
+*/
 /* -----------------------------------------------------------------------------
 
 # Base - Genral & Typography
@@ -392,11 +399,37 @@ p:last-child {
 
 .gray-bg {
   background-color: #f5f5f5;
-}.orange-text {    color: #ee71dabf;}
+}
+
+
+
+.orange-text {
+    color: #ee71dabf;
+}
 
 .blue-bg {
   background-color: #162133;
-}a.boxed-btn {    font-family: 'Lexend', sans-serif;    display: inline-block;    background-color: #ee71dabf;    color: #fff;    padding: 10px 20px;6}a.bordered-btn {    font-family: 'Lexend', sans-serif;    display: inline-block;    color: #fff;    border: 2px solid #ee71dabf;    padding: 7px 20px;}
+}
+
+
+
+a.boxed-btn {
+    font-family: 'Lexend', sans-serif;
+    display: inline-block;
+    background-color: #ee71dabf;
+    color: #fff;
+    padding: 10px 20px;6
+}
+
+
+
+a.bordered-btn {
+    font-family: 'Lexend', sans-serif;
+    display: inline-block;
+    color: #fff;
+    border: 2px solid #ee71dabf;
+    padding: 7px 20px;
+}
 
 a.read-more-btn {
   display: inline-block;
@@ -660,7 +693,13 @@ nav.main-menu ul ul.sub-menu li a {
   padding: 8px;
   font-size: 13px;
   font-weight: 600;
-}nav.main-menu ul li.current-list-item > a {    color: #ee71dabf;}
+}
+
+
+
+nav.main-menu ul li.current-list-item > a {
+    color: #ee71dabf;
+}
 
 nav.main-menu li:hover > a {
   color: #ee71dabf;
@@ -979,13 +1018,55 @@ a.boxed-btn {
   -webkit-transition: 0.3s;
   -o-transition: 0.3s;
   transition: 0.3s;
-}    a.boxed-btn:hover {        background-color: #fff;        color: #ee71dabf;    }
+}
+
+
+
+    a.boxed-btn:hover {
+        background-color: #fff;
+        color: #ee71dabf;
+    }
 
 a.bordered-btn {
   -webkit-transition: 0.3s;
   -o-transition: 0.3s;
   transition: 0.3s;
-}    a.bordered-btn:hover {        background-color: #051922;        color: #fff;    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    a.bordered-btn:hover {
+        background-color: #051922;
+        color: #fff;
+    }
 
 ul.sub-menu a {
   -webkit-transition: 0.3s;
@@ -1318,7 +1399,14 @@ a.mobile-show.search-bar-icon:hover {
 
 # Hero Styles
 
------------------------------------------------------------------------------ */.hero-bg {        background-image: url('../img/hero-bg.jpg');    background-size: cover;    background-position: center;    background-attachment: fixed;}
+----------------------------------------------------------------------------- */
+.hero-bg {
+        background-image: url('../img/hero-bg.jpg');
+
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+}
 
 .hero-text {
   display: table;
@@ -1349,7 +1437,17 @@ html, body {
   background-color: #07212e;
   z-index: -1;
   opacity: 0.6;
-}.hero-text p.subtitle {    color: #ff86ea6b;    font-weight: 700;    text-transform: uppercase;    letter-spacing: 7px;    font-size: 16px;}
+}
+
+
+
+.hero-text p.subtitle {
+    color: #ff86ea6b;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 7px;
+    font-size: 16px;
+}
 
 .hero-text h1 {
   font-size: 64px;

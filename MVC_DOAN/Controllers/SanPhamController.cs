@@ -27,7 +27,7 @@ namespace MVC_DOAN.Controllers
         public async Task<IActionResult> Detail(int Id)
         {
             Sanpham SP = await _SPI.GetByIdAsync(Id);
-            return View(SP);
+            return View("~/Views/SanPham/Detail.cshtml");
         }
         [HttpGet]
         public IActionResult Create()
