@@ -105,6 +105,10 @@
       "PackagePath": "staticwebassets\\assets\\css\\meanmenu.min.css"
     },
     {
+      "Id": "D:\\Framework\\HaruCosmetic\\DoanFrame\\MVC_DOAN\\wwwroot\\assets\\css\\nice-select.css",
+      "PackagePath": "staticwebassets\\assets\\css\\nice-select.css"
+    },
+    {
       "Id": "D:\\Framework\\HaruCosmetic\\DoanFrame\\MVC_DOAN\\wwwroot\\assets\\css\\owl.carousel.css",
       "PackagePath": "staticwebassets\\assets\\css\\owl.carousel.css"
     },

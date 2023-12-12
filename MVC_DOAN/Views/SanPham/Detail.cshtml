@@ -16,7 +16,7 @@
 
         incrementButton.addEventListener("click", function () {
             // Tăng giá trị khi nhấn nút +
-            let currentValue = parseInt(quantityInput.value) || 0;
+            let currentValue = parseInt(quantityInput.value) || 1;
             currentValue++;
             quantityInput.value = currentValue;
         });
@@ -132,14 +132,13 @@
                             <label class="mb-2 d-block">Số lượng</label>
                             <div class="input-group mb-3">
                                 <button class="btn btn-white border border-secondary px-3" type="button" id="decrement" data-mdb-ripple-color="dark">
-                                    -
+                                    <i class="fas fa-minus"></i>
                                 </button>
                                 <input type="text" id="quantityInput" class="form-control text-center border border-secondary" value="1" aria-label="Example text with button addon" aria-describedby="button-addon1" />
                                 <button class="btn btn-white border border-secondary px-3" type="button" id="increment" data-mdb-ripple-color="dark">
-                                    +
+                                    <i class="fas fa-plus"></i>
                                 </button>
                             </div>
-
                         </div>
                     </div>
                     <a href="#" class="btn btn-warning shadow-0"> <i class="me-1 fa fa-shopping-basket"></i> Thêm vào giỏ hàng </a>

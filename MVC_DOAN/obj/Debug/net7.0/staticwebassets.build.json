@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "QgMbLFbxOfgyt7keczG6Yqs+ZSCEpu8IfhwVfobSFu4=",
+  "Hash": "2ChqY11UhOe2wN+uRPu2v0zNuOxLCUNxG0ShqXzgihA=",
   "Source": "MVC_DOAN",
   "BasePath": "_content/MVC_DOAN",
   "Mode": "Default",
@@ -528,6 +528,25 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\assets\\css\\meanmenu.min.css"
+    },
+    {
+      "Identity": "D:\\Framework\\HaruCosmetic\\DoanFrame\\MVC_DOAN\\wwwroot\\assets\\css\\nice-select.css",
+      "SourceId": "MVC_DOAN",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\Framework\\HaruCosmetic\\DoanFrame\\MVC_DOAN\\wwwroot\\",
+      "BasePath": "_content/MVC_DOAN",
+      "RelativePath": "assets/css/nice-select.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\assets\\css\\nice-select.css"
     },
     {
       "Identity": "D:\\Framework\\HaruCosmetic\\DoanFrame\\MVC_DOAN\\wwwroot\\assets\\css\\owl.carousel.css",
