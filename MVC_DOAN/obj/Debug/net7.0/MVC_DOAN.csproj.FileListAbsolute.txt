@@ -521,3 +521,4 @@ D:\Framework\HaruCosmetic\DoanFrame\MVC_DOAN\obj\Debug\net7.0\refint\MVC_DOAN.dl
 D:\Framework\HaruCosmetic\DoanFrame\MVC_DOAN\obj\Debug\net7.0\MVC_DOAN.pdb
 D:\Framework\HaruCosmetic\DoanFrame\MVC_DOAN\obj\Debug\net7.0\MVC_DOAN.genruntimeconfig.cache
 D:\Framework\HaruCosmetic\DoanFrame\MVC_DOAN\obj\Debug\net7.0\ref\MVC_DOAN.dll
+D:\Framework\HaruCosmetic\DoanFrame\MVC_DOAN\bin\Debug\net7.0\libman.json
