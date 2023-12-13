@@ -45,11 +45,11 @@ namespace MVC_DOAN.Controllers
                     }
                 }
                 //Password is incorrect
-                TempData["Error"] = "Wrong credentials. Please try again";
+                TempData["ErrorMessage"] = "Sai mật khẩu, vui lòng thử lại";
                 return View(loginViewModel);
             }
             //User not found
-            TempData["Error"] = "Wrong credentials. Please try again";
+            TempData["ErrorMessage"] = "Sai tài khoản, vui lòng thử lại!";
             return View(loginViewModel);
         }
 
@@ -68,7 +68,7 @@ namespace MVC_DOAN.Controllers
 			var user = await _userManager.FindByEmailAsync(registerViewModel.EmailAddress);
 			if (user != null)
 			{
-				TempData["Error"] = "This email address is already in use";
+				TempData["ErrorMessage"] = "Email này đã được sử dụng";
 				return View(registerViewModel);
 			}
 
@@ -81,6 +81,15 @@ namespace MVC_DOAN.Controllers
 
 			if (newUserResponse.Succeeded)
 				await _userManager.AddToRoleAsync(newUser, UserRoles.User);
+			else
+			{
+				foreach (var error in newUserResponse.Errors)
+				{
+					ModelState.AddModelError(string.Empty, error.Description);
+
+				}
+				return View(registerViewModel);
+			}
 
 			return RedirectToAction("Index", "Home");
 		}

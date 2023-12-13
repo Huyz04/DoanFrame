@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\HUY\\DAIHOC\\NAM3\\KY1\\Framework\\DOAN\\MVC_DOAN\\MVC_DOAN\\MVC_DOAN.csproj": {}
+    "D:\\HUY\\DAIHOC\\NAM3\\KY1\\Framework\\DOAN_MAIN\\MVC_DOAN\\MVC_DOAN.csproj": {}
   },
   "projects": {
-    "D:\\HUY\\DAIHOC\\NAM3\\KY1\\Framework\\DOAN\\MVC_DOAN\\MVC_DOAN\\MVC_DOAN.csproj": {
+    "D:\\HUY\\DAIHOC\\NAM3\\KY1\\Framework\\DOAN_MAIN\\MVC_DOAN\\MVC_DOAN.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\HUY\\DAIHOC\\NAM3\\KY1\\Framework\\DOAN\\MVC_DOAN\\MVC_DOAN\\MVC_DOAN.csproj",
+        "projectUniqueName": "D:\\HUY\\DAIHOC\\NAM3\\KY1\\Framework\\DOAN_MAIN\\MVC_DOAN\\MVC_DOAN.csproj",
         "projectName": "MVC_DOAN",
-        "projectPath": "D:\\HUY\\DAIHOC\\NAM3\\KY1\\Framework\\DOAN\\MVC_DOAN\\MVC_DOAN\\MVC_DOAN.csproj",
+        "projectPath": "D:\\HUY\\DAIHOC\\NAM3\\KY1\\Framework\\DOAN_MAIN\\MVC_DOAN\\MVC_DOAN.csproj",
         "packagesPath": "C:\\Users\\HP\\.nuget\\packages\\",
-        "outputPath": "D:\\HUY\\DAIHOC\\NAM3\\KY1\\Framework\\DOAN\\MVC_DOAN\\MVC_DOAN\\obj\\",
+        "outputPath": "D:\\HUY\\DAIHOC\\NAM3\\KY1\\Framework\\DOAN_MAIN\\MVC_DOAN\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
