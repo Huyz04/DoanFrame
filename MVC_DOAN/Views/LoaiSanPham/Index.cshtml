@@ -83,7 +83,6 @@
 
 
 
-
         const showModalButton = document.getElementById('showModalButton');
         const modal = document.getElementById('myModal');
         const closeBtn = modal.querySelector('.close');
@@ -101,6 +100,33 @@
                 modal.style.display = 'none';
             }
         });
+
+
+        var consigneenameInput = document.getElementById('input-consigneename');
+        var phoneInput = document.getElementById('input-phonenumber');
+        var addressInput = document.getElementById('input-address');
+        // Lấy tất cả các input radio trong tài liệu
+        var radios = document.querySelectorAll(".address");
+
+        // Lặp qua từng radio và thêm sự kiện 'click'
+        radios.forEach(function (radio) {
+            radio.addEventListener('click', function () {
+                if (this.checked) {
+                    // Ẩn modal khi người dùng chọn radio button
+                    var modal = document.getElementById('myModal');
+                    modal.style.display = 'none';
+
+                    var consigneeName = this.closest('.label-address').querySelector('.consignee-name').innerText;
+                    var phoneNumber = this.closest('.label-address').querySelector('.phone-numer').innerText;
+                    var addressDetails = this.closest('.label-address').querySelector('.address-details').innerText;
+
+                    consigneenameInput.value = consigneeName;
+                    phoneInput.value = phoneNumber;
+                    addressInput.value = addressDetails;
+                }
+            });
+        });
+
     });
 
 </script>
@@ -205,6 +231,12 @@
             cursor: pointer;
         }
 
+    .vertical-center {
+        display: flex;
+        align-items: center; /* Căn giữa theo chiều dọc */
+        justify-content: center; /* Căn giữa theo chiều ngang */
+    }
+
   </style>
 <section style="background-color: #eee;">
     <div class="modal" id="myModal">
@@ -212,62 +244,39 @@
             <span class="close">&times;</span>
             <h5>SỔ ĐỊA CHỈ</h5>
 
-            @* <div class="col-lg-12 row">
-                <div class="card mb-3 col-lg-8">
-                    <div class="card-body">
-                                <label class="btn btn-secondary form-control form-control-lg d-flex align-items-center justify-content-between">
-                                    <input type="radio" name="options" id="COD" autocomplete="off"
-                                           size="1" minlength="3" maxlength="3" style="margin-right: 10px;"
-                                           checked>
-                                    <span class="flex-grow-1">Thanh toán khi nhận hàng</span>
-                                </label>
-                    </div>
+            <div class="col-lg-12 row mb-3" style="margin-left: 0 !important;">
+                <div class="card p-0 col-lg-11">
+                    <label class="label-address btn btn-secondary form-control form-control-lg d-flex align-items-center p-0">
+                        <input type="radio" name="options" class="address" autocomplete="off" style="margin:10px"
+                               size="1" minlength="3" maxlength="3"
+                               checked>
+                        <div style="margin:10px; display: block; text-align: left;">
+                            <div><b>Tên người nhận: </b><span class="consignee-name">Name 1</span></div>
+                            <div><b>Số điện thoại: </b><span class="phone-numer">09********</span></div>
+                            <div><b>Địa chỉ: </b><span class="address-details">Address</span></div>
+                        </div>
+                    </label>
                 </div>
-                <div class="col-lg-2">
+                <div class="col-lg-1 vertical-center">
                     <a href="#!" style="color: #cecece;"><i class="fas fa-trash-alt"></i></a>
                 </div>
-            </div> *@
-
-            <div class="col-lg-12" style=" height: 200px; overflow: auto;">
-                <div class="card mb-3">
-                    <div class="card-body">
-                        <div class="d-flex justify-content-between">
-                            <div class="checked-row-address d-flex flex-row align-items-center" data-key="">
-                                <div class="mx-3">
-                                    <input type="checkbox" id="myCheckbox">
-                                </div>
-                                <div>
-                                    <p>Địa chỉ ABCD</p>
-                                    <p>Địa chỉ ABCD</p>
-                                    <p>Địa chỉ ABCD</p>
-                                </div>
-                            </div>
-                            <div class="d-flex flex-row align-items-center">
-                                <a href="#!" style="color: #cecece;"><i class="fas fa-trash-alt"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
             </div>
-            <div class="col-lg-12" style=" height: 200px; overflow: auto;">
-                <div class="card mb-3">
-                    <div class="card-body">
-                        <div class="d-flex justify-content-between">
-                            <div class="checked-row-address d-flex flex-row align-items-center" data-key="">
-                                <div class="mx-3">
-                                    <input type="checkbox" id="myCheckbox">
-                                </div>
-                                <div>
-                                    <p>Địa chỉ ABCD</p>
-                                    <p>Địa chỉ ABCD</p>
-                                    <p>Địa chỉ ABCD</p>
-                                </div>
-                            </div>
-                            <div class="d-flex flex-row align-items-center">
-                                <a href="#!" style="color: #cecece;"><i class="fas fa-trash-alt"></i></a>
-                            </div>
+
+            <div class="col-lg-12 row mb-3" style="margin-left: 0 !important;">
+                <div class="card p-0 col-lg-11">
+                    <label class="label-address btn btn-secondary form-control form-control-lg d-flex align-items-center p-0">
+                        <input type="radio" name="options" class="address" autocomplete="off" style="margin:10px"
+                               size="1" minlength="3" maxlength="3"
+                               checked>
+                        <div style="margin:10px; display: block; text-align: left;">
+                            <div><b>Tên người nhận: </b><span class="consignee-name">Name 2</span></div>
+                            <div><b>Số điện thoại: </b><span class="phone-numer">09********</span></div>
+                            <div><b>Địa chỉ: </b><span class="address-details">Address</span></div>
                         </div>
-                    </div>
+                    </label>
+                </div>
+                <div class="col-lg-1 vertical-center">
+                    <a href="#!" style="color: #cecece;"><i class="fas fa-trash-alt"></i></a>
                 </div>
             </div>
 
@@ -411,16 +420,16 @@
 
                                         <form class="mt-4">
                                             <div class="form-group mb-4">
-                                                <label for="name">Tên người nhận hàng:</label>
-                                                <input type="text" class="form-control form-control-lg" id="name" disabled>
+                                                <label for="input-consigneename">Tên người nhận hàng:</label>
+                                                <input type="text" class="form-control form-control-lg" id="input-consigneename" disabled>
                                             </div>
                                             <div class="form-group mb-4">
-                                                <label for="phone">Số điện thoại:</label>
-                                                <input type="text" class="form-control form-control-lg" id="phone" disabled>
+                                                <label for="input-phonenumber">Số điện thoại:</label>
+                                                <input type="text" class="form-control form-control-lg" id="input-phonenumber" disabled>
                                             </div>
                                             <div class="form-group mb-4">
-                                                <label for="address">Địa chỉ giao hàng:</label>
-                                                <input type="text" class="form-control form-control-lg" id="address" disabled>
+                                                <label for="input-address">Địa chỉ giao hàng:</label>
+                                                <input type="text" class="form-control form-control-lg" id="input-address" disabled>
                                             </div>
                                         </form>
 
