@@ -4,6 +4,16 @@
 	ViewData["Title"] = "Login";
 	Layout = null;
 }
+@{
+	var errorMessage = TempData["ErrorMessage"] as string;
+}
+
+@if (!string.IsNullOrEmpty(errorMessage))
+{
+	<div id="errorBox" class="error-box show-error">
+		@errorMessage
+	</div>
+}
 @* <div class="row">
     <div class="col-md-6 offset-3">
         <p>
@@ -53,6 +63,18 @@
 
 		/*//////////////////////////////////////////////////////////////////
 		[ RESTYLE TAG ]*/
+		.error-box {
+			background-color: #f8d7da;
+			color: #721c24;
+			border: 1px solid #f5c6cb;
+			padding: 10px;
+			margin-bottom: 10px;
+			display: none; /* Ẩn ban đầu */
+		}
+
+		.show-error {
+			display: block; /* Hiển thị khi có class 'show-error' được thêm vào */
+		}
 
 		* {
 			margin: 0px;
@@ -641,7 +663,6 @@
 	</style>
 </header>
 <body style="background-color: #666666;">
-
 	<div class="limiter">
 		<div class="container-login100">
 			<div class="wrap-login100">
@@ -649,7 +670,9 @@
 					<div asp-validation-summary="ModelOnly" class="text-danger"></div>
 
 					<span class="login100-logo p-b-43">
+						<a asp-area="" asp-controller="Home" asp-action="Index">
 						<img src="~/assets/img/logo.png" alt="" class="logo" />
+						</a>
 					</span>
 
 					<span class="login100-form-title p-b-43">
@@ -687,7 +710,7 @@
 						<span class="txt2">
 							Bạn chưa có tài khoản?
 						</span>
-						<a href="#">
+						<a asp-area="" asp-controller="Account" asp-action="Register">
 							<b>Đăng ký ngay</b>
 						</a>
 					</div>
@@ -732,5 +755,16 @@
 	<script src="vendor/countdowntime/countdowntime.js"></script>
 	<!--===============================================================================================-->
 	<script src="js/main.js"></script>
+	<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
+	<script>
+		$(document).ready(function () {
+			var errorBox = $('#errorBox');
+
+			// Ẩn hộp thông báo lỗi sau 5 giây
+			setTimeout(function () {
+				errorBox.removeClass('show-error');
+			}, 2500);
+		});
+	</script>
 </body>
