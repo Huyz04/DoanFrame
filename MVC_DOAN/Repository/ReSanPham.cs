@@ -2,6 +2,7 @@
 using MVC_DOAN.Data;
 using MVC_DOAN.Interface;
 using MVC_DOAN.Models;
+using MVC_DOAN.ViewModels;
 
 namespace MVC_DOAN.Repository
 {
@@ -24,9 +25,13 @@ namespace MVC_DOAN.Repository
             return Save();
         }
 
-        public async Task<IEnumerable<Sanpham>> GetAll()
+        public async Task<SanPhamVM> GetAll()
         {
-            return await _context.Sanphams.ToListAsync();
+            var sanphamVM = new SanPhamVM();
+            sanphamVM.sanphamVM = await _context.Sanphams.ToListAsync();
+            sanphamVM.loaisanphamVM = await _context.Loaisanphams.ToListAsync();
+
+            return sanphamVM;
         }
 
         public async Task<Sanpham> GetByIdAsync(int Id)
@@ -39,7 +44,47 @@ namespace MVC_DOAN.Repository
             return await _context.Sanphams.AsNoTracking().FirstOrDefaultAsync(c => c.Id == Id);
         }
 
-        public bool Save()
+
+		public async Task<SanPhamVM> GetFilter(string timkiem, int MaLSP, string sapxep, int giaduoi, int giatren)
+		{
+			var sanphamVM = new SanPhamVM();
+			sanphamVM.loaisanphamVM = await _context.Loaisanphams.ToListAsync();
+			// Xây dựng truy vấn dựa trên các tiêu chí tìm kiếm
+			var query = _context.Sanphams.AsQueryable();
+
+			// Lọc theo từ khóa tìm kiếm
+			if (!string.IsNullOrEmpty(timkiem))
+			{
+				query = query.Where(s => s.Tensp.Contains(timkiem));
+			}
+
+			// Lọc theo mã loại sản phẩm
+			if (MaLSP != 0)
+			{
+				query = query.Where(s => s.LoaisanphamId == MaLSP);
+			}
+
+			// Lọc theo mức giá
+			query = query.Where(s => s.Dongia >= giaduoi && s.Dongia <= giatren);
+
+			// Sắp xếp theo giá
+			if (sapxep == "ASC")
+			{
+				query = query.OrderBy(s => s.Dongia);
+			}
+			else if (sapxep == "DESC")
+			{
+				query = query.OrderByDescending(s => s.Dongia);
+			}
+
+			// Lấy danh sách sản phẩm từ truy vấn
+			sanphamVM.sanphamVM = await query.ToListAsync();
+
+			return sanphamVM;
+
+		}
+
+		public bool Save()
         {
             var saved = _context.SaveChanges();
             return saved > 0 ? true : false;

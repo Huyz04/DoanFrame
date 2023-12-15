@@ -19,6 +19,7 @@ public partial class Sanpham
     public int? Soluongtonkho { get; set; }
 
     public string? Tinhtrang { get; set; }
+    public string? Mota { get; set; }
 
     public string? Img { get; set; }
     [ForeignKey("LoaiSanPham")]
