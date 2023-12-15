@@ -46,6 +46,7 @@
     });
 
 </script>
+
 <div style="height: 100px; background-color: #051922;"></div>
 
 
@@ -55,7 +56,7 @@
         <div class="row gx-5">
             <aside class="col-lg-6">
                 <div class="border rounded-4 mb-3 d-flex justify-content-center">
-                     <img style="max-width: 100%; max-height: 100vh; margin: auto;" class="rounded-4 fit" src="https://res.cloudinary.com/div8akj4q/image/upload/v1702304116/qlfmj2ns1mld2ik5e7v2.png" />
+                     <img style="max-width: 100%; max-height: 100vh; margin: auto;" class="rounded-4 fit" src="@Model.Img" />
                 </div>
                 <!-- thumbs-wrap.// -->
                 <!-- gallery-wrap .end// -->
@@ -63,7 +64,7 @@
             <main class="col-lg-6">
                 <div class="ps-lg-3">
                     <h4 class="title text-dark">
-                        Serum ABC
+                        @Model.Tensp
                     </h4>
                     <div class="d-flex flex-row my-3">
                         <div class="text-warning mb-1 me-2">
@@ -81,7 +82,7 @@
                     </div>
 
                     <div class="mb-3">
-                        <span class="h5">100000</span>
+                        <span class="h5">@Model.Dongia</span>
                         <span class="text-muted"> VNĐ</span>
                     </div>
 

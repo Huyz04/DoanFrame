@@ -1,6 +1,52 @@
 ﻿
+<script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.min.js"></script>
 <script>
     document.addEventListener("DOMContentLoaded", function () {
+
+        function renderCity(data) {
+            for (const x of data) {
+                citis.options[citis.options.length] = new Option(x.Name, x.Id);
+            }
+            citis.onchange = function () {
+                district.length = 1;
+                ward.length = 1;
+                if (this.value != "") {
+                    const result = data.filter(n => n.Id === this.value);
+
+                    for (const k of result[0].Districts) {
+                        district.options[district.options.length] = new Option(k.Name, k.Id);
+                    }
+                }
+            };
+            district.onchange = function () {
+                ward.length = 1;
+                const dataCity = data.filter((n) => n.Id === citis.value);
+                if (this.value != "") {
+                    const dataWards = dataCity[0].Districts.filter(n => n.Id === this.value)[0].Wards;
+
+                    for (const w of dataWards) {
+                        wards.options[wards.options.length] = new Option(w.Name, w.Id);
+                    }
+                }
+            };
+        }
+
+
+        var citis = document.getElementById("city");
+        var districts = document.getElementById("district");
+        var wards = document.getElementById("ward");
+        var Parameter = {
+            url: "https://raw.githubusercontent.com/kenzouno1/DiaGioiHanhChinhVN/master/data.json",
+            method: "GET",
+            responseType: "application/json",
+        };
+        var promise = axios(Parameter);
+        promise.then(function (result) {
+            renderCity(result.data);
+        });
+
+
+
         // Lấy tất cả các hàng input group
         const inputGroups = document.querySelectorAll(".quantity-price");
 
@@ -80,9 +126,9 @@
         });
 
 
-        var consigneenameInput = document.getElementById('input-consigneename');
-        var phoneInput = document.getElementById('input-phonenumber');
-        var addressInput = document.getElementById('input-address');
+        var consigneenameInputCheckout = document.getElementById('input-consigneename');
+        var phoneInputCheckout = document.getElementById('input-phonenumber');
+        var addressInputCheckout = document.getElementById('input-address');
         // Lấy tất cả các input radio trong tài liệu
         var radios = document.querySelectorAll(".address");
 
@@ -98,13 +144,133 @@
                     var phoneNumber = this.closest('.label-address').querySelector('.phone-numer').innerText;
                     var addressDetails = this.closest('.label-address').querySelector('.address-details').innerText;
 
-                    consigneenameInput.value = consigneeName;
-                    phoneInput.value = phoneNumber;
-                    addressInput.value = addressDetails;
+                    consigneenameInputCheckout.value = consigneeName;
+                    phoneInputCheckout.value = phoneNumber;
+                    addressInputCheckout.value = addressDetails;
                 }
             });
         });
 
+        // Lấy thẻ button
+        var btnAddAddress = document.getElementById('btn-add-address');
+        btnAddAddress.addEventListener('click', function () {
+            document.getElementById('add-address-container').style.display = '';
+            btnAddAddress.style.display = 'none';
+        });
+
+        var btnCancelAddress = document.getElementById('cancel-add-address');
+        btnCancelAddress.addEventListener('click', function () {
+            document.getElementById('add-address-container').style.display = 'none';
+            btnAddAddress.style.display = 'block';
+        });
+
+        var btnSaveAddress = document.getElementById('save-add-address');
+        btnSaveAddress.addEventListener('click', function () {
+            var nameInput = document.getElementById('name-input');
+            var phoneInput = document.getElementById('phone-input');
+            var addressInput = document.getElementById('address-input');
+            var cityOption = document.getElementById('city');
+            var districtOption = document.getElementById('district');
+            var wardOption = document.getElementById('ward');
+
+            document.getElementById('add-address-container').style.display = 'none';
+            btnAddAddress.style.display = 'block';
+
+            // Tạo các phần tử HTML
+            var outerDiv = document.createElement('div');
+            outerDiv.classList.add('card-address-details', 'col-lg-12', 'row', 'mb-3');
+            outerDiv.style.marginLeft = '0';
+
+            var cardDiv = document.createElement('div');
+            cardDiv.classList.add('card', 'p-0', 'col-lg-11');
+
+            var labelDiv = document.createElement('label');
+            labelDiv.classList.add('label-address', 'btn', 'btn-secondary', 'form-control', 'form-control-lg', 'd-flex', 'align-items-center', 'p-0');
+
+            var inputRadio = document.createElement('input');
+            inputRadio.setAttribute('type', 'radio');
+            inputRadio.setAttribute('name', 'options');
+            inputRadio.classList.add('address');
+            inputRadio.setAttribute('autocomplete', 'off');
+            inputRadio.style.margin = '10px';
+            inputRadio.setAttribute('size', '1');
+            inputRadio.setAttribute('minlength', '3');
+            inputRadio.setAttribute('maxlength', '3');
+            inputRadio.checked = false;
+            inputRadio.addEventListener('click', function () {
+                if (this.checked) {
+                    var modal = document.getElementById('myModal');
+                    modal.style.display = 'none';
+
+                    var consigneeName = this.closest('.label-address').querySelector('.consignee-name').innerText;
+                    var phoneNumber = this.closest('.label-address').querySelector('.phone-numer').innerText;
+                    var addressDetails = this.closest('.label-address').querySelector('.address-details').innerText;
+
+                    consigneenameInputCheckout.value = consigneeName;
+                    phoneInputCheckout.value = phoneNumber;
+                    addressInputCheckout.value = addressDetails;
+                }
+            });
+
+            var innerDiv = document.createElement('div');
+            innerDiv.style.margin = '10px';
+            innerDiv.style.display = 'block';
+            innerDiv.style.textAlign = 'left';
+
+            var div1 = document.createElement('div');
+            var boldText1 = document.createElement('b');
+            boldText1.textContent = 'Tên người nhận: ';
+            var span1 = document.createElement('span');
+            span1.classList.add('consignee-name');
+            span1.textContent = nameInput.value;
+            div1.appendChild(boldText1);
+            div1.appendChild(span1);
+
+            var div2 = document.createElement('div');
+            var boldText2 = document.createElement('b');
+            boldText2.textContent = 'Số điện thoại: ';
+            var span2 = document.createElement('span');
+            span2.classList.add('phone-numer');
+            span2.textContent = phoneInput.value;
+            div2.appendChild(boldText2);
+            div2.appendChild(span2);
+
+            var div3 = document.createElement('div');
+            var boldText3 = document.createElement('b');
+            boldText3.textContent = 'Địa chỉ: ';
+            var span3 = document.createElement('span');
+            span3.classList.add('address-details');
+
+            var addressString = addressInput.value + ", " + wardOption.options[wardOption.selectedIndex].textContent + ", " + districtOption.options[districtOption.selectedIndex].textContent + ", " + cityOption.options[cityOption.selectedIndex].textContent
+
+            span3.textContent = addressString;
+            div3.appendChild(boldText3);
+            div3.appendChild(span3);
+
+            var trashDiv = document.createElement('div');
+            trashDiv.classList.add('col-lg-1', 'vertical-center');
+            var trashLink = document.createElement('a');
+            trashLink.setAttribute('href', '#!');
+            trashLink.style.color = '#cecece';
+            var trashIcon = document.createElement('i');
+            trashIcon.classList.add('fas', 'fa-trash-alt');
+            trashLink.appendChild(trashIcon);
+            trashDiv.appendChild(trashLink);
+
+            // Chèn các phần tử vào nhau theo cấu trúc
+            outerDiv.appendChild(cardDiv);
+            cardDiv.appendChild(labelDiv);
+            labelDiv.appendChild(inputRadio);
+            labelDiv.appendChild(innerDiv);
+            innerDiv.appendChild(div1);
+            innerDiv.appendChild(div2);
+            innerDiv.appendChild(div3);
+            outerDiv.appendChild(trashDiv);
+
+            var divsWithClassA = document.querySelectorAll('#container-address .card-address-details');
+            var lastDivWithClassA = divsWithClassA[divsWithClassA.length - 1];
+            lastDivWithClassA.after(outerDiv);
+        });
     });
 
 </script>
@@ -120,18 +286,19 @@
         border-color: var(--secondary-color);
         color: #000000;
     }
-    .btn-secondary:hover,
-    .btn-secondary:focus,
-    .btn-secondary:active,
-    .btn-secondary.active,
-    .show > .btn-secondary.dropdown-toggle {
+
+        .btn-secondary:hover,
+        .btn-secondary:focus,
+        .btn-secondary:active,
+        .btn-secondary.active,
+        .show > .btn-secondary.dropdown-toggle {
             background-color: var(--secondary-color-active);
             border-color: var(--secondary-color-active);
             color: #000000;
-    }
+        }
 
     .icon-with-text {
-        cursor:pointer;
+        cursor: pointer;
         position: relative;
         display: inline-block; /* Để div chỉ chứa đúng kích thước của nội dung bên trong */
         font-size: 16px; /* Kích thước chung của văn bản và icon */
@@ -155,7 +322,7 @@
         display: block;
         font-size: 16px;
         margin-bottom: 20px;
-        padding:0 !important;
+        padding: 0 !important;
     }
 
         .button-with-icon button {
@@ -215,14 +382,14 @@
         justify-content: center; /* Căn giữa theo chiều ngang */
     }
 
-  </style>
+</style>
 <section style="background-color: #eee;">
     <div class="modal" id="myModal">
-        <div class="modal-content">
-            <span class="close">&times;</span>
+        <div id="container-address" class="modal-content">
+            <span class="close" style="text-align: right;">&times;</span>
             <h5>SỔ ĐỊA CHỈ</h5>
 
-            <div class="col-lg-12 row mb-3" style="margin-left: 0 !important;">
+            <div class="card-address-details col-lg-12 row mb-3" style="margin-left: 0 !important;">
                 <div class="card p-0 col-lg-11">
                     <label class="label-address btn btn-secondary form-control form-control-lg d-flex align-items-center p-0">
                         <input type="radio" name="options" class="address" autocomplete="off" style="margin:10px"
@@ -240,7 +407,7 @@
                 </div>
             </div>
 
-            <div class="col-lg-12 row mb-3" style="margin-left: 0 !important;">
+            <div class="card-address-details col-lg-12 row mb-3" style="margin-left: 0 !important;">
                 <div class="card p-0 col-lg-11">
                     <label class="label-address btn btn-secondary form-control form-control-lg d-flex align-items-center p-0">
                         <input type="radio" name="options" class="address" autocomplete="off" style="margin:10px"
@@ -258,9 +425,46 @@
                 </div>
             </div>
 
-            <button class="btn btn-primary" type="button">
-                Thêm địa chỉ
+            <div class="card" id="add-address-container" style="padding:15px; display:none;">
+                <label>Tên người nhận:</label>
+                <input type="text" id="name-input" name="nameInput" required>
+                <label>Số điện thoại:</label>
+                <input type="text" id="phone-input" name="phoneInput" required>
+                <label>Địa chỉ:</label>
+                <input type="text" id="address-input" name="addressInput" required>
+                <div class="row">
+                    <div class="col-md-4">
+                        <label>Tỉnh/ Thành phố:</label><br />
+                        <select class="form-select form-select-sm mb-3" id="city" style="width:100%;height:30px;">
+                            <option value="" selected>Chọn tỉnh thành</option>
+                        </select>
+                    </div>
+                    <div class="col-md-4">
+                        <label>Quận/ Huyện:</label><br />
+                        <select class="form-select form-select-sm mb-3" id="district" style="width:100%;height:30px;">
+                            <option value="" selected>Chọn quận huyện</option>
+                        </select>
+                    </div>
+                    <div class="col-md-4">
+                        <label>Phường xã:</label><br />
+                        <select class="form-select form-select-sm" id="ward" style="width:100%;height:30px;">
+                            <option value="" selected>Chọn phường xã</option>
+                        </select>
+                    </div>
+
+                </div>
+                <div style="display:flex;margin:20px;justify-content:center;">
+                    <button id="save-add-address" class="btn btn-dark" style="margin-right:20px;">Thêm</button>
+                    <button id="cancel-add-address" class="btn btn-dark" style="margin-right:20px;">Hủy</button>
+                </div>
+            </div>
+
+            <button id="btn-add-address" class="card row mb-3" type="button" style="margin: 0 !important; display:block;">
+                <div>
+                    <i class="fas fa-plus"></i><span style="margin-left:20px;">Thêm địa chỉ mới</span>
+                </div>
             </button>
+
         </div>
     </div>
 
@@ -284,7 +488,7 @@
                                     <div class="card-body">
                                         <div class="d-flex justify-content-between">
                                             <div class="checked-row d-flex flex-row align-items-center" data-key="">
-                                                <div class ="mx-3">
+                                                <div class="mx-3">
                                                     <input type="checkbox" id="myCheckbox">
                                                 </div>
                                                 <div class="mx-3">
@@ -296,7 +500,7 @@
                                                 </div>
                                             </div>
                                             <div class="quantity-price d-flex flex-row align-items-center">
-                                                <div class="input-group" style="z-index:0;" >
+                                                <div class="input-group" style="z-index:0;">
                                                     <button class="btn btn-white border border-secondary px-3 decrement" type="button" data-mdb-ripple-color="dark">
                                                         <i class="fas fa-minus"></i>
                                                     </button>

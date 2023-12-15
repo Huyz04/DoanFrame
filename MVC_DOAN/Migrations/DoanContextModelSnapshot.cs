@@ -247,6 +247,9 @@ namespace MVC_DOAN.Migrations
                     b.Property<int>("LoaisanphamId")
                         .HasColumnType("int");
 
+                    b.Property<string>("Mota")
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<int?>("Soluongdaban")
                         .HasColumnType("int");
 

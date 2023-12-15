@@ -1,8 +1,29 @@
-﻿@model IEnumerable<Sanpham>
+﻿@model SanPhamVM
 @{
 	ViewData["Title"] = "San Pham";
 }
+<style>
+	.search-input {
+		padding: 8px 32px;
+		border-radius: 20px;
+		border: none;
+		font-size: 16px;
+	}
 
+	.search-bar-icon {
+		position: absolute;
+		top: 50%;
+		right: 8px;
+		transform: translateY(-50%);
+		text-decoration: none;
+		color: #000;
+	}
+
+		/* Tùy chỉnh kiểu dáng icon tìm kiếm */
+		.search-bar-icon i {
+			font-size: 20px;
+		}
+</style>
 <!-- breadcrumb-section -->
 <div style="height: 100px; background-color: #051922;"></div>
 
@@ -12,22 +33,40 @@
 	<div class="container">
 		<div class="row">
 			<div class="col-md-12">
+
 				<div class="product-filters">
+					
 					<ul>
-						<li class="active" data-filter="*">Tất cả</li>
-						<li data-filter=".strawberry">Sữa rửa mặt</li>
-						<li data-filter=".berry">Son</li>
-						<li data-filter=".lemon">Phấn</li>
+						<li>
+							<input type="text" class="search-input" placeholder="Nhập thông tin tìm kiếm">
+							
+								<i class="fas fa-search"></i>
+							
+						</li>
+						<li>
+							<label for="sortSelect">Loại sản phẩm: </label>
+							<select class="custom-select mr-sm-2" id="sortSelect" style="height: 38px; border: 1px solid #ced4da; border-radius: 5px;">
+								<option value="">Tất cả</option>
+								@foreach (var item in Model.loaisanphamVM)
+								{
+
+									@if (item.Tinhtrang == "1")
+									{
+										<option value="@item.Id">@item.Tenlsp</option>
+									}
+								}
+							</select>
+						</li>
 					</ul>
 				</div>
 			</div>
 		</div>
 		<div class="col-lg-12 col-md-6 text-center">
 			<div>
-				<label for="sortSelect">Sắp xếp: </label>
-				<select class="custom-select mr-sm-2" id="sortSelect" style="height: 38px; border: 1px solid #ced4da; border-radius: 5px;">
-					<option value="asc">Tăng dần</option>
-					<option value="desc">Giảm dần</option>
+				<label for="sortSelectSX">Sắp xếp: </label>
+				<select class="custom-select mr-sm-2" id="sortSelectSX" style="height: 38px; border: 1px solid #ced4da; border-radius: 5px;">
+					<option value="ASC">Tăng dần</option>
+					<option value="DESC">Giảm dần</option>
 				</select>
 
 				<label for="sortSelect" style="padding-left: 50px;">Khoảng giá: </label>
@@ -38,70 +77,20 @@
 		</div>
 
 		<div class="row product-lists">
-			@foreach (var item in Model)
+			@foreach (var item in Model.sanphamVM)
 			{
 			<div class="col-lg-4 col-md-6 text-center strawberry">
 				<div class="single-product-item">
 					<div class="product-image">
-						<a href="single-product.html"><img src="@item.Img" alt=""></a>
+							<a asp-area="" asp-controller="SanPham" asp-action="Detail" asp-route-Id="@item.Id"><img src="@item.Img" alt=""></a>
 					</div>
 					<h3>@item.Tensp</h3>
 					<p class="product-price">@item.Dongia<span>VND</span></p>
-					<a href="cart.html" class="cart-btn"><i class="fas fa-shopping-cart"></i> Add to Cart</a>
+						<a asp-area="" asp-controller="GioHang" asp-action="Index" class="cart-btn"><i class="fas fa-shopping-cart"></i>Thêm vào giỏ</a>
 				</div>
 			</div>
 			}
-			<div class="col-lg-4 col-md-6 text-center berry">
-				<div class="single-product-item">
-					<div class="product-image">
-						<a href="single-product.html"><img src="assets/img/products/product-img-2.jpg" alt=""></a>
-					</div>
-					<h3>Berry</h3>
-					<p class="product-price"><span>Per Kg</span> 70$ </p>
-					<a href="cart.html" class="cart-btn"><i class="fas fa-shopping-cart"></i> Add to Cart</a>
-				</div>
-			</div>
-			<div class="col-lg-4 col-md-6 text-center lemon">
-				<div class="single-product-item">
-					<div class="product-image">
-						<a href="single-product.html"><img src="assets/img/products/product-img-3.jpg" alt=""></a>
-					</div>
-					<h3>Lemon</h3>
-					<p class="product-price"><span>Per Kg</span> 35$ </p>
-					<a href="cart.html" class="cart-btn"><i class="fas fa-shopping-cart"></i> Add to Cart</a>
-				</div>
-			</div>
-			<div class="col-lg-4 col-md-6 text-center">
-				<div class="single-product-item">
-					<div class="product-image">
-						<a href="single-product.html"><img src="assets/img/products/product-img-4.jpg" alt=""></a>
-					</div>
-					<h3>Avocado</h3>
-					<p class="product-price"><span>Per Kg</span> 50$ </p>
-					<a href="cart.html" class="cart-btn"><i class="fas fa-shopping-cart"></i> Add to Cart</a>
-				</div>
-			</div>
-			<div class="col-lg-4 col-md-6 text-center">
-				<div class="single-product-item">
-					<div class="product-image">
-						<a href="single-product.html"><img src="assets/img/products/product-img-5.jpg" alt=""></a>
-					</div>
-					<h3>Green Apple</h3>
-					<p class="product-price"><span>Per Kg</span> 45$ </p>
-					<a href="cart.html" class="cart-btn"><i class="fas fa-shopping-cart"></i> Add to Cart</a>
-				</div>
-			</div>
-			<div class="col-lg-4 col-md-6 text-center strawberry">
-				<div class="single-product-item">
-					<div class="product-image">
-						<a href="single-product.html"><img src="assets/img/products/product-img-6.jpg" alt=""></a>
-					</div>
-					<h3>Strawberry</h3>
-					<p class="product-price"><span>Per Kg</span> 80$ </p>
-					<a href="cart.html" class="cart-btn"><i class="fas fa-shopping-cart"></i> Add to Cart</a>
-				</div>
-			</div>
-		</div>
+
 
 		<div class="row">
 			<div class="col-lg-12 text-center">
@@ -119,18 +108,44 @@
 	</div>
 </div>
 <!-- end products -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<script>
+		$(document).ready(function () {
+			$('li i.fa-search').click(function () {
+				var searchValue = $('.search-input').val();
+				var maLSP = $('#sortSelect').val();
+				var sapXep = $('#sortSelectSX').val();
+				var giaDuoi = $('#minPrice').val();
+				var giaTren = $('#maxPrice').val();
+				if (giaDuoi === "") {
+					giaDuoi = 0;
+				}
 
-@* {
-    <div>@item.Masp</div>
-    <div>@item.Tensp</div>
-    <div>
-        <a type="button" class="btn btn-sm btn-outline-info" asp-controller="SanPham" asp-action="Edit" asp-route-id="@item.Masp">
-            Edit
-        </a>
-        <a type="button" class="btn btn-sm btn-outline-danger" asp-controller="SanPham" asp-action="Detail" asp-route-id="@item.Masp">
-           Detail
-        </a>
-		<a ></a>
-    </div>
-    <div>------------------------</div>
-} *@
+				if (giaTren === "") {
+					giaTren = 1000000000;
+				}
+
+				// Gửi các thông số lọc dữ liệu qua request AJAX đến action GetFilter trong controller
+				$.ajax({
+					url: '@Url.Action("GetFilter", "SanPham")',
+					type: 'GET',
+					data: {
+						timkiem: searchValue,
+						MaLSP: maLSP,
+						sapxep: sapXep,
+						giaduoi: giaDuoi,
+						giatren: giaTren
+					},
+					success: function (result) {
+						// Xử lý kết quả trả về từ action GetFilter
+						// Ví dụ: cập nhật lại danh sách sản phẩm trong view
+						$('.product-lists').html(result);
+					},
+					error: function (xhr, status, error) {
+						// Xử lý lỗi (nếu có)
+						console.log(error);
+					}
+				});
+			});
+		});
+	</script>

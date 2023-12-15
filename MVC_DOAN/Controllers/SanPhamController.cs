@@ -21,8 +21,8 @@ namespace MVC_DOAN.Controllers
         }
         public async Task<IActionResult> Index()
         {
-            IEnumerable<Sanpham> SanPhams = await _SPI.GetAll();
-            return View(SanPhams);
+            SanPhamVM sanphamVM = await _SPI.GetAll();
+            return View(sanphamVM);
         }
         public async Task<IActionResult> Detail(int Id)
         {
@@ -30,6 +30,12 @@ namespace MVC_DOAN.Controllers
 			return View(sanpham);
 		}
         [HttpGet]
+		public async Task<IActionResult> GetFilter(string timkiem, int MaLSP, string sapxep, int giaduoi, int giatren)
+		{
+			SanPhamVM sanphamVM = await _SPI.GetFilter( timkiem, MaLSP, sapxep, giaduoi, giatren);
+			return View(sanphamVM);
+		}
+		[HttpGet]
         public IActionResult Create()
         {
             var curUserId = _httpContextAccessor.HttpContext.User.GetUserId();
