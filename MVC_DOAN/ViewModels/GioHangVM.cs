@@ -4,7 +4,8 @@ namespace MVC_DOAN.ViewModels
 {
     public class GioHangVM
     {
-        public IEnumerable<Sanpham> sanphamVM { get; set; }
-        public IEnumerable<Ctgh> ctghVM { get; set; }
+        public IEnumerable<Sanpham> sanphams { get; set; }
+        public IEnumerable<Ctgh> ctghs { get; set; }
+        public IEnumerable<Diachi> diachis { get; set; }
     }
 }

@@ -410,11 +410,7 @@ a.read-more-btn {
 
 a.read-more-btn:hover {
   color: #ee71dabf;
-}
-
-a.boxed-btn, a.bordered-btn, a.cart-btn {
-  border-radius: 50px;
-}
+}a.boxed-btn, a.bordered-btn, a.cart-btn, button.cart-btn {    border-radius: 50px;}
 
 .section-title h3 {
   font-size: 40px;
@@ -1200,12 +1196,11 @@ a.cart-btn {
   -webkit-transition: 0.3s;
   -o-transition: 0.3s;
   transition: 0.3s;
-}
-
+}button.cart-btn {    -webkit-transition: 0.3s;    -o-transition: 0.3s;    transition: 0.3s;}
 a.cart-btn:hover {
   background-color: #051922;
   color: #ee71dabf;
-}
+}button.cart-btn:hover {    background-color: #051922;    color: #ee71dabf;}
 
 .recent-posts ul li {
   -webkit-transition: 0.3s;
@@ -2391,12 +2386,10 @@ a.cart-btn {
   background-color: #ee71dabf;
   color: #fff;
   padding: 10px 20px;
-}
-
+}button.cart-btn {    font-family: 'Lexend', sans-serif;    display: inline-block;    background-color: #ee71dabf;    color: #fff;    padding: 10px 20px;}
 a.cart-btn i {
   margin-right: 5px;
-}
-
+}button.cart-btn i {    margin-right: 5px;}
 .single-product-img img {
   border-radius: 5px;
   -webkit-box-shadow: 0 0 20px #ddd;
@@ -2440,7 +2433,7 @@ input[type="number"] {
 
 .single-product-form a.cart-btn {
   margin-bottom: 15px;
-}
+}.single-product-form button.cart-btn {    margin-bottom: 15px;}
 
 .single-product-content h4 {
   font-size: 20px;

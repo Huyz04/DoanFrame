@@ -1,0 +1,659 @@
+﻿@model GioHangVM
+@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.min.js"></script>
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+
+        function renderCity(data) {
+            for (const x of data) {
+                citis.options[citis.options.length] = new Option(x.Name, x.Id);
+            }
+            citis.onchange = function () {
+                district.length = 1;
+                ward.length = 1;
+                if (this.value != "") {
+                    const result = data.filter(n => n.Id === this.value);
+
+                    for (const k of result[0].Districts) {
+                        district.options[district.options.length] = new Option(k.Name, k.Id);
+                    }
+                }
+            };
+            district.onchange = function () {
+                ward.length = 1;
+                const dataCity = data.filter((n) => n.Id === citis.value);
+                if (this.value != "") {
+                    const dataWards = dataCity[0].Districts.filter(n => n.Id === this.value)[0].Wards;
+
+                    for (const w of dataWards) {
+                        wards.options[wards.options.length] = new Option(w.Name, w.Id);
+                    }
+                }
+            };
+        }
+
+
+        var citis = document.getElementById("city");
+        var districts = document.getElementById("district");
+        var wards = document.getElementById("ward");
+        var Parameter = {
+            url: "https://raw.githubusercontent.com/kenzouno1/DiaGioiHanhChinhVN/master/data.json",
+            method: "GET",
+            responseType: "application/json",
+        };
+        var promise = axios(Parameter);
+        promise.then(function (result) {
+            renderCity(result.data);
+        });
+
+
+
+        // Lấy tất cả các hàng input group
+        const inputGroups = document.querySelectorAll(".quantity-price");
+
+        // Lặp qua từng hàng input group để thêm sự kiện tương ứng
+        inputGroups.forEach(function (group) {
+            const decrementButton = group.querySelector(".decrement");
+            const incrementButton = group.querySelector(".increment");
+            const quantityInput = group.querySelector(".quantityInput");
+            const priceDiv = group.querySelector(".priceDiv");
+            const originalPrice = parseInt(priceDiv.querySelector("b").innerText);
+
+            function updatePrice(value) {
+                const newPrice = originalPrice * value;
+                priceDiv.querySelector("b").innerText = newPrice;
+            }
+            decrementButton.addEventListener("click", function () {
+                let currentValue = parseInt(quantityInput.value) || 1;
+                if (currentValue > 1) {
+                    currentValue--;
+                    quantityInput.value = currentValue;
+                    updatePrice(currentValue);
+                }
+            });
+
+            incrementButton.addEventListener("click", function () {
+                let currentValue = parseInt(quantityInput.value) || 1;
+                currentValue++;
+                quantityInput.value = currentValue;
+                updatePrice(currentValue);
+            });
+
+            quantityInput.addEventListener("input", function () {
+                let currentValue = parseInt(quantityInput.value) || 1;
+                updatePrice(currentValue);
+            });
+        });
+
+        const checkboxes = document.querySelectorAll('.checked-row input[type="checkbox"]');
+        const totalElement = document.getElementById('totalAmount');
+        let totalPrice = 0;
+
+        checkboxes.forEach(function (checkbox) {
+            checkbox.addEventListener('change', function () {
+                const isChecked = this.checked;
+                const priceDiv = this.closest('.checked-row').nextElementSibling.querySelector('.priceDiv');
+                const price = parseInt(priceDiv.querySelector('b').innerText);
+
+                if (isChecked) {
+                    totalPrice += price;
+                } else {
+                    totalPrice -= price;
+                }
+
+                // Cập nhật tổng giá trị
+                totalElement.textContent = totalPrice;
+            });
+        });
+
+
+
+        const showModalButton = document.getElementById('showModalButton');
+        const modal = document.getElementById('myModal');
+        const closeBtn = modal.querySelector('.close');
+
+        showModalButton.addEventListener('click', function () {
+            modal.style.display = 'block';
+        });
+
+        closeBtn.addEventListener('click', function () {
+            modal.style.display = 'none';
+        });
+
+        window.addEventListener('click', function (event) {
+            if (event.target === modal) {
+                modal.style.display = 'none';
+            }
+        });
+
+
+        var consigneenameInputCheckout = document.getElementById('input-consigneename');
+        var phoneInputCheckout = document.getElementById('input-phonenumber');
+        var addressInputCheckout = document.getElementById('input-address');
+        // Lấy tất cả các input radio trong tài liệu
+        var radios = document.querySelectorAll(".address");
+
+        // Lặp qua từng radio và thêm sự kiện 'click'
+        radios.forEach(function (radio) {
+            radio.addEventListener('click', function () {
+                if (this.checked) {
+                    // Ẩn modal khi người dùng chọn radio button
+                    var modal = document.getElementById('myModal');
+                    modal.style.display = 'none';
+
+                    var consigneeName = this.closest('.label-address').querySelector('.consignee-name').innerText;
+                    var phoneNumber = this.closest('.label-address').querySelector('.phone-numer').innerText;
+                    var addressDetails = this.closest('.label-address').querySelector('.address-details').innerText;
+
+                    consigneenameInputCheckout.value = consigneeName;
+                    phoneInputCheckout.value = phoneNumber;
+                    addressInputCheckout.value = addressDetails;
+                }
+            });
+        });
+
+        // Lấy thẻ button
+        var btnAddAddress = document.getElementById('btn-add-address');
+        btnAddAddress.addEventListener('click', function () {
+            document.getElementById('add-address-container').style.display = '';
+            btnAddAddress.style.display = 'none';
+        });
+
+        var btnCancelAddress = document.getElementById('cancel-add-address');
+        btnCancelAddress.addEventListener('click', function () {
+            document.getElementById('add-address-container').style.display = 'none';
+            btnAddAddress.style.display = 'block';
+        });
+
+        var btnSaveAddress = document.getElementById('save-add-address');
+        btnSaveAddress.addEventListener('click', function () {
+            var nameInput = document.getElementById('name-input');
+            var phoneInput = document.getElementById('phone-input');
+            var addressInput = document.getElementById('address-input');
+            var cityOption = document.getElementById('city');
+            var districtOption = document.getElementById('district');
+            var wardOption = document.getElementById('ward');
+
+            document.getElementById('add-address-container').style.display = 'none';
+            btnAddAddress.style.display = 'block';
+
+            // Tạo các phần tử HTML
+            var outerDiv = document.createElement('div');
+            outerDiv.classList.add('card-address-details', 'col-lg-12', 'row', 'mb-3');
+            outerDiv.style.marginLeft = '0';
+
+            var cardDiv = document.createElement('div');
+            cardDiv.classList.add('card', 'p-0', 'col-lg-11');
+
+            var labelDiv = document.createElement('label');
+            labelDiv.classList.add('label-address', 'btn', 'btn-secondary', 'form-control', 'form-control-lg', 'd-flex', 'align-items-center', 'p-0');
+
+            var inputRadio = document.createElement('input');
+            inputRadio.setAttribute('type', 'radio');
+            inputRadio.setAttribute('name', 'options');
+            inputRadio.classList.add('address');
+            inputRadio.setAttribute('autocomplete', 'off');
+            inputRadio.style.margin = '10px';
+            inputRadio.setAttribute('size', '1');
+            inputRadio.setAttribute('minlength', '3');
+            inputRadio.setAttribute('maxlength', '3');
+            inputRadio.checked = false;
+            inputRadio.addEventListener('click', function () {
+                if (this.checked) {
+                    var modal = document.getElementById('myModal');
+                    modal.style.display = 'none';
+
+                    var consigneeName = this.closest('.label-address').querySelector('.consignee-name').innerText;
+                    var phoneNumber = this.closest('.label-address').querySelector('.phone-numer').innerText;
+                    var addressDetails = this.closest('.label-address').querySelector('.address-details').innerText;
+
+                    consigneenameInputCheckout.value = consigneeName;
+                    phoneInputCheckout.value = phoneNumber;
+                    addressInputCheckout.value = addressDetails;
+                }
+            });
+
+            var innerDiv = document.createElement('div');
+            innerDiv.style.margin = '10px';
+            innerDiv.style.display = 'block';
+            innerDiv.style.textAlign = 'left';
+
+            var div1 = document.createElement('div');
+            var boldText1 = document.createElement('b');
+            boldText1.textContent = 'Tên người nhận: ';
+            var span1 = document.createElement('span');
+            span1.classList.add('consignee-name');
+            span1.textContent = nameInput.value;
+            div1.appendChild(boldText1);
+            div1.appendChild(span1);
+
+            var div2 = document.createElement('div');
+            var boldText2 = document.createElement('b');
+            boldText2.textContent = 'Số điện thoại: ';
+            var span2 = document.createElement('span');
+            span2.classList.add('phone-numer');
+            span2.textContent = phoneInput.value;
+            div2.appendChild(boldText2);
+            div2.appendChild(span2);
+
+            var div3 = document.createElement('div');
+            var boldText3 = document.createElement('b');
+            boldText3.textContent = 'Địa chỉ: ';
+            var span3 = document.createElement('span');
+            span3.classList.add('address-details');
+
+            var addressString = addressInput.value + ", " + wardOption.options[wardOption.selectedIndex].textContent + ", " + districtOption.options[districtOption.selectedIndex].textContent + ", " + cityOption.options[cityOption.selectedIndex].textContent
+
+            span3.textContent = addressString;
+            div3.appendChild(boldText3);
+            div3.appendChild(span3);
+
+            var trashDiv = document.createElement('div');
+            trashDiv.classList.add('col-lg-1', 'vertical-center');
+            var trashLink = document.createElement('a');
+            trashLink.setAttribute('href', '#!');
+            trashLink.style.color = '#cecece';
+            var trashIcon = document.createElement('i');
+            trashIcon.classList.add('fas', 'fa-trash-alt');
+            trashLink.appendChild(trashIcon);
+            trashDiv.appendChild(trashLink);
+
+            // Chèn các phần tử vào nhau theo cấu trúc
+            outerDiv.appendChild(cardDiv);
+            cardDiv.appendChild(labelDiv);
+            labelDiv.appendChild(inputRadio);
+            labelDiv.appendChild(innerDiv);
+            innerDiv.appendChild(div1);
+            innerDiv.appendChild(div2);
+            innerDiv.appendChild(div3);
+            outerDiv.appendChild(trashDiv);
+
+            var divsWithClassA = document.querySelectorAll('#container-address .card-address-details');
+            var lastDivWithClassA = divsWithClassA[divsWithClassA.length - 1];
+            lastDivWithClassA.after(outerDiv);
+        });
+    });
+
+</script>
+<style>
+    :root {
+        --secondary-color: #ffffff;
+        --secondary-color-active: #f0f0f0;
+    }
+
+    /* Áp dụng màu chủ đạo mới cho các phần tử Bootstrap */
+    .btn-secondary {
+        background-color: var(--secondary-color);
+        border-color: var(--secondary-color);
+        color: #000000;
+    }
+
+        .btn-secondary:hover,
+        .btn-secondary:focus,
+        .btn-secondary:active,
+        .btn-secondary.active,
+        .show > .btn-secondary.dropdown-toggle {
+            background-color: var(--secondary-color-active);
+            border-color: var(--secondary-color-active);
+            color: #000000;
+        }
+
+    .icon-with-text {
+        cursor: pointer;
+        position: relative;
+        display: inline-block; /* Để div chỉ chứa đúng kích thước của nội dung bên trong */
+        font-size: 16px; /* Kích thước chung của văn bản và icon */
+        margin-bottom: 20px; /* Khoảng cách giữa các div */
+    }
+
+        .icon-with-text i {
+            position: absolute;
+            right: 20px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: #aaa;
+        }
+
+        .icon-with-text .text {
+            padding-right: 20px; /* Khoảng trống bên phải của div chứa văn bản */
+        }
+
+    .button-with-icon {
+        position: relative;
+        display: block;
+        font-size: 16px;
+        margin-bottom: 20px;
+        padding: 0 !important;
+    }
+
+        .button-with-icon button {
+            text-align: left;
+        }
+
+        .button-with-icon i {
+            position: absolute;
+            right: 20px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: #aaa;
+        }
+    /* CSS để ẩn modal ban đầu và cố định kích thước */
+    .modal {
+        display: none; /* Ẩn modal */
+        position: fixed; /* Cố định vị trí trên cùng của trình duyệt */
+        z-index: 1; /* Hiển thị modal trên các phần tử khác */
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        overflow: auto; /* Kích hoạt thanh cuộn trong trường hợp nội dung dài */
+        background-color: rgba(0, 0, 0, 0.5); /* Màu nền với độ mờ */
+    }
+
+    .modal-content {
+        position: absolute; /* Đặt vị trí tuyệt đối để tránh các hiệu ứng kích thước mở rộng */
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background-color: #fff; /* Màu nền của phần modal */
+        padding: 20px;
+        border: 1px solid #888;
+        max-width: 80%; /* Kích thước tối đa của modal */
+        max-height: 80%; /* Chiều cao tối đa của modal */
+        overflow: auto; /* Kích hoạt thanh cuộn trong trường hợp nội dung dài */
+    }
+
+    .close {
+        color: #aaa;
+        float: right;
+        font-size: 28px;
+        font-weight: bold;
+    }
+
+        .close:hover,
+        .close:focus {
+            color: black;
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+    .vertical-center {
+        display: flex;
+        align-items: center; /* Căn giữa theo chiều dọc */
+        justify-content: center; /* Căn giữa theo chiều ngang */
+    }
+
+</style>
+<div style="height: 100px; background-color: #051922;"></div>
+<section style="background-color: #eee;">
+    <div class="modal" id="myModal">
+        <div id="container-address" class="modal-content">
+            <span class="close" style="text-align: right;">&times;</span>
+            <h5>SỔ ĐỊA CHỈ</h5>
+            @foreach (var item in Model.diachis)
+            {
+            <div class="card-address-details col-lg-12 row mb-3" style="margin-left: 0 !important;">
+                <div class="card p-0 col-lg-11">
+                    <label class="label-address btn btn-secondary form-control form-control-lg d-flex align-items-center p-0">
+                        <input type="radio" name="options" class="address" autocomplete="off" style="margin:10px"
+                               size="1" minlength="3" maxlength="3"
+                               checked>
+                        <div style="margin:10px; display: block; text-align: left;">
+                            <div><b>Tên người nhận: </b><span class="consignee-name">@item.Hotennguoinhan</span></div>
+                            <div><b>Số điện thoại: </b><span class="phone-numer">@item.Sdt </span></div>
+                            <div><b>Địa chỉ: </b><span class="address-details">@item.Diachichitiet, @item.Xa, @item.Huyen, @item.Tinh</span></div>
+                        </div>
+                    </label>
+                </div>
+                <div class="col-lg-1 vertical-center">
+                    <a href="#!" style="color: #cecece;"><i class="fas fa-trash-alt"></i></a>
+                </div>
+            </div>
+            }
+           @using (Html.BeginForm("Create", "DiaChi", FormMethod.Post))
+                {
+            <div class="card" id="add-address-container" style="padding:15px; display:none;">
+                
+                <label>Tên người nhận:</label>
+                <input type="text" id="name-input" name="Hotennguoinhan" required>
+                <label>Số điện thoại:</label>
+                <input type="text" id="phone-input" name="Sdt" required>
+                <label>Địa chỉ:</label>
+                <input type="text" id="address-input" name="Diachichitiet" required>
+                <div class="row">
+                    <div class="col-md-4">
+                            <label for ="Tinh">Tỉnh/ Thành phố:</label><br />
+                        <select name="Tinh" class="form-select form-select-sm mb-3" id="city" style="width:100%;height:30px;">
+                            <option value="" selected>Chọn tỉnh thành</option>
+                        </select>
+                    </div>
+                    <div class="col-md-4">
+                            <label for="Huyen">Quận/ Huyện:</label><br />
+                        <select name="Huyen" class="form-select form-select-sm mb-3" id="district" style="width:100%;height:30px;">
+                            <option value="" selected>Chọn quận huyện</option>
+                        </select>
+                    </div>
+                    <div class="col-md-4">
+                            <label for="Xa">Phường xã:</label><br />
+                            <select name ="Xa" class="form-select form-select-sm" id="ward" style="width:100%;height:30px;">
+                            <option value="" selected>Chọn phường xã</option>
+                        </select>
+                    </div>
+
+                </div>
+                <div style="display:flex;margin:20px;justify-content:center;">
+  
+
+                        <button type="submit" id="save-add-address" class="btn btn-dark" style="margin-right:20px;" >Thêm</button>
+                    
+                    <button id="save-add-address" class="btn btn-dark" style="margin-right:20px;">Thêm</button>
+                    <button id="cancel-add-address" class="btn btn-dark" style="margin-right:20px;">Hủy</button>
+                </div>
+                
+            </div>
+            }
+
+            <button id="btn-add-address" class="card row mb-3" type="button" style="margin: 0 !important; display:block;">
+                <div>
+                    <i class="fas fa-plus"></i><span style="margin-left:20px;">Thêm địa chỉ mới</span>
+                </div>
+            </button>
+
+        </div>
+    </div>
+
+    <div class="container py-5 h-100">
+        <div class="row d-flex justify-content-center align-items-center h-100">
+            <div class="col">
+                <div class="card">
+                    <div class="card-body p-4">
+
+                        <div class="row">
+
+                            <div class="col-lg-7" style=" height: 600px; overflow: auto;">
+                                <h5 class="mb-3">
+                                    <a href="#!" class="text-body">
+                                        <i class="fas fa-long-arrow-alt-left me-2"></i>Tiếp tục mua sắm
+                                    </a>
+                                </h5>
+                                <hr>
+
+                                <div class="card mb-3">
+                                    <div class="card-body">
+                                        <div class="d-flex justify-content-between">
+                                            <div class="checked-row d-flex flex-row align-items-center" data-key="">
+                                                <div class="mx-3">
+                                                    <input type="checkbox" id="myCheckbox">
+                                                </div>
+                                                <div class="mx-3">
+                                                    <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-shopping-carts/img1.webp"
+                                                         class="img-fluid rounded-3" alt="Shopping item" style="width: 65px;">
+                                                </div>
+                                                <div class="ms-3" style="width: 150px;">
+                                                    <h5>Iphone 11 pro</h5>
+                                                </div>
+                                            </div>
+                                            <div class="quantity-price d-flex flex-row align-items-center">
+                                                <div class="input-group" style="z-index:0;">
+                                                    <button class="btn btn-white border border-secondary px-3 decrement" type="button" data-mdb-ripple-color="dark">
+                                                        <i class="fas fa-minus"></i>
+                                                    </button>
+                                                    <input type="text" class="quantityInput text-center border border-secondary" value="1" style="width: 50px;" />
+                                                    <button class="btn btn-white border border-secondary px-3 increment" type="button" data-mdb-ripple-color="dark">
+                                                        <i class="fas fa-plus"></i>
+                                                    </button>
+                                                </div>
+                                                <div class="priceDiv" style="width: 200px;">
+                                                    <p class="mb-0"><b>90000</b><span> VNĐ</span></p>
+                                                </div>
+                                                <a href="#!" style="color: #cecece;"><i class="fas fa-trash-alt"></i></a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="card mb-3">
+                                    <div class="card-body">
+                                        <div class="d-flex justify-content-between">
+                                            <div class="checked-row d-flex flex-row align-items-center">
+                                                <div class="mx-3">
+                                                    <input type="checkbox" id="myCheckbox">
+                                                </div>
+                                                <div class="mx-3">
+                                                    <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-shopping-carts/img2.webp"
+                                                         class="img-fluid rounded-3" alt="Shopping item" style="width: 65px;">
+                                                </div>
+                                                <div class="ms-3" style="width: 150px;">
+                                                    <h5>Samsung galaxy Note 10 10 10 10 10</h5>
+                                                </div>
+                                            </div>
+                                            <div class="quantity-price d-flex flex-row align-items-center">
+                                                <div class="input-group" style="z-index:0;">
+                                                    <button class="btn btn-white border border-secondary px-3 decrement" type="button" data-mdb-ripple-color="dark">
+                                                        <i class="fas fa-minus"></i>
+                                                    </button>
+                                                    <input type="text" class="quantityInput text-center border border-secondary" value="1" style="width: 50px;" />
+                                                    <button class="btn btn-white border border-secondary px-3 increment" type="button" data-mdb-ripple-color="dark">
+                                                        <i class="fas fa-plus"></i>
+                                                    </button>
+                                                </div>
+                                                <div class="priceDiv" style="width: 200px;">
+                                                    <p class="mb-0"><b>90000</b><span> VNĐ</span></p>
+                                                </div>
+                                                <a href="#!" style="color: #cecece;"><i class="fas fa-trash-alt"></i></a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="card mb-3">
+                                    <div class="card-body">
+                                        <div class="d-flex justify-content-between">
+                                            <div class="checked-row d-flex flex-row align-items-center">
+                                                <div class="mx-3">
+                                                    <input type="checkbox" id="myCheckbox">
+                                                </div>
+                                                <div class="mx-3">
+                                                    <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-shopping-carts/img3.webp"
+                                                         class="img-fluid rounded-3" alt="Shopping item" style="width: 65px;">
+                                                </div>
+                                                <div class="ms-3" style="width: 150px;">
+                                                    <h5>Canon EOS M50</h5>
+                                                </div>
+                                            </div>
+                                            <div class="quantity-price d-flex flex-row align-items-center">
+                                                <div class="input-group" style="z-index:0;">
+                                                    <button class="btn btn-white border border-secondary px-3 decrement" type="button" data-mdb-ripple-color="dark">
+                                                        <i class="fas fa-minus"></i>
+                                                    </button>
+                                                    <input type="text" class="quantityInput text-center border border-secondary" value="1" style="width: 50px;" />
+                                                    <button class="btn btn-white border border-secondary px-3 increment" type="button" data-mdb-ripple-color="dark">
+                                                        <i class="fas fa-plus"></i>
+                                                    </button>
+                                                </div>
+                                                <div class="priceDiv" style="width: 200px;">
+                                                    <p class="mb-0"><b>90000</b><span> VNĐ</span></p>
+                                                </div>
+                                                <a href="#!" style="color: #cecece;"><i class="fas fa-trash-alt"></i></a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-lg-5">
+                                <div class="card text-white rounded-3" style="background-color: rgba(5, 25, 34, 0.6);">
+                                    <div class="card-body">
+                                        <div class="d-flex justify-content-between align-items-center mb-4">
+                                            <h5 class="mb-0">Giỏ hàng</h5>
+                                        </div>
+
+                                        <div class="button-with-icon form-control">
+                                            <button class="form-control form-control-lg" id="showModalButton">
+                                                Chọn địa chỉ giao hàng <i class="fas fa-arrow-right"></i>
+                                            </button>
+                                        </div>
+
+                                        <form class="mt-4">
+                                            <div class="form-group mb-4">
+                                                <label for="input-consigneename">Tên người nhận hàng:</label>
+                                                <input type="text" class="form-control form-control-lg" id="input-consigneename" disabled>
+                                            </div>
+                                            <div class="form-group mb-4">
+                                                <label for="input-phonenumber">Số điện thoại:</label>
+                                                <input type="text" class="form-control form-control-lg" id="input-phonenumber" disabled>
+                                            </div>
+                                            <div class="form-group mb-4">
+                                                <label for="input-address">Địa chỉ giao hàng:</label>
+                                                <input type="text" class="form-control form-control-lg" id="input-address" disabled>
+                                            </div>
+                                        </form>
+
+                                        <label>Chọn phương thức thanh toán:</label>
+                                        <div data-toggle="buttons" style="border: 2px solid #ccc; border-radius: 10px; background-color: #f0f0f0;">
+                                            <label class="btn btn-secondary form-control form-control-lg d-flex align-items-center justify-content-between">
+                                                <input type="radio" name="options" id="COD" autocomplete="off"
+                                                       size="1" minlength="3" maxlength="3" style="margin-right: 10px;"
+                                                       checked>
+                                                <span class="flex-grow-1">Thanh toán khi nhận hàng</span>
+                                            </label>
+
+                                            <label class="btn btn-secondary form-control form-control-lg d-flex align-items-center justify-content-between">
+                                                <input type="radio" name="options" id="VNPay" autocomplete="off"
+                                                       size="1" minlength="3" maxlength="3" style="margin-right: 10px;">
+                                                <span class="flex-grow-1">Thanh toán VNPay</span>
+                                            </label>
+
+                                        </div>
+
+                                        <hr class="my-4">
+
+                                        <div class="d-flex justify-content-between">
+                                            <p class="mb-2"><strong>Tổng tiền</strong></p>
+                                            <p class="mb-2"><strong id="totalAmount">0</strong><span> VNĐ</span></p>
+                                        </div>
+
+                                        <button type="button" class="btn btn-light info btn-block btn-lg w-100">
+                                            <div class="d-flex justify-content-between align-items-center text-center w-100">
+                                                <span class="mx-auto">Thanh toán <i class="fas fa-long-arrow-alt-right ms-2"></i></span>
+                                            </div>
+                                        </button>
+
+                                    </div>
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

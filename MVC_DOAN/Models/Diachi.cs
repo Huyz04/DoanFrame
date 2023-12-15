@@ -13,6 +13,7 @@ public partial class Diachi
     public string? Hotennguoinhan { get; set; }
 
     public string? Sdt { get; set; }
+    public string? Xa { get; set; }
 
     public string? Tinh { get; set; }
 
