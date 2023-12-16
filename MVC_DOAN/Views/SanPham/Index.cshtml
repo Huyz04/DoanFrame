@@ -38,10 +38,10 @@
 					
 					<ul>
 						<li>
-							<input type="text" class="search-input" placeholder="Nhập thông tin tìm kiếm">
-							
+							<div class="input-group" style="">
+								<input type="text" class="form-control" id="search-input" placeholder="Nhập thông tin tìm kiếm" style="border:1px solid #000000">
 								<i class="fas fa-search"></i>
-							
+							</div>
 						</li>
 						<li>
 							<label for="sortSelect">Loại sản phẩm: </label>
@@ -91,9 +91,8 @@
 							<input type="hidden" name="SanphamId" value="@item.Id" />
 							<input type="hidden" name="Soluong" value="1" />
 
-							<button type="submit" class="cart-btn"><i class="fas fa-shopping-cart"></i>Thêm vào giỏ</button>
+							<button type="submit" class="cart-btn" style="border:none"><i class="fas fa-shopping-cart"></i>Thêm vào giỏ</button>
 						}
-						<a asp-area="" asp-controller="GioHang" asp-action="Index" class="cart-btn" ><i class="fas fa-shopping-cart"></i>Thêm vào giỏ</a>
 				</div>
 			</div>
 			}
@@ -118,7 +117,7 @@
 	<script>
 		$(document).ready(function () {
 			$('li i.fa-search').click(function () {
-				var searchValue = $('.search-input').val();
+				var searchValue = $('#search-input').val();
 				var maLSP = $('#sortSelect').val();
 				var sapXep = $('#sortSelectSX').val();
 				var giaDuoi = $('#minPrice').val();

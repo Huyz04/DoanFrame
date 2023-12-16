@@ -410,9 +410,14 @@
                         </div>
                     </label>
                 </div>
-                <div class="col-lg-1 vertical-center">
-                    <a href="#!" style="color: #cecece;"><i class="fas fa-trash-alt"></i></a>
-                </div>
+                    @using (Html.BeginForm("DeleteGioHang", "DiaChi", FormMethod.Post))
+                    {
+                        <input type="hidden" name="Id" value="@item.Id"/>
+                        <a  style="color: #cecece;" onclick="event.target.closest('form').submit()">
+                            <i class="fas fa-trash-alt"></i>
+                        </a>
+                        
+                    }
             </div>
             }
            @using (Html.BeginForm("Create", "DiaChi", FormMethod.Post))
@@ -428,30 +433,28 @@
                 <div class="row">
                     <div class="col-md-4">
                             <label for ="Tinh">Tỉnh/ Thành phố:</label><br />
-                        <select name="Tinh" class="form-select form-select-sm mb-3" id="city" style="width:100%;height:30px;">
+                        <select  class="form-select form-select-sm mb-3" id="city" style="width:100%;height:30px;">
                             <option value="" selected>Chọn tỉnh thành</option>
                         </select>
+                            <input type="hidden" id="city-text-input" name="Tinh" readonly>
                     </div>
                     <div class="col-md-4">
-                            <label for="Huyen">Quận/ Huyện:</label><br />
-                        <select name="Huyen" class="form-select form-select-sm mb-3" id="district" style="width:100%;height:30px;">
+                            <label >Quận/ Huyện:</label><br />
+                        <select  class="form-select form-select-sm mb-3" id="district" style="width:100%;height:30px;">
                             <option value="" selected>Chọn quận huyện</option>
                         </select>
+                            <input type="hidden" id="district-text-input" name="Huyen" readonly>
                     </div>
                     <div class="col-md-4">
-                            <label for="Xa">Phường xã:</label><br />
-                            <select name ="Xa" class="form-select form-select-sm" id="ward" style="width:100%;height:30px;">
+                            <label >Phường xã:</label><br />
+                            <select class="form-select form-select-sm" id="ward" style="width:100%;height:30px;">
                             <option value="" selected>Chọn phường xã</option>
                         </select>
+                            <input type="hidden" id="ward-text-input" name="Xa" readonly>
                     </div>
-
                 </div>
                 <div style="display:flex;margin:20px;justify-content:center;">
-  
-
                         <button type="submit" id="save-add-address" class="btn btn-dark" style="margin-right:20px;" >Thêm</button>
-                    
-                    <button id="save-add-address" class="btn btn-dark" style="margin-right:20px;">Thêm</button>
                     <button id="cancel-add-address" class="btn btn-dark" style="margin-right:20px;">Hủy</button>
                 </div>
                 
@@ -477,7 +480,7 @@
 
                             <div class="col-lg-7" style=" height: 600px; overflow: auto;">
                                 <h5 class="mb-3">
-                                    <a href="#!" class="text-body">
+                                    <a asp-action="Index" asp-controller="SanPham" class="text-body">
                                         <i class="fas fa-long-arrow-alt-left me-2"></i>Tiếp tục mua sắm
                                     </a>
                                 </h5>
@@ -657,3 +660,23 @@
         </div>
     </div>
 </section>
+<script>
+    document.getElementById("city").addEventListener("change", function () {
+        var selectElement = document.getElementById("city");
+        var selectedOption = selectElement.options[selectElement.selectedIndex];
+        var selectedText = selectedOption.text;
+        document.getElementById("city-text-input").value = selectedText;
+    });
+    document.getElementById("district").addEventListener("change", function () {
+        var selectElement = document.getElementById("district");
+        var selectedOption = selectElement.options[selectElement.selectedIndex];
+        var selectedText = selectedOption.text;
+        document.getElementById("district-text-input").value = selectedText;
+    });
+    document.getElementById("ward").addEventListener("change", function () {
+        var selectElement = document.getElementById("ward");
+        var selectedOption = selectElement.options[selectElement.selectedIndex];
+        var selectedText = selectedOption.text;
+        document.getElementById("ward-text-input").value = selectedText;
+    });
+</script>

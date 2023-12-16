@@ -24,9 +24,9 @@ namespace MVC_DOAN.Repository
             return Save();
         }
 
-        public Task<Diachi> GetGioHangById(string Id)
+        public async Task<Diachi> GetDiaChiById(int Id)
         {
-            throw new NotImplementedException();
+            return await _context.Diachis.FirstOrDefaultAsync(c => c.Id == Id);
         }
 
         public bool Save()

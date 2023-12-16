@@ -4,8 +4,8 @@ using MVC_DOAN.Models;
 
 namespace MVC_DOAN.Controllers
 {
-	public class DiachiController : Controller
-	{
+    public class DiachiController : Controller
+    {
         private readonly IDiaChi _DCI;
         private readonly IHttpContextAccessor _httpContextAccessor;
         public DiachiController(IDiaChi DCI, IHttpContextAccessor httpContextAccessor)
@@ -14,9 +14,9 @@ namespace MVC_DOAN.Controllers
             _httpContextAccessor = httpContextAccessor;
         }
         public IActionResult Index()
-		{
-			return View();
-		}
+        {
+            return View();
+        }
         [HttpPost]
         public async Task<IActionResult> Create(Diachi diachi)
         {
@@ -33,7 +33,7 @@ namespace MVC_DOAN.Controllers
                     TaikhoanId = _httpContextAccessor.HttpContext.User.GetUserId(),
                 };
                 _DCI.Add(DIACHI);
-               
+                return RedirectToAction("GetGioHang", "GioHang");
             }
             else
             {
@@ -42,5 +42,13 @@ namespace MVC_DOAN.Controllers
             ModelState.AddModelError("", "Them vao gio hang khong thanh cong!");
             return RedirectToAction("Index", "SanPham");
         }
+        public async Task<IActionResult> DeleteGioHang(int Id)
+        {
+            var diachi = await _DCI.GetDiaChiById(Id);
+            if (diachi == null) return View("Error");
+            _DCI.Delete(diachi);
+            return RedirectToAction("GetGioHang", "GioHang");
+        }
     }
+    
 }

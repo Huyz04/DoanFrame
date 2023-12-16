@@ -5,7 +5,7 @@ namespace MVC_DOAN.Interface
 {
     public interface IDiaChi
     {
-        Task<Diachi> GetGioHangById(string Id);
+        Task<Diachi> GetDiaChiById(int Id);
         bool Add(Diachi diachi);
         bool Update(Diachi diachi);
         bool Delete(Diachi diachi);
