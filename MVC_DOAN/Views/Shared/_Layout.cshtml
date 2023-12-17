@@ -84,7 +84,7 @@
                                             
                                             @if (User.Identity.IsAuthenticated)
                                             {
-                                                <a class="shopping-cart" href="cart.html">
+                                                <a asp-area="" asp-controller="GioHang" asp-action="GetGioHang" class="shopping-cart">
                                                     <i class="fas fa-shopping-cart"></i>
                                                 </a>
                                                 <a asp-area="" asp-controller="Account" asp-action="Logout">Logout</a>

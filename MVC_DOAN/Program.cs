@@ -16,6 +16,9 @@ builder.Services.AddControllersWithViews();
 builder.Services.AddScoped<ILoaiSanPham, ReLoaiSanPham>();
 builder.Services.AddScoped<IDashboard, ReDashboard>();
 builder.Services.AddScoped<ISanPham, ReSanPham>();
+builder.Services.AddScoped<IGioHang, ReGioHang>();
+builder.Services.AddScoped<IDiaChi, ReDiaChi>();
+
 builder.Services.AddScoped<IUser, ReUser>();
 builder.Services.AddScoped<IPhotoService, PhotoService>();
 builder.Services.AddSession();

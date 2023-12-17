@@ -8,40 +8,43 @@ namespace MVC_DOAN.Repository
 {
     public class ReGioHang : IGioHang
     {
-        private readonly DoanContext _context;
-
+        public readonly DoanContext _context;
         public ReGioHang(DoanContext context)
         {
             _context = context;
         }
         public bool Add(Ctgh ctgh)
         {
-            throw new NotImplementedException();
+            _context.Add(ctgh);
+            return Save();
         }
 
         public bool Delete(Ctgh ctgh)
         {
-            throw new NotImplementedException();
+            _context.Remove(ctgh);
+            return Save();
+        }
+
+        public bool Save()
+        {
+            var saved = _context.SaveChanges();
+            return saved > 0 ? true : false;
+        }
+
+        public bool Update(Ctgh ctgh)
+        {
+            _context.Update(ctgh);
+            return Save();
         }
 
         public async Task<GioHangVM> GetGioHangById(string Id)
         {
             var giohangVM = new GioHangVM();
-            giohangVM.ctghVM = await _context.Ctghs.Where(c => c.TaikhoanId == Id).ToListAsync();
-            var sanphamIds = giohangVM.ctghVM.Select(c => c.SanphamId).ToList();
-            giohangVM.sanphamVM = await _context.Sanphams.Where(s => sanphamIds.Contains(s.Id)).ToListAsync();
-
+            giohangVM.ctghs = await _context.Ctghs.Where(c => c.TaikhoanId == Id).ToListAsync();
+            var sanphamIds = giohangVM.ctghs.Select(ctgh => ctgh.SanphamId).ToList();
+            giohangVM.sanphams = await _context.Sanphams.Where(s => sanphamIds.Contains(s.Id)).ToListAsync();
+            giohangVM.diachis = await _context.Diachis.Where(d => d.TaikhoanId == Id).ToListAsync();
             return giohangVM;
-        }
-
-        public bool Save()
-        {
-            throw new NotImplementedException();
-        }
-
-        public bool Update(Ctgh ctgh)
-        {
-            throw new NotImplementedException();
         }
     }
 }

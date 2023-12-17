@@ -128,6 +128,9 @@ namespace MVC_DOAN.Migrations
                     b.Property<string>("Tinh")
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<string>("Xa")
+                        .HasColumnType("nvarchar(max)");
+
                     b.HasKey("Id");
 
                     b.HasIndex("TaikhoanId");
