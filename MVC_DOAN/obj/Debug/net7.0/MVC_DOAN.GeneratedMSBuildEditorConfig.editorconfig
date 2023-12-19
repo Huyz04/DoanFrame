@@ -44,6 +44,14 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcR2lvSGFuZ1xJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
+[D:/HUY/DAIHOC/NAM3/KY1/Framework/DOAN_MAIN/MVC_DOAN/Views/HoaDon/GetHoaDon.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9hRG9uXEdldEhvYURvbi5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/HUY/DAIHOC/NAM3/KY1/Framework/DOAN_MAIN/MVC_DOAN/Views/HoaDon/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9hRG9uXEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
 [D:/HUY/DAIHOC/NAM3/KY1/Framework/DOAN_MAIN/MVC_DOAN/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
@@ -72,6 +80,26 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTG9haVNhblBoYW1cSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
+[D:/HUY/DAIHOC/NAM3/KY1/Framework/DOAN_MAIN/MVC_DOAN/Views/NguoiDung/Address.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTmd1b2lEdW5nXEFkZHJlc3MuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/HUY/DAIHOC/NAM3/KY1/Framework/DOAN_MAIN/MVC_DOAN/Views/NguoiDung/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTmd1b2lEdW5nXEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/HUY/DAIHOC/NAM3/KY1/Framework/DOAN_MAIN/MVC_DOAN/Views/NguoiDung/Info.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTmd1b2lEdW5nXEluZm8uY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/HUY/DAIHOC/NAM3/KY1/Framework/DOAN_MAIN/MVC_DOAN/Views/NguoiDung/Order.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTmd1b2lEdW5nXE9yZGVyLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/HUY/DAIHOC/NAM3/KY1/Framework/DOAN_MAIN/MVC_DOAN/Views/SanPham/AdminSanPham.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2FuUGhhbVxBZG1pblNhblBoYW0uY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
 [D:/HUY/DAIHOC/NAM3/KY1/Framework/DOAN_MAIN/MVC_DOAN/Views/SanPham/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2FuUGhhbVxDcmVhdGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
@@ -88,12 +116,20 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2FuUGhhbVxHZXRGaWx0ZXIuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
+[D:/HUY/DAIHOC/NAM3/KY1/Framework/DOAN_MAIN/MVC_DOAN/Views/SanPham/GetFilterAdmin.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2FuUGhhbVxHZXRGaWx0ZXJBZG1pbi5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
 [D:/HUY/DAIHOC/NAM3/KY1/Framework/DOAN_MAIN/MVC_DOAN/Views/SanPham/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2FuUGhhbVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
 [D:/HUY/DAIHOC/NAM3/KY1/Framework/DOAN_MAIN/MVC_DOAN/Views/Shared/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/HUY/DAIHOC/NAM3/KY1/Framework/DOAN_MAIN/MVC_DOAN/Views/Shared/_Admin.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9BZG1pbi5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
 [D:/HUY/DAIHOC/NAM3/KY1/Framework/DOAN_MAIN/MVC_DOAN/Views/Shared/_ValidationScriptsPartial.cshtml]

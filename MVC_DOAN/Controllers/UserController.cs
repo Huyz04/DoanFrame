@@ -47,5 +47,9 @@ namespace MVC_DOAN.Controllers
             };
             return View(userDetailVM);
         }
+        public IActionResult Get()
+        {
+            return  View();
+        }
     }
 }

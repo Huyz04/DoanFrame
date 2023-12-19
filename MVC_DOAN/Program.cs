@@ -7,6 +7,7 @@ using MVC_DOAN.Interface;
 using MVC_DOAN.Models;
 using MVC_DOAN.Repository;
 using MVC_DOAN.Service;
+using System.Reflection.Metadata;
 
 
 var builder = WebApplication.CreateBuilder(args);
@@ -18,6 +19,11 @@ builder.Services.AddScoped<IDashboard, ReDashboard>();
 builder.Services.AddScoped<ISanPham, ReSanPham>();
 builder.Services.AddScoped<IGioHang, ReGioHang>();
 builder.Services.AddScoped<IDiaChi, ReDiaChi>();
+builder.Services.AddScoped<IChiTietDon, ReChiTietDon>();
+builder.Services.AddScoped<IDonHang, ReDonHang>();
+builder.Services.AddScoped<IHoaDon, ReHoaDon>();
+
+
 
 builder.Services.AddScoped<IUser, ReUser>();
 builder.Services.AddScoped<IPhotoService, PhotoService>();

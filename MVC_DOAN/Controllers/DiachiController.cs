@@ -18,7 +18,7 @@ namespace MVC_DOAN.Controllers
             return View();
         }
         [HttpPost]
-        public async Task<IActionResult> Create(Diachi diachi)
+        public bool Create(Diachi diachi)
         {
             if (ModelState.IsValid)
             {
@@ -33,14 +33,12 @@ namespace MVC_DOAN.Controllers
                     TaikhoanId = _httpContextAccessor.HttpContext.User.GetUserId(),
                 };
                 _DCI.Add(DIACHI);
-                return RedirectToAction("GetGioHang", "GioHang");
+                return true;
             }
             else
             {
-                ModelState.AddModelError("", "Them vao gio hang khong thanh cong!");
+                return false;
             }
-            ModelState.AddModelError("", "Them vao gio hang khong thanh cong!");
-            return RedirectToAction("Index", "SanPham");
         }
         public async Task<IActionResult> DeleteGioHang(int Id)
         {

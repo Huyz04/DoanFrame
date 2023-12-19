@@ -18,6 +18,6 @@
 
         public IFormFile? Img { get; set; }
         public string? URL { get; set; }
-
+        public string? Mota { get; set; }
     }
 }

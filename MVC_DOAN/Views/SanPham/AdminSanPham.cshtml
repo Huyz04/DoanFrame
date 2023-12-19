@@ -1,0 +1,853 @@
+﻿@model SanPhamVM
+@{
+	Layout = "_Admin";
+}
+
+<header>
+	<link rel="stylesheet" href="~/assets/css/style.css" />
+
+	<style>
+
+		#sidebar {
+			min-width: 250px;
+			max-width: 250px;
+			background: #212121;
+			color: #fff;
+			-webkit-transition: all 0.3s;
+			-o-transition: all 0.3s;
+			transition: all 0.3s;
+			position: relative;
+			box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+			overflow-y: auto;
+		}
+
+			#sidebar .h6 {
+				color: #fff;
+			}
+
+			#sidebar.active {
+				margin-left: -250px;
+			}
+
+				#sidebar.active .custom-menu {
+					margin-right: -50px;
+				}
+
+			#sidebar h1 {
+				margin-bottom: 20px;
+				font-weight: 700;
+				font-size: 20px;
+			}
+
+				#sidebar h1 .logo {
+					color: #fff;
+					display: block;
+					padding: 10px 30px;
+					background: #2f89fc;
+				}
+
+			#sidebar ul.components {
+				padding: 0;
+			}
+
+			#sidebar ul li {
+				font-size: 16px;
+			}
+
+				#sidebar ul li > ul {
+					margin-left: 10px;
+				}
+
+					#sidebar ul li > ul li {
+						font-size: 14px;
+					}
+
+				#sidebar ul li a {
+					padding: 15px 30px;
+					display: block;
+					color: rgba(255, 255, 255, 0.6);
+					border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+				}
+
+					#sidebar ul li a:hover {
+						color: #fff;
+						background: #2f89fc;
+						border-bottom: 1px solid #2f89fc;
+					}
+
+				#sidebar ul li.active > a {
+					background: transparent;
+					color: #fff;
+				}
+
+					#sidebar ul li.active > a:hover {
+						background: #2f89fc;
+						border-bottom: 1px solid #2f89fc;
+					}
+
+		.page-titles {
+			text-align: center;
+			padding: 10px;
+			margin-bottom: 30px;
+		}
+
+		.card-header {
+			background-color: #ffffff;
+			height: 60px;
+			padding: 1rem;
+		}
+
+		.card {
+			box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+		}
+
+		/* CSS để ẩn modal ban đầu và cố định kích thước */
+		.modal {
+			display: none; /* Ẩn modal */
+			position: fixed; /* Cố định vị trí trên cùng của trình duyệt */
+			z-index: 1; /* Hiển thị modal trên các phần tử khác */
+			left: 0;
+			top: 0;
+			width: 100%;
+			height: 100%;
+			overflow: auto; /* Kích hoạt thanh cuộn trong trường hợp nội dung dài */
+			background-color: rgba(0, 0, 0, 0.5); /* Màu nền với độ mờ */
+		}
+
+		.modal-content {
+			position: absolute; /* Đặt vị trí tuyệt đối để tránh các hiệu ứng kích thước mở rộng */
+			top: 50%;
+			left: 50%;
+			transform: translate(-50%, -50%);
+			background-color: #fff; /* Màu nền của phần modal */
+			padding: 20px;
+			border: 1px solid #888;
+			max-width: 50%; /* Kích thước tối đa của modal */
+			max-height: 60%; /* Chiều cao tối đa của modal */
+			overflow: auto; /* Kích hoạt thanh cuộn trong trường hợp nội dung dài */
+		}
+
+		.close {
+			color: #aaa;
+			float: right;
+			font-size: 28px;
+			font-weight: bold;
+		}
+
+			.close:hover,
+			.close:focus {
+				color: black;
+				text-decoration: none;
+				cursor: pointer;
+			}
+
+
+		/* CSS để ẩn modal ban đầu và cố định kích thước */
+		.modalView {
+			display: none; /* Ẩn modal */
+			position: fixed; /* Cố định vị trí trên cùng của trình duyệt */
+			z-index: 1; /* Hiển thị modal trên các phần tử khác */
+			left: 0;
+			top: 0;
+			width: 100%;
+			height: 100%;
+			overflow: auto; /* Kích hoạt thanh cuộn trong trường hợp nội dung dài */
+			background-color: rgba(0, 0, 0, 0.5); /* Màu nền với độ mờ */
+		}
+
+		.modal-view-content {
+			position: absolute; /* Đặt vị trí tuyệt đối để tránh các hiệu ứng kích thước mở rộng */
+			top: 50%;
+			left: 50%;
+			transform: translate(-50%, -50%);
+			background-color: #fff; /* Màu nền của phần modal */
+			padding: 20px;
+			border: 1px solid #888;
+			max-width: 80%; /* Kích thước tối đa của modal */
+			min-height: fit-content; /* Chiều cao tối đa của modal */
+			overflow: auto; /* Kích hoạt thanh cuộn trong trường hợp nội dung dài */
+		}
+
+		.highlight {
+			background-color: yellow; /* Màu nền bạn muốn áp dụng */
+			font-weight: bold; /* Tuỳ chỉnh kiểu chữ nếu cần */
+		}
+
+		.row > * {
+			margin-bottom: 20px;
+		}
+
+		.star-rating li {
+			display: inline-block;
+		}
+
+			.star-rating li i {
+				color: gold;
+			}
+
+		.price {
+			font-size: 20px;
+			color: #000000;
+		}
+
+		.new-arrivals-img-contnent {
+			height: 200px; /* Đặt chiều cao cố định cho div */
+			width: 100%; /* Đặt chiều rộng cố định cho div (có thể điều chỉnh tùy thuộc vào thiết kế của bạn) */
+			overflow: hidden; /* Ẩn bất kỳ nội dung nào vượt quá kích thước div */
+			display: flex; /* Sử dụng flexbox để căn giữa hình ảnh */
+			justify-content: center; /* Căn giữa theo chiều ngang */
+			align-items: center; /* Căn giữa theo chiều dọc */
+		}
+
+			.new-arrivals-img-contnent img {
+				max-width: 100%; /* Đảm bảo hình ảnh không vượt quá kích thước của div */
+				height: auto; /* Đảm bảo tỉ lệ hình ảnh được giữ nguyên */
+			}
+
+		.content-body {
+			overflow-y: auto;
+			width: calc(100vw - 250px);
+		}
+	</style>
+
+</header>
+<body>
+	<div id="preloader" class="container-fluid">
+		<div class="modal" id="myModal">
+			<div class="modal-content">
+				<span class="close" style="text-align: right;">&times;</span>
+				<form method="post" asp-action="Edit" asp-controller="SanPham" enctype="multipart/form-data">
+				<div class="container">
+					<div class="row">
+						<div class="col-5">
+							<label>Hình ảnh:</label><br />
+							<img id="img-input" src="https://res.cloudinary.com/div8akj4q/image/upload/v1702304116/qlfmj2ns1mld2ik5e7v2.png"
+								 alt="Hình ảnh" style="width: 70% ; height: auto ; object-fit: cover;" name="URL" />
+								 
+							<div class="mt-5">
+								<label>Chọn hình ảnh:</label>
+								<input type="file" name="Img" accept="image/*" style="color: black" />
+							</div>
+						</div>
+						<div class="col-7">
+							<div class="row">
+								<label class="col-4">ID:</label>
+								<input id="id-input" class="col-8" style="font-size: 14px; padding: 5px; width: 250px"
+									   type="text" disabled />
+									<input type="hidden" name="Id" id="Id-In"/>
+							</div>
+
+							<div class="row">
+								<label class="col-4">Tên sản phẩm:</label>
+								<input id="name-input" name="Tensp" class="col-8" type="text"
+									   style="font-size: 14px; padding: 5px; width: 250px">
+							</div>
+
+							<div class="row">
+								<labe class="col-4">Tên loại sản phẩm:</labe>
+									<select id="categories-input" name="LoaisanphamId" class=" col-8" name="categories" style="font-size: 14px; padding: 5px; width: 250px">
+									@foreach (var item in Model.loaisanphamVM)
+									{
+										<option value="@item.Id">@item.Tenlsp</option>
+									}
+								</select>
+		
+							</div>
+
+							<div class="row">
+								<label class="col-4">Đơn giá:</label>
+								<input id="price-input" name="Dongia" class="col-8" style="font-size: 14px; padding: 5px; width: 250px"
+									   type="number" />
+							</div>
+
+							<div class="row">
+								<label class="col-4">Tình trạng:</label>
+								<select id="status-input" name="Tinhtrang" class=" col-8" name="status" style="font-size: 14px; padding: 5px; width: 250px">
+									<option value="1" >Đang kinh doanh</option>
+									<option value="0">Ngừng kinh doanh</option>
+								</select>
+							</div>
+						</div>
+					</div>
+					<div class="row">
+						<label>Mô tả sản phẩm</label>
+						<textarea id="description-input" name="Mota" rows="4" cols="50" style="margin:10px"></textarea>
+					</div>
+					<div style="text-align:center;">
+						<button id="save-edit" type="submit" class="btn btn-dark">Lưu</button>
+						<button id="cancel-edit" class="btn btn-dark">Hủy</button>
+					</div>
+				</div>
+				</form>
+			</div>
+		</div>
+		<div class="modalView" id="myModalView">
+			<div id="container-order-details" class="modal-view-content" style="position:relative">
+				<span class="close" style="position:absolute;top: 0px;right:10px">&times;</span>
+				<div>
+					<h5 style="text-align: center;">Chi tiết sản phẩm</h5>
+
+					<div class="card mb-3">
+						<div class="card-body">
+							<div class="d-flex justify-content-between">
+								<div class="checked-row d-flex flex-row align-items-center" data-key="">
+									<div class="mx-3">
+										<img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-shopping-carts/img1.webp"
+											 class="img-fluid rounded-3" alt="Shopping item" style="width: 65px;">
+									</div>
+									<div class="ms-3" style="width: 150px;">
+										<h5>Iphone 11 pro</h5>
+									</div>
+								</div>
+								<div class="quantity-price d-flex flex-row align-items-center">
+									<div class="input-group">
+										<div>90000</div><br />
+										<div> x<span>1</span></div>
+									</div>
+									<div class="priceDiv" style="width: 200px;">
+										<p class="mb-0"><b>90000</b><span> VNĐ</span></p>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="card mb-3">
+						<div class="card-body">
+							<div class="d-flex justify-content-between">
+								<div class="checked-row d-flex flex-row align-items-center" data-key="">
+									<div class="mx-3">
+										<img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-shopping-carts/img1.webp"
+											 class="img-fluid rounded-3" alt="Shopping item" style="width: 65px;">
+									</div>
+									<div class="ms-3" style="width: 150px;">
+										<h5>Iphone 11 pro</h5>
+									</div>
+								</div>
+								<div class="quantity-price d-flex flex-row align-items-center">
+									<div class="input-group">
+										<div>90000</div><br />
+										<div> x<span>1</span></div>
+									</div>
+									<div class="priceDiv" style="width: 200px;">
+										<p class="mb-0"><b>90000</b><span> VNĐ</span></p>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="wrapper d-flex align-items-stretch">
+			<nav id="sidebar">
+				<div class="p-4 pt-5">
+					<div class="site-logo">
+						<a href="@Url.Action("Index", "Home")">
+						<img src="~/assets/img/logo.png" alt="" />
+					</div>
+				</div>
+				<div class="p-4 pt-5">
+					<ul class="list-unstyled components mb-5">
+						<li>
+							<a class="has-arrow " href="javascript:void()" aria-expanded="false">
+								<i class="fas fa-home"></i>
+								<span class="nav-text">Dashboard</span>
+							</a>
+						</li>
+						<li>
+							<a href="#">Loại sản phẩm</a>
+						</li>
+						<li class="active">
+							<a asp-controller="SanPham" asp-action="AdminSanPham">Sản phẩm</a>
+						</li>
+						<li>
+							<a asp-controller="HoaDon" asp-action="GetHoaDon">Đơn hàng</a>
+						</li>
+						<li>
+							<a href="#pageSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Thống kê</a>
+							<ul class="collapse list-unstyled" id="pageSubmenu">
+								<li>
+									<a href="#">Theo năm</a>
+								</li>
+								<li>
+									<a href="#">Theo quý</a>
+								</li>
+								<li>
+									<a href="#">Theo tháng</a>
+								</li>
+							</ul>
+						</li>
+					</ul>
+
+					<div class="footer">
+						<p>
+						</p>
+					</div>
+
+				</div>
+			</nav>
+
+			<div class="content-body" style="background-color: #f0f0f0;">
+				<div class="container-fluid">
+					<div class="page-titles card">
+						<h3>SẢN PHẨM</h3>
+					</div>
+
+					<div class="d-flex justify-content-between">
+						<div>
+							@* <button id="export-excel" type="button" class="btn btn-dark" style="border: 1px solid #000000;"><b>Xuất file excel</b></button> *@
+							<select id="filter-category" name="filter-category" style="font-size: 14px; padding: 5px; margin-left:10px; width: 150px; border-radius:30px">
+								<option value="">Tất cả</option>
+								@foreach (var item in Model.loaisanphamVM)
+								{
+										<option value="@item.Id">@item.Tenlsp</option>
+								}
+							</select>
+						</div>
+						<div class="input-group" style="width:50%; margin-bottom:20px">
+							<input id="search-input" type="text" class="form-control" placeholder="Tìm kiếm..." style="border: 1px solid #000000;">
+							<button id="search-button" class="btn btn-outline-dark" type="button" style="border: 1px solid #000000; ">
+								<i class="fas fa-search"></i>
+							</button>
+						</div>
+					</div>
+
+					<div class="row" id="push-here">
+						@foreach(var item in Model.sanphamVM)
+						{
+						<div class="col-3">
+							<div class="card">
+								<div class="card-body">
+									<div class="new-arrival-product" data-id="@item.Id" data-status="@item.Tinhtrang">
+										<div class="row">
+											<h4 class="category-name col-6">@item.Loaisanpham.Tenlsp</h4>
+
+											<div class="col-6" style="text-align:right">
+												<!-- Nút Edit -->
+												<button class="btn button-edit">
+													<i class="fas fa-edit text-warning" style="font-size:16px"></i>
+												</button>
+											</div>
+										</div>
+										<div class="new-arrivals-img-contnent">
+											<img class="img-fluid" src="@item.Img" alt="">
+										</div>
+										<div class="new-arrival-content text-center mt-3">
+											<h4 class="product-name">@item.Tensp</h4>
+											<ul class="star-rating">
+												<li><i class="fa fa-star"></i></li>
+												<li><i class="fa fa-star"></i></li>
+												<li><i class="fa fa-star"></i></li>
+												<li><i class="fa fa-star-half-empty"></i></li>
+												<li><i class="fa fa-star-half-empty"></i></li>
+											</ul>
+											<span class="price">@item.Dongia</span> VNĐ
+										</div>
+										<textarea class="description" style="margin:10px; display:none">@item.Mota</textarea>
+									</div>
+								</div>
+							</div>
+						</div>
+						}
+						<div class="col-3">
+							<div class="card">
+								<div class="card-body">
+									<div class="new-arrival-product" data-id="2" data-status="Đang kinh doanh">
+										<div class="row">
+											<h4 class="category-name col-6">Serum</h4>
+
+											<div class="col-6" style="text-align:right">
+												<!-- Nút Edit -->
+												<button class="btn button-edit">
+													<i class="fas fa-edit text-warning" style="font-size:16px"></i>
+												</button>
+											</div>
+										</div>
+										<div class="new-arrivals-img-contnent">
+											<img class="img-fluid" src="https://res.cloudinary.com/div8akj4q/image/upload/v1702304116/qlfmj2ns1mld2ik5e7v2.png" alt="">
+										</div>
+										<div class="new-arrival-content text-center mt-3">
+											<h4 class="product-name">Bonorum et Malorum</h4>
+											<ul class="star-rating">
+												<li><i class="fa fa-star"></i></li>
+												<li><i class="fa fa-star"></i></li>
+												<li><i class="fa fa-star"></i></li>
+												<li><i class="fa fa-star"></i></li>
+												<li><i class="fa fa-star"></i></li>
+											</ul>
+											<span class="price">159000</span> VNĐ
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+
+						<div class="col-3">
+							<div class="card">
+								<div class="card-body">
+									<div class="new-arrival-product" data-id="3" data-status="Đang kinh doanh">
+										<div class="row">
+											<h4 class="category-name col-6">Serum</h4>
+
+											<div class="col-6" style="text-align:right">
+												<!-- Nút Edit -->
+												<button class="btn button-edit">
+													<i class="fas fa-edit text-warning" style="font-size:16px"></i>
+												</button>
+											</div>
+										</div>
+										<div class="new-arrivals-img-contnent">
+											<img class="img-fluid" src="https://res.cloudinary.com/div8akj4q/image/upload/v1702304116/qlfmj2ns1mld2ik5e7v2.png" alt="">
+										</div>
+										<div class="new-arrival-content text-center mt-3">
+											<h4 class="product-name">Bonorum et Malorum</h4>
+											<ul class="star-rating">
+												<li><i class="fa fa-star"></i></li>
+												<li><i class="fa fa-star"></i></li>
+												<li><i class="fa fa-star"></i></li>
+												<li><i class="fa fa-star"></i></li>
+												<li><i class="fa fa-star"></i></li>
+											</ul>
+											<span class="price">357000</span> VNĐ
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+
+						<div class="col-3">
+							<div class="card">
+								<div class="card-body">
+									<div class="new-arrival-product" data-id="4" data-status="Đang kinh doanh">
+										<div class="row">
+											<h4 class="category-name col-6">Serum</h4>
+
+											<div class="col-6" style="text-align:right">
+												<!-- Nút Edit -->
+												<button class="btn button-edit">
+													<i class="fas fa-edit text-warning" style="font-size:16px"></i>
+												</button>
+											</div>
+										</div>
+										<div class="new-arrivals-img-contnent">
+											<img class="img-fluid" src="https://res.cloudinary.com/div8akj4q/image/upload/v1698829009/c9hwscmyb7wfccipwsiw.jpg" alt="">
+										</div>
+										<div class="new-arrival-content text-center mt-3">
+											<h4 class="product-name">Bonorum et Malorum</h4>
+											<ul class="star-rating">
+												<li><i class="fa fa-star"></i></li>
+												<li><i class="fa fa-star"></i></li>
+												<li><i class="fa fa-star"></i></li>
+												<li><i class="fa fa-star-half-empty"></i></li>
+												<li><i class="fa fa-star-half-empty"></i></li>
+											</ul>
+											<span class="price">654000</span> VNĐ
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="col-3">
+							<div class="card">
+								<div class="card-body">
+									<div class="new-arrival-product" data-id="5" data-status="Đang kinh doanh">
+										<div class="row">
+											<h4 class="category-name col-6">Serum</h4>
+
+											<div class="col-6" style="text-align:right">
+												<!-- Nút Edit -->
+												<button class="btn button-edit">
+													<i class="fas fa-edit text-warning" style="font-size:16px"></i>
+												</button>
+											</div>
+										</div>
+										<div class="new-arrivals-img-contnent">
+											<img class="img-fluid" src="https://res.cloudinary.com/div8akj4q/image/upload/v1702304116/qlfmj2ns1mld2ik5e7v2.png" alt="">
+										</div>
+										<div class="new-arrival-content text-center mt-3">
+											<h4 class="product-name">Bonorum et Malorum</h4>
+											<ul class="star-rating">
+												<li><i class="fa fa-star"></i></li>
+												<li><i class="fa fa-star"></i></li>
+												<li><i class="fa fa-star"></i></li>
+												<li><i class="fa fa-star"></i></li>
+												<li><i class="fa fa-star"></i></li>
+											</ul>
+											<span class="price">364000</span> VNĐ
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="col-3">
+							<div class="card">
+								<div class="card-body">
+									<div class="new-arrival-product" data-id="6" data-status="Đang kinh doanh">
+										<div class="row">
+											<h4 class="category-name col-6">Serum</h4>
+
+											<div class="col-6" style="text-align:right">
+												<!-- Nút Edit -->
+												<button class="btn button-edit">
+													<i class="fas fa-edit text-warning" style="font-size:16px"></i>
+												</button>
+											</div>
+										</div>
+										<div class="new-arrivals-img-contnent">
+											<img class="img-fluid" src="https://res.cloudinary.com/div8akj4q/image/upload/v1702304116/qlfmj2ns1mld2ik5e7v2.png" alt="">
+										</div>
+										<div class="new-arrival-content text-center mt-3">
+											<h4 class="product-name">C</h4>
+											<ul class="star-rating">
+												<li><i class="fa fa-star"></i></li>
+												<li><i class="fa fa-star"></i></li>
+												<li><i class="fa fa-star"></i></li>
+												<li><i class="fa fa-star-half-empty"></i></li>
+												<li><i class="fa fa-star-half-empty"></i></li>
+											</ul>
+											<span class="price">548000</span> VNĐ
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+	</div>
+
+	<!--===============================================================================================-->
+	<script src="vendor/jquery/jquery-3.2.1.min.js"></script>
+	<!--===============================================================================================-->
+	<script src="vendor/animsition/js/animsition.min.js"></script>
+	<!--===============================================================================================-->
+	<script src="vendor/bootstrap/js/popper.js"></script>
+	<script src="vendor/bootstrap/js/bootstrap.min.js"></script>
+	<!--===============================================================================================-->
+	<script src="vendor/select2/select2.min.js"></script>
+	<!--===============================================================================================-->
+	<script src="vendor/daterangepicker/moment.min.js"></script>
+	<script src="vendor/daterangepicker/daterangepicker.js"></script>
+	<!--===============================================================================================-->
+	<script src="vendor/countdowntime/countdowntime.js"></script>
+	<!--===============================================================================================-->
+
+	<script src="js/main.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.13/xlsx.full.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/2014-11-29/FileSaver.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.1/js/bootstrap.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.12.13/xlsx.full.min.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<script>
+		const modal = document.getElementById('myModal');
+		const modalView = document.getElementById('myModalView');
+		const closeBtn = modal.querySelector('.close');
+		const closeBtnView = modalView.querySelector('.close');
+		const btnEdit = document.querySelectorAll('.button-edit');
+		const btnDelete = document.querySelectorAll('.button-delete');
+		const saveEdit = document.getElementById('save-edit');
+		const cancelEdit = document.getElementById('cancel-edit');
+
+		btnEdit.forEach(item => {
+			item.addEventListener('click', function () {
+				modal.style.display = 'block';
+				var parentDiv = item.closest('.new-arrival-product');
+
+
+				var dataId = parentDiv.dataset.id;
+				var dataStatus = parentDiv.dataset.status;
+				var description = parentDiv.querySelector('.description').value;
+				var imgSrc = parentDiv.querySelector('.img-fluid').src;
+				var productName = parentDiv.querySelector('.product-name').innerText;
+				var categoryName = parentDiv.querySelector('.category-name').innerText;
+				var price = parentDiv.querySelector('.price').innerText;
+
+				document.getElementById('Id-In').value = dataId;
+				
+				document.getElementById('img-input').src = imgSrc;
+				document.getElementById('description-input').value = description;
+				document.getElementById('id-input').value = dataId;
+				document.getElementById('name-input').value = productName;
+				document.getElementById('price-input').value = price;
+
+				var categories = document.getElementById('categories-input');
+				for (var i = 0; i < categories.options.length; i++) {
+					if (categories.options[i].textContent === categoryName) {
+						categories.options[i].selected = true;
+						break;
+					}
+				}
+
+				var status = document.getElementById('status-input');
+				for (var i = 0; i < status.options.length; i++) {
+					if (status.options[i].value === dataStatus) {
+						status.options[i].selected = true;
+						break;
+					}
+				}
+
+			});
+		});
+
+		closeBtn.addEventListener('click', function () {
+			modal.style.display = 'none';
+		});
+
+		cancelEdit.addEventListener('click', function () {
+			modal.style.display = 'none';
+		});
+
+		saveEdit.addEventListener('click', function () {
+			modal.style.display = 'none';
+
+			var imgSrcInput = document.getElementById('img-input').src;
+			var dataIdInput = document.getElementById('id-input').value;
+			var productNameInput = document.getElementById('name-input').value;
+			var categoryNameOption = document.getElementById('categories-input');
+			var categoryNameInput = categoryNameOption.options[categoryNameOption.selectedIndex].textContent;
+			var priceInput = document.getElementById('price-input').value;
+			var statusInput = document.getElementById('status-input').value;
+			var categoryIdInput = categoryNameOption.options[categoryNameOption.selectedIndex].value;
+
+			
+			var products = document.querySelectorAll('.new-arrival-product');
+			products.forEach(function (product) {
+				var dataId = product.getAttribute('data-id');
+
+				if (dataId === dataIdInput) {
+					product.setAttribute('data-status', statusInput);
+					changeStatus(product, statusInput);
+
+					var productName = product.querySelector('.product-name');
+					productName.textContent = productNameInput;
+
+					var categoryName = product.querySelector('.category-name');
+					categoryName.textContent = categoryNameInput;
+
+					var price = product.querySelector('.price');
+					price.textContent = priceInput;
+
+					var img = product.querySelector('.img-fluid');
+					img.src = imgSrcInput;
+
+
+				}
+			});
+		});
+
+		let removeSearchProduct = function () {
+			var products = document.querySelectorAll('.new-arrival-product');
+			products.forEach(function (product) {
+				var productName = product.querySelector('.product-name');
+				var productPrice = product.querySelector('.price');
+
+				productName.style.textDecoration = 'none';
+				productPrice.style.textDecoration = 'none';
+
+			});
+
+			var categories = document.querySelectorAll('.category-name');
+			categories.forEach(function (category) {
+				var categoryName = category.innerText.toLowerCase().trim();
+				category.style.textDecoration = 'none';
+			});
+
+		};
+
+		document.getElementById("search-button").addEventListener("click", function () {
+			document.getElementById("search-button").removeEventListener('click', removeSearchProduct);
+			var searchText = document.getElementById("search-input").value.toLowerCase().trim(); // Lấy giá trị nhập và chuẩn hóa
+			var flag = false;
+
+			var products = document.querySelectorAll('.new-arrival-product');
+			products.forEach(function (product) {
+				var productName = product.querySelector('.product-name');
+				var productPrice = product.querySelector('.price');
+
+				if (productName.innerText.toLowerCase().trim().includes(searchText)) {
+					productName.style.textDecoration = 'underline';
+					flag = true;
+				}
+				if (productPrice.innerText.toLowerCase().trim().includes(searchText)) {
+					productPrice.style.textDecoration = 'underline';
+					flag = true;
+				}
+			});
+
+			var categories = document.querySelectorAll('.category-name');
+			categories.forEach(function (category) {
+				var categoryName = category.innerText.toLowerCase().trim();
+
+				if (categoryName.includes(searchText)) {
+					category.style.textDecoration = 'underline';
+					flag = true;
+				}
+			});
+
+			if (flag) {
+				product.style.display = 'block';
+			}
+			else {
+				product.style.display = 'none';
+			}
+		});
+
+		var statusProducts = document.querySelectorAll('[data-status="0"]');
+		statusProducts.forEach(function (product) {
+			product.setAttribute('disabled', true);
+			product.style.opacity = '0.5'; // Đổi màu xám mờ
+		});
+		function changeStatus(product, statusInput) {
+			if (statusInput === "0") {
+				product.setAttribute('disabled', true);
+				product.style.opacity = '0.5'; // Đổi màu xám mờ
+			}
+			else {
+				product.setAttribute('disabled', false);
+				product.style.opacity = '1';
+			}
+		}
+
+		document.getElementById('filter-category').addEventListener('change', function () {
+			var selectedCategory = this.value; // Lựa chọn đã chọn từ dropdown
+			var categoryNames = document.querySelectorAll('.category-name'); // Tất cả các phần tử h4 có class là 'category-name'
+			alert(selectedCategory);
+			$.ajax({
+				url: '@Url.Action("GetFilterAdmin", "SanPham")',
+				type: 'GET',
+				data: {
+					timkiem: null,
+					MaLSP: selectedCategory,
+					sapxep: 'ASC',
+					giaduoi: 0,
+					giatren: 1000000000
+				},
+				success: function (result) {
+					// Xử lý kết quả trả về từ action GetFilter
+					// Ví dụ: cập nhật lại danh sách sản phẩm trong view
+					$('#push-here').html(result);
+				},
+				error: function (xhr, status, error) {
+					// Xử lý lỗi (nếu có)
+					console.log(error);
+				}
+			});
+
+			// Duyệt qua tất cả các phần tử h4 và ẩn hoặc hiển thị phụ thuộc vào lựa chọn
+			categoryNames.forEach(function (category) {
+				var parentDiv = category.closest('.col-3'); // Tìm phần tử cha có class là 'col-3'
+				if (category.textContent.trim() === selectedCategory) {
+					parentDiv.style.display = 'block'; // Hiển thị nếu text trùng với lựa chọn
+				} else {
+					parentDiv.style.display = 'none'; // Ẩn nếu không trùng khớp
+				}
+			});
+		});
+
+		
+	</script>
+</body>

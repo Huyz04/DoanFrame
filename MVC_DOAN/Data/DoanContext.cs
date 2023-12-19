@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Reflection.Metadata;
 using EntityFrameworkCore.Triggers;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
@@ -37,5 +38,16 @@ public partial class DoanContext : IdentityDbContext<Taikhoan>
     {
         return this.SaveChangesWithTriggersAsync(base.SaveChangesAsync, acceptAllChangesOnSuccess: true, cancellationToken: cancellationToken);
     }
-
+    protected override void OnModelCreating(ModelBuilder modelBuilder)
+    {
+        modelBuilder.Entity<Chitietdon>()
+            .ToTable(tb => tb.HasTrigger("SomeTrigger"));
+        base.OnModelCreating(modelBuilder);
+    }
+	protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+	{
+		optionsBuilder.EnableSensitiveDataLogging();
+		// Cấu hình các tùy chọn khác cho DbContext của bạn
+	}
 }
+

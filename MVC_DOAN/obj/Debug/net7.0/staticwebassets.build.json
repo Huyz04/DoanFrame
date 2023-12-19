@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "bHJY/XcM9BrTjT2Rn1/LFGTcEaC05dKOew9LF1rZreQ=",
+  "Hash": "B6GQLoz7B9xRNt2Juk18dYD07l8kb+mKeSOXyI6U+1s=",
   "Source": "MVC_DOAN",
   "BasePath": "_content/MVC_DOAN",
   "Mode": "Default",
@@ -865,6 +865,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\assets\\css\\scss\\sections\\_testimonials.scss"
+    },
+    {
+      "Identity": "D:\\HUY\\DAIHOC\\NAM3\\KY1\\Framework\\DOAN_MAIN\\MVC_DOAN\\wwwroot\\assets\\css\\style.css",
+      "SourceId": "MVC_DOAN",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\HUY\\DAIHOC\\NAM3\\KY1\\Framework\\DOAN_MAIN\\MVC_DOAN\\wwwroot\\",
+      "BasePath": "_content/MVC_DOAN",
+      "RelativePath": "assets/css/style.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\assets\\css\\style.css"
     },
     {
       "Identity": "D:\\HUY\\DAIHOC\\NAM3\\KY1\\Framework\\DOAN_MAIN\\MVC_DOAN\\wwwroot\\assets\\img\\1.jpg",

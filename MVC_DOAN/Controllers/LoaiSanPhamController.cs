@@ -37,7 +37,7 @@ namespace MVC_DOAN.Controllers
             return View(createLoaisanphamVM);
         }
         [HttpPost]
-         public async Task<IActionResult> Create(CreateLoaiSanPhamVM LoaiSanphamVM)
+         public bool Create(CreateLoaiSanPhamVM LoaiSanphamVM)
             {
                 if (ModelState.IsValid)
                 {
@@ -48,14 +48,14 @@ namespace MVC_DOAN.Controllers
                     TaikhoanId = LoaiSanphamVM.TaikhoanId
                 };
                     _LSPI.Add(Loaisanphams);
-                    return RedirectToAction("Index");
+                return true;
                 }
                 else
                 {
                     ModelState.AddModelError("", "Upload failed");
                 }
 
-                return View(LoaiSanphamVM);
+            return false;
             }
 
         public async Task<IActionResult> Edit(int Id)

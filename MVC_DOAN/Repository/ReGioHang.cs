@@ -40,11 +40,44 @@ namespace MVC_DOAN.Repository
         public async Task<GioHangVM> GetGioHangById(string Id)
         {
             var giohangVM = new GioHangVM();
-            giohangVM.ctghs = await _context.Ctghs.Where(c => c.TaikhoanId == Id).ToListAsync();
-            var sanphamIds = giohangVM.ctghs.Select(ctgh => ctgh.SanphamId).ToList();
-            giohangVM.sanphams = await _context.Sanphams.Where(s => sanphamIds.Contains(s.Id)).ToListAsync();
-            giohangVM.diachis = await _context.Diachis.Where(d => d.TaikhoanId == Id).ToListAsync();
-            return giohangVM;
+			giohangVM.ctghvms = await _context.Ctghs
+		 .Where(c => c.TaikhoanId == Id)
+		 .Join(
+			 _context.Sanphams,
+			 ctgh => ctgh.SanphamId,
+			 sanpham => sanpham.Id,
+			 (ctgh, sanpham) => new CtghVM
+			 {
+				 Id = ctgh.Id,
+				 Soluong = ctgh.Soluong,
+				 SanphamId = ctgh.SanphamId,
+				 TaikhoanId = ctgh.TaikhoanId,
+				 Tensp = sanpham.Tensp,
+				 Dongia = sanpham.Dongia,
+				 Img = sanpham.Img
+			 }
+		 )
+		 .ToListAsync();
+			giohangVM.diachis = await _context.Diachis.Where(d => d.TaikhoanId == Id).ToListAsync();
+			return giohangVM;
+        }
+
+        public async Task<Ctgh> GetCtghById(int Id)
+        {
+            return await _context.Ctghs.FirstOrDefaultAsync(c => c.Id == Id);
+        }
+
+        public Ctgh Check(Ctgh ctgh)
+        {
+            var check =  _context.Ctghs.FirstOrDefault(c => c.SanphamId == ctgh.SanphamId && c.TaikhoanId == ctgh.TaikhoanId);
+            if (check != null)
+            {
+                return check;
+            }
+            else
+            {
+                return null;
+            }
         }
     }
 }

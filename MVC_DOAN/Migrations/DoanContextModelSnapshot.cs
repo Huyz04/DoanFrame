@@ -24,13 +24,16 @@ namespace MVC_DOAN.Migrations
 
             modelBuilder.Entity("MVC_DOAN.Models.Chitietdon", b =>
                 {
-                    b.Property<int>("Madon")
+                    b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Madon"));
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
                     b.Property<int?>("Dongia")
+                        .HasColumnType("int");
+
+                    b.Property<int?>("DonhangId")
                         .HasColumnType("int");
 
                     b.Property<int?>("SanphamId")
@@ -42,7 +45,7 @@ namespace MVC_DOAN.Migrations
                     b.Property<string>("TaikhoanId")
                         .HasColumnType("nvarchar(450)");
 
-                    b.HasKey("Madon");
+                    b.HasKey("Id");
 
                     b.HasIndex("TaikhoanId");
 
@@ -152,7 +155,7 @@ namespace MVC_DOAN.Migrations
                     b.Property<DateTime?>("Ngaygiao")
                         .HasColumnType("datetime2");
 
-                    b.Property<DateTime?>("Ngaytao")
+                    b.Property<DateTime>("Ngaytao")
                         .HasColumnType("datetime2");
 
                     b.Property<string>("Phuongthucthanhtoan")
