@@ -41,7 +41,23 @@ namespace MVC_DOAN.Controllers
                     var result = await _signInManager.PasswordSignInAsync(user, loginViewModel.Password, false, false);
                     if (result.Succeeded)
                     {
-                        return RedirectToAction("Index", "Home");
+						var roles = await _userManager.GetRolesAsync(user);
+						if (roles.Contains("admin"))
+						{
+							// Nếu người dùng có vai trò Admin, điều hướng đến trang Admin
+							return RedirectToAction("AdminSanPham", "SanPham");
+						}
+						else if (roles.Contains("user"))
+						{
+							// Nếu người dùng có vai trò User, điều hướng đến trang User
+							return RedirectToAction("Index", "Home");
+						}
+						else
+						{
+							// Người dùng không có vai trò được xác định, điều hướng đến trang mặc định
+							return RedirectToAction("Index", "Home");
+						}
+
                     }
                 }
                 //Password is incorrect
@@ -75,7 +91,8 @@ namespace MVC_DOAN.Controllers
 			var newUser = new Taikhoan()
 			{
 				Email = registerViewModel.EmailAddress,
-				UserName = registerViewModel.EmailAddress
+				UserName = registerViewModel.EmailAddress,
+                Nickname = "User"
 			};
 			var newUserResponse = await _userManager.CreateAsync(newUser, registerViewModel.Password);
 
@@ -101,5 +118,65 @@ namespace MVC_DOAN.Controllers
 			return RedirectToAction("Index", "Home");
 		}
 
+		[HttpPost]
+		public async Task<IActionResult> ChangePassword(string email, string oldPassword, string newPassword)
+		{
+			// Tìm người dùng với email
+			var user = await _userManager.FindByEmailAsync(email);
+
+			if (user != null)
+			{
+				// Kiểm tra mật khẩu cũ
+				var isOldPasswordCorrect = await _userManager.CheckPasswordAsync(user, oldPassword);
+
+				if (isOldPasswordCorrect)
+				{
+					// Thay đổi mật khẩu
+					var result = await _userManager.ChangePasswordAsync(user, oldPassword, newPassword);
+
+					if (result.Succeeded)
+					{
+						// Đăng nhập lại người dùng (nếu cần)
+						await _signInManager.RefreshSignInAsync(user);
+						TempData["SuccessMessage"] = "Đổi mật khẩu thành công!";
+						// Xử lý sau khi thay đổi mật khẩu thành công
+						return RedirectToAction("ChangePasswordSuccess");
+					}
+					else
+					{
+						TempData["ErrorMessage"] = "Đổi mật khẩu thất bại!";
+						// Xử lý khi thay đổi mật khẩu không thành công
+						return RedirectToAction("ChangePasswordFailed");
+					}
+				}
+				else
+				{
+					TempData["ErrorMessage"] = "Mật khẩu cũ chưa đúng!";
+					// Xử lý khi mật khẩu cũ không đúng
+					return RedirectToAction("IncorrectOldPassword");
+				}
+			}
+
+			// Xử lý khi không tìm thấy người dùng
+			return RedirectToAction("UserNotFound");
+		}
+
+		public IActionResult ChangePasswordSuccess()
+		{
+			TempData["SuccessMessage"] = "Đổi mật khẩu thành công!";
+			return RedirectToAction("Login","Account");
+		}
+
+		public IActionResult IncorrectOldPassword()
+		{
+			TempData["ErrorMessage"] = "Mật khẩu cũ không chính xác!";
+			return RedirectToAction("Detail", "User");
+		}
+
+		public IActionResult ChangePasswordFailed()
+		{
+			TempData["ErrorMessage"] = "Đổi mật khẩu thất bại!";
+			return RedirectToAction("Detail", "User");
+		}
 	}
 }

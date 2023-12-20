@@ -3952,12 +3952,12 @@ textarea.form-control-lg {
     overflow: hidden;
 }
 
-    .modal-open .modal {
+    .modal-open .modal, .modalAdd {
         overflow-x: hidden;
         overflow-y: auto;
     }
 
-.modal {
+.modal, .modalAdd {
     position: fixed;
     top: 0;
     left: 0;

@@ -1,8 +1,14 @@
-﻿@model SanPhamVM
-@{
+﻿@* @model SanPhamVM
+ *@@{
 	Layout = "_Admin";
 }
-
+@using MVC_DOAN.ViewModels;
+@model ADSanphamVM
+@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
 <header>
 	<link rel="stylesheet" href="~/assets/css/style.css" />
 
@@ -102,7 +108,7 @@
 		}
 
 		/* CSS để ẩn modal ban đầu và cố định kích thước */
-		.modal {
+		.modal, .modalAdd {
 			display: none; /* Ẩn modal */
 			position: fixed; /* Cố định vị trí trên cùng của trình duyệt */
 			z-index: 1; /* Hiển thị modal trên các phần tử khác */
@@ -123,7 +129,6 @@
 			padding: 20px;
 			border: 1px solid #888;
 			max-width: 50%; /* Kích thước tối đa của modal */
-			max-height: 60%; /* Chiều cao tối đa của modal */
 			overflow: auto; /* Kích hoạt thanh cuộn trong trường hợp nội dung dài */
 		}
 
@@ -246,7 +251,7 @@
 							<div class="row">
 								<labe class="col-4">Tên loại sản phẩm:</labe>
 									<select id="categories-input" name="LoaisanphamId" class=" col-8" name="categories" style="font-size: 14px; padding: 5px; width: 250px">
-									@foreach (var item in Model.loaisanphamVM)
+									@foreach (var item in Model.sanphamvm.loaisanphamVM)
 									{
 										<option value="@item.Id">@item.Tenlsp</option>
 									}
@@ -281,6 +286,7 @@
 				</form>
 			</div>
 		</div>
+
 		<div class="modalView" id="myModalView">
 			<div id="container-order-details" class="modal-view-content" style="position:relative">
 				<span class="close" style="position:absolute;top: 0px;right:10px">&times;</span>
@@ -339,6 +345,68 @@
 			</div>
 		</div>
 
+		<div class="modalAdd" id="myModalAdd">
+			<div class="modal-content">
+				<span class="close" style="text-align: right;">&times;</span>
+				<form method="post" asp-action="Create" asp-controller="SanPham" enctype="multipart/form-data">
+					<div class="container">
+						<div class="row">
+							<div class="col-5">
+								<label>Hình ảnh:</label><br />
+								<img id="add-img-input" src="~/assets/img/camera.png"
+									 alt="Hình ảnh" style="width: 70% ; height: auto ; object-fit: cover;" name="URL" />
+
+								<div class="mt-5">
+									<label>Chọn hình ảnh:</label>
+									<input type="file" name="Img" accept="image/*" style="color: black" />
+								</div>
+							</div>
+							<div class="col-7">
+								<div class="row">
+									<label class="col-4">Tên sản phẩm:</label>
+									<input id="add-name-input" name="Tensp" class="col-8" type="text"
+										   style="font-size: 14px; padding: 5px; width: 60%">
+								</div>
+
+								<div class="row">
+									<labe class="col-4">Tên loại sản phẩm:</labe>
+									<select id="add-categories-input" name="LoaisanphamId" class=" col-8" name="categories" style="font-size: 14px; padding: 5px; width: 60%">
+										@foreach (var item in Model.sanphamvm.loaisanphamVM)
+										{
+											<option value="@item.Id">@item.Tenlsp</option>
+										}
+									</select>
+
+								</div>
+
+								<div class="row">
+									<label class="col-4">Đơn giá:</label>
+									<input id="add-price-input" name="Dongia" class="col-8" style="font-size: 14px; padding: 5px; width: 60%"
+										   type="number" />
+								</div>
+
+								<div class="row">
+									<label class="col-4">Tình trạng:</label>
+									<select id="add-status-input" name="Tinhtrang" class=" col-8" name="status" style="font-size: 14px; padding: 5px; width: 60%">
+										<option value="1">Đang kinh doanh</option>
+										<option value="0">Ngừng kinh doanh</option>
+									</select>
+								</div>
+								<div class="row">
+									<label class="col-4">Mô tả:</label>
+									<textarea id="add-description-input" class=" col-8" name="Mota" rows="4" cols="50" style="width: 60%"></textarea>
+								</div>
+							</div>
+						</div>
+						<div style="text-align:center;">
+							<button id="save-add" type="submit" class="btn btn-dark">Thêm</button>
+							<button id="cancel-add" class="btn btn-dark">Hủy</button>
+						</div>
+					</div>
+				</form>
+			</div>
+		</div>
+
 		<div class="wrapper d-flex align-items-stretch">
 			<nav id="sidebar">
 				<div class="p-4 pt-5">
@@ -356,7 +424,7 @@
 							</a>
 						</li>
 						<li>
-							<a href="#">Loại sản phẩm</a>
+							<a asp-controller="LoaiSanPham" asp-action="Index">Loại sản phẩm</a>
 						</li>
 						<li class="active">
 							<a asp-controller="SanPham" asp-action="AdminSanPham">Sản phẩm</a>
@@ -366,17 +434,9 @@
 						</li>
 						<li>
 							<a href="#pageSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Thống kê</a>
-							<ul class="collapse list-unstyled" id="pageSubmenu">
-								<li>
-									<a href="#">Theo năm</a>
-								</li>
-								<li>
-									<a href="#">Theo quý</a>
-								</li>
-								<li>
-									<a href="#">Theo tháng</a>
-								</li>
-							</ul>
+						</li>
+						<li>
+							<a asp-controller="Account" asp-action="Logout">Đăng xuất</a>
 						</li>
 					</ul>
 
@@ -396,14 +456,16 @@
 
 					<div class="d-flex justify-content-between">
 						<div>
-							@* <button id="export-excel" type="button" class="btn btn-dark" style="border: 1px solid #000000;"><b>Xuất file excel</b></button> *@
-							<select id="filter-category" name="filter-category" style="font-size: 14px; padding: 5px; margin-left:10px; width: 150px; border-radius:30px">
-								<option value="">Tất cả</option>
-								@foreach (var item in Model.loaisanphamVM)
-								{
-										<option value="@item.Id">@item.Tenlsp</option>
-								}
-							</select>
+							<button id="add-product" class="btn btn-dark">Thêm sản phẩm</button>
+							
+								@* <button id="export-excel" type="button" class="btn btn-dark" style="border: 1px solid #000000;"><b>Xuất file excel</b></button> *@
+								<select id="filter-category" name="filter-category" style="font-size: 14px; padding: 5px; margin-left:10px; width: 150px; border-radius:30px">
+									<option value="">Tất cả</option>
+									@foreach (var item in Model.sanphamvm.loaisanphamVM)
+									{
+											<option value="@item.Id">@item.Tenlsp</option>
+									}
+								</select>
 						</div>
 						<div class="input-group" style="width:50%; margin-bottom:20px">
 							<input id="search-input" type="text" class="form-control" placeholder="Tìm kiếm..." style="border: 1px solid #000000;">
@@ -414,7 +476,7 @@
 					</div>
 
 					<div class="row" id="push-here">
-						@foreach(var item in Model.sanphamVM)
+						@foreach(var item in Model.sanphamvm.sanphamVM)
 						{
 						<div class="col-3">
 							<div class="card">
@@ -450,168 +512,6 @@
 							</div>
 						</div>
 						}
-						<div class="col-3">
-							<div class="card">
-								<div class="card-body">
-									<div class="new-arrival-product" data-id="2" data-status="Đang kinh doanh">
-										<div class="row">
-											<h4 class="category-name col-6">Serum</h4>
-
-											<div class="col-6" style="text-align:right">
-												<!-- Nút Edit -->
-												<button class="btn button-edit">
-													<i class="fas fa-edit text-warning" style="font-size:16px"></i>
-												</button>
-											</div>
-										</div>
-										<div class="new-arrivals-img-contnent">
-											<img class="img-fluid" src="https://res.cloudinary.com/div8akj4q/image/upload/v1702304116/qlfmj2ns1mld2ik5e7v2.png" alt="">
-										</div>
-										<div class="new-arrival-content text-center mt-3">
-											<h4 class="product-name">Bonorum et Malorum</h4>
-											<ul class="star-rating">
-												<li><i class="fa fa-star"></i></li>
-												<li><i class="fa fa-star"></i></li>
-												<li><i class="fa fa-star"></i></li>
-												<li><i class="fa fa-star"></i></li>
-												<li><i class="fa fa-star"></i></li>
-											</ul>
-											<span class="price">159000</span> VNĐ
-										</div>
-									</div>
-								</div>
-							</div>
-						</div>
-
-						<div class="col-3">
-							<div class="card">
-								<div class="card-body">
-									<div class="new-arrival-product" data-id="3" data-status="Đang kinh doanh">
-										<div class="row">
-											<h4 class="category-name col-6">Serum</h4>
-
-											<div class="col-6" style="text-align:right">
-												<!-- Nút Edit -->
-												<button class="btn button-edit">
-													<i class="fas fa-edit text-warning" style="font-size:16px"></i>
-												</button>
-											</div>
-										</div>
-										<div class="new-arrivals-img-contnent">
-											<img class="img-fluid" src="https://res.cloudinary.com/div8akj4q/image/upload/v1702304116/qlfmj2ns1mld2ik5e7v2.png" alt="">
-										</div>
-										<div class="new-arrival-content text-center mt-3">
-											<h4 class="product-name">Bonorum et Malorum</h4>
-											<ul class="star-rating">
-												<li><i class="fa fa-star"></i></li>
-												<li><i class="fa fa-star"></i></li>
-												<li><i class="fa fa-star"></i></li>
-												<li><i class="fa fa-star"></i></li>
-												<li><i class="fa fa-star"></i></li>
-											</ul>
-											<span class="price">357000</span> VNĐ
-										</div>
-									</div>
-								</div>
-							</div>
-						</div>
-
-						<div class="col-3">
-							<div class="card">
-								<div class="card-body">
-									<div class="new-arrival-product" data-id="4" data-status="Đang kinh doanh">
-										<div class="row">
-											<h4 class="category-name col-6">Serum</h4>
-
-											<div class="col-6" style="text-align:right">
-												<!-- Nút Edit -->
-												<button class="btn button-edit">
-													<i class="fas fa-edit text-warning" style="font-size:16px"></i>
-												</button>
-											</div>
-										</div>
-										<div class="new-arrivals-img-contnent">
-											<img class="img-fluid" src="https://res.cloudinary.com/div8akj4q/image/upload/v1698829009/c9hwscmyb7wfccipwsiw.jpg" alt="">
-										</div>
-										<div class="new-arrival-content text-center mt-3">
-											<h4 class="product-name">Bonorum et Malorum</h4>
-											<ul class="star-rating">
-												<li><i class="fa fa-star"></i></li>
-												<li><i class="fa fa-star"></i></li>
-												<li><i class="fa fa-star"></i></li>
-												<li><i class="fa fa-star-half-empty"></i></li>
-												<li><i class="fa fa-star-half-empty"></i></li>
-											</ul>
-											<span class="price">654000</span> VNĐ
-										</div>
-									</div>
-								</div>
-							</div>
-						</div>
-						<div class="col-3">
-							<div class="card">
-								<div class="card-body">
-									<div class="new-arrival-product" data-id="5" data-status="Đang kinh doanh">
-										<div class="row">
-											<h4 class="category-name col-6">Serum</h4>
-
-											<div class="col-6" style="text-align:right">
-												<!-- Nút Edit -->
-												<button class="btn button-edit">
-													<i class="fas fa-edit text-warning" style="font-size:16px"></i>
-												</button>
-											</div>
-										</div>
-										<div class="new-arrivals-img-contnent">
-											<img class="img-fluid" src="https://res.cloudinary.com/div8akj4q/image/upload/v1702304116/qlfmj2ns1mld2ik5e7v2.png" alt="">
-										</div>
-										<div class="new-arrival-content text-center mt-3">
-											<h4 class="product-name">Bonorum et Malorum</h4>
-											<ul class="star-rating">
-												<li><i class="fa fa-star"></i></li>
-												<li><i class="fa fa-star"></i></li>
-												<li><i class="fa fa-star"></i></li>
-												<li><i class="fa fa-star"></i></li>
-												<li><i class="fa fa-star"></i></li>
-											</ul>
-											<span class="price">364000</span> VNĐ
-										</div>
-									</div>
-								</div>
-							</div>
-						</div>
-						<div class="col-3">
-							<div class="card">
-								<div class="card-body">
-									<div class="new-arrival-product" data-id="6" data-status="Đang kinh doanh">
-										<div class="row">
-											<h4 class="category-name col-6">Serum</h4>
-
-											<div class="col-6" style="text-align:right">
-												<!-- Nút Edit -->
-												<button class="btn button-edit">
-													<i class="fas fa-edit text-warning" style="font-size:16px"></i>
-												</button>
-											</div>
-										</div>
-										<div class="new-arrivals-img-contnent">
-											<img class="img-fluid" src="https://res.cloudinary.com/div8akj4q/image/upload/v1702304116/qlfmj2ns1mld2ik5e7v2.png" alt="">
-										</div>
-										<div class="new-arrival-content text-center mt-3">
-											<h4 class="product-name">C</h4>
-											<ul class="star-rating">
-												<li><i class="fa fa-star"></i></li>
-												<li><i class="fa fa-star"></i></li>
-												<li><i class="fa fa-star"></i></li>
-												<li><i class="fa fa-star-half-empty"></i></li>
-												<li><i class="fa fa-star-half-empty"></i></li>
-											</ul>
-											<span class="price">548000</span> VNĐ
-										</div>
-									</div>
-								</div>
-							</div>
-						</div>
 					</div>
 				</div>
 			</div>
@@ -645,10 +545,13 @@
 	<script>
 		const modal = document.getElementById('myModal');
 		const modalView = document.getElementById('myModalView');
+		const modalAdd = document.getElementById('myModalAdd');
 		const closeBtn = modal.querySelector('.close');
 		const closeBtnView = modalView.querySelector('.close');
+		const closeBtnAdd = modalAdd.querySelector('.close');
 		const btnEdit = document.querySelectorAll('.button-edit');
 		const btnDelete = document.querySelectorAll('.button-delete');
+		const btnAdd = document.getElementById('add-product');
 		const saveEdit = document.getElementById('save-edit');
 		const cancelEdit = document.getElementById('cancel-edit');
 
@@ -692,9 +595,17 @@
 
 			});
 		});
+		
+		btnAdd.addEventListener('click', function () {
+			modalAdd.style.display = 'block';
+		});
 
 		closeBtn.addEventListener('click', function () {
 			modal.style.display = 'none';
+		});
+		
+		closeBtnAdd.addEventListener('click', function () {
+			modalAdd.style.display = 'none';
 		});
 
 		cancelEdit.addEventListener('click', function () {
@@ -848,6 +759,8 @@
 			});
 		});
 
-		
+		document.getElementById("add-product").addEventListener("click", function () {
+			
+		});
 	</script>
 </body>

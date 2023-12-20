@@ -54,12 +54,14 @@ namespace MVC_DOAN.Controllers
         [HttpPost]
         public async Task<IActionResult> Create(CreateSanPhamViewModel SanphamVM)
         {
-            if (ModelState.IsValid)
-            {
-                var result = await _PhoToService.AddPhotoAsync(SanphamVM.Img);
+            
+				var curUserId = _httpContextAccessor.HttpContext.User.GetUserId();
+				var createSanPhamViewModel = new CreateSanPhamViewModel { TaikhoanId = curUserId };
+				var result = await _PhoToService.AddPhotoAsync(SanphamVM.Img);
 
                 var club = new Sanpham
                 {
+                    
                     LoaisanphamId = SanphamVM.LoaisanphamId,
                     Tensp = SanphamVM.Tensp,
                     Dongia = SanphamVM.Dongia,
@@ -69,13 +71,9 @@ namespace MVC_DOAN.Controllers
                     TaikhoanId = SanphamVM.TaikhoanId,
                     Img = result.Url.ToString()
                 };
-                _SPI.Add(club);
-                return RedirectToAction("Index");
-            }
-            else
-            {
-                ModelState.AddModelError("", "Photo upload failed");
-            }
+               if( _SPI.Add(club))
+                return RedirectToAction("AdminSanPham");
+           
 
             return View(SanphamVM);
         }
@@ -84,7 +82,9 @@ namespace MVC_DOAN.Controllers
 			var curUserId = _httpContextAccessor.HttpContext.User.GetUserId();
 			if (curUserId == null) return RedirectToAction("Login", "Account");
 			SanPhamVM sanphamVM = await _SPI.GetAll();
-			return View(sanphamVM);
+            var adsanphamVM = new ADSanphamVM();
+            adsanphamVM.sanphamvm = sanphamVM;
+			return View(adsanphamVM);
 		}
 		public async Task<IActionResult> Edit(int Id)
         {

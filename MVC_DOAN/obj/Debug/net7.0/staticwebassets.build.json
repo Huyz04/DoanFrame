@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "B6GQLoz7B9xRNt2Juk18dYD07l8kb+mKeSOXyI6U+1s=",
+  "Hash": "dZz3ux9y9M3Axa3fTXMldA12pYyJ69goN4c5Cf6Oiug=",
   "Source": "MVC_DOAN",
   "BasePath": "_content/MVC_DOAN",
   "Mode": "Default",
@@ -1001,6 +1001,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\assets\\img\\breadcrumb-bg.jpg"
+    },
+    {
+      "Identity": "D:\\HUY\\DAIHOC\\NAM3\\KY1\\Framework\\DOAN_MAIN\\MVC_DOAN\\wwwroot\\assets\\img\\camera.png",
+      "SourceId": "MVC_DOAN",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\HUY\\DAIHOC\\NAM3\\KY1\\Framework\\DOAN_MAIN\\MVC_DOAN\\wwwroot\\",
+      "BasePath": "_content/MVC_DOAN",
+      "RelativePath": "assets/img/camera.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\assets\\img\\camera.png"
     },
     {
       "Identity": "D:\\HUY\\DAIHOC\\NAM3\\KY1\\Framework\\DOAN_MAIN\\MVC_DOAN\\wwwroot\\assets\\img\\company-logos\\1.png",

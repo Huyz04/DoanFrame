@@ -1,20 +1,21 @@
-﻿﻿﻿@using MVC_DOAN.ViewModels
+﻿
+
+﻿﻿@using MVC_DOAN.ViewModels
+@using Microsoft.IdentityModel.Tokens;
 @model LoginViewModel
 @{
 	ViewData["Title"] = "Login";
 	Layout = null;
 }
 @{
-	var errorMessage = TempData["ErrorMessage"] as string;
+	string errorMessage = TempData["ErrorMessage"] as string;
 }
 
 @if (!string.IsNullOrEmpty(errorMessage))
 {
-	<div id="errorBox" class="error-box show-error">
-		@errorMessage
-	</div>
+	string errorMMessage = TempData["ErrorMessage"] as string;
+	errorMessage = System.Web.HttpUtility.HtmlDecode(errorMessage);
 }
-
 <header>
 	<link rel="stylesheet" href="~/lib/font-awesome/css/all.min.css" />
 	<style>

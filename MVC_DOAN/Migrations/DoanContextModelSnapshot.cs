@@ -47,9 +47,16 @@ namespace MVC_DOAN.Migrations
 
                     b.HasKey("Id");
 
+                    b.HasIndex("DonhangId");
+
+                    b.HasIndex("SanphamId");
+
                     b.HasIndex("TaikhoanId");
 
-                    b.ToTable("Chitietdons");
+                    b.ToTable("Chitietdons", t =>
+                        {
+                            t.HasTrigger("SomeTrigger");
+                        });
                 });
 
             modelBuilder.Entity("MVC_DOAN.Models.Ctgh", b =>
@@ -179,7 +186,11 @@ namespace MVC_DOAN.Migrations
 
                     b.HasIndex("TaikhoanId");
 
-                    b.ToTable("Donhangs");
+                    b.ToTable("Donhangs", t =>
+                        {
+                            t.HasTrigger("SomeTrigger")
+                                .HasDatabaseName("SomeTrigger1");
+                        });
                 });
 
             modelBuilder.Entity("MVC_DOAN.Models.Loaisanpham", b =>
@@ -189,6 +200,9 @@ namespace MVC_DOAN.Migrations
                         .HasColumnType("int");
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<string>("Mota")
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("TaikhoanId")
                         .HasColumnType("nvarchar(450)");
@@ -495,11 +509,23 @@ namespace MVC_DOAN.Migrations
 
             modelBuilder.Entity("MVC_DOAN.Models.Chitietdon", b =>
                 {
+                    b.HasOne("MVC_DOAN.Models.Donhang", "Donhang")
+                        .WithMany()
+                        .HasForeignKey("DonhangId");
+
+                    b.HasOne("MVC_DOAN.Models.Sanpham", "sanpham")
+                        .WithMany()
+                        .HasForeignKey("SanphamId");
+
                     b.HasOne("MVC_DOAN.Models.Taikhoan", "Taikhoan")
                         .WithMany("Chitietdons")
                         .HasForeignKey("TaikhoanId");
 
+                    b.Navigation("Donhang");
+
                     b.Navigation("Taikhoan");
+
+                    b.Navigation("sanpham");
                 });
 
             modelBuilder.Entity("MVC_DOAN.Models.Ctgh", b =>

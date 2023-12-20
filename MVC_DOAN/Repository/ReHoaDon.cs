@@ -69,6 +69,7 @@ namespace MVC_DOAN.Repository
 				if (edittthd.Ngaygiaohang != null) hoaDon.Ngaygiao = edittthd.Ngaygiaohang;
 				hoaDon.Trangthaidonhang = edittthd.Tinhtrangdonhang;
 				hoaDon.Ngaygiao = edittthd.Ngaygiaohang;
+				if (edittthd.TrangthaiTT != null) hoaDon.Trangthaithanhtoan = edittthd.TrangthaiTT;
 				_context.SaveChanges();
 				isUpdated = true;
 			}

@@ -6,5 +6,6 @@
 
 		public string? Tinhtrangdonhang { get; set; }
 		public DateTime? Ngaygiaohang { get; set; }
+		public string? TrangthaiTT { get; set; }
 	}
 }

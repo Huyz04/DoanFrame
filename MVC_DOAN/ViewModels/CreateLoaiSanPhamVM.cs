@@ -11,5 +11,6 @@ namespace MVC_DOAN.ViewModels
 
         public string? Tinhtrang { get; set; }
         public string? TaikhoanId { get; set; }
+        public string? Motaa { get; set; }
     }
 }

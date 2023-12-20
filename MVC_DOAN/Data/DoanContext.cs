@@ -42,7 +42,11 @@ public partial class DoanContext : IdentityDbContext<Taikhoan>
     {
         modelBuilder.Entity<Chitietdon>()
             .ToTable(tb => tb.HasTrigger("SomeTrigger"));
-        base.OnModelCreating(modelBuilder);
+		modelBuilder.Entity<Donhang>()
+		   .ToTable(tb => tb.HasTrigger("SomeTrigger"));
+		modelBuilder.Entity<Loaisanpham>()
+		   .ToTable(tb => tb.HasTrigger("SomeTrigger"));
+		base.OnModelCreating(modelBuilder);
     }
 	protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
 	{

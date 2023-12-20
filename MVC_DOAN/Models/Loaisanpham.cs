@@ -17,7 +17,7 @@ public partial class Loaisanpham
     [ForeignKey("Taikhoan")]
     public string? TaikhoanId { get; set; }
     public Taikhoan? Taikhoan { get; set; }
-
+    public string? Mota { get; set; }
 
 
 }

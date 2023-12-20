@@ -26,6 +26,7 @@ builder.Services.AddScoped<IHoaDon, ReHoaDon>();
 
 
 builder.Services.AddScoped<IUser, ReUser>();
+
 builder.Services.AddScoped<IPhotoService, PhotoService>();
 builder.Services.AddSession();
 builder.Services.Configure<CloudinarySettings>(builder.Configuration.GetSection("CloudinarySettings"));

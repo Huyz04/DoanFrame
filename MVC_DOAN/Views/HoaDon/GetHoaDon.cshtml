@@ -270,7 +270,8 @@
 								</a>
 							</li>
 							<li>
-								<a href="#">Loại sản phẩm</a>
+							<li>
+								<a asp-controller="LoaiSanPham" asp-action="Index">Loại sản phẩm</a>
 							</li>
 							<li>
 								<a asp-controller="SanPham" asp-action="AdminSanPham">Sản phẩm</a>
@@ -279,18 +280,10 @@
 								<a asp-controller="HoaDon" asp-action="GetHoaDon">Đơn hàng</a>
 							</li>
 							<li>
-								<a href="#pageSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Thống kê</a>
-								<ul class="collapse list-unstyled" id="pageSubmenu">
-									<li>
-										<a href="#">Theo năm</a>
-									</li>
-									<li>
-										<a href="#">Theo quý</a>
-									</li>
-									<li>
-										<a href="#">Theo tháng</a>
-									</li>
-								</ul>
+								<a href="#pageSubmenu" >Thống kê</a>
+							</li>
+							<li>
+								<a asp-controller="Account" asp-action="Logout">Đăng xuất</a>
 							</li>
 						</ul>
 
@@ -608,7 +601,8 @@
 		data: JSON.stringify({
 		"Id": id,
 		"Ngaygiaohang": null,
-		"Tinhtrangdonhang": "Đã duyệt"
+		"Tinhtrangdonhang": "Đã duyệt",
+								"TrangthaiTT": null
 		}),
 		contentType: 'application/json',
 
@@ -635,7 +629,8 @@
 		data: JSON.stringify({
 		"Id": id,
 		"Ngaygiaohang": null,
-		"Tinhtrangdonhang": "Đang vận chuyển"
+		"Tinhtrangdonhang": "Đang vận chuyển",
+								"TrangthaiTT": null
 		}),
 		contentType: 'application/json',
 
@@ -685,7 +680,9 @@
 		data: JSON.stringify({
 		"Id": idd,
 		"Ngaygiaohang": selectedDate,
-		"Tinhtrangdonhang": "Đã giao"
+		"Tinhtrangdonhang": "Đã giao",
+								"TrangthaiTT": "Đã thanh toán"
+
 		}),
 		contentType: 'application/json',
 

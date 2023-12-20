@@ -80,22 +80,6 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTG9haVNhblBoYW1cSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/HUY/DAIHOC/NAM3/KY1/Framework/DOAN_MAIN/MVC_DOAN/Views/NguoiDung/Address.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTmd1b2lEdW5nXEFkZHJlc3MuY3NodG1s
-build_metadata.AdditionalFiles.CssScope = 
-
-[D:/HUY/DAIHOC/NAM3/KY1/Framework/DOAN_MAIN/MVC_DOAN/Views/NguoiDung/Index.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTmd1b2lEdW5nXEluZGV4LmNzaHRtbA==
-build_metadata.AdditionalFiles.CssScope = 
-
-[D:/HUY/DAIHOC/NAM3/KY1/Framework/DOAN_MAIN/MVC_DOAN/Views/NguoiDung/Info.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTmd1b2lEdW5nXEluZm8uY3NodG1s
-build_metadata.AdditionalFiles.CssScope = 
-
-[D:/HUY/DAIHOC/NAM3/KY1/Framework/DOAN_MAIN/MVC_DOAN/Views/NguoiDung/Order.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTmd1b2lEdW5nXE9yZGVyLmNzaHRtbA==
-build_metadata.AdditionalFiles.CssScope = 
-
 [D:/HUY/DAIHOC/NAM3/KY1/Framework/DOAN_MAIN/MVC_DOAN/Views/SanPham/AdminSanPham.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2FuUGhhbVxBZG1pblNhblBoYW0uY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
@@ -136,12 +120,20 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
+[D:/HUY/DAIHOC/NAM3/KY1/Framework/DOAN_MAIN/MVC_DOAN/Views/User/Address.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXNlclxBZGRyZXNzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
 [D:/HUY/DAIHOC/NAM3/KY1/Framework/DOAN_MAIN/MVC_DOAN/Views/User/Detail.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXNlclxEZXRhaWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
 [D:/HUY/DAIHOC/NAM3/KY1/Framework/DOAN_MAIN/MVC_DOAN/Views/User/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXNlclxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/HUY/DAIHOC/NAM3/KY1/Framework/DOAN_MAIN/MVC_DOAN/Views/User/Order.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXNlclxPcmRlci5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
 [D:/HUY/DAIHOC/NAM3/KY1/Framework/DOAN_MAIN/MVC_DOAN/Views/_ViewImports.cshtml]
