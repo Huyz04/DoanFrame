@@ -6,7 +6,14 @@ namespace MVC_DOAN
     {
         public static string GetUserId(this ClaimsPrincipal user)
         {
-            return user.FindFirst(ClaimTypes.NameIdentifier).Value;
+            try
+            {
+                return user.FindFirst(ClaimTypes.NameIdentifier).Value;
+            }
+            catch (Exception e)
+            {
+                return null;
+            }
         }
     }
 }

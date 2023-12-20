@@ -1,10 +1,630 @@
 ﻿@model IEnumerable<Loaisanpham>
 
-@*
-    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
-*@
-@{
-}
+
+
+<header>
+	<link rel="stylesheet" href="~/assets/css/style.css" />
+
+	<style>
+		#sidebar {
+			min-width: 250px;
+			max-width: 250px;
+			background: #212121;
+			color: #fff;
+			-webkit-transition: all 0.3s;
+			-o-transition: all 0.3s;
+			transition: all 0.3s;
+			position: relative;
+			box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+			overflow-y: auto;
+		}
+
+			#sidebar .h6 {
+				color: #fff;
+			}
+
+			#sidebar.active {
+				margin-left: -250px;
+			}
+
+				#sidebar.active .custom-menu {
+					margin-right: -50px;
+				}
+
+			#sidebar h1 {
+				margin-bottom: 20px;
+				font-weight: 700;
+				font-size: 20px;
+			}
+
+				#sidebar h1 .logo {
+					color: #fff;
+					display: block;
+					padding: 10px 30px;
+					background: #2f89fc;
+				}
+
+			#sidebar ul.components {
+				padding: 0;
+			}
+
+			#sidebar ul li {
+				font-size: 16px;
+			}
+
+				#sidebar ul li > ul {
+					margin-left: 10px;
+				}
+
+					#sidebar ul li > ul li {
+						font-size: 14px;
+					}
+
+				#sidebar ul li a {
+					padding: 15px 30px;
+					display: block;
+					color: rgba(255, 255, 255, 0.6);
+					border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+				}
+
+					#sidebar ul li a:hover {
+						color: #fff;
+						background: #2f89fc;
+						border-bottom: 1px solid #2f89fc;
+					}
+
+				#sidebar ul li.active > a {
+					background: transparent;
+					color: #fff;
+				}
+
+					#sidebar ul li.active > a:hover {
+						background: #2f89fc;
+						border-bottom: 1px solid #2f89fc;
+					}
+
+		.page-titles {
+			text-align: center;
+			padding: 10px;
+			margin-bottom: 30px;
+		}
+
+		.card-header {
+			background-color: #ffffff;
+			height: 60px;
+			padding: 1rem;
+		}
+
+		.card {
+			box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+		}
+
+		/* CSS để ẩn modal ban đầu và cố định kích thước */
+		.modal {
+			display: none; /* Ẩn modal */
+			position: fixed; /* Cố định vị trí trên cùng của trình duyệt */
+			z-index: 1; /* Hiển thị modal trên các phần tử khác */
+			left: 0;
+			top: 0;
+			width: 100%;
+			height: 100%;
+			overflow: auto; /* Kích hoạt thanh cuộn trong trường hợp nội dung dài */
+			background-color: rgba(0, 0, 0, 0.5); /* Màu nền với độ mờ */
+		}
+
+		.modal-content {
+			position: absolute; /* Đặt vị trí tuyệt đối để tránh các hiệu ứng kích thước mở rộng */
+			top: 50%;
+			left: 50%;
+			transform: translate(-50%, -50%);
+			background-color: #fff; /* Màu nền của phần modal */
+			padding: 20px;
+			border: 1px solid #888;
+			max-width: 50%; /* Kích thước tối đa của modal */
+			max-height: 60%; /* Chiều cao tối đa của modal */
+			overflow: auto; /* Kích hoạt thanh cuộn trong trường hợp nội dung dài */
+		}
+
+		.close {
+			color: #aaa;
+			float: right;
+			font-size: 28px;
+			font-weight: bold;
+		}
+
+			.close:hover,
+			.close:focus {
+				color: black;
+				text-decoration: none;
+				cursor: pointer;
+			}
+
+
+		/* CSS để ẩn modal ban đầu và cố định kích thước */
+		.modalView, .modalAdd {
+			display: none; /* Ẩn modal */
+			position: fixed; /* Cố định vị trí trên cùng của trình duyệt */
+			z-index: 1; /* Hiển thị modal trên các phần tử khác */
+			left: 0;
+			top: 0;
+			width: 100%;
+			height: 100%;
+			overflow: auto; /* Kích hoạt thanh cuộn trong trường hợp nội dung dài */
+			background-color: rgba(0, 0, 0, 0.5); /* Màu nền với độ mờ */
+		}
+
+		.modal-view-content {
+			position: absolute; /* Đặt vị trí tuyệt đối để tránh các hiệu ứng kích thước mở rộng */
+			top: 50%;
+			left: 50%;
+			transform: translate(-50%, -50%);
+			background-color: #fff; /* Màu nền của phần modal */
+			padding: 20px;
+			border: 1px solid #888;
+			max-width: 60%; /* Kích thước tối đa của modal */
+			min-height: fit-content; /* Chiều cao tối đa của modal */
+			overflow: auto; /* Kích hoạt thanh cuộn trong trường hợp nội dung dài */
+		}
+
+		.highlight {
+			background-color: yellow; /* Màu nền bạn muốn áp dụng */
+			font-weight: bold; /* Tuỳ chỉnh kiểu chữ nếu cần */
+		}
+
+		.dropdown-toggle::after {
+			content: none;
+		}
+	</style>
+
+</header>
+<body>
+	<div id="preloader" class="container-fluid">
+		<div class="modalAdd" id="myModalAdd">
+			<div id="container-add" class="modal-view-content" style="position:relative">
+				<span class="close" style="position:absolute;top: 0px;right:10px">&times;</span>
+			<form method="post" asp-action="Create" asp-controller="LoaiSanPham" enctype="multipart/form-data">
+				<div>
+					<div class="card-body">
+						<h5 style="text-align: center;">Loại sản phẩm</h5>
+						<div style="margin:0">
+							<div class="row">
+								<div class="col-6">
+									<label>Tên loại sản phẩm:</label><br />
+									<input id="add-category-name" name="Tenlsp" type="text" class="form-control" style="border: 1px solid #000000;">
+								</div>
+								<div class="col-6">
+									<label>Tình trạng kinh doanh:</label><br />
+									<select id="add-category-status" name="Tinhtrang" class="form-select form-select-sm mb-3" style="width:100%;height:30px;border:1px solid #000">
+										<option value="1" selected>Đang kinh doanh</option>
+										<option value="0">Ngừng kinh doanh</option>
+									</select>
+								</div>
+							</div>
+							<label>Mô tả:</label>
+							<textarea style="width:100%" name="Motaa" ></textarea>
+						</div>
+
+						<div style="display:flex;margin:20px;justify-content:center;">
+								<button type="submit" class="save-add-category btn btn-dark" style="margin-right:20px;">Thêm</button>
+							<button class="cancel-add-category btn btn-dark" style="margin-right:20px;">Hủy</button>
+						</div>
+					</div>
+				</div>
+				</form>
+			</div>
+		</div>
+		
+		<div class="modalView" id="myModalView">
+			<div id="container-edit" class="modal-view-content" style="position:relative">
+				<span class="close" style="position:absolute;top: 0px;right:10px">&times;</span>
+				<form method="post" asp-action="Edit" asp-controller="LoaiSanPham" enctype="multipart/form-data">
+				<div>
+					<div class="card-body">
+						<h5 style="text-align: center;">Loại sản phẩm</h5>
+						<div style="margin:0">
+							<div class="row">
+								<div class="col-4">
+									<label>ID:</label>
+										
+									<input id="category-id" type="text"  class="form-control" style="border: 1px solid #000000;" disabled>
+										<input id="category-id-copy" type="hidden" name="Id" />
+								</div>
+								<div class="col-4">
+									<label>Tên loại sản phẩm:</label><br />
+									<input id="category-name" type="text" name="Tenlsp" class="form-control" style="border: 1px solid #000000;">
+								</div>
+								<div class="col-4">
+									<label>Tình trạng kinh doanh:</label><br />
+									<select id="category-status" name="Tinhtrang" class="form-select form-select-sm mb-3" style="width:100%;height:30px;border:1px solid #000">
+										<option value="1" selected>Đang kinh doanh</option>
+										<option value="0">Ngừng kinh doanh</option>
+									</select>
+								</div>
+							</div>
+							<label>Mô tả:</label>
+							<textarea id="category-describe" name="Mota" style="width:100%"></textarea>
+						</div>
+
+						<div style="display:flex;margin:20px;justify-content:center;">
+							<button type="submit" class="save-edit-category btn btn-dark" style="margin-right:20px;">Lưu</button>
+							<button class="cancel-edit-category btn btn-dark" style="margin-right:20px;">Hủy</button>
+						</div>
+					</div>
+				</div>
+				</form>
+			</div>
+		</div>
+
+		<div class="wrapper d-flex align-items-stretch">
+			<nav id="sidebar">
+				<div class="p-4 pt-5">
+					<div class="site-logo">
+						<img src="~/assets/img/logo.png" alt="" />
+					</div>
+				</div>
+				<div class="p-4 pt-5">
+					<ul class="list-unstyled components mb-5">
+						<li>
+							<a class="has-arrow " href="javascript:void()" aria-expanded="false">
+								<i class="fas fa-home"></i>
+								<span class="nav-text">Dashboard</span>
+							</a>
+						</li>
+						<li class="active">
+							<a asp-controller="LoaiSanPham" asp-action="Index">Loại sản phẩm</a>
+						</li>
+						<li>
+							<a asp-controller="SanPham" asp-action="AdminSanPham">Sản phẩm</a>
+						</li>
+						<li>
+							<a asp-controller="HoaDon" asp-action="GetHoaDon">Đơn hàng</a>
+						</li>
+						<li>
+							<a href="#pageSubmenu" >Thống kê</a>
+						</li>
+						<li>
+							<a asp-controller="Account" asp-action="Logout">Đăng xuất</a>
+						</li>
+
+					</ul>
+
+					<div class="footer">
+						<p>
+						</p>
+					</div>
+
+				</div>
+			</nav>
+
+			<div class="content-body" style="background-color: #f0f0f0;">
+				<div class="container-fluid">
+					<div class="page-titles card">
+						<h3>LOẠI SẢN PHẨM</h3>
+					</div>
+
+					<div class="col-lg-12">
+						<div class="card" style="width:78vw; height:80vh;">
+							<div class="card-header d-flex justify-content-between">
+								<div>
+									<button id="add-category" type="button" class="btn btn-dark"><b>Thêm mới</b></button>
+									<button id="export-excel" type="button" class="btn btn-dark"><b>Xuất file excel</b></button>
+								</div>
+								<div class="input-group" style="width:50%">
+									<input id="search-input" type="text" class="form-control" placeholder="Tìm kiếm..." style="border: 1px solid #000000;">
+									<button id="search-button" class="btn btn-outline-dark" type="button" style="border: 1px solid #000000;">
+										<i class="fas fa-search"></i>
+									</button>
+								</div>
+
+							</div>
+							<div class="card-body" style=" overflow-y: auto;">
+								<div class="table-responsive" style="height:100%">
+									<table id="tbl" style="min-width: 100%" class=" display table table-responsive-md">
+										<thead>
+											<tr>
+												<th>
+													ID
+													<span class="btn-link text-dark" data-bs-toggle="dropdown">
+														<i class="fas fa-angle-down dropdown ms-auto "></i>
+													</span>
+													<span class="dropdown-menu dropdown-menu-end">
+														<div class="dropdown-item sort-id" data-status="asc">Tăng dần</div>
+														<div class="dropdown-item sort-id" data-status="desc">Giảm dần</div>
+													</span>
+												</th>
+												<th>
+													Tên loại sản phẩm
+													<span class="btn-link text-dark" data-bs-toggle="dropdown">
+														<i class="fas fa-angle-down dropdown ms-auto "></i>
+													</span>
+													<span class="dropdown-menu dropdown-menu-end">
+														<div class="dropdown-item sort-user" data-status="asc">A-Z</div>
+														<div class="dropdown-item sort-user" data-status="desc">Z-A</div>
+													</span>
+												</th>
+												<th>
+													Mô tả
+													<span class="btn-link text-dark" data-bs-toggle="dropdown">
+														<i class="fas fa-angle-down dropdown ms-auto "></i>
+													</span>
+													<span class="dropdown-menu dropdown-menu-end">
+														<div class="dropdown-item sort-order-date" data-status="asc">Tăng dần</div>
+														<div class="dropdown-item sort-order-date" data-status="desc">Giảm dần</div>
+													</span>
+												</th>
+												<th>
+													Tình trạng kinh doanh
+													<span class="btn-link text-dark" data-bs-toggle="dropdown">
+														<i class="fas fa-angle-down dropdown ms-auto "></i>
+													</span>
+													<span class="dropdown-menu dropdown-menu-end">
+														<div class="dropdown-item sort-payment-status" data-status="all">Tất cả</div>
+														<div class="dropdown-item sort-payment-status" data-status="Đang kinh doanh">Đang kinh doanh</div>
+														<div class="dropdown-item sort-payment-status" data-status="Ngừng kinh doanh">Ngừng kinh doanh</div>
+													</span>
+												</th>
+												<th></th>
+											</tr>
+										</thead>
+										<tbody style=" line-height:3;">
+											@foreach(var item in Model) {
+											<tr>
+												<td>@item.Id</td>
+												<td>@item.Tenlsp</td>
+												<td>@item.Mota</td>
+													<td>
+														@if (item.Tinhtrang == "1")
+														{
+															<text>Đang kinh doanh</text>
+														}
+														else if (item.Tinhtrang == "0")
+														{
+															<text>Ngừng kinh doanh</text>
+														}
+													</td>
+												<td>
+													<div class="btn-link btn-edit">
+														<i class="fas fa-edit"></i>
+													</div>
+												</td>
+											</tr>}
+											
+										</tbody>
+									</table>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+	</div>
+	</div>
+
+	<!--===============================================================================================-->
+	<script src="vendor/jquery/jquery-3.2.1.min.js"></script>
+	<!--===============================================================================================-->
+	<script src="vendor/animsition/js/animsition.min.js"></script>
+	<!--===============================================================================================-->
+	<script src="vendor/bootstrap/js/popper.js"></script>
+	<script src="vendor/bootstrap/js/bootstrap.min.js"></script>
+	<!--===============================================================================================-->
+	<script src="vendor/select2/select2.min.js"></script>
+	<!--===============================================================================================-->
+	<script src="vendor/daterangepicker/moment.min.js"></script>
+	<script src="vendor/daterangepicker/daterangepicker.js"></script>
+	<!--===============================================================================================-->
+	<script src="vendor/countdowntime/countdowntime.js"></script>
+	<!--===============================================================================================-->
+
+	<script src="js/main.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.13/xlsx.full.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/2014-11-29/FileSaver.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.1/js/bootstrap.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.12.13/xlsx.full.min.js"></script>
+
+	<script>
+		var originalInput = document.getElementById("category-id");
+		var inputValue = originalInput.value;
+		var copiedInput = document.getElementById("category-id-copy");
+		copiedInput.value = inputValue;
+		document.addEventListener('DOMContentLoaded', function () {
+			document.getElementById('export-excel').addEventListener('click', function () {
+				var table = document.getElementById('tbl');
+				var data = [];
+				var headers = [];
+				for (var i = 0; i < table.rows[0].cells.length; i++) {
+					headers[i] = table.rows[0].cells[i].innerText;
+				}
+				data.push(headers);
+				for (var i = 1; i < table.rows.length; i++) {
+					var tableRow = table.rows[i];
+					var rowData = [];
+					for (var j = 0; j < tableRow.cells.length; j++) {
+						rowData.push(tableRow.cells[j].innerText);
+					}
+					data.push(rowData);
+				}
+
+				/* Tạo một Workbook mới */
+				var workbook = XLSX.utils.book_new();
+				alert(workbook)
+				var worksheet = XLSX.utils.aoa_to_sheet(data);
+
+				/* Thêm worksheet vào Workbook */
+				XLSX.utils.book_append_sheet(workbook, worksheet, 'Dữ liệu');
+
+				/* Xuất file Excel */
+				XLSX.writeFile(workbook, 'data.xlsx');
+			});
+
+			const dropdownItems = document.querySelectorAll('.dropdown-item');
+
+			dropdownItems.forEach(item => {
+				item.addEventListener('click', function () {
+					const status = this.getAttribute('data-status');
+					const column = event.target.closest('th').cellIndex; // Lấy chỉ số cột
+
+					// Kiểm tra nếu là các div có data-status là 'asc' hoặc 'desc'
+					if (status === 'asc' || status === 'desc') {
+						sortColumn(column, status); // Gọi hàm sắp xếp cột
+					}
+					else {
+						filterColumn(column, status);
+					}
+				});
+			});
+
+			// Hàm sắp xếp cột
+			function sortColumn(columnIndex, order) {
+				const table = document.getElementById('tbl');
+				const tbody = table.getElementsByTagName('tbody')[0];
+				const rows = tbody.getElementsByTagName('tr');
+				const arr = Array.from(rows);
+
+				arr.sort((rowA, rowB) => {
+					const cellA = rowA.getElementsByTagName('td')[columnIndex].innerText.trim();
+					const cellB = rowB.getElementsByTagName('td')[columnIndex].innerText.trim();
+
+					if (order === 'asc') {
+						return cellA.localeCompare(cellB, undefined, { sensitivity: 'accent' });
+					} else {
+						return cellB.localeCompare(cellA, undefined, { sensitivity: 'accent' });
+					}
+				});
+
+				// Xóa các hàng trong tbody
+				while (tbody.firstChild) {
+					tbody.removeChild(tbody.firstChild);
+				}
+
+				// Thêm các hàng đã sắp xếp vào tbody
+				arr.forEach(row => {
+					tbody.appendChild(row);
+				});
+			}
+
+			function filterColumn(columnIndex, filterValue) {
+				const table = document.getElementById('tbl');
+				const tbody = table.getElementsByTagName('tbody')[0];
+				const rows = tbody.getElementsByTagName('tr');
+
+				for (let i = 0; i < rows.length; i++) {
+					const cellValue = rows[i].getElementsByTagName('td')[columnIndex].innerText.trim();
+
+					if (filterValue === 'all') {
+						rows[i].style.display = ''; // Hiển thị tất cả các hàng nếu chọn Tất cả
+					} else if (cellValue === filterValue) {
+						rows[i].style.display = ''; // Hiển thị hàng thỏa mãn điều kiện
+					} else {
+						rows[i].style.display = 'none'; // Ẩn các hàng không thỏa mãn điều kiện
+					}
+				}
+			}
+
+			const modalAdd = document.getElementById('myModalAdd');
+			const modalView = document.getElementById('myModalView');
+			const closeBtnAdd = modalAdd.querySelector('.close');
+			const closeBtnView = modalView.querySelector('.close');
+			const cancelAdd = modalAdd.querySelector('.cancel-add-category');
+			const cancelEdit = modalView.querySelector('.cancel-edit-category');
+
+			const btnEdit = document.querySelectorAll('.btn-edit');
+			btnEdit.forEach(item => {
+				item.addEventListener('click', function () {
+					modalView.style.display = 'block';
+					let row = item.parentNode.parentNode;
+
+					let columns = row.getElementsByTagName("td");
+					let columnValues = [];
+
+					for (let i = 0; i < columns.length - 1; i++) {
+						let columnText = columns[i].textContent;
+						columnValues.push(columnText.trim());
+					}
+
+					let cateID = document.getElementById("category-id");
+					cateID.value = columnValues[0];
+					let cateName = document.getElementById("category-name");
+					cateName.value = columnValues[1];
+					let cateDescribe = document.getElementById("category-describe");
+					cateDescribe.value = columnValues[2];
+					let cateStatus = document.getElementById("category-status");
+					for (let i = 0; i < cateStatus.options.length; i++) {
+						if (cateStatus.options[i].textContent === columnValues[3]) {
+							cateStatus.options[i].selected = true;
+							break; // Thoát khỏi vòng lặp sau khi đã chọn option
+						}
+					}
+				});
+			});
+
+
+			const btnAdd = document.getElementById('add-category');
+			btnAdd.addEventListener('click', function () {
+				modalAdd.style.display = 'block';
+				//
+			});
+
+			closeBtnAdd.addEventListener('click', function () {
+				modalAdd.style.display = 'none';
+			});
+
+			closeBtnView.addEventListener('click', function () {
+				modalView.style.display = 'none';
+			});
+
+			cancelAdd.addEventListener('click', function () {
+				modalAdd.style.display = 'none';
+			});
+
+			cancelEdit.addEventListener('click', function () {
+				modalView.style.display = 'none';
+			});
+
+			window.addEventListener('click', function (event) {
+				if (event.target === modal) {
+					modal.style.display = 'none';
+					modalView.style.display = 'none';
+				}
+			});
+
+
+			document.getElementById("search-button").addEventListener("click", function () {
+				var searchValue = document.getElementById("search-input").value.toUpperCase();
+				var table = document.getElementById("tbl");
+				var rows = table.getElementsByTagName("tr");
+
+				for (var i = 1; i < rows.length; i++) {
+					var cells = rows[i].getElementsByTagName("td");
+
+					var found = false;
+					for (var j = 0; j < cells.length; j++) {
+						var cellText = cells[j].textContent || cells[j].innerText;
+
+						if (cellText.toUpperCase().indexOf(searchValue) > -1) {
+							found = true;
+							cells[j].classList.add("highlight");
+						} else {
+							cells[j].classList.remove("highlight");
+						}
+					}
+
+					if (found) {
+						rows[i].style.display = "";
+					} else {
+						rows[i].style.display = "none";
+					}
+				}
+			});
+		});
+
+	</script>
+</body>
+
+@* 
 <h1>DDaay laf Page Loai San pham</h1>
 @foreach (var item in Model)
 {
@@ -23,4 +643,4 @@
         </a>
     </div>
     <div>------------------------</div>
-}
+} *@

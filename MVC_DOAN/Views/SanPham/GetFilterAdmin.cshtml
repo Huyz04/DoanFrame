@@ -1,0 +1,240 @@
+﻿@model SanPhamVM
+@{
+	ViewData["Title"] = "San Pham Admin";
+	Layout = null;
+}
+
+<div class="row">
+	@foreach (var item in Model.sanphamVM)
+	{
+		<div class="col-3">
+			<div class="card">
+				<div class="card-body">
+					<div class="new-arrival-product" data-id="@item.Id" data-status="@item.Tinhtrang">
+						<div class="row">
+							<h4 class="category-name col-6">@item.Loaisanpham.Tenlsp</h4>
+
+							<div class="col-6" style="text-align:right">
+								<!-- Nút Edit -->
+								<button class="btn button-edit">
+									<i class="fas fa-edit text-warning" style="font-size:16px"></i>
+								</button>
+							</div>
+						</div>
+						<div class="new-arrivals-img-contnent">
+							<img class="img-fluid" src="@item.Img" alt="">
+						</div>
+						<div class="new-arrival-content text-center mt-3">
+							<h4 class="product-name">@item.Tensp</h4>
+							<ul class="star-rating">
+								<li><i class="fa fa-star"></i></li>
+								<li><i class="fa fa-star"></i></li>
+								<li><i class="fa fa-star"></i></li>
+								<li><i class="fa fa-star-half-empty"></i></li>
+								<li><i class="fa fa-star-half-empty"></i></li>
+							</ul>
+							<span class="price">@item.Dongia</span> VNĐ
+						</div>
+						<textarea class="description" style="margin:10px; display:none">@item.Mota</textarea>
+					</div>
+				</div>
+			</div>
+		</div>
+	}
+	
+</div>
+<script>
+	const modal = document.getElementById('myModal');
+	const modalView = document.getElementById('myModalView');
+	const closeBtn = modal.querySelector('.close');
+	const closeBtnView = modalView.querySelector('.close');
+	const btnEdit = document.querySelectorAll('.button-edit');
+	const btnDelete = document.querySelectorAll('.button-delete');
+	const saveEdit = document.getElementById('save-edit');
+	const cancelEdit = document.getElementById('cancel-edit');
+
+	btnEdit.forEach(item => {
+		item.addEventListener('click', function () {
+			modal.style.display = 'block';
+			var parentDiv = item.closest('.new-arrival-product');
+
+			var dataId = parentDiv.dataset.id;
+			var dataStatus = parentDiv.dataset.status;
+			var description = parentDiv.querySelector('.description').value;
+			var imgSrc = parentDiv.querySelector('.img-fluid').src;
+			var productName = parentDiv.querySelector('.product-name').innerText;
+			var categoryName = parentDiv.querySelector('.category-name').innerText;
+			var price = parentDiv.querySelector('.price').innerText;
+
+			document.getElementById('img-input').src = imgSrc;
+			document.getElementById('description-input').value = description;
+			document.getElementById('id-input').value = dataId;
+			document.getElementById('name-input').value = productName;
+			document.getElementById('price-input').value = price;
+
+			var categories = document.getElementById('categories-input');
+			for (var i = 0; i < categories.options.length; i++) {
+				if (categories.options[i].textContent === categoryName) {
+					categories.options[i].selected = true;
+				}
+			}
+
+			var status = document.getElementById('status-input');
+			for (var i = 0; i < status.options.length; i++) {
+				if (status.options[i].textContent === dataStatus) {
+					status.options[i].selected = true;
+				}
+			}
+		});
+	});
+
+	closeBtn.addEventListener('click', function () {
+		modal.style.display = 'none';
+	});
+
+	cancelEdit.addEventListener('click', function () {
+		modal.style.display = 'none';
+	});
+
+	saveEdit.addEventListener('click', function () {
+		modal.style.display = 'none';
+
+		var imgSrcInput = document.getElementById('img-input').src;
+		var dataIdInput = document.getElementById('id-input').value;
+		var productNameInput = document.getElementById('name-input').value;
+		var categoryNameOption = document.getElementById('categories-input');
+		var categoryNameInput = categoryNameOption.options[categoryNameOption.selectedIndex].textContent;
+		var priceInput = document.getElementById('price-input').value;
+		var statusInput = document.getElementById('status-input').value;
+
+		var products = document.querySelectorAll('.new-arrival-product');
+		products.forEach(function (product) {
+			var dataId = product.getAttribute('data-id');
+
+			if (dataId === dataIdInput) {
+				product.setAttribute('data-status', statusInput);
+				changeStatus(product, statusInput);
+
+				var productName = product.querySelector('.product-name');
+				productName.textContent = productNameInput;
+
+				var categoryName = product.querySelector('.category-name');
+				categoryName.textContent = categoryNameInput;
+
+				var price = product.querySelector('.price');
+				price.textContent = priceInput;
+
+				var img = product.querySelector('.img-fluid');
+				img.src = imgSrcInput;
+			}
+		});
+	});
+
+	let removeSearchProduct = function () {
+		var products = document.querySelectorAll('.new-arrival-product');
+		products.forEach(function (product) {
+			var productName = product.querySelector('.product-name');
+			var productPrice = product.querySelector('.price');
+
+			productName.style.textDecoration = 'none';
+			productPrice.style.textDecoration = 'none';
+
+		});
+
+		var categories = document.querySelectorAll('.category-name');
+		categories.forEach(function (category) {
+			var categoryName = category.innerText.toLowerCase().trim();
+			category.style.textDecoration = 'none';
+		});
+
+	};
+
+	document.getElementById("search-button").addEventListener("click", function () {
+		document.getElementById("search-button").removeEventListener('click', removeSearchProduct);
+		var searchText = document.getElementById("search-input").value.toLowerCase().trim(); // Lấy giá trị nhập và chuẩn hóa
+		var flag = false;
+
+		var products = document.querySelectorAll('.new-arrival-product');
+		products.forEach(function (product) {
+			var productName = product.querySelector('.product-name');
+			var productPrice = product.querySelector('.price');
+
+			if (productName.innerText.toLowerCase().trim().includes(searchText)) {
+				productName.style.textDecoration = 'underline';
+				flag = true;
+			}
+			if (productPrice.innerText.toLowerCase().trim().includes(searchText)) {
+				productPrice.style.textDecoration = 'underline';
+				flag = true;
+			}
+		});
+
+		var categories = document.querySelectorAll('.category-name');
+		categories.forEach(function (category) {
+			var categoryName = category.innerText.toLowerCase().trim();
+
+			if (categoryName.includes(searchText)) {
+				category.style.textDecoration = 'underline';
+				flag = true;
+			}
+		});
+
+		if (flag) {
+			product.style.display = 'block';
+		}
+		else {
+			product.style.display = 'none';
+		}
+	});
+
+	var statusProducts = document.querySelectorAll('[data-status="0"]');
+	statusProducts.forEach(function (product) {
+		product.setAttribute('disabled', true);
+		product.style.opacity = '0.5'; // Đổi màu xám mờ
+	});
+	function changeStatus(product, statusInput) {
+		if (statusInput === "0") {
+			product.setAttribute('disabled', true);
+			product.style.opacity = '0.5'; // Đổi màu xám mờ
+		}
+		else {
+			product.setAttribute('disabled', false);
+			product.style.opacity = '1';
+		}
+	}
+
+	document.getElementById('filter-category').addEventListener('change', function () {
+		var selectedCategory = this.value; // Lựa chọn đã chọn từ dropdown
+		var categoryNames = document.querySelectorAll('.category-name'); // Tất cả các phần tử h4 có class là 'category-name'
+		$.ajax({
+			url: '@Url.Action("GetFilterAdmin", "SanPham")',
+			type: 'GET',
+			data: {
+				timkiem: null,
+				MaLSP: selectedCategory,
+				sapxep: 'ASC',
+				giaduoi: 0,
+				giatren: 1000000000
+			},
+			success: function (result) {
+				// Xử lý kết quả trả về từ action GetFilter
+				// Ví dụ: cập nhật lại danh sách sản phẩm trong view
+				$('#push-here').html(result);
+			},
+			error: function (xhr, status, error) {
+				// Xử lý lỗi (nếu có)
+				console.log(error);
+			}
+		});
+
+		// Duyệt qua tất cả các phần tử h4 và ẩn hoặc hiển thị phụ thuộc vào lựa chọn
+		categoryNames.forEach(function (category) {
+			var parentDiv = category.closest('.col-3'); // Tìm phần tử cha có class là 'col-3'
+			if (category.textContent.trim() === selectedCategory) {
+				parentDiv.style.display = 'block'; // Hiển thị nếu text trùng với lựa chọn
+			} else {
+				parentDiv.style.display = 'none'; // Ẩn nếu không trùng khớp
+			}
+		});
+	});
+</script>

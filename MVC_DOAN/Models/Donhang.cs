@@ -11,7 +11,7 @@ public partial class Donhang
     public int Id { get; set; }
     public int? Tongtien { get; set; }
 
-    public DateTime? Ngaytao { get; set; }
+    public DateTime Ngaytao { get; set; }
 
     public DateTime? Ngaygiao { get; set; }
 

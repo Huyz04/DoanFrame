@@ -37,7 +37,7 @@ namespace MVC_DOAN.Controllers
             return View(createLoaisanphamVM);
         }
         [HttpPost]
-         public async Task<IActionResult> Create(CreateLoaiSanPhamVM LoaiSanphamVM)
+         public IActionResult Create(CreateLoaiSanPhamVM LoaiSanphamVM)
             {
                 if (ModelState.IsValid)
                 {
@@ -45,17 +45,18 @@ namespace MVC_DOAN.Controllers
                 {
                     Tenlsp = LoaiSanphamVM.Tenlsp,
                     Tinhtrang = LoaiSanphamVM.Tinhtrang,
-                    TaikhoanId = LoaiSanphamVM.TaikhoanId
+                    TaikhoanId = LoaiSanphamVM.TaikhoanId,
+                    Mota = LoaiSanphamVM.Motaa
                 };
                     _LSPI.Add(Loaisanphams);
-                    return RedirectToAction("Index");
-                }
+                return RedirectToAction("Index");
+			}
                 else
                 {
                     ModelState.AddModelError("", "Upload failed");
                 }
 
-                return View(LoaiSanphamVM);
+            return View("Error"); ;
             }
 
         public async Task<IActionResult> Edit(int Id)
@@ -65,14 +66,15 @@ namespace MVC_DOAN.Controllers
             return View(LSP);
         }
         [HttpPost]
-        public async Task<IActionResult> Edit(int Id, Loaisanpham LSP)
+        public async Task<IActionResult> Edit(Loaisanpham LSP)
         {
+            
             if (!ModelState.IsValid)
             {
                 ModelState.AddModelError("", "Failed to edit LoaiSanPham");
                 return View("Edit", LSP);
             }
-
+            
             _LSPI.Update(LSP);
             return RedirectToAction("Index");
         }

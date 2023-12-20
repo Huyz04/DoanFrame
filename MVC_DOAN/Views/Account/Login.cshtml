@@ -1,55 +1,21 @@
-﻿﻿﻿@using MVC_DOAN.ViewModels
+﻿
+
+﻿﻿@using MVC_DOAN.ViewModels
+@using Microsoft.IdentityModel.Tokens;
 @model LoginViewModel
 @{
 	ViewData["Title"] = "Login";
 	Layout = null;
 }
 @{
-	var errorMessage = TempData["ErrorMessage"] as string;
+	string errorMessage = TempData["ErrorMessage"] as string;
 }
 
 @if (!string.IsNullOrEmpty(errorMessage))
 {
-	<div id="errorBox" class="error-box show-error">
-		@errorMessage
-	</div>
+	string errorMMessage = TempData["ErrorMessage"] as string;
+	errorMessage = System.Web.HttpUtility.HtmlDecode(errorMessage);
 }
-@* <div class="row">
-    <div class="col-md-6 offset-3">
-        <p>
-            <a href="C:\Users\My PC\Downloads\index.html">C:\Users\My PC\Downloads\index.html</a>
-            <h4>Log in to your account</h4>
-        </p>
-        @if (TempData["Error"] != null)
-        {
-            <div class="col-md-12 alert alert-danger">
-                <span><b>Sorry!</b> - @TempData["Error"]</span>
-            </div>
-        }
-        <div class="row">
-            <div class="col-md-8 offset-2">
-                <form asp-action="Login">
-                    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-                    <div class="form-group">
-                        <label asp-for="EmailAddress" class="control-label"></label>
-                        <input asp-for="EmailAddress" class="form-control">
-                        <span asp-validation-for="EmailAddress" class="text-danger"></span>
-                    </div>
-                    <div class="form-group">
-                        <label asp-for="Password" class="control-label"></label>
-                        <input asp-for="Password" class="form-control" />
-                        <span asp-validation-for="Password" class="text-danger"></span>
-                    </div>
-                    <div class="form-group">
-                        <input class="btn btn-outline-success float right" type="submit" value="Log in" />
-                        <a class="btn btn-outline-secondary" asp-controller="Home" asp-action="Index">Cancel</a>
-                    </div>
-                </form>
-            </div>
-        </div>
-    </div>
-</div> *@
-
 <header>
 	<link rel="stylesheet" href="~/lib/font-awesome/css/all.min.css" />
 	<style>
@@ -765,6 +731,15 @@
 			setTimeout(function () {
 				errorBox.removeClass('show-error');
 			}, 2500);
+		});
+		var allElements = document.querySelectorAll("*");
+
+		allElements.forEach(function (element) {
+			// Kiểm tra xem innerHTML của mỗi phần tử có chứa chuỗi '&#xFEFF' không
+			if (element.innerHTML.includes('&#xFEFF')) {
+				// Nếu có, thay thế chuỗi '&#xFEFF' bằng chuỗi rỗng để ẩn đi
+				element.innerHTML = element.innerHTML.replace(/&#xFEFF/g, '');
+			}
 		});
 	</script>
 </body>

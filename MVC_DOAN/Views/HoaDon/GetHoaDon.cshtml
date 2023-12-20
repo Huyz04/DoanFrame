@@ -1,0 +1,794 @@
+﻿@using System.Globalization
+@model IEnumerable<HoaDonVM>
+@{
+	Layout = "_Admin";
+}
+<header>
+	<link rel="stylesheet" href="~/assets/css/style.css" />
+
+	<style>
+		#sidebar {
+			min-width: 250px;
+			max-width: 250px;
+			background: #212121;
+			color: #fff;
+			-webkit-transition: all 0.3s;
+			-o-transition: all 0.3s;
+			transition: all 0.3s;
+			position: relative;
+			box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+			overflow-y: auto;
+		}
+
+			#sidebar .h6 {
+				color: #fff;
+			}
+
+			#sidebar.active {
+				margin-left: -250px;
+			}
+
+				#sidebar.active .custom-menu {
+					margin-right: -50px;
+				}
+
+			#sidebar h1 {
+				margin-bottom: 20px;
+				font-weight: 700;
+				font-size: 20px;
+			}
+
+				#sidebar h1 .logo {
+					color: #fff;
+					display: block;
+					padding: 10px 30px;
+					background: #2f89fc;
+				}
+
+			#sidebar ul.components {
+				padding: 0;
+			}
+
+			#sidebar ul li {
+				font-size: 16px;
+			}
+
+				#sidebar ul li > ul {
+					margin-left: 10px;
+				}
+
+					#sidebar ul li > ul li {
+						font-size: 14px;
+					}
+
+				#sidebar ul li a {
+					padding: 15px 30px;
+					display: block;
+					color: rgba(255, 255, 255, 0.6);
+					border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+				}
+
+					#sidebar ul li a:hover {
+						color: #fff;
+						background: #2f89fc;
+						border-bottom: 1px solid #2f89fc;
+					}
+
+				#sidebar ul li.active > a {
+					background: transparent;
+					color: #fff;
+				}
+
+					#sidebar ul li.active > a:hover {
+						background: #2f89fc;
+						border-bottom: 1px solid #2f89fc;
+					}
+
+		.page-titles {
+			text-align: center;
+			padding: 10px;
+			margin-bottom: 30px;
+		}
+
+		.card-header {
+			background-color: #ffffff;
+			height: 60px;
+			padding: 1rem;
+		}
+
+		.card {
+			box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+		}
+
+		/* CSS để ẩn modal ban đầu và cố định kích thước */
+		.modal {
+			display: none; /* Ẩn modal */
+			position: fixed; /* Cố định vị trí trên cùng của trình duyệt */
+			z-index: 1; /* Hiển thị modal trên các phần tử khác */
+			left: 0;
+			top: 0;
+			width: 100%;
+			height: 100%;
+			overflow: auto; /* Kích hoạt thanh cuộn trong trường hợp nội dung dài */
+			background-color: rgba(0, 0, 0, 0.5); /* Màu nền với độ mờ */
+		}
+
+		.modal-content {
+			position: absolute; /* Đặt vị trí tuyệt đối để tránh các hiệu ứng kích thước mở rộng */
+			top: 50%;
+			left: 50%;
+			transform: translate(-50%, -50%);
+			background-color: #fff; /* Màu nền của phần modal */
+			padding: 20px;
+			border: 1px solid #888;
+			max-width: 50%; /* Kích thước tối đa của modal */
+			max-height: 60%; /* Chiều cao tối đa của modal */
+			overflow: auto; /* Kích hoạt thanh cuộn trong trường hợp nội dung dài */
+		}
+
+		.close {
+			color: #aaa;
+			float: right;
+			font-size: 28px;
+			font-weight: bold;
+		}
+
+			.close:hover,
+			.close:focus {
+				color: black;
+				text-decoration: none;
+				cursor: pointer;
+			}
+
+
+		/* CSS để ẩn modal ban đầu và cố định kích thước */
+		.modalView {
+			display: none; /* Ẩn modal */
+			position: fixed; /* Cố định vị trí trên cùng của trình duyệt */
+			z-index: 1; /* Hiển thị modal trên các phần tử khác */
+			left: 0;
+			top: 0;
+			width: 100%;
+			height: 100%;
+			overflow: auto; /* Kích hoạt thanh cuộn trong trường hợp nội dung dài */
+			background-color: rgba(0, 0, 0, 0.5); /* Màu nền với độ mờ */
+		}
+
+		.modal-view-content {
+			position: absolute; /* Đặt vị trí tuyệt đối để tránh các hiệu ứng kích thước mở rộng */
+			top: 50%;
+			left: 50%;
+			transform: translate(-50%, -50%);
+			background-color: #fff; /* Màu nền của phần modal */
+			padding: 20px;
+			border: 1px solid #888;
+			max-width: 80%; /* Kích thước tối đa của modal */
+			min-height: fit-content; /* Chiều cao tối đa của modal */
+			overflow: auto; /* Kích hoạt thanh cuộn trong trường hợp nội dung dài */
+		}
+
+		.highlight {
+			background-color: yellow; /* Màu nền bạn muốn áp dụng */
+			font-weight: bold; /* Tuỳ chỉnh kiểu chữ nếu cần */
+		}
+	</style>
+
+</header>
+<body>
+	@if (User.Identity.IsAuthenticated && User.IsInRole("admin"))
+	{
+		<div id="preloader" class="container-fluid">
+			<div class="modal" id="myModal">
+				<div id="container-address" class="modal-content">
+					<span class="close" style="text-align: right;">&times;</span>
+
+					<div class="card" id="add-address-container" style="padding:15px;">
+						<h5 style="text-align: center;">Chọn ngày giao hàng</h5>
+						<input type="date" id="datepicker">
+
+						<div style="display:flex;margin:10px;justify-content:center;">
+							<button id="save-delivery-date" class="btn btn-dark" style="margin-right:20px;">Lưu</button>
+							<button id="cancel-delivery-date" class="btn btn-dark" style="margin-right:20px;">Hủy</button>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="modalView" id="myModalView">
+				<div id="container-order-details" class="modal-view-content" style="position:relative">
+					<span class="close" style="position:absolute;top: 0px;right:10px">&times;</span>
+
+					<div>
+						<h5 style="text-align: center;">Chi tiết sản phẩm</h5>
+
+						<div class="card mb-3">
+							<div class="card-body">
+								<div class="d-flex justify-content-between">
+									<div class="checked-row d-flex flex-row align-items-center" data-key="">
+										<div class="mx-3">
+											<img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-shopping-carts/img1.webp"
+											class="img-fluid rounded-3" alt="Shopping item" style="width: 65px;">
+										</div>
+										<div class="ms-3" style="width: 150px;">
+											<h5>Iphone 11 pro</h5>
+										</div>
+									</div>
+									<div class="quantity-price d-flex flex-row align-items-center">
+										<div class="input-group">
+											<div>90000</div><br />
+											<div> x<span>1</span></div>
+										</div>
+										<div class="priceDiv" style="width: 200px;">
+											<p class="mb-0"><b>90000</b><span> VNĐ</span></p>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="card mb-3">
+							<div class="card-body">
+								<div class="d-flex justify-content-between">
+									<div class="checked-row d-flex flex-row align-items-center" data-key="">
+										<div class="mx-3">
+											<img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-shopping-carts/img1.webp"
+											class="img-fluid rounded-3" alt="Shopping item" style="width: 65px;">
+										</div>
+										<div class="ms-3" style="width: 150px;">
+											<h5>Iphone 11 pro</h5>
+										</div>
+									</div>
+									<div class="quantity-price d-flex flex-row align-items-center">
+										<div class="input-group">
+											<div>90000</div><br />
+											<div> x<span>1</span></div>
+										</div>
+										<div class="priceDiv" style="width: 200px;">
+											<p class="mb-0"><b>90000</b><span> VNĐ</span></p>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="wrapper d-flex align-items-stretch">
+				<nav id="sidebar">
+					<div class="p-4 pt-5">
+						<div class="site-logo">
+							<a href="@Url.Action("Index", "Home")">
+							<img src="~/assets/img/logo.png" alt="" />
+						</div>
+					</div>
+					<div class="p-4 pt-5">
+						<ul class="list-unstyled components mb-5">
+							<li>
+								<a class="has-arrow " href="javascript:void()" aria-expanded="false">
+									<i class="fas fa-home"></i>
+									<span class="nav-text">Dashboard</span>
+								</a>
+							</li>
+							<li>
+							<li>
+								<a asp-controller="LoaiSanPham" asp-action="Index">Loại sản phẩm</a>
+							</li>
+							<li>
+								<a asp-controller="SanPham" asp-action="AdminSanPham">Sản phẩm</a>
+							</li>
+							<li class="active">
+								<a asp-controller="HoaDon" asp-action="GetHoaDon">Đơn hàng</a>
+							</li>
+							<li>
+								<a href="#pageSubmenu" >Thống kê</a>
+							</li>
+							<li>
+								<a asp-controller="Account" asp-action="Logout">Đăng xuất</a>
+							</li>
+						</ul>
+
+						<div class="footer">
+							<p>
+							</p>
+						</div>
+
+					</div>
+				</nav>
+
+				<div class="content-body" style="background-color: #f0f0f0;">
+					<div class="container-fluid">
+						<div class="page-titles card">
+							<h3>ĐƠN HÀNG</h3>
+						</div>
+
+						<div class="col-lg-12">
+							<div class="card" style="width:78vw; height:80vh;">
+								<div class="card-header d-flex justify-content-between">
+									<div>
+										<button id="export-excel" type="button" class="btn btn-dark"><b>Xuất file excel</b></button>
+									</div>
+									<div class="input-group" style="width:50%">
+										<input id="search-input" type="text" class="form-control" placeholder="Tìm kiếm..." style="border: 1px solid #000000;">
+										<button id="search-button" class="btn btn-outline-dark" type="button" style="border: 1px solid #000000;">
+											<i class="fas fa-search"></i>
+										</button>
+									</div>
+
+								</div>
+								<div class="card-body" style=" overflow-y: auto;">
+									<div class="table-responsive" style="height:100%">
+										<table id="tbl" style="min-width: 100%" class=" display table table-responsive-md">
+											<thead>
+												<tr>
+													<th>
+														ID
+														<span class="btn-link text-dark" data-bs-toggle="dropdown">
+															<i class="fas fa-angle-down dropdown ms-auto "></i>
+														</span>
+														<span class="dropdown-menu dropdown-menu-end">
+															<div class="dropdown-item sort-id" data-status="asc">Tăng dần</div>
+															<div class="dropdown-item sort-id" data-status="desc">Giảm dần</div>
+														</span>
+													</th>
+													<th>
+														Email người dùng
+														<span class="btn-link text-dark" data-bs-toggle="dropdown">
+															<i class="fas fa-angle-down dropdown ms-auto "></i>
+														</span>
+														<span class="dropdown-menu dropdown-menu-end">
+															<div class="dropdown-item sort-user" data-status="asc">A-Z</div>
+															<div class="dropdown-item sort-user" data-status="desc">Z-A</div>
+														</span>
+													</th>
+													<th>
+														Ngày đặt hàng
+														<span class="btn-link text-dark" data-bs-toggle="dropdown">
+															<i class="fas fa-angle-down dropdown ms-auto "></i>
+														</span>
+														<span class="dropdown-menu dropdown-menu-end">
+															<div class="dropdown-item sort-order-date" data-status="asc">Tăng dần</div>
+															<div class="dropdown-item sort-order-date" data-status="desc">Giảm dần</div>
+														</span>
+													</th>
+													<th>
+														Ngày giao hàng
+														<span class="btn-link text-dark" data-bs-toggle="dropdown">
+															<i class="fas fa-angle-down dropdown ms-auto "></i>
+														</span>
+														<span class="dropdown-menu dropdown-menu-end">
+															<div class="dropdown-item sort-order-date" data-status="asc">Tăng dần</div>
+															<div class="dropdown-item sort-order-date" data-status="desc">Giảm dần</div>
+														</span>
+													</th>
+													<th>
+														Tổng tiền
+														<span class="btn-link text-dark" data-bs-toggle="dropdown">
+															<i class="fas fa-angle-down dropdown ms-auto "></i>
+														</span>
+														<span class="dropdown-menu dropdown-menu-end">
+															<div class="dropdown-item sort-total" data-status="asc">Tăng dần</div>
+															<div class="dropdown-item sort-total" data-status="desc">Giảm dần</div>
+														</span>
+													</th>
+													<th>
+														Phương thức thanh toán
+														<span class="btn-link text-dark" data-bs-toggle="dropdown">
+															<i class="fas fa-angle-down dropdown ms-auto "></i>
+														</span>
+														<span class="dropdown-menu dropdown-menu-end">
+															<div class="dropdown-item sort-payment" data-status="all">Tất cả</div>
+															<div class="dropdown-item sort-payment" data-status="COD">COD</div>
+															<div class="dropdown-item sort-payment" data-status="VNPay">VNPay</div>
+														</span>
+													</th>
+													<th>
+														Tình trạng thanh toán
+														<span class="btn-link text-dark" data-bs-toggle="dropdown">
+															<i class="fas fa-angle-down dropdown ms-auto "></i>
+														</span>
+														<span class="dropdown-menu dropdown-menu-end">
+															<div class="dropdown-item sort-payment-status" data-status="all">Tất cả</div>
+															<div class="dropdown-item sort-payment-status" data-status="Chưa thanh toán">Chưa thanh toán</div>
+															<div class="dropdown-item sort-payment-status" data-status="Đã thanh toán">Đã thanh toán</div>
+														</span>
+													</th>
+													<th>
+														Tình trạng đơn hàng
+														<span class="btn-link text-dark" data-bs-toggle="dropdown">
+															<i class="fas fa-angle-down dropdown ms-auto "></i>
+														</span>
+														<span class="dropdown-menu dropdown-menu-end">
+															<div class="dropdown-item sort-order-status" data-status="all">Tất cả</div>
+															<div class="dropdown-item sort-order-status" data-status="Chưa duyệt">Chưa duyệt</div>
+															<div class="dropdown-item sort-order-status" data-status="Đã duyệt">Đã duyệt</div>
+															<div class="dropdown-item sort-order-status" data-status="Đang vận chuyển">Đang vận chuyển</div>
+															<div class="dropdown-item sort-order-status" data-status="Đã giao">Đã giao</div>
+														</span>
+													</th>
+													<th></th>
+													<th></th>
+												</tr>
+											</thead>
+											<tbody style=" line-height:3;">
+												@foreach (var item in Model)
+												{
+													<tr>
+														<td>@item.Id</td>
+														<td>@item.Emailnguoidung</td>
+														<td>@item.Ngaytao</td>
+														<td class="delivery-date">@item.Ngaygiao?.ToString().Substring(0,10)</td>
+														<td>@item.Tongtien</td>
+														<td>@item.Phuongthucthanhtoan</td>
+														<td>@item.Trangthaithanhtoan</td>
+														<td>
+															<span class="status badge light">
+																<i class="fa fa-circle @(item.Trangthaidonhang == "Chờ duyệt" ? "text-dark" : "")
+																@(item.Trangthaidonhang == "Đã duyệt" ? "text-info" : "")
+																@(item.Trangthaidonhang == "Đang vận chuyển" ? "text-warning" : "")
+																@(item.Trangthaidonhang == "Đã giao" ? "text-success" : "") me-1">
+																@item.Trangthaidonhang</i>
+															</span>
+														</td>
+														<td>
+															<div class="btn-link view">
+																<i class="fas fa-eye"></i>
+															</div>
+														</td>
+														<td>
+															<div class="dropdown ms-auto">
+																<div class="btn-link" data-bs-toggle="dropdown">
+																	<svg width="24px" height="24px" viewBox="0 0 24 24" version="1.1"><g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"><rect x="0" y="0" width="24" height="24"></rect><circle fill="#000000" cx="5" cy="12" r="2"></circle><circle fill="#000000" cx="12" cy="12" r="2"></circle><circle fill="#000000" cx="19" cy="12" r="2"></circle></g></svg>
+																</div>
+																<div class="dropdown-menu dropdown-menu-end">
+																	<div class="dropdown-item" data-status="approved">Duyệt</div>
+																	<div class="dropdown-item" data-status="delivering">Đang giao</div>
+																	<div class="dropdown-item delivered" data-status="delivered">Đã giao</div>
+																</div>
+															</div>
+														</td>
+													</tr>
+												}
+
+
+											</tbody>
+										</table>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+		</div>
+
+	<!--===============================================================================================-->
+	<script src="vendor/jquery/jquery-3.2.1.min.js"></script>
+	<!--===============================================================================================-->
+	<script src="vendor/animsition/js/animsition.min.js"></script>
+	<!--===============================================================================================-->
+	<script src="vendor/bootstrap/js/popper.js"></script>
+	<script src="vendor/bootstrap/js/bootstrap.min.js"></script>
+	<!--===============================================================================================-->
+	<script src="vendor/select2/select2.min.js"></script>
+	<!--===============================================================================================-->
+	<script src="vendor/daterangepicker/moment.min.js"></script>
+	<script src="vendor/daterangepicker/daterangepicker.js"></script>
+	<!--===============================================================================================-->
+	<script src="vendor/countdowntime/countdowntime.js"></script>
+	<!--===============================================================================================-->
+
+	<script src="js/main.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.13/xlsx.full.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/2014-11-29/FileSaver.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.1/js/bootstrap.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.12.13/xlsx.full.min.js"></script>
+	<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+	<script>
+		document.getElementById('export-excel').addEventListener('click', function () {
+		var table = document.getElementById('tbl');
+		var data = [];
+		var headers = [];
+		for (var i = 0; i < table.rows[0].cells.length; i++) {
+		headers[i] = table.rows[0].cells[i].innerText;
+		}
+		data.push(headers);
+		for (var i = 1; i < table.rows.length; i++) {
+		var tableRow = table.rows[i];
+		var rowData = [];
+		for (var j = 0; j < tableRow.cells.length; j++) {
+		rowData.push(tableRow.cells[j].innerText);
+		}
+		data.push(rowData);
+		}
+
+		/* Tạo một Workbook mới */
+		var workbook = XLSX.utils.book_new();
+		var worksheet = XLSX.utils.aoa_to_sheet(data);
+
+		/* Thêm worksheet vào Workbook */
+		XLSX.utils.book_append_sheet(workbook, worksheet, 'Dữ liệu');
+
+		/* Xuất file Excel */
+		XLSX.writeFile(workbook, 'data.xlsx');
+		});
+
+
+		// Lấy danh sách các phần tử có class 'dropdown-item'
+		const dropdownItems = document.querySelectorAll('.dropdown-item');
+
+		dropdownItems.forEach(item => {
+		item.addEventListener('click', function () {
+		const status = this.getAttribute('data-status');
+		const column = event.target.closest('th').cellIndex; // Lấy chỉ số cột
+
+		// Kiểm tra nếu là các div có data-status là 'asc' hoặc 'desc'
+		if (status === 'asc' || status === 'desc') {
+		sortColumn(column, status); // Gọi hàm sắp xếp cột
+		}
+		else {
+		filterColumn(column, status);
+		}
+		});
+		});
+
+		// Hàm sắp xếp cột
+		function sortColumn(columnIndex, order) {
+		const table = document.getElementById('tbl');
+		const tbody = table.getElementsByTagName('tbody')[0];
+		const rows = tbody.getElementsByTagName('tr');
+		const arr = Array.from(rows);
+
+		arr.sort((rowA, rowB) => {
+		const cellA = rowA.getElementsByTagName('td')[columnIndex].innerText.trim();
+		const cellB = rowB.getElementsByTagName('td')[columnIndex].innerText.trim();
+
+		if (order === 'asc') {
+		return cellA.localeCompare(cellB, undefined, { sensitivity: 'accent' });
+		} else {
+		return cellB.localeCompare(cellA, undefined, { sensitivity: 'accent' });
+		}
+		});
+
+		// Xóa các hàng trong tbody
+		while (tbody.firstChild) {
+		tbody.removeChild(tbody.firstChild);
+		}
+
+		// Thêm các hàng đã sắp xếp vào tbody
+		arr.forEach(row => {
+		tbody.appendChild(row);
+		});
+		}
+
+		function filterColumn(columnIndex, filterValue) {
+		const table = document.getElementById('tbl');
+		const tbody = table.getElementsByTagName('tbody')[0];
+		const rows = tbody.getElementsByTagName('tr');
+
+		for (let i = 0; i < rows.length; i++) {
+		const cellValue = rows[i].getElementsByTagName('td')[columnIndex].innerText.trim();
+
+		if (filterValue === 'all') {
+		rows[i].style.display = ''; // Hiển thị tất cả các hàng nếu chọn Tất cả
+		} else if (cellValue === filterValue) {
+		rows[i].style.display = ''; // Hiển thị hàng thỏa mãn điều kiện
+		} else {
+		rows[i].style.display = 'none'; // Ẩn các hàng không thỏa mãn điều kiện
+		}
+		}
+		}
+
+
+		document.querySelectorAll('.dropdown-item').forEach(item => {
+		item.addEventListener('click', function () {
+
+		var status = item.getAttribute('data-status');
+		var statusSpan = item.closest('tr').querySelector('.status');
+		var id = $(this).closest('tr').find('td:first').text();
+		if (status === 'approved') {
+		const deliveryDateCell = item.closest('tr').querySelector('.delivery-date');
+		deliveryDateCell.textContent = "";
+
+		icon = '<i class="fa fa-circle text-info me-1">Đã duyệt</i>';
+		statusSpan.innerHTML = icon;
+
+		$.ajax({
+		url: '/HoaDon/Edit',
+		method: 'POST',
+		data: JSON.stringify({
+		"Id": id,
+		"Ngaygiaohang": null,
+		"Tinhtrangdonhang": "Đã duyệt",
+								"TrangthaiTT": null
+		}),
+		contentType: 'application/json',
+
+		success: function (res) {
+		if (res) {
+		alert("Cập nhật thành công");
+		} else {
+		alert('Create failed');
+		}
+		},
+		error: function (error) {
+		alert('Error:', error);
+		}
+		});
+		} else if (status === 'delivering') {
+		const deliveryDateCell = item.closest('tr').querySelector('.delivery-date');
+		deliveryDateCell.textContent = "";
+
+		icon = '<i class="fa fa-circle text-warning me-1">Đang vận chuyển</i>';
+		statusSpan.innerHTML = icon;
+		$.ajax({
+		url: '/HoaDon/Edit',
+		method: 'POST',
+		data: JSON.stringify({
+		"Id": id,
+		"Ngaygiaohang": null,
+		"Tinhtrangdonhang": "Đang vận chuyển",
+								"TrangthaiTT": null
+		}),
+		contentType: 'application/json',
+
+		success: function (res) {
+		if (res) {
+		alert("Cập nhật thành công");
+		} else {
+		alert('Create failed');
+		}
+		},
+		error: function (error) {
+		alert('Error:', error);
+		}
+		});
+		}
+
+		});
+		});
+
+		const btnDelivered = document.querySelectorAll('.delivered');
+		const modal = document.getElementById('myModal');
+		const modalView = document.getElementById('myModalView');
+		const closeBtn = modal.querySelector('.close');
+		const closeBtnView = modalView.querySelector('.close');
+
+		btnDelivered.forEach(item => {
+		item.addEventListener('click', function () {
+		modal.style.display = 'block';
+		var idd = $(this).closest('tr').find('td:first').text();
+
+		const saveDeliveryDateBtn = document.getElementById('save-delivery-date');
+		const deliveryDateInput = document.getElementById('datepicker');
+		const closestRow = this.closest('tr');
+
+		let deliveryDateUpdateHandler = function () {
+		const selectedDate = deliveryDateInput.value;
+		const deliveryDateCell = closestRow.querySelector('.delivery-date');
+		deliveryDateCell.textContent = selectedDate;
+
+		const statusSpan = closestRow.querySelector('.status');
+		icon = '<i class="fa fa-circle text-success me-1">Đã giao</i>';
+		statusSpan.innerHTML = icon; 
+		alert(idd);
+		$.ajax({
+		url: '/HoaDon/Edit',
+		method: 'POST',
+		data: JSON.stringify({
+		"Id": idd,
+		"Ngaygiaohang": selectedDate,
+		"Tinhtrangdonhang": "Đã giao",
+								"TrangthaiTT": "Đã thanh toán"
+
+		}),
+		contentType: 'application/json',
+
+		success: function (res) {
+		if (res) {
+		alert("Cập nhật thành công");
+		location.reload();
+		} else {
+		alert('Create failed');
+		}
+		},
+		error: function (error) {
+		alert('Error:', error);
+		}
+		});
+		alert(selectedDate);
+		modal.style.display = 'none';
+
+		// Gỡ bỏ sự kiện sau khi đã sử dụng
+		saveDeliveryDateBtn.removeEventListener('click', deliveryDateUpdateHandler);
+		};
+		saveDeliveryDateBtn.addEventListener('click', deliveryDateUpdateHandler);
+
+		const cancelDeliveryDateBtn = document.getElementById('cancel-delivery-date');
+		cancelDeliveryDateBtn.addEventListener('click', function () {
+		modal.style.display = 'none';
+		});
+		});
+		});
+
+
+		const btnView = document.querySelectorAll('.view');
+
+		btnView.forEach(item => {
+		item.addEventListener('click', function () {
+		modalView.style.display = 'block';
+		});
+		});
+
+		closeBtn.addEventListener('click', function () {
+		modal.style.display = 'none';
+		});
+
+		closeBtnView.addEventListener('click', function () {
+		modalView.style.display = 'none';
+		});
+
+		window.addEventListener('click', function (event) {
+		if (event.target === modal) {
+		modal.style.display = 'none';
+		modalView.style.display = 'none';
+		}
+		});
+
+
+		document.getElementById("search-button").addEventListener("click", function () {
+		// Lấy giá trị từ thanh tìm kiếm
+		var searchValue = document.getElementById("search-input").value.toUpperCase();
+		var table = document.getElementById("tbl");
+		var rows = table.getElementsByTagName("tr");
+
+		for (var i = 1; i < rows.length; i++) { // Bắt đầu từ index 1 để bỏ qua hàng tiêu đề
+		var cells = rows[i].getElementsByTagName("td");
+
+		var found = false;
+		for (var j = 0; j < cells.length; j++) {
+		var cellText = cells[j].textContent || cells[j].innerText;
+
+		if (cellText.toUpperCase().indexOf(searchValue) > -1) {
+		found = true;
+		cells[j].classList.add("highlight");
+		} else {
+		cells[j].classList.remove("highlight");
+		}
+		}
+
+		if (found) {
+		rows[i].style.display = "";
+		} else {
+		rows[i].style.display = "none";
+		}
+		}
+		});
+
+	</script>
+
+	}
+	else {
+	<div style="height: 100px; background-color: #051922;"></div>
+
+	<!-- error section -->
+	<div class="full-height-section error-section">
+		<div class="full-height-tablecell">
+			<div class="container">
+				<div class="row">
+					<div class="col-lg-8 offset-lg-2 text-center">
+						<div class="error-text">
+							<i class="far fa-sad-cry"></i>
+							<h1>Oops! Not Found.</h1>
+							<p>The page you requested for is not found.</p>
+							<a asp-controller="Home" asp-action="Index" class="boxed-btn">Back to Home</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	}
+</body>

@@ -2329,21 +2329,12 @@ ul.social-link-team li a {
   font-weight: 600;
   font-size: 17px;
   margin: 15px;
-  border: 1px solid #051922;
   color: #323232;
   cursor: pointer;
-  padding: 8px 20px;
   border-radius: 25px;
-  border: 1px solid #ee71dabf;
-  background-color: #ee71dabf;
   color: #fff;
 }
 
-.product-filters ul li.active {
-  border: 1px solid #ee71dabf;
-  background-color: #ee71dabf;
-  color: #fff;
-}
 
 .single-product-item {
   margin-bottom: 30px;

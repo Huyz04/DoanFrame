@@ -35,6 +35,14 @@ namespace MVC_DOAN.Controllers
 			SanPhamVM sanphamVM = await _SPI.GetFilter( timkiem, MaLSP, sapxep, giaduoi, giatren);
 			return View(sanphamVM);
 		}
+
+		[HttpGet]
+		public async Task<IActionResult> GetFilterAdmin(string timkiem, int MaLSP, string sapxep, int giaduoi, int giatren)
+		{
+			SanPhamVM sanphamVM = await _SPI.GetFilter(timkiem, MaLSP, sapxep, giaduoi, giatren);
+			return View(sanphamVM);
+		}
+
 		[HttpGet]
         public IActionResult Create()
         {
@@ -46,12 +54,14 @@ namespace MVC_DOAN.Controllers
         [HttpPost]
         public async Task<IActionResult> Create(CreateSanPhamViewModel SanphamVM)
         {
-            if (ModelState.IsValid)
-            {
-                var result = await _PhoToService.AddPhotoAsync(SanphamVM.Img);
+            
+				var curUserId = _httpContextAccessor.HttpContext.User.GetUserId();
+				var createSanPhamViewModel = new CreateSanPhamViewModel { TaikhoanId = curUserId };
+				var result = await _PhoToService.AddPhotoAsync(SanphamVM.Img);
 
                 var club = new Sanpham
                 {
+                    
                     LoaisanphamId = SanphamVM.LoaisanphamId,
                     Tensp = SanphamVM.Tensp,
                     Dongia = SanphamVM.Dongia,
@@ -61,18 +71,22 @@ namespace MVC_DOAN.Controllers
                     TaikhoanId = SanphamVM.TaikhoanId,
                     Img = result.Url.ToString()
                 };
-                _SPI.Add(club);
-                return RedirectToAction("Index");
-            }
-            else
-            {
-                ModelState.AddModelError("", "Photo upload failed");
-            }
+               if( _SPI.Add(club))
+                return RedirectToAction("AdminSanPham");
+           
 
             return View(SanphamVM);
         }
-
-        public async Task<IActionResult> Edit(int Id)
+		public async Task<IActionResult> AdminSanPham()
+		{
+			var curUserId = _httpContextAccessor.HttpContext.User.GetUserId();
+			if (curUserId == null) return RedirectToAction("Login", "Account");
+			SanPhamVM sanphamVM = await _SPI.GetAll();
+            var adsanphamVM = new ADSanphamVM();
+            adsanphamVM.sanphamvm = sanphamVM;
+			return View(adsanphamVM);
+		}
+		public async Task<IActionResult> Edit(int Id)
         {
             var SP = await _SPI.GetByIdAsync(Id);
             if (SP == null) return View("Error");
@@ -98,36 +112,103 @@ namespace MVC_DOAN.Controllers
             }
             var DSP = await _SPI.GetByIdAsyncNoTracking(Id);
             if (DSP != null)
-            {
-                try
+            { 
+                if ( SPVM.Img != null)
                 {
-                    await _PhoToService.DeletePhotoAsync(DSP.Img);
-                }
-                catch (Exception ex)
-                {
-                    ModelState.AddModelError("", "Could not delete Photo");
-                    return View(SPVM);
-                }
-                var photoResult = await _PhoToService.AddPhotoAsync(SPVM.Img);
+                    if (DSP.Img != null)
+                    {
+                        try
+                        {
+                            await _PhoToService.DeletePhotoAsync(DSP.Img);
+                        }
+                        catch (Exception ex)
+                        {
+                            ModelState.AddModelError("", "Could not delete Photo");
+                            return View(SPVM);
+                        }
+                    }
 
-                var SP = new Sanpham
-                {
-                    Id = Id,
-                    Tensp = SPVM.Tensp,
-                    LoaisanphamId = SPVM.LoaisanphamId,
-                    Dongia = SPVM.Dongia,
-                    Soluongtonkho = SPVM.Soluongtonkho,
-                    Tinhtrang = SPVM.Tinhtrang,
-                    Img = photoResult.Url.ToString()
-                };
-                _SPI.Update(SP);
-                return RedirectToAction("Index"); 
+                    var photoResult = await _PhoToService.AddPhotoAsync(SPVM.Img);
 
+                    var SP = new Sanpham
+                    {
+                        Id = Id,
+                        Tensp = SPVM.Tensp,
+                        LoaisanphamId = SPVM.LoaisanphamId,
+                        Dongia = SPVM.Dongia,
+                        Soluongtonkho = SPVM.Soluongtonkho,
+                        Tinhtrang = SPVM.Tinhtrang,
+                        Img = photoResult.Url.ToString(),
+                        Mota = SPVM.Mota
+                    };
+                    _SPI.Update(SP);
+                    return RedirectToAction("AdminSanPham");
+                }
+                else
+                {
+					var SP = new Sanpham
+					{
+						Id = Id,
+						Tensp = SPVM.Tensp,
+						LoaisanphamId = SPVM.LoaisanphamId,
+						Dongia = SPVM.Dongia,
+						Soluongtonkho = SPVM.Soluongtonkho,
+						Tinhtrang = SPVM.Tinhtrang,
+                        Img = DSP.Img,
+						Mota = SPVM.Mota
+					};
+					_SPI.Update(SP);
+					return RedirectToAction("AdminSanPham");
+				}
              }
         else
             {
                 return View(SPVM);
             }
         }
-    }
+		public async Task<IActionResult> EditSP(int Id, EditSanPhamViewModel SPVM)
+		{
+			if (!ModelState.IsValid)
+			{
+				ModelState.AddModelError("", "Failed to edit LoaiSanPham");
+				return View("Edit", SPVM);
+			}
+			var DSP = await _SPI.GetByIdAsyncNoTracking(Id);
+			if (DSP != null)
+			{
+				if (DSP.Img != null || SPVM.Img != null)
+				{
+					try
+					{
+						await _PhoToService.DeletePhotoAsync(DSP.Img);
+					}
+					catch (Exception ex)
+					{
+						ModelState.AddModelError("", "Could not delete Photo");
+						return View(SPVM);
+					}
+				}
+				var photoResult = await _PhoToService.AddPhotoAsync(SPVM.Img);
+
+				var SP = new Sanpham
+				{
+					Id = Id,
+					Tensp = SPVM.Tensp,
+					LoaisanphamId = SPVM.LoaisanphamId,
+					Dongia = SPVM.Dongia,
+					Soluongtonkho = SPVM.Soluongtonkho,
+					Tinhtrang = SPVM.Tinhtrang,
+					Img = photoResult.Url.ToString()
+				};
+				_SPI.Update(SP);
+				return RedirectToAction("GetFilterAdmin");
+
+			}
+			else
+			{
+				return View(SPVM);
+			}
+		}
+
+	}
 }
