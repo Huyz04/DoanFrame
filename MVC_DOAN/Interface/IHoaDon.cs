@@ -11,5 +11,6 @@ namespace MVC_DOAN.Interface
 		bool Update(Donhang donhang);
 		bool Delete(Donhang donhang);
 		bool Save();
+		Task<ThongKe> GetThongKe(int nam);
 	}
 }

@@ -36,5 +36,12 @@ namespace MVC_DOAN.Controllers
 		return 	_HDI.UpdateTTHD(edhd);
 			
 		}
-	}
+		public async Task<IActionResult> GetThongKe(int nam)
+		{
+			var Thongke = await _HDI.GetThongKe(nam);
+			Thongke.nam = nam;
+			return View(Thongke);
+		}
+
+    }
 }

@@ -1,0 +1,387 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+
+<link rel="stylesheet" href="~/assets/css/style.css" />
+<style>
+	#sidebar {
+		min-width: 250px;
+		max-width: 250px;
+		background: #212121;
+		color: #fff;
+		-webkit-transition: all 0.3s;
+		-o-transition: all 0.3s;
+		transition: all 0.3s;
+		position: relative;
+		box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+		overflow-y: auto;
+	}
+
+		#sidebar .h6 {
+			color: #fff;
+		}
+
+		#sidebar.active {
+			margin-left: -250px;
+		}
+
+			#sidebar.active .custom-menu {
+				margin-right: -50px;
+			}
+
+		#sidebar h1 {
+			margin-bottom: 20px;
+			font-weight: 700;
+			font-size: 20px;
+		}
+
+			#sidebar h1 .logo {
+				color: #fff;
+				display: block;
+				padding: 10px 30px;
+				background: #2f89fc;
+			}
+
+		#sidebar ul.components {
+			padding: 0;
+		}
+
+		#sidebar ul li {
+			font-size: 16px;
+		}
+
+			#sidebar ul li > ul {
+				margin-left: 10px;
+			}
+
+				#sidebar ul li > ul li {
+					font-size: 14px;
+				}
+
+			#sidebar ul li a {
+				padding: 15px 30px;
+				display: block;
+				color: rgba(255, 255, 255, 0.6);
+				border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+			}
+
+				#sidebar ul li a:hover {
+					color: #fff;
+					background: #2f89fc;
+					border-bottom: 1px solid #2f89fc;
+				}
+
+			#sidebar ul li.active > a {
+				background: transparent;
+				color: #fff;
+			}
+
+				#sidebar ul li.active > a:hover {
+					background: #2f89fc;
+					border-bottom: 1px solid #2f89fc;
+				}
+
+	.page-titles {
+		text-align: center;
+		padding: 10px;
+		margin-bottom: 30px;
+	}
+
+	.card-header {
+		background-color: #ffffff;
+		height: 60px;
+		padding: 1rem;
+	}
+
+	.card {
+		box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+	}
+
+	/* CSS để ẩn modal ban đầu và cố định kích thước */
+
+	.highlight {
+		background-color: yellow; /* Màu nền bạn muốn áp dụng */
+		font-weight: bold; /* Tuỳ chỉnh kiểu chữ nếu cần */
+	}
+
+	.dropdown-toggle::after {
+		content: none;
+	}
+</style>
+
+<div id="preloader" class="container-fluid">
+
+	<div class="wrapper d-flex align-items-stretch">
+		<nav id="sidebar">
+			<div class="p-4 pt-5">
+				<div class="site-logo">
+					<img src="~/assets/img/logo.png" alt="" />
+				</div>
+			</div>
+			<div class="p-4 pt-5">
+				<ul class="list-unstyled components mb-5">
+					<li class="active">
+						<a asp-controller="User" asp-action="GetUser">
+							<i class="fas fa-home"></i>
+							<span class="nav-text">Dashboard</span>
+						</a>
+					</li>
+
+					<li>
+						<a asp-controller="LoaiSanPham" asp-action="Index">Loại sản phẩm</a>
+					</li>
+					<li>
+						<a asp-controller="SanPham" asp-action="AdminSanPham">Sản phẩm</a>
+					</li>
+					<li >
+						<a asp-controller="HoaDon" asp-action="GetHoaDon">Đơn hàng</a>
+					</li>
+					<li>
+						<a asp-controller="HoaDon" asp-action="GetThongKe" asp-route-nam="2023">Thống kê</a>
+					</li>
+					<li>
+						<a asp-controller="Account" asp-action="Logout">Đăng xuất</a>
+					</li>
+
+				</ul>
+
+				<div class="footer">
+					<p>
+					</p>
+				</div>
+
+			</div>
+		</nav>
+
+		<div class="content-body" style="background-color: #f0f0f0;">
+			<div class="container-fluid">
+				<div class="page-titles card">
+					<h3>TÀI KHOẢN NGƯỜI DÙNG</h3>
+				</div>
+
+				<div class="col-lg-12">
+					<div class="card" style="width:78vw; height:80vh;">
+						<div class="card-header d-flex justify-content-between">
+							<div>
+								<button id="export-excel" type="button" class="btn btn-dark"><b>Xuất file excel</b></button>
+							</div>
+							<div class="input-group" style="width:50%">
+								<input id="search-input" type="text" class="form-control" placeholder="Tìm kiếm..." style="border: 1px solid #000000;">
+								<button id="search-button" class="btn btn-outline-dark" type="button" style="border: 1px solid #000000;">
+									<i class="fas fa-search"></i>
+								</button>
+							</div>
+
+						</div>
+						<div class="card-body" style=" overflow-y: auto;">
+							<div class="table-responsive" style="height:100%">
+								<table id="tbl" style="min-width: 100%" class=" display table table-responsive-md">
+									<thead>
+										<tr>
+											<th>
+												ID
+												<span class="btn-link text-dark" data-bs-toggle="dropdown">
+													<i class="fas fa-angle-down dropdown ms-auto "></i>
+												</span>
+												<span class="dropdown-menu dropdown-menu-end">
+													<div class="dropdown-item sort-id" data-status="asc">Tăng dần</div>
+													<div class="dropdown-item sort-id" data-status="desc">Giảm dần</div>
+												</span>
+											</th>
+											<th>
+												Tên người dùng
+												<span class="btn-link text-dark" data-bs-toggle="dropdown">
+													<i class="fas fa-angle-down dropdown ms-auto "></i>
+												</span>
+												<span class="dropdown-menu dropdown-menu-end">
+													<div class="dropdown-item sort-user" data-status="asc">A-Z</div>
+													<div class="dropdown-item sort-user" data-status="desc">Z-A</div>
+												</span>
+											</th>
+											<th>
+												Email
+												<span class="btn-link text-dark" data-bs-toggle="dropdown">
+													<i class="fas fa-angle-down dropdown ms-auto "></i>
+												</span>
+												<span class="dropdown-menu dropdown-menu-end">
+													<div class="dropdown-item sort-email" data-status="asc">A-Z</div>
+													<div class="dropdown-item sort-email" data-status="desc">Z-A</div>
+												</span>
+											</th>
+											<th>
+												Password
+												<span class="btn-link text-dark" data-bs-toggle="dropdown">
+													<i class="fas fa-angle-down dropdown ms-auto "></i>
+												</span>
+												<span class="dropdown-menu dropdown-menu-end">
+													<div class="dropdown-item sort-pass" data-status="asc">A-Z</div>
+													<div class="dropdown-item sort-pass" data-status="desc">Z-A</div>
+												</span>
+											</th>
+											<th>
+												Tổng tiền
+												<span class="btn-link text-dark" data-bs-toggle="dropdown">
+													<i class="fas fa-angle-down dropdown ms-auto "></i>
+												</span>
+												<span class="dropdown-menu dropdown-menu-end">
+													<div class="dropdown-item sort-id" data-status="asc">Tăng dần</div>
+													<div class="dropdown-item sort-id" data-status="desc">Giảm dần</div>
+												</span>
+											</th>
+										</tr>
+									</thead>
+									<tbody style=" line-height:3;">
+										<tr>
+											<td>Id</td>
+											<td>Ten</td>
+											<td>Email</td>
+											<td>Password</td>
+											<td>
+												100000
+											</td>
+										</tr>
+									</tbody>
+								</table>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+</div>
+
+<script src="js/main.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.13/xlsx.full.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/2014-11-29/FileSaver.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.1/js/bootstrap.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.12.13/xlsx.full.min.js"></script>
+
+<script>
+	document.addEventListener('DOMContentLoaded', function () {
+		document.getElementById('export-excel').addEventListener('click', function () {
+			var table = document.getElementById('tbl');
+			var data = [];
+			var headers = [];
+			for (var i = 0; i < table.rows[0].cells.length; i++) {
+				headers[i] = table.rows[0].cells[i].innerText;
+			}
+			data.push(headers);
+			for (var i = 1; i < table.rows.length; i++) {
+				var tableRow = table.rows[i];
+				var rowData = [];
+				for (var j = 0; j < tableRow.cells.length; j++) {
+					rowData.push(tableRow.cells[j].innerText);
+				}
+				data.push(rowData);
+			}
+
+			/* Tạo một Workbook mới */
+			var workbook = XLSX.utils.book_new();
+			alert(workbook)
+			var worksheet = XLSX.utils.aoa_to_sheet(data);
+
+			/* Thêm worksheet vào Workbook */
+			XLSX.utils.book_append_sheet(workbook, worksheet, 'Dữ liệu');
+
+			/* Xuất file Excel */
+			XLSX.writeFile(workbook, 'data.xlsx');
+		});
+
+		const dropdownItems = document.querySelectorAll('.dropdown-item');
+
+		dropdownItems.forEach(item => {
+			item.addEventListener('click', function () {
+				const status = this.getAttribute('data-status');
+				const column = event.target.closest('th').cellIndex; // Lấy chỉ số cột
+
+				// Kiểm tra nếu là các div có data-status là 'asc' hoặc 'desc'
+				if (status === 'asc' || status === 'desc') {
+					sortColumn(column, status); // Gọi hàm sắp xếp cột
+				}
+				else {
+					filterColumn(column, status);
+				}
+			});
+		});
+
+		// Hàm sắp xếp cột
+		function sortColumn(columnIndex, order) {
+			const table = document.getElementById('tbl');
+			const tbody = table.getElementsByTagName('tbody')[0];
+			const rows = tbody.getElementsByTagName('tr');
+			const arr = Array.from(rows);
+
+			arr.sort((rowA, rowB) => {
+				const cellA = rowA.getElementsByTagName('td')[columnIndex].innerText.trim();
+				const cellB = rowB.getElementsByTagName('td')[columnIndex].innerText.trim();
+
+				if (order === 'asc') {
+					return cellA.localeCompare(cellB, undefined, { sensitivity: 'accent' });
+				} else {
+					return cellB.localeCompare(cellA, undefined, { sensitivity: 'accent' });
+				}
+			});
+
+			// Xóa các hàng trong tbody
+			while (tbody.firstChild) {
+				tbody.removeChild(tbody.firstChild);
+			}
+
+			// Thêm các hàng đã sắp xếp vào tbody
+			arr.forEach(row => {
+				tbody.appendChild(row);
+			});
+		}
+
+		function filterColumn(columnIndex, filterValue) {
+			const table = document.getElementById('tbl');
+			const tbody = table.getElementsByTagName('tbody')[0];
+			const rows = tbody.getElementsByTagName('tr');
+
+			for (let i = 0; i < rows.length; i++) {
+				const cellValue = rows[i].getElementsByTagName('td')[columnIndex].innerText.trim();
+
+				if (filterValue === 'all') {
+					rows[i].style.display = ''; // Hiển thị tất cả các hàng nếu chọn Tất cả
+				} else if (cellValue === filterValue) {
+					rows[i].style.display = ''; // Hiển thị hàng thỏa mãn điều kiện
+				} else {
+					rows[i].style.display = 'none'; // Ẩn các hàng không thỏa mãn điều kiện
+				}
+			}
+		}
+
+		document.getElementById("search-button").addEventListener("click", function () {
+			var searchValue = document.getElementById("search-input").value.toUpperCase();
+			var table = document.getElementById("tbl");
+			var rows = table.getElementsByTagName("tr");
+			for (var i = 1; i < rows.length; i++) {
+				var cells = rows[i].getElementsByTagName("td");
+
+				var found = false;
+				for (var j = 0; j < cells.length; j++) {
+					var cellText = cells[j].textContent || cells[j].innerText;
+
+					if (cellText.toUpperCase().indexOf(searchValue) > -1) {
+						found = true;
+						cells[j].classList.add("highlight");
+					} else {
+						cells[j].classList.remove("highlight");
+					}
+				}
+
+				if (found) {
+					rows[i].style.display = "";
+				} else {
+					rows[i].style.display = "none";
+				}
+			}
+		});
+	});
+
+</script>

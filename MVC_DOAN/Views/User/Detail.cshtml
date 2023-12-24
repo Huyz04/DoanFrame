@@ -269,8 +269,9 @@
 </style>
 
 
-<div class="container-fluid" style="margin-top:50px">
-	<div class="content-body row" style="width: -webkit-fill-available; display:none">
+<div class="container-fluid" style="margin-top:50px; margin-bottom:50px;">
+	<div class="container">
+	<div class="content-body row" style="width: -webkit-fill-available; display:none;">
 		<div class="col-5">
 			<div class="card" style="border-radius:5px">
 			</div>
@@ -507,10 +508,10 @@
 			</div>
 		</div>
 	</div>
-	<div class="container" style="max-width:1700px">
-		<div class="main-body">
-			<div class="row">
-				<div class="col-3">
+	<div class="container" style="max-width:1700px; ">
+			<div class="main-body" style="min-height:700px">
+			<div class="row" style="height:700px">
+				<div class="col-4" style="height:100%">
 					<div class="card" style="border-radius:5px; height:100%;">
 						<div class="card-body" style="align-self: center; text-align: center;width: -webkit-fill-available;">
 							<div class="d-flex flex-column align-items-center text-center" style="margin-top:20px">
@@ -526,7 +527,6 @@
 									<ul class="list-unstyled components mb-5">
 										<li class="active">
 											<a asp-action="Detail">
-												<i class="fas fa-user"></i>
 												<span class="nav-text">Thông tin tài khoản</span>
 											</a>
 										</li>
@@ -545,8 +545,8 @@
 						</div>
 					</div>
 				</div>
-				<div class="col-9">
-					<div class="card" style="border-radius:5px;">
+					<div class="col-8" style="height:100%">
+					<div class="card" style="border-radius:5px; height:50%">
 						<div class="card-body">
 							<h5 class="d-flex align-items-center mb-3" style="justify-content:center">THÔNG TIN TÀI KHOẢN</h5>
 							
@@ -627,6 +627,7 @@
 				</div>
 			</div>
 		</div>
+	</div>
 	</div>
 </div>
 

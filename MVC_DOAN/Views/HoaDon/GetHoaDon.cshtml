@@ -257,7 +257,7 @@
 				<nav id="sidebar">
 					<div class="p-4 pt-5">
 						<div class="site-logo">
-							<a href="@Url.Action("Index", "Home")">
+							
 							<img src="~/assets/img/logo.png" alt="" />
 						</div>
 					</div>
@@ -269,7 +269,7 @@
 									<span class="nav-text">Dashboard</span>
 								</a>
 							</li>
-							<li>
+							
 							<li>
 								<a asp-controller="LoaiSanPham" asp-action="Index">Loại sản phẩm</a>
 							</li>
@@ -280,7 +280,7 @@
 								<a asp-controller="HoaDon" asp-action="GetHoaDon">Đơn hàng</a>
 							</li>
 							<li>
-								<a href="#pageSubmenu" >Thống kê</a>
+								<a asp-controller="HoaDon" asp-action="GetThongKe" asp-route-nam="2023">Thống kê</a>
 							</li>
 							<li>
 								<a asp-controller="Account" asp-action="Logout">Đăng xuất</a>
@@ -608,7 +608,7 @@
 
 		success: function (res) {
 		if (res) {
-		alert("Cập nhật thành công");
+		console.log("Cập nhật thành công");
 		} else {
 		alert('Create failed');
 		}
@@ -636,7 +636,7 @@
 
 		success: function (res) {
 		if (res) {
-		alert("Cập nhật thành công");
+		console.log("Cập nhật thành công");
 		} else {
 		alert('Create failed');
 		}
@@ -673,7 +673,7 @@
 		const statusSpan = closestRow.querySelector('.status');
 		icon = '<i class="fa fa-circle text-success me-1">Đã giao</i>';
 		statusSpan.innerHTML = icon; 
-		alert(idd);
+		console.log(idd);
 		$.ajax({
 		url: '/HoaDon/Edit',
 		method: 'POST',
@@ -688,7 +688,7 @@
 
 		success: function (res) {
 		if (res) {
-		alert("Cập nhật thành công");
+									console.log("Cập nhật thành công");
 		location.reload();
 		} else {
 		alert('Create failed');
@@ -698,7 +698,7 @@
 		alert('Error:', error);
 		}
 		});
-		alert(selectedDate);
+						console.log(selectedDate);
 		modal.style.display = 'none';
 
 		// Gỡ bỏ sự kiện sau khi đã sử dụng

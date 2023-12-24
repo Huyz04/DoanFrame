@@ -411,7 +411,6 @@
 			<nav id="sidebar">
 				<div class="p-4 pt-5">
 					<div class="site-logo">
-						<a href="@Url.Action("Index", "Home")">
 						<img src="~/assets/img/logo.png" alt="" />
 					</div>
 				</div>
@@ -433,7 +432,7 @@
 							<a asp-controller="HoaDon" asp-action="GetHoaDon">Đơn hàng</a>
 						</li>
 						<li>
-							<a href="#pageSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Thống kê</a>
+							<a asp-controller="HoaDon" asp-action="GetThongKe" asp-route-nam="2023">Thống kê</a>
 						</li>
 						<li>
 							<a asp-controller="Account" asp-action="Logout">Đăng xuất</a>
@@ -454,7 +453,7 @@
 						<h3>SẢN PHẨM</h3>
 					</div>
 
-					<div class="d-flex justify-content-between">
+					<div class="d-flex justify-content-between" style="margin-bottom:20px">
 						<div>
 							<button id="add-product" class="btn btn-dark">Thêm sản phẩm</button>
 							
@@ -467,7 +466,7 @@
 									}
 								</select>
 						</div>
-						<div class="input-group" style="width:50%; margin-bottom:20px">
+						<div class="input-group" style="width:50%; margin-bottom:20px; display: none">
 							<input id="search-input" type="text" class="form-control" placeholder="Tìm kiếm..." style="border: 1px solid #000000;">
 							<button id="search-button" class="btn btn-outline-dark" type="button" style="border: 1px solid #000000; ">
 								<i class="fas fa-search"></i>
@@ -726,7 +725,6 @@
 		document.getElementById('filter-category').addEventListener('change', function () {
 			var selectedCategory = this.value; // Lựa chọn đã chọn từ dropdown
 			var categoryNames = document.querySelectorAll('.category-name'); // Tất cả các phần tử h4 có class là 'category-name'
-			alert(selectedCategory);
 			$.ajax({
 				url: '@Url.Action("GetFilterAdmin", "SanPham")',
 				type: 'GET',

@@ -138,6 +138,9 @@ namespace MVC_DOAN.Migrations
                     b.Property<string>("Tinh")
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<string>("Tinhtrang")
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<string>("Xa")
                         .HasColumnType("nvarchar(max)");
 
@@ -217,7 +220,11 @@ namespace MVC_DOAN.Migrations
 
                     b.HasIndex("TaikhoanId");
 
-                    b.ToTable("Loaisanphams");
+                    b.ToTable("Loaisanphams", t =>
+                        {
+                            t.HasTrigger("SomeTrigger")
+                                .HasDatabaseName("SomeTrigger2");
+                        });
                 });
 
             modelBuilder.Entity("MVC_DOAN.Models.Phiship", b =>

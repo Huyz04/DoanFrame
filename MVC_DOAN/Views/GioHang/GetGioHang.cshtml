@@ -4,11 +4,28 @@
     ViewData["Title"] = "Giỏ hàng";
 }
 
-
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.min.js"></script>
 <script>
     document.addEventListener("DOMContentLoaded", function () {
+        var emaill = $("#emailnguoidung").text() ;
+    var DonhangID;
+    var selectedValue;
+        $(".label-address input[type='radio']").click(function () {
+            // Lấy giá trị của input được chọn
+            selectedValue = $(this).val();
+        });
+    var currentTime = new Date();
+    var selectedPaymentMethod;
+    var radioButtons = document.querySelectorAll('input[name="options"]');
+    radioButtons.forEach(function (radioButton) {
+        radioButton.addEventListener('click', function () {
+            // Lấy giá trị text tương ứng với nút radio được chọn
+            selectedPaymentMethod = this.id;
+        });
+    });
 
+      
         function renderCity(data) {
             for (const x of data) {
                 citis.options[citis.options.length] = new Option(x.Name, x.Id);
@@ -37,6 +54,34 @@
             };
         }
 
+        function renderCityEdit(data) {
+            for (const x of data) {
+                citisEdit.options[citisEdit.options.length] = new Option(x.Name, x.Id);
+            }
+            citisEdit.onchange = function () {
+                districtEdit.length = 1;
+                ward.length = 1;
+                if (this.value != "") {
+                    const result = data.filter(n => n.Id === this.value);
+
+                    for (const k of result[0].Districts) {
+                        districtEdit.options[districtEdit.options.length] = new Option(k.Name, k.Id);
+                    }
+                }
+            };
+            districtEdit.onchange = function () {
+                ward.length = 1;
+                const dataCity = data.filter((n) => n.Id === citisEdit.value);
+                if (this.value != "") {
+                    const dataWards = dataCity[0].Districts.filter(n => n.Id === this.value)[0].Wards;
+
+                    for (const w of dataWards) {
+                        wardsEdit.options[wardsEdit.options.length] = new Option(w.Name, w.Id);
+                    }
+                }
+            };
+        }
+
         var citis = document.getElementById("city");
         var districts = document.getElementById("district");
         var wards = document.getElementById("ward");
@@ -50,6 +95,85 @@
             renderCity(result.data);
         });
 
+        var citisEdit = document.getElementById("cityEdit");
+        var districtsEdit = document.getElementById("districtEdit");
+        var wardsEdit = document.getElementById("wardEdit");
+        var Parameter = {
+            url: "https://raw.githubusercontent.com/kenzouno1/DiaGioiHanhChinhVN/master/data.json",
+            method: "GET",
+            responseType: "application/json",
+        };
+        var promise = axios(Parameter);
+        promise.then(function (result) {
+            renderCityEdit(result.data);
+        });
+
+
+        var btnCancelEditAddress = document.querySelectorAll(".cancel-edit-address");
+        btnCancelEditAddress.forEach(function (item) {
+            item.addEventListener('click', function () {
+                var parentDiv = item.closest('.card-address-details').querySelector('#edit-address-container');
+                parentDiv.style.display = 'none';
+            });
+        });
+
+        const dynamicInput = document.getElementById('edit-address-container');
+        var editAddress = document.querySelectorAll(".edit-address");
+        editAddress.forEach(function (item) {
+            item.addEventListener('click', function () {
+                var editContainer = item.closest('.card-address-details').querySelector('.address-container');
+
+                const idAddress = editContainer.querySelector('.id-address').innerText;
+                const consigneeName = editContainer.querySelector('.consignee-name').innerText;
+                const phoneNumber = editContainer.querySelector('.phone-numer').innerText;
+                const addressDetails = editContainer.querySelector('.address-details').innerText;
+                let arrAddress = addressDetails.split(", ");
+
+                var idAddressInput = document.getElementById('id-address-input');
+                var nameInput = document.getElementById('name-input');
+                var phoneInput = document.getElementById('phone-input');
+                var addressInput = document.getElementById('address-input');
+                var cityInput = document.getElementById('cityEdit');
+                var districtInput = document.getElementById('districtEdit');
+                var wardInput = document.getElementById('wardEdit');
+
+                idAddressInput.value = idAddress;
+                nameInput.value = consigneeName;
+                phoneInput.value = phoneNumber;
+                addressInput.value = arrAddress[0];
+
+                for (var i = 0; i < cityInput.options.length; i++) {
+                    if (cityInput.options[i].text === arrAddress[3]) {
+                        cityInput.selectedIndex = i; // Chọn option có text khớp
+                        // Tạo và kích hoạt sự kiện onchange cho select box
+                        var event = new Event('change');
+                        cityInput.dispatchEvent(event);
+                        break;
+                    }
+                }
+                for (var i = 0; i < districtInput.options.length; i++) {
+                    if (districtInput.options[i].text === arrAddress[2]) {
+                        districtInput.selectedIndex = i; // Chọn option có text khớp
+                        // Tạo và kích hoạt sự kiện onchange cho select box
+                        var event = new Event('change');
+                        districtInput.dispatchEvent(event);
+                        break;
+                    }
+                }
+                for (var i = 0; i < wardInput.options.length; i++) {
+                    if (wardInput.options[i].text === arrAddress[1]) {
+                        wardInput.selectedIndex = i; // Chọn option có text khớp
+                        // Tạo và kích hoạt sự kiện onchange cho select box
+                        var event = new Event('change');
+                        wardInput.dispatchEvent(event);
+                        break;
+                    }
+                }
+
+                editContainer.appendChild(dynamicInput);
+                dynamicInput.style.display = 'block';
+            });
+        });
 
         // Lấy tất cả các hàng input group
         const inputGroups = document.querySelectorAll(".quantity-price");
@@ -113,22 +237,176 @@
 
         const showModalButton = document.getElementById('showModalButton');
         const modal = document.getElementById('myModal');
-        const closeBtn = modal.querySelector('.close');
+        const modalConfirm = document.getElementById('myModalConfirm');
+        const closeBtn = document.querySelectorAll('.close');
+        const cancelConfirmBtn = document.getElementById('cancel-confirm');
+
+
+        $("#btnThanhToan").click(function (event) {
+            var MOUNTT = $("#totalAmount").text();
+            var selectedIds = [];
+            var checkboxes = document.querySelectorAll('input[type="checkbox"]');
+            checkboxes.forEach(function (checkbox) {
+                if (checkbox.checked) {
+                    // Nếu checkbox được chọn, thêm Id tương ứng vào mảng selectedIds
+                    selectedIds.push(checkbox.value);
+                }
+            });
+            // Lấy dữ liệu từ form
+            var phuongThucThanhToan = selectedPaymentMethod;
+            var trangThaiDonHang = "Chờ duyệt";
+            var diaChiId = selectedValue;
+
+
+            var trangThaiThanhToan;
+            if (selectedPaymentMethod == "COD")
+                trangThaiThanhToan = "Chưa thanh toán";
+            else trangThaiThanhToan = "Đã thanh toán";
+
+            // Định nghĩa URL và dữ liệu
+            if (diaChiId != null) {
+                if (phuongThucThanhToan != null) {
+                    if (phuongThucThanhToan == "COD") {
+                        modalConfirm.style.display = 'block';
+                        document.getElementById('confirm').addEventListener('click', function () {
+                            var url = "/DonHang/Create";
+                            var data = {
+                                Phuongthucthanhtoan: phuongThucThanhToan,
+                                Trangthaidonhang: trangThaiDonHang,
+                                DiachiId: diaChiId,
+                                Trangthaithanhtoan: trangThaiThanhToan,
+                                Ngaytao: currentTime
+                            };
+
+                            // Gửi yêu cầu POST
+                            $.ajax({
+                                url: url,
+                                type: "POST",
+                                data: data,
+                                success: function (response) {
+                                    // Xử lý kết quả trả về từ server
+                                    if (response > 0) {
+                                        DonhangID = response;
+                                        $.ajax({
+                                            url: '/ChiTietDon/Create',
+                                            method: 'POST',
+                                            data: JSON.stringify({ donhangid: DonhangID, ctghid: selectedIds }),
+                                            contentType: 'application/json',
+                                            success: function (res) {
+                                                if (res) {
+                                                    location.reload();
+                                                } else {
+                                                    alert('Create failed');
+                                                }
+                                            },
+                                            error: function (error) {
+                                                alert('Error:', error);
+                                            }
+                                        });
+                                    } else {
+                                        alert("Đã xảy ra lỗi khi tạo đơn hàng.");
+                                    }
+                                },
+                                error: function (xhr, textStatus, error) {
+                                    // Xử lý lỗi
+                                    alert("Lỗi khi gửi yêu cầu: " + error);
+                                }
+
+                            });
+                        });
+                        
+                    }
+                    else if (phuongThucThanhToan == "VNPay") {
+
+                        var url = "/DonHang/Create";
+                        var data = {
+                            Phuongthucthanhtoan: phuongThucThanhToan,
+                            Trangthaidonhang: trangThaiDonHang,
+                            DiachiId: diaChiId,
+                            Trangthaithanhtoan: trangThaiThanhToan,
+                            Ngaytao: currentTime
+                        };
+
+                        // Gửi yêu cầu POST
+                        $.ajax({
+                            url: url,
+                            type: "POST",
+                            data: data,
+                            success: function (response) {
+                                // Xử lý kết quả trả về từ server
+                                if (response > 0) {
+                                    DonhangID = response;
+                                    $.ajax({
+                                        url: '/ChiTietDon/Create',
+                                        method: 'POST',
+                                        data: JSON.stringify({ donhangid: DonhangID, ctghid: selectedIds }),
+                                        contentType: 'application/json',
+                                        success: function (res) {
+                                            if (res) {
+                                                var tt = {
+                                                    mail: emaill,
+                                                    dongia: MOUNTT
+                                                };
+                                                // Gửi yêu cầu Ajax đến phương thức Index trong Controller
+                                                $.ajax({
+                                                    url: "/VNPAY/Index",
+                                                    type: "GET",
+                                                    data: JSON.stringify(tt),
+                                                    contentType: "application/json",
+                                                    success: function (response) {
+                                                        // Chuyển hướng đến trang View "Index.cshtml" với dữ liệu truyền qua query string
+                                                        var queryString = "mail=" + encodeURIComponent(tt.mail) + "&dongia=" + encodeURIComponent(tt.dongia);
+                                                        window.location.href = "/VNPAY/Index?" + queryString;
+                                                    },
+                                                    error: function (xhr, status, error) {
+                                                        alert("Lỗi");
+                                                    }
+                                                });
+                                            } else {
+                                                alert('Create failed');
+                                            }
+                                        },
+                                        error: function (error) {
+                                            alert('Error:', error);
+                                        }
+                                    });
+                                } else {
+                                    alert("Đã xảy ra lỗi khi tạo đơn hàng.");
+                                }
+                            },
+                            error: function (xhr, textStatus, error) {
+                                // Xử lý lỗi
+                                alert("Lỗi khi gửi yêu cầu: " + error);
+                            }
+
+                        });
+
+
+                    }
+                }
+            }
+
+        });
 
         showModalButton.addEventListener('click', function () {
             modal.style.display = 'block';
         });
-
-        closeBtn.addEventListener('click', function () {
-            modal.style.display = 'none';
+        closeBtn.forEach(function (item) {
+            item.addEventListener('click', function () {
+                modal.style.display = 'none';
+                modalConfirm.style.display = 'none';
+            });
+        });
+        cancelConfirmBtn.addEventListener('click', function () {
+            modalConfirm.style.display = 'none';
         });
 
         window.addEventListener('click', function (event) {
             if (event.target === modal) {
                 modal.style.display = 'none';
+                modalConfirm.style.display = 'none';
             }
         });
-
 
         var consigneenameInputCheckout = document.getElementById('input-consigneename');
         var phoneInputCheckout = document.getElementById('input-phonenumber');
@@ -169,141 +447,141 @@
         });
 
         var btnSaveAddress = document.getElementById('save-add-address');
-        btnSaveAddress.addEventListener('click', function () {
-            var nameInput = document.getElementById('name-input');
-            var phoneInput = document.getElementById('phone-input');
-            var addressInput = document.getElementById('address-input');
-            var cityOption = document.getElementById('city');
-            var districtOption = document.getElementById('district');
-            var wardOption = document.getElementById('ward');
+        // btnSaveAddress.addEventListener('click', function () {
+        //     var nameInput = document.getElementById('name-input');
+        //     var phoneInput = document.getElementById('phone-input');
+        //     var addressInput = document.getElementById('address-input');
+        //     var cityOption = document.getElementById('city');
+        //     var districtOption = document.getElementById('district');
+        //     var wardOption = document.getElementById('ward');
 
-            alert(nameInput.value, phoneInput, addressInput, cityOption);
+        //     alert(nameInput.value, phoneInput, addressInput, cityOption);
 
-            alert("Nhan ");
-            //ínert vào csdl
-                        $.ajax({
-                            url: '/DiaChi/Create',
-                            method: 'POST',
-                            data: JSON.stringify(
-                            {   Hotennguoinhan: nameInput.value,
-                                Sdt: phoneInput.value,
-                        Tinh: cityOption.options[cityOption.selectedIndex].textContent,
-                        Huyen: districtOption.options[districtOption.selectedIndex].textContent,
-                        Xa: wardOption.options[wardOption.selectedIndex].textContent,
-                                Diachichitiet: addressInput.value}
-                            ),
-                            contentType: 'application/json',
-                            success: function (res) {
-                                if (res) {
-                                    alert("Them thanh cong")
-                                } else {
-                                    alert('Create failed');
-                                }
-                            },
-                            error: function (error) {
-                                alert('Error:', error);
-                            }
-                        });
-            //if(true) thì thực hiện đoạn dưới
+        //     alert("Nhan ");
+        //     //ínert vào csdl
+        //                 $.ajax({
+        //                     url: '/DiaChi/Create',
+        //                     method: 'POST',
+        //                     data: JSON.stringify(
+        //                     {   Hotennguoinhan: nameInput.value,
+        //                         Sdt: phoneInput.value,
+        //                 Tinh: cityOption.options[cityOption.selectedIndex].textContent,
+        //                 Huyen: districtOption.options[districtOption.selectedIndex].textContent,
+        //                 Xa: wardOption.options[wardOption.selectedIndex].textContent,
+        //                         Diachichitiet: addressInput.value}
+        //                     ),
+        //                     contentType: 'application/json',
+        //                     success: function (res) {
+        //                         if (res) {
+        //                             alert("Them thanh cong")
+        //                         } else {
+        //                             alert('Create failed');
+        //                         }
+        //                     },
+        //                     error: function (error) {
+        //                         alert('Error:', error);
+        //                     }
+        //                 });
+        //     //if(true) thì thực hiện đoạn dưới
 
-            document.getElementById('add-address-container').style.display = 'none';
-            btnAddAddress.style.display = 'block';
+        //     document.getElementById('add-address-container').style.display = 'none';
+        //     btnAddAddress.style.display = 'block';
 
-            // Tạo các phần tử HTML
-            var outerDiv = document.createElement('div');
-            outerDiv.classList.add('card-address-details', 'col-lg-12', 'row', 'mb-3');
-            outerDiv.style.marginLeft = '0';
+        //     // Tạo các phần tử HTML
+        //     var outerDiv = document.createElement('div');
+        //     outerDiv.classList.add('card-address-details', 'col-lg-12', 'row', 'mb-3');
+        //     outerDiv.style.marginLeft = '0';
 
-            var cardDiv = document.createElement('div');
-            cardDiv.classList.add('card', 'p-0', 'col-lg-11');
+        //     var cardDiv = document.createElement('div');
+        //     cardDiv.classList.add('card', 'p-0', 'col-lg-11');
 
-            var labelDiv = document.createElement('label');
-            labelDiv.classList.add('label-address', 'btn', 'btn-secondary', 'form-control', 'form-control-lg', 'd-flex', 'align-items-center', 'p-0');
+        //     var labelDiv = document.createElement('label');
+        //     labelDiv.classList.add('label-address', 'btn', 'btn-secondary', 'form-control', 'form-control-lg', 'd-flex', 'align-items-center', 'p-0');
 
-            var inputRadio = document.createElement('input');
-            inputRadio.setAttribute('type', 'radio');
-            inputRadio.setAttribute('name', 'options');
-            inputRadio.classList.add('address');
-            inputRadio.setAttribute('autocomplete', 'off');
-            inputRadio.style.margin = '10px';
-            inputRadio.setAttribute('size', '1');
-            inputRadio.setAttribute('minlength', '3');
-            inputRadio.setAttribute('maxlength', '3');
-            inputRadio.checked = false;
-            inputRadio.addEventListener('click', function () {
-                if (this.checked) {
-                    var modal = document.getElementById('myModal');
-                    modal.style.display = 'none';
+        //     var inputRadio = document.createElement('input');
+        //     inputRadio.setAttribute('type', 'radio');
+        //     inputRadio.setAttribute('name', 'options');
+        //     inputRadio.classList.add('address');
+        //     inputRadio.setAttribute('autocomplete', 'off');
+        //     inputRadio.style.margin = '10px';
+        //     inputRadio.setAttribute('size', '1');
+        //     inputRadio.setAttribute('minlength', '3');
+        //     inputRadio.setAttribute('maxlength', '3');
+        //     inputRadio.checked = false;
+        //     inputRadio.addEventListener('click', function () {
+        //         if (this.checked) {
+        //             var modal = document.getElementById('myModal');
+        //             modal.style.display = 'none';
 
-                    var consigneeName = this.closest('.label-address').querySelector('.consignee-name').innerText;
-                    var phoneNumber = this.closest('.label-address').querySelector('.phone-numer').innerText;
-                    var addressDetails = this.closest('.label-address').querySelector('.address-details').innerText;
+        //             var consigneeName = this.closest('.label-address').querySelector('.consignee-name').innerText;
+        //             var phoneNumber = this.closest('.label-address').querySelector('.phone-numer').innerText;
+        //             var addressDetails = this.closest('.label-address').querySelector('.address-details').innerText;
 
-                    consigneenameInputCheckout.value = consigneeName;
-                    phoneInputCheckout.value = phoneNumber;
-                    addressInputCheckout.value = addressDetails;
-                }
-            });
+        //             consigneenameInputCheckout.value = consigneeName;
+        //             phoneInputCheckout.value = phoneNumber;
+        //             addressInputCheckout.value = addressDetails;
+        //         }
+        //     });
 
-            var innerDiv = document.createElement('div');
-            innerDiv.style.margin = '10px';
-            innerDiv.style.display = 'block';
-            innerDiv.style.textAlign = 'left';
+        //     var innerDiv = document.createElement('div');
+        //     innerDiv.style.margin = '10px';
+        //     innerDiv.style.display = 'block';
+        //     innerDiv.style.textAlign = 'left';
 
-            var div1 = document.createElement('div');
-            var boldText1 = document.createElement('b');
-            boldText1.textContent = 'Tên người nhận: ';
-            var span1 = document.createElement('span');
-            span1.classList.add('consignee-name');
-            span1.textContent = nameInput.value;
-            div1.appendChild(boldText1);
-            div1.appendChild(span1);
+        //     var div1 = document.createElement('div');
+        //     var boldText1 = document.createElement('b');
+        //     boldText1.textContent = 'Tên người nhận: ';
+        //     var span1 = document.createElement('span');
+        //     span1.classList.add('consignee-name');
+        //     span1.textContent = nameInput.value;
+        //     div1.appendChild(boldText1);
+        //     div1.appendChild(span1);
 
-            var div2 = document.createElement('div');
-            var boldText2 = document.createElement('b');
-            boldText2.textContent = 'Số điện thoại: ';
-            var span2 = document.createElement('span');
-            span2.classList.add('phone-numer');
-            span2.textContent = phoneInput.value;
-            div2.appendChild(boldText2);
-            div2.appendChild(span2);
+        //     var div2 = document.createElement('div');
+        //     var boldText2 = document.createElement('b');
+        //     boldText2.textContent = 'Số điện thoại: ';
+        //     var span2 = document.createElement('span');
+        //     span2.classList.add('phone-numer');
+        //     span2.textContent = phoneInput.value;
+        //     div2.appendChild(boldText2);
+        //     div2.appendChild(span2);
 
-            var div3 = document.createElement('div');
-            var boldText3 = document.createElement('b');
-            boldText3.textContent = 'Địa chỉ: ';
-            var span3 = document.createElement('span');
-            span3.classList.add('address-details');
+        //     var div3 = document.createElement('div');
+        //     var boldText3 = document.createElement('b');
+        //     boldText3.textContent = 'Địa chỉ: ';
+        //     var span3 = document.createElement('span');
+        //     span3.classList.add('address-details');
 
-            var addressString = addressInput.value + ", " + wardOption.options[wardOption.selectedIndex].textContent + ", " + districtOption.options[districtOption.selectedIndex].textContent + ", " + cityOption.options[cityOption.selectedIndex].textContent
+        //     var addressString = addressInput.value + ", " + wardOption.options[wardOption.selectedIndex].textContent + ", " + districtOption.options[districtOption.selectedIndex].textContent + ", " + cityOption.options[cityOption.selectedIndex].textContent
 
-            span3.textContent = addressString;
-            div3.appendChild(boldText3);
-            div3.appendChild(span3);
+        //     span3.textContent = addressString;
+        //     div3.appendChild(boldText3);
+        //     div3.appendChild(span3);
 
-            var trashDiv = document.createElement('div');
-            trashDiv.classList.add('col-lg-1', 'vertical-center');
-            var trashLink = document.createElement('a');
-            trashLink.setAttribute('href', '#!');
-            trashLink.style.color = '#cecece';
-            var trashIcon = document.createElement('i');
-            trashIcon.classList.add('fas', 'fa-trash-alt');
-            trashLink.appendChild(trashIcon);
-            trashDiv.appendChild(trashLink);
+        //     var trashDiv = document.createElement('div');
+        //     trashDiv.classList.add('col-lg-1', 'vertical-center');
+        //     var trashLink = document.createElement('a');
+        //     trashLink.setAttribute('href', '#!');
+        //     trashLink.style.color = '#cecece';
+        //     var trashIcon = document.createElement('i');
+        //     trashIcon.classList.add('fas', 'fa-trash-alt');
+        //     trashLink.appendChild(trashIcon);
+        //     trashDiv.appendChild(trashLink);
 
-            // Chèn các phần tử vào nhau theo cấu trúc
-            outerDiv.appendChild(cardDiv);
-            cardDiv.appendChild(labelDiv);
-            labelDiv.appendChild(inputRadio);
-            labelDiv.appendChild(innerDiv);
-            innerDiv.appendChild(div1);
-            innerDiv.appendChild(div2);
-            innerDiv.appendChild(div3);
-            outerDiv.appendChild(trashDiv);
+        //     // Chèn các phần tử vào nhau theo cấu trúc
+        //     outerDiv.appendChild(cardDiv);
+        //     cardDiv.appendChild(labelDiv);
+        //     labelDiv.appendChild(inputRadio);
+        //     labelDiv.appendChild(innerDiv);
+        //     innerDiv.appendChild(div1);
+        //     innerDiv.appendChild(div2);
+        //     innerDiv.appendChild(div3);
+        //     outerDiv.appendChild(trashDiv);
 
-            var divsWithClassA = document.querySelectorAll('#container-address .card-address-details');
-            var lastDivWithClassA = divsWithClassA[divsWithClassA.length - 1];
-            lastDivWithClassA.after(outerDiv);
-        });
+        //     var divsWithClassA = document.querySelectorAll('#container-address .card-address-details');
+        //     var lastDivWithClassA = divsWithClassA[divsWithClassA.length - 1];
+        //     lastDivWithClassA.after(outerDiv);
+        // });
 
     var deleteAddress = document.querySelectorAll(".delete-address");
     deleteAddress.forEach(function (item) {
@@ -312,64 +590,6 @@
             parentDiv.style.display = 'none';
         });
     });
-
-    var editAddress = document.querySelectorAll(".edit-address");
-    editAddress.forEach(function (item) {
-        item.addEventListener('click', function () {
-            var editContainer = item.closest('.card-address-details').querySelector('.edit-address-container');
-
-            if (editContainer.style.display === 'none' || editContainer.style.display === '') {
-                editContainer.style.display = 'block'; // Hiển thị div khi click
-
-                var consigneeName = item.closest('.card-address-details').querySelector('.consignee-name').innerText;
-                var phoneNumber = item.closest('.card-address-details').querySelector('.phone-numer').innerText;
-                var addressDetails = item.closest('.card-address-details').querySelector('.address-details').innerText;
-                let arrAddress = addressDetails.split(", ");
-
-                var nameInput = item.closest('.card-address-details').querySelector('#name-input');
-                var phoneInput = item.closest('.card-address-details').querySelector('#phone-input');
-                var addressInput = item.closest('.card-address-details').querySelector('#address-input');
-                var cityInput = item.closest('.card-address-details').querySelector('#cityEdit');
-                var districtInput = item.closest('.card-address-details').querySelector('#districtEdit');
-                var wardInput = item.closest('.card-address-details').querySelector('#wardEdit');
-
-                nameInput.value = consigneeName;
-                phoneInput.value = phoneNumber;
-                addressInput.value = arrAddress[0];
-
-                for (var i = 0; i < cityInput.options.length; i++) {
-                    if (cityInput.options[i].text === arrAddress[3]) {
-                        cityInput.selectedIndex = i; // Chọn option có text khớp
-                        // Tạo và kích hoạt sự kiện onchange cho select box
-                        var event = new Event('change');
-                        cityInput.dispatchEvent(event);
-                        break;
-                    }
-                }
-                for (var i = 0; i < districtInput.options.length; i++) {
-                    if (districtInput.options[i].text === arrAddress[2]) {
-                        districtInput.selectedIndex = i; // Chọn option có text khớp
-                        // Tạo và kích hoạt sự kiện onchange cho select box
-                        var event = new Event('change');
-                        districtInput.dispatchEvent(event);
-                        break;
-                    }
-                }
-                for (var i = 0; i < wardInput.options.length; i++) {
-                    if (wardInput.options[i].text === arrAddress[1]) {
-                        wardInput.selectedIndex = i; // Chọn option có text khớp
-                        // Tạo và kích hoạt sự kiện onchange cho select box
-                        var event = new Event('change');
-                        wardInput.dispatchEvent(event);
-                        break;
-                    }
-                }
-            } else {
-                editContainer.style.display = 'none'; // Ẩn div nếu đã được hiển thị trước đó
-            }
-        });
-    });
-
 
     });
 
@@ -485,80 +705,97 @@
 </style>
 <div style="height: 100px; background-color: #051922;"></div>
 <section style="background-color: #eee;">
+    <div style="display:none" id="emailnguoidung">@Model.diachis.First().Taikhoan.Email</div>
     <div class="modal" id="myModal">
         <div id="container-address" class="modal-content">
             <span class="close" style="text-align: right;">&times;</span>
             <h5>SỔ ĐỊA CHỈ</h5>
             @foreach (var item in Model.diachis)
             {
-            <div class="card-address-details col-lg-12 row mb-3" style="margin-left: 0 !important;">
-                <div class="card p-0 col-lg-11">
-                    <label class="label-address btn btn-secondary form-control form-control-lg d-flex align-items-center p-0">
-                        <input type="radio" name="diachi" class="address" autocomplete="off" style="margin:10px" value="@item.Id"
-                               size="1" minlength="3" maxlength="3"
-                                   checked>
-                        <div style="margin:10px; display: block; text-align: left;">
-                            <div><b>Tên người nhận: </b><span class="consignee-name">@item.Hotennguoinhan</span></div>
-                            <div><b>Số điện thoại: </b><span class="phone-numer">@item.Sdt </span></div>
-                                <div><b>Địa chỉ: </b><span class="address-details" >@item.Diachichitiet, @item.Xa, @item.Huyen, @item.Tinh</span></div>
-                        </div>
-                    </label>
-                        
-                        <div class="edit-address-container" style="padding:15px; margin-top:10px; display:none">
-                            <div class="row">
-                                <div class="col-md-4">
-                                    <label>Tên người nhận:</label><br />
-                                    <input type="text" id="name-input" name="nameInput" style="width:100%;height:30px;" required>
-                                </div>
-                                <div class="col-md-4">
-                                    <label>Số điện thoại:</label><br />
-                                    <input type="text" id="phone-input" name="phoneInput" style="width:100%;height:30px;" required>
-                                </div>
-                                <div class="col-md-4">
-                                    <label>Địa chỉ:</label><br />
-                                    <input type="text" id="address-input" name="addressInput" style="width:100%;height:30px;" required>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-md-4">
-                                    <label>Tỉnh/ Thành phố:</label><br />
-                                    <select class="form-select form-select-sm mb-3" id="cityEdit" style="width:100%;height:30px;">
-                                        <option value="" selected>Chọn tỉnh thành</option>
-                                    </select>
-                                </div>
-                                <div class="col-md-4">
-                                    <label>Quận/ Huyện:</label><br />
-                                    <select class="form-select form-select-sm mb-3" id="districtEdit" style="width:100%;height:30px;">
-                                        <option value="" selected>Chọn quận huyện</option>
-                                    </select>
-                                </div>
-                                <div class="col-md-4">
-                                    <label>Phường xã:</label><br />
-                                    <select class="form-select form-select-sm" id="wardEdit" style="width:100%;height:30px;">
-                                        <option value="" selected>Chọn phường xã</option>
-                                    </select>
-                                </div>
-                            </div>
-                            <div style="display:flex;margin:20px;justify-content:center;">
-                                <button class="save-edit-address" class="btn btn-dark" style="margin-right:20px;">Lưu</button>
-                                <button class="cancel-edit-address" class="btn btn-dark" style="margin-right:20px;">Hủy</button>
-                            </div>
-                        </div>
+                @if(item.Tinhtrang =="1")
+                {
+                    <div class="card-address-details col-lg-12 row mb-3" style="margin-left: 0 !important;">
+						<div class="address-container card p-0 col-lg-11">
+                            <div class="id-address" style=" display: none">@item.Id</div>
+                            <label class="label-address btn btn-secondary form-control form-control-lg d-flex align-items-center p-0">
+								<input type="radio" name="diachi" class="address" autocomplete="off" style="margin:10px" value="@item.Id"
+									   size="1" minlength="3" maxlength="3"
+									   checked>
+								<div style="margin:10px; display: block; text-align: left;">
+									<div><b>Tên người nhận: </b><span class="consignee-name">@item.Hotennguoinhan</span></div>
+									<div><b>Số điện thoại: </b><span class="phone-numer">@item.Sdt </span></div>
+									<div><b>Địa chỉ: </b><span class="address-details">@item.Diachichitiet, @item.Xa, @item.Huyen, @item.Tinh</span></div>
+								</div>
+							</label>
 
-                </div>
-                    <div class="col-lg-1 vertical-center">
-                        <a href="#!" style="color: #cecece; margin-right:10px"><i class="edit-address fas fa-edit text-warning"></i></a>
+						</div>
+						<div class="col-lg-1 vertical-center">
+							<a href="#!" style="color: #cecece; margin-right:10px"><i class="edit-address fas fa-edit text-warning"></i></a>
+
+							@using (Html.BeginForm("DeleteGioHang", "DiaChi", FormMethod.Post))
+							{
+								<input type="hidden" name="Id" value="@item.Id" />
+								<a style="color: #cecece;" onclick="event.target.closest('form').submit()"><i class="delete-address fas fa-trash-alt text-danger"></i></a>
+							}
+						</div>
                     
-                        @using (Html.BeginForm("DeleteGioHang", "DiaChi", FormMethod.Post))
-                     {
-                        <input type="hidden" name="Id" value="@item.Id"/>
-                        <a style="color: #cecece;" onclick="event.target.closest('form').submit()"><i class="delete-address fas fa-trash-alt text-danger"></i></a>
-                     }
-                </div>
-            </div>
-            }
+				    </div>
+                }
+			}
+
+			<div id="edit-address-container" style="padding:15px; margin-top:10px; display:none">
+                @using (Html.BeginForm("Edit", "DiaChi", FormMethod.Post))
+                {
+                <input type="hidden" id="id-address-input" name="Id" value="" readonly>
+                   
+				<div class="row">
+					<div class="col-md-4">
+						<label>Tên người nhận:</label><br />
+                            <input type="text" id="name-input" name="Hotennguoinhan" style="width:100%;height:30px;" required>
+					</div>
+					<div class="col-md-4">
+						<label>Số điện thoại:</label><br />
+                            <input type="text" id="phone-input" name="Sdt" style="width:100%;height:30px;" required>
+					</div>
+					<div class="col-md-4">
+						<label>Địa chỉ:</label><br />
+                            <input type="text" id="address-input" name="Diachichitiet" style="width:100%;height:30px;" required>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-md-4">
+						<label>Tỉnh/ Thành phố:</label><br />
+						<select class="form-select form-select-sm mb-3" id="cityEdit" style="width:100%;height:30px;">
+							<option value="" selected>Chọn tỉnh thành</option>
+						</select>
+                            <input type="hidden" id="city-text-edit" name="Tinh" readonly>
+					</div>
+					<div class="col-md-4">
+						<label>Quận/ Huyện:</label><br />
+						<select class="form-select form-select-sm mb-3" id="districtEdit" style="width:100%;height:30px;">
+							<option value="" selected>Chọn quận huyện</option>
+						</select>
+                            <input type="hidden" id="district-text-edit" name="Huyen" readonly>
+					</div>
+					<div class="col-md-4">
+						<label>Phường xã:</label><br />
+						<select class="form-select form-select-sm" id="wardEdit" style="width:100%;height:30px;">
+							<option value="" selected>Chọn phường xã</option>
+						</select>
+                            <input type="hidden" id="ward-text-edit" name="Xa" readonly>
+					</div>
+				</div>
+				<div style="display:flex;margin:20px;justify-content:center;">
+					<button type="submit" class="save-edit-address btn btn-dark" style="margin-right:20px;">Lưu</button>
+					<button class="cancel-edit-address btn btn-dark" style="margin-right:20px;">Hủy</button>
+				</div>
+                }
+			</div>
+
+
             <div class="card" id="add-address-container" style="padding:15px; display:none;">
-                
+                @using (Html.BeginForm("Create", "DiaChi", FormMethod.Post))
+                {
                 <label>Tên người nhận:</label>
                 <input type="text" id="name-input" name="Hotennguoinhan" required>
                 <label>Số điện thoại:</label>
@@ -568,7 +805,7 @@
                 <div class="row">
                     <div class="col-md-4">
                             <label for ="Tinh">Tỉnh/ Thành phố:</label><br />
-                        <select  class="form-select form-select-sm mb-3" id="city" style="width:100%;height:30px;">
+                        <select  class="form-select form-select-sm mb-3" id="city" style="width:100%;height:30px;" required>
                             <option value="" selected>Chọn tỉnh thành</option>
                         </select>
                             <input type="hidden" id="city-text-input" name="Tinh" readonly>
@@ -592,13 +829,29 @@
                         <button type="submit" id="save-add-address" class="btn btn-dark" style="margin-right:20px;" >Thêm</button>
                     <button id="cancel-add-address" class="btn btn-dark" style="margin-right:20px;">Hủy</button>
                 </div>
-                
+                }
+
+
             </div>
             <button id="btn-add-address" class="card row mb-3" type="button" style="margin: 0 !important; display:block;">
                 <div>
                     <i class="fas fa-plus"></i><span style="margin-left:20px;">Thêm địa chỉ mới</span>
                 </div>
             </button>
+
+        </div>
+    </div>
+
+    <div class="modal" id="myModalConfirm">
+        <div id="container-confirm" class="modal-content" style="width:50%">
+            <span class="close" style="text-align: right;">&times;</span>
+            <h5 style="align-self:center">XÁC NHẬN ĐẶT HÀNG</h5>
+
+
+            <div style="display:flex;margin:20px;justify-content:center;">
+                <button type="submit" id="confirm" class="btn btn-dark" style="margin-right:20px;">Thanh toán</button>
+                <button id="cancel-confirm" class="btn btn-dark" style="margin-right:20px;">Hủy</button>
+            </div>
 
         </div>
     </div>
@@ -674,7 +927,7 @@
                                 </div>
                                 }
                             </div>
-
+                            
                             <div class="col-lg-5">
                                 <div class="card text-white rounded-3" style="background-color: rgba(5, 25, 34, 0.6);">
                                     <div class="card-body">
@@ -707,8 +960,7 @@
                                         <div data-toggle="buttons" style="border: 2px solid #ccc; border-radius: 10px; background-color: #f0f0f0;">
                                             <label class="btn btn-secondary form-control form-control-lg d-flex align-items-center justify-content-between">
                                                 <input type="radio" name="options" id="COD" autocomplete="off"
-                                                       size="1" minlength="3" maxlength="3" style="margin-right: 10px;"
-                                                       checked>
+                                                       size="1" minlength="3" maxlength="3" style="margin-right: 10px;">
                                                 <span class="flex-grow-1">Thanh toán khi nhận hàng</span>
                                             </label>
 
@@ -732,7 +984,6 @@
                                                 <span class="mx-auto">Thanh toán <i class="fas fa-long-arrow-alt-right ms-2"></i></span>
                                             </div>
                                         </button>
-                                                            
                                     </div>
                                 </div>
 
@@ -746,103 +997,7 @@
         </div>
     </div>
 </section>
-<script src="https://code.jquery.com/jquery-3.6.0.min.js" ></script>
 <script>
-    
-    var DonhangID;
-    var selectedValue;
-    $(document).ready(function () {
-        $(".label-address input[type='radio']").click(function () {
-            // Lấy giá trị của input được chọn
-            selectedValue = $(this).val();
-        });
-    });
-    var currentTime = new Date();
-    var selectedPaymentMethod;
-    var radioButtons = document.querySelectorAll('input[name="options"]');
-    radioButtons.forEach(function (radioButton) {
-        radioButton.addEventListener('click', function () {
-            // Lấy giá trị text tương ứng với nút radio được chọn
-            selectedPaymentMethod = this.id;
-            alert(selectedPaymentMethod);
-        });
-    });
-    $(document).ready(function () {
-        $("#btnThanhToan").click(function (event) {
-            alert("Thanh toán đã nhấn");
-            event.preventDefault(); // Ngăn chặn sự kiện submit mặc định của form
-            var selectedIds = [];
-            var checkboxes = document.querySelectorAll('input[type="checkbox"]');
-            checkboxes.forEach(function (checkbox) {
-                if (checkbox.checked) {
-                    // Nếu checkbox được chọn, thêm Id tương ứng vào mảng selectedIds
-                    selectedIds.push(checkbox.value);
-                }
-            });
-            // Lấy dữ liệu từ form
-            var phuongThucThanhToan = selectedPaymentMethod;
-            var trangThaiDonHang = "Chờ duyệt";
-            var diaChiId = selectedValue;
-            var donhangid = 1;
-            var ctghid = [23, 27];
-
-            var trangThaiThanhToan;
-            if (selectedPaymentMethod == "Thanh toán khi nhận hàng") trangThaiThanhToan = "Chưa thanh toán";
-            // Định nghĩa URL và dữ liệu
-            if (diaChiId != null)
-            {
-                if (phuongThucThanhToan != null) {
-                    var url = "/DonHang/Create";
-                    var data = {
-                        Phuongthucthanhtoan: phuongThucThanhToan,
-                        Trangthaidonhang: trangThaiDonHang,
-                        DiachiId: diaChiId,
-                        Trangthaithanhtoan: trangThaiThanhToan,
-                        Ngaytao: currentTime
-                    };
-
-                    // Gửi yêu cầu POST
-                    $.ajax({
-                        url: url,
-                        type: "POST",
-                        data: data,
-                        success: function (response) {
-                            // Xử lý kết quả trả về từ server
-                            if (response > 0) {
-                                alert(response);
-                                DonhangID = response;
-                                $.ajax({
-                                    url: '/ChiTietDon/Create',
-                                    method: 'POST',
-                                    data: JSON.stringify({ donhangid: DonhangID, ctghid: selectedIds }),
-                                    contentType: 'application/json',
-                                    success: function (res) {
-                                        if (res) {
-                                            location.reload();
-                                        } else {
-                                            alert('Create failed');
-                                        }
-                                    },
-                                    error: function (error) {
-                                        alert('Error:', error);
-                                    }
-                                });
-                            } else {
-                                alert("Đã xảy ra lỗi khi tạo đơn hàng.");
-                            }
-                        },
-                        error: function (xhr, textStatus, error) {
-                            // Xử lý lỗi
-                            alert("Lỗi khi gửi yêu cầu: " + error);
-                        }
-
-                    });
-                    
-                } else alert("Bạn chưa chọn phương thức thanh toán");
-            } else alert("Bạn chưa chọn địa chỉ");
-            
-        });
-    });
 
     document.getElementById("city").addEventListener("change", function () {
         var selectElement = document.getElementById("city");
@@ -862,60 +1017,23 @@
         var selectedText = selectedOption.text;
         document.getElementById("ward-text-input").value = selectedText;
     });
-    var editAddress = document.querySelectorAll(".edit-address");
-    editAddress.forEach(function (item) {
-        item.addEventListener('click', function () {
-            var editContainer = item.closest('.card-address-details').querySelector('.edit-address-container');
 
-            if (editContainer.style.display === 'none' || editContainer.style.display === '') {
-                editContainer.style.display = 'block'; // Hiển thị div khi click
-
-                var consigneeName = item.closest('.card-address-details').querySelector('.consignee-name').innerText;
-                var phoneNumber = item.closest('.card-address-details').querySelector('.phone-numer').innerText;
-                var addressDetails = item.closest('.card-address-details').querySelector('.address-details').innerText;
-                let arrAddress = addressDetails.split(", ");
-
-                var nameInput = item.closest('.card-address-details').querySelector('#name-input');
-                var phoneInput = item.closest('.card-address-details').querySelector('#phone-input');
-                var addressInput = item.closest('.card-address-details').querySelector('#address-input');
-                var cityInput = item.closest('.card-address-details').querySelector('#cityEdit');
-                var districtInput = item.closest('.card-address-details').querySelector('#districtEdit');
-                var wardInput = item.closest('.card-address-details').querySelector('#wardEdit');
-
-                nameInput.value = consigneeName;
-                phoneInput.value = phoneNumber;
-                addressInput.value = arrAddress[0];
-
-                for (var i = 0; i < cityInput.options.length; i++) {
-                    if (cityInput.options[i].text === arrAddress[3]) {
-                        cityInput.selectedIndex = i; // Chọn option có text khớp
-                        // Tạo và kích hoạt sự kiện onchange cho select box
-                        var event = new Event('change');
-                        cityInput.dispatchEvent(event);
-                        break;
-                    }
-                }
-                for (var i = 0; i < districtInput.options.length; i++) {
-                    if (districtInput.options[i].text === arrAddress[2]) {
-                        districtInput.selectedIndex = i; // Chọn option có text khớp
-                        // Tạo và kích hoạt sự kiện onchange cho select box
-                        var event = new Event('change');
-                        districtInput.dispatchEvent(event);
-                        break;
-                    }
-                }
-                for (var i = 0; i < wardInput.options.length; i++) {
-                    if (wardInput.options[i].text === arrAddress[1]) {
-                        wardInput.selectedIndex = i; // Chọn option có text khớp
-                        // Tạo và kích hoạt sự kiện onchange cho select box
-                        var event = new Event('change');
-                        wardInput.dispatchEvent(event);
-                        break;
-                    }
-                }
-            } else {
-                editContainer.style.display = 'none'; // Ẩn div nếu đã được hiển thị trước đó
-            }
-        });
+    document.getElementById("cityEdit").addEventListener("change", function () {
+        var selectElement = document.getElementById("cityEdit");
+        var selectedOption = selectElement.options[selectElement.selectedIndex];
+        var selectedText = selectedOption.text;
+        document.getElementById("city-text-edit").value = selectedText;
+    });
+    document.getElementById("districtEdit").addEventListener("change", function () {
+        var selectElement = document.getElementById("districtEdit");
+        var selectedOption = selectElement.options[selectElement.selectedIndex];
+        var selectedText = selectedOption.text;
+        document.getElementById("district-text-edit").value = selectedText;
+    });
+    document.getElementById("wardEdit").addEventListener("change", function () {
+        var selectElement = document.getElementById("wardEdit");
+        var selectedOption = selectElement.options[selectElement.selectedIndex];
+        var selectedText = selectedOption.text;
+        document.getElementById("ward-text-edit").value = selectedText;
     });
 </script>

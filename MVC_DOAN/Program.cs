@@ -7,8 +7,11 @@ using MVC_DOAN.Interface;
 using MVC_DOAN.Models;
 using MVC_DOAN.Repository;
 using MVC_DOAN.Service;
+using System.Configuration;
 using System.Reflection.Metadata;
-
+using Microsoft.Extensions.Configuration;
+using Microsoft.Extensions.DependencyInjection;
+using MailKit;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -22,10 +25,13 @@ builder.Services.AddScoped<IDiaChi, ReDiaChi>();
 builder.Services.AddScoped<IChiTietDon, ReChiTietDon>();
 builder.Services.AddScoped<IDonHang, ReDonHang>();
 builder.Services.AddScoped<IHoaDon, ReHoaDon>();
-
+builder.Services.AddScoped<IVnPayService, VnPayService>();
 
 
 builder.Services.AddScoped<IUser, ReUser>();
+
+builder.Services.AddIdentity<Taikhoan, IdentityRole>().AddEntityFrameworkStores<DoanContext>().AddDefaultTokenProviders();
+builder.Services.Configure<DataProtectionTokenProviderOptions>(opts => opts.TokenLifespan = TimeSpan.FromHours(10));
 
 builder.Services.AddScoped<IPhotoService, PhotoService>();
 builder.Services.AddSession();
@@ -34,8 +40,7 @@ builder.Services.AddDbContext<DoanContext>(options =>
 {
     options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection"));
 });
-builder.Services.AddIdentity<Taikhoan, IdentityRole>()
-    .AddEntityFrameworkStores<DoanContext>();
+
 builder.Services.AddMemoryCache();
 builder.Services.AddSession();
 builder.Services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme)

@@ -58,7 +58,7 @@ namespace MVC_DOAN.Repository
 			 }
 		 )
 		 .ToListAsync();
-			giohangVM.diachis = await _context.Diachis.Where(d => d.TaikhoanId == Id).ToListAsync();
+			giohangVM.diachis = await _context.Diachis.Where(d => d.TaikhoanId == Id).Include(c => c.Taikhoan).ToListAsync();
 			return giohangVM;
         }
 

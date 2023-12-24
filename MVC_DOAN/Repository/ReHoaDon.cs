@@ -48,6 +48,37 @@ namespace MVC_DOAN.Repository
 			return hoaDonVMs;
 		}
 
+		public async Task<ThongKe> GetThongKe(int nam)
+		{
+			var thongke = new ThongKe();
+			thongke.Doanhthu = new List<decimal>();
+			var query = _context.Donhangs
+				.Where(d => d.Ngaytao.Year == nam)
+				.GroupBy(d => d.Ngaytao.Month)
+				.Select(g => new { Month = g.Key, TotalAmount = g.Sum(d => d.Tongtien) })
+				.OrderBy(g => g.Month)
+				.ToList();
+
+			// Tạo một danh sách chứa các tháng từ 1 đến 12
+			var allMonths = Enumerable.Range(1, 12).ToList();
+
+			foreach (var month in allMonths)
+			{
+				// Tìm kiếm kết quả tương ứng với tháng trong danh sách query
+				var result = query.FirstOrDefault(q => q.Month == month);
+				if (result != null)
+				{
+					thongke.Doanhthu.Add(result.TotalAmount ?? 0);
+				}
+				else
+				{
+					thongke.Doanhthu.Add(0);
+				}
+			}
+
+			return thongke;
+		}
+
 		public bool Save()
 		{
 			var saved = _context.SaveChanges();
