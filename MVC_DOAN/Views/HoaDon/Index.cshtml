@@ -260,12 +260,6 @@
 				<div class="p-4 pt-5">
 					<ul class="list-unstyled components mb-5">
 						<li>
-							<a class="has-arrow " href="javascript:void()" aria-expanded="false">
-								<i class="fas fa-home"></i>
-								<span class="nav-text">Dashboard</span>
-							</a>
-						</li>
-						<li>
 							<a href="#">Loại sản phẩm</a>
 						</li>
 						<li>
@@ -562,7 +556,6 @@
 
 			/* Tạo một Workbook mới */
 			var workbook = XLSX.utils.book_new();
-			alert(workbook)
 			var worksheet = XLSX.utils.aoa_to_sheet(data);
 
 			/* Thêm worksheet vào Workbook */

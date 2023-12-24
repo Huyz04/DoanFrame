@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "dZz3ux9y9M3Axa3fTXMldA12pYyJ69goN4c5Cf6Oiug=",
+  "Hash": "11cWoQe0BIbQk+L0CiFiqgW5+uDXPAcGGfxAidq8EMY=",
   "Source": "MVC_DOAN",
   "BasePath": "_content/MVC_DOAN",
   "Mode": "Default",
@@ -1494,6 +1494,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\assets\\img\\team\\team-3.jpg"
+    },
+    {
+      "Identity": "D:\\HUY\\DAIHOC\\NAM3\\KY1\\Framework\\DOAN_MAIN\\MVC_DOAN\\wwwroot\\assets\\img\\thanks.jpg",
+      "SourceId": "MVC_DOAN",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\HUY\\DAIHOC\\NAM3\\KY1\\Framework\\DOAN_MAIN\\MVC_DOAN\\wwwroot\\",
+      "BasePath": "_content/MVC_DOAN",
+      "RelativePath": "assets/img/thanks.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\assets\\img\\thanks.jpg"
     },
     {
       "Identity": "D:\\HUY\\DAIHOC\\NAM3\\KY1\\Framework\\DOAN_MAIN\\MVC_DOAN\\wwwroot\\assets\\img\\us.jpg",

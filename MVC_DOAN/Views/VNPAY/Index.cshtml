@@ -1,0 +1,58 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+@model Thanhtoan
+@{
+    ViewData["Title"] = "Home Page";
+}
+<div style="height: 100px; background-color: #051922;"></div>
+
+
+<div class="table-responsive" style="margin-top: 30px">
+	<div class="text-center">
+		<h1 class="display-4">XÁC NHẬN THÔNG TIN THANH TOÁN</h1>
+	</div>
+    <form action="/VNPAY/CreatePaymentUrl" id="frmCreateOrder" method="POST" style="margin:0 30% 50px 30%">
+       
+        <div style="display: none;" class="form-group">
+            <label for="ordertype">Loại hàng hóa </label>
+            <select name="OrderType" id="ordertype" class="form-control">
+                <option value="electric">Đồ điện tử</option>
+                <option value="fashion">Thời trang</option>
+                <option value="other">Khác</option>
+            </select>
+        </div>
+        <br />
+        <div class="form-group">
+            <label for="Name">Tên khách hàng</label>
+            <input class="form-control"
+                   id="Name"
+                   name="Name"
+                   type="text"
+                   value="@Model.mail" readonly>
+        </div>
+        <br />
+        <div class="form-group">
+            <label for="Amount">Số tiền</label>
+            <input class="form-control"
+                   id="Amount"
+                   name="Amount"
+                   type="text"
+                   value="@Model.dongia" readonly>
+        </div>
+        <br />
+        <div class="form-group">
+            <label for="OrderDescription">Nội dung thanh toán</label>
+            <textarea class="form-control"
+                      cols="20"
+                      id="OrderDescription"
+                      name="OrderDescription"
+                      rows="2">Thanh toán đơn hàng Haru</textarea>
+        </div>
+        <br />
+        <button type="submit" class="btn btn-primary">Thanh toán</button>
+        <a asp-controller="GioHang" asp-action="GetGioHang" class="btn btn-secondary">Cancel</a>
+    </form>
+</div>

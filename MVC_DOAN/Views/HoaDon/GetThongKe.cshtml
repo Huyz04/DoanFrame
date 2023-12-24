@@ -1,0 +1,227 @@
+﻿@model	ThongKe
+
+<link rel="stylesheet" href="~/assets/css/style.css" />
+
+<style>
+	#sidebar {
+		min-width: 250px;
+		max-width: 250px;
+		background: #212121;
+		color: #fff;
+		-webkit-transition: all 0.3s;
+		-o-transition: all 0.3s;
+		transition: all 0.3s;
+		position: relative;
+		box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+		overflow-y: auto;
+	}
+
+		#sidebar .h6 {
+			color: #fff;
+		}
+
+		#sidebar.active {
+			margin-left: -250px;
+		}
+
+			#sidebar.active .custom-menu {
+				margin-right: -50px;
+			}
+
+		#sidebar h1 {
+			margin-bottom: 20px;
+			font-weight: 700;
+			font-size: 20px;
+		}
+
+			#sidebar h1 .logo {
+				color: #fff;
+				display: block;
+				padding: 10px 30px;
+				background: #2f89fc;
+			}
+
+		#sidebar ul.components {
+			padding: 0;
+		}
+
+		#sidebar ul li {
+			font-size: 16px;
+		}
+
+			#sidebar ul li > ul {
+				margin-left: 10px;
+			}
+
+				#sidebar ul li > ul li {
+					font-size: 14px;
+				}
+
+			#sidebar ul li a {
+				padding: 15px 30px;
+				display: block;
+				color: rgba(255, 255, 255, 0.6);
+				border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+			}
+
+				#sidebar ul li a:hover {
+					color: #fff;
+					background: #2f89fc;
+					border-bottom: 1px solid #2f89fc;
+				}
+
+			#sidebar ul li.active > a {
+				background: transparent;
+				color: #fff;
+			}
+
+				#sidebar ul li.active > a:hover {
+					background: #2f89fc;
+					border-bottom: 1px solid #2f89fc;
+				}
+
+	.page-titles {
+		text-align: center;
+		padding: 10px;
+		margin-bottom: 30px;
+	}
+
+	.card-header {
+		background-color: #ffffff;
+		height: 60px;
+		padding: 1rem;
+	}
+
+	.card {
+		box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+	}
+
+	.dropdown-toggle::after {
+		content: none;
+	}
+</style>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
+
+<script src="js/main.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.13/xlsx.full.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/2014-11-29/FileSaver.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.1/js/bootstrap.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.12.13/xlsx.full.min.js"></script>
+
+<body>
+
+	<div id="preloader" class="container-fluid">
+		<div class="wrapper d-flex align-items-stretch">
+			<nav id="sidebar">
+				<div class="p-4 pt-5">
+					<div class="site-logo">
+						<img src="~/assets/img/logo.png" alt="" />
+					</div>
+				</div>
+				<div class="p-4 pt-5">
+					<ul class="list-unstyled components mb-5">
+						<li>
+							<a class="has-arrow " href="javascript:void()" aria-expanded="false">
+								<i class="fas fa-home"></i>
+								<span class="nav-text">Dashboard</span>
+							</a>
+						</li>
+
+						<li>
+							<a asp-controller="LoaiSanPham" asp-action="Index">Loại sản phẩm</a>
+						</li>
+						<li>
+							<a asp-controller="SanPham" asp-action="AdminSanPham">Sản phẩm</a>
+						</li>
+						<li >
+							<a asp-controller="HoaDon" asp-action="GetHoaDon">Đơn hàng</a>
+						</li>
+						<li class="active">
+							<a asp-controller="HoaDon" asp-action="GetThongKe" asp-route-nam="2023">Thống kê</a>
+						</li>
+						<li>
+							<a asp-controller="Account" asp-action="Logout">Đăng xuất</a>
+						</li>
+					</ul>
+
+					<div class="footer">
+						<p>
+						</p>
+					</div>
+
+				</div>
+			</nav>
+
+			<div class="content-body" style="background-color: #f0f0f0;">
+				<div class="container-fluid">
+					<div class="page-titles card">
+						<h3>THỐNG KÊ DOANH THU</h3>
+					</div>
+
+					<div class="col-lg-12">
+						<div class="card" style="width:78vw; height:80vh;">
+							<div class="card-body">
+								<div style="text-align: -webkit-center;">
+									<select id="select-year" class="form-select form-select-sm mb-3" style="width:30%;height:30px;border:1px solid #000; text-align-last: center;">
+										<option value="2021" selected="@(Model.nam == 2021 ? "selected" : null)">2021</option>
+										<option value="2022" selected="@(Model.nam == 2022 ? "selected" : null)">2022</option>
+										<option value="2023" selected="@(Model.nam == 2023 ? "selected" : null)">2023</option>
+									</select>
+								</div>
+								<canvas id="myChart" style="width:100%; height:90%"></canvas>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+	</div>
+	<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+	<script>
+		$(document).ready(function () {
+			// Lắng nghe sự kiện change của thẻ select
+			$('#select-year').change(function () {
+				// Lấy giá trị được chọn
+				var selectedYear = $(this).val();
+
+				// Tạo đối tượng dữ liệu
+				var data = { nam: selectedYear };
+
+				// Tạo chuỗi truy vấn từ đối tượng dữ liệu
+				var queryString = $.param(data);
+
+				// Tạo URL hoàn chỉnh
+				var url = '/HoaDon/GetThongKe?' + queryString;
+
+				// Chuyển hướng đến URL
+				window.location.href = url;
+			});
+		});
+
+
+
+		const xValues = ["Tháng 1", "Tháng 2", "Tháng 3", "Tháng 4", "Tháng 5", "Tháng 6", "Tháng 7", "Tháng 8", "Tháng 9", "Tháng 10", "Tháng 11", "Tháng 12"];
+		const yValues = @Html.Raw(Json.Serialize(Model.Doanhthu));
+		const barColors = ["red", "green", "blue", "orange", "brown"];
+		new Chart("myChart", {
+			type: "bar",
+			data: {
+				labels: xValues,
+				datasets: [{
+					backgroundColor: "green",
+					data: yValues
+				}]
+			},
+			options: {
+				legend: { display: false },
+				title: {
+					display: true,
+					text: "Thống kê doanh thu theo năm"
+				}
+			}
+		});
+	</script>
+</body>

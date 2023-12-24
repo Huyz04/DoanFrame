@@ -522,3 +522,10 @@ D:\HUY\DAIHOC\NAM3\KY1\Framework\DOAN_MAIN\MVC_DOAN\obj\Debug\net7.0\refint\MVC_
 D:\HUY\DAIHOC\NAM3\KY1\Framework\DOAN_MAIN\MVC_DOAN\obj\Debug\net7.0\MVC_DOAN.pdb
 D:\HUY\DAIHOC\NAM3\KY1\Framework\DOAN_MAIN\MVC_DOAN\obj\Debug\net7.0\MVC_DOAN.genruntimeconfig.cache
 D:\HUY\DAIHOC\NAM3\KY1\Framework\DOAN_MAIN\MVC_DOAN\obj\Debug\net7.0\ref\MVC_DOAN.dll
+D:\HUY\DAIHOC\NAM3\KY1\Framework\DOAN_MAIN\MVC_DOAN\bin\Debug\net7.0\BouncyCastle.Cryptography.dll
+D:\HUY\DAIHOC\NAM3\KY1\Framework\DOAN_MAIN\MVC_DOAN\bin\Debug\net7.0\MailKit.dll
+D:\HUY\DAIHOC\NAM3\KY1\Framework\DOAN_MAIN\MVC_DOAN\bin\Debug\net7.0\MimeKit.dll
+D:\HUY\DAIHOC\NAM3\KY1\Framework\DOAN_MAIN\MVC_DOAN\bin\Debug\net7.0\SendGrid.dll
+D:\HUY\DAIHOC\NAM3\KY1\Framework\DOAN_MAIN\MVC_DOAN\bin\Debug\net7.0\StarkbankEcdsa.dll
+D:\HUY\DAIHOC\NAM3\KY1\Framework\DOAN_MAIN\MVC_DOAN\bin\Debug\net7.0\System.Security.Cryptography.Pkcs.dll
+D:\HUY\DAIHOC\NAM3\KY1\Framework\DOAN_MAIN\MVC_DOAN\bin\Debug\net7.0\runtimes\win\lib\net7.0\System.Security.Cryptography.Pkcs.dll

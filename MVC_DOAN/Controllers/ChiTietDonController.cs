@@ -22,7 +22,7 @@ namespace MVC_DOAN.Controllers
         [HttpPost]
         public bool Create([FromBody] CreateCTD crCTD)
         {
-
+            
             if (ModelState.IsValid)
             {
                 if (_CTDI.Add(crCTD)) return true;

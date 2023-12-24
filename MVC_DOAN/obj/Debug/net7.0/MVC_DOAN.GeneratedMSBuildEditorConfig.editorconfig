@@ -16,12 +16,28 @@ build_property.GenerateRazorMetadataSourceChecksumAttributes =
 build_property.MSBuildProjectDirectory = D:\HUY\DAIHOC\NAM3\KY1\Framework\DOAN_MAIN\MVC_DOAN
 build_property._RazorSourceGeneratorDebug = 
 
+[D:/HUY/DAIHOC/NAM3/KY1/Framework/DOAN_MAIN/MVC_DOAN/Views/Account/ForgotPassword.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudFxGb3Jnb3RQYXNzd29yZC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/HUY/DAIHOC/NAM3/KY1/Framework/DOAN_MAIN/MVC_DOAN/Views/Account/ForgotPasswordConfirmation.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudFxGb3Jnb3RQYXNzd29yZENvbmZpcm1hdGlvbi5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
 [D:/HUY/DAIHOC/NAM3/KY1/Framework/DOAN_MAIN/MVC_DOAN/Views/Account/Login.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudFxMb2dpbi5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
 [D:/HUY/DAIHOC/NAM3/KY1/Framework/DOAN_MAIN/MVC_DOAN/Views/Account/Register.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudFxSZWdpc3Rlci5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/HUY/DAIHOC/NAM3/KY1/Framework/DOAN_MAIN/MVC_DOAN/Views/Account/ResetPassword.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudFxSZXNldFBhc3N3b3JkLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/HUY/DAIHOC/NAM3/KY1/Framework/DOAN_MAIN/MVC_DOAN/Views/Account/ResetPasswordConfirmation.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudFxSZXNldFBhc3N3b3JkQ29uZmlybWF0aW9uLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
 [D:/HUY/DAIHOC/NAM3/KY1/Framework/DOAN_MAIN/MVC_DOAN/Views/Add/Index.cshtml]
@@ -46,6 +62,10 @@ build_metadata.AdditionalFiles.CssScope =
 
 [D:/HUY/DAIHOC/NAM3/KY1/Framework/DOAN_MAIN/MVC_DOAN/Views/HoaDon/GetHoaDon.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9hRG9uXEdldEhvYURvbi5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/HUY/DAIHOC/NAM3/KY1/Framework/DOAN_MAIN/MVC_DOAN/Views/HoaDon/GetThongKe.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9hRG9uXEdldFRob25nS2UuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
 [D:/HUY/DAIHOC/NAM3/KY1/Framework/DOAN_MAIN/MVC_DOAN/Views/HoaDon/Index.cshtml]
@@ -128,12 +148,28 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXNlclxEZXRhaWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
+[D:/HUY/DAIHOC/NAM3/KY1/Framework/DOAN_MAIN/MVC_DOAN/Views/User/GetUser.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXNlclxHZXRVc2VyLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
 [D:/HUY/DAIHOC/NAM3/KY1/Framework/DOAN_MAIN/MVC_DOAN/Views/User/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXNlclxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
 [D:/HUY/DAIHOC/NAM3/KY1/Framework/DOAN_MAIN/MVC_DOAN/Views/User/Order.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXNlclxPcmRlci5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/HUY/DAIHOC/NAM3/KY1/Framework/DOAN_MAIN/MVC_DOAN/Views/VNPAY/Fail.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVk5QQVlcRmFpbC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/HUY/DAIHOC/NAM3/KY1/Framework/DOAN_MAIN/MVC_DOAN/Views/VNPAY/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVk5QQVlcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/HUY/DAIHOC/NAM3/KY1/Framework/DOAN_MAIN/MVC_DOAN/Views/VNPAY/Success.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVk5QQVlcU3VjY2Vzcy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
 [D:/HUY/DAIHOC/NAM3/KY1/Framework/DOAN_MAIN/MVC_DOAN/Views/_ViewImports.cshtml]

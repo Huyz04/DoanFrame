@@ -76,10 +76,16 @@
 			</div>
 
 		</div>
-
+	<div style="text-align: -webkit-center;height: 56px;">
+		<div class="alert alert-success" id="alert-add-to-cart" style="display:none;width:95%">
+		<strong>Thêm thành công!</strong> Sản phẩm đã vào giỏ của bạn.
+		</div>
+	</div>
 	<div class="row product-lists" style="margin: 0 50px 0 50px;">
 			@foreach (var item in Model.sanphamVM)
 			{
+				if(item.Tinhtrang=="1")
+				{
 			<div class="col-3 text-center strawberry">
 				<div class="single-product-item">
 					<div class="product-image">
@@ -91,6 +97,7 @@
 					<button type="button" class="cart-btn" onclick="addToCart(this)" style="border:none"><i class="fas fa-shopping-cart"></i>Thêm vào giỏ</button>
 				</div>
 			</div>
+				}
 			}
 			
 	</div>
@@ -104,7 +111,6 @@
 
 			var sanphamID = input.value; // Lấy giá trị của input
 
-			alert(sanphamID); // Hiển thị giá trị của input bằng cách sử dụng alert
 		$.ajax({
 			url: '/GioHang/Create',
 			method: 'POST',
@@ -112,7 +118,12 @@
 			contentType: 'application/json',
 			success: function (res) {
 				if (res) {
-					alert("Them thanh cong");
+					//alert("Them thanh cong");
+					document.getElementById('alert-add-to-cart').style.display = 'block';
+					// Ẩn alert sau 3 giây
+					setTimeout(function () {
+						document.getElementById('alert-add-to-cart').style.display = 'none';
+					}, 2000);
 				} else {
 					alert("Bạn cần đăng nhập để thực hiện chức năng này");
 				}
@@ -123,8 +134,7 @@
 		});
 		}
 
-
-		$(document).ready(function () {
+	$(document).ready(function () {
 
 			$('#search-icon').click(function () {
 				var searchValue = $('#search-input').val();

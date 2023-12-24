@@ -23,4 +23,5 @@ public partial class Diachi
     [ForeignKey("Taikhoan")]
     public string? TaikhoanId { get; set; }
     public Taikhoan? Taikhoan { get; set; }
+    public string? Tinhtrang { get; set; }
 }

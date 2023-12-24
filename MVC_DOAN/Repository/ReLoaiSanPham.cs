@@ -2,6 +2,7 @@
 using MVC_DOAN.Interface;
 using MVC_DOAN.Models;
 using Microsoft.EntityFrameworkCore;
+using MVC_DOAN.ViewModels;
 
 namespace MVC_DOAN.Repository
 {
@@ -24,7 +25,28 @@ namespace MVC_DOAN.Repository
             _context.Remove(LSP);
             return Save();
         }
+        public async Task<IEnumerable<Loaisanpham>> Edit(EditLSP EDLSP)
+        {
+            var loaisanpham = await _context.Loaisanphams.FirstOrDefaultAsync(lsp => lsp.Id == EDLSP.Id);
 
+            if (loaisanpham != null)
+            {
+                // Cập nhật các thuộc tính của Loại Sản phẩm
+                loaisanpham.Tenlsp = EDLSP.Tenlsp;
+                loaisanpham.Tinhtrang = EDLSP.Tinhtrang;
+                loaisanpham.Mota = EDLSP.Mota;
+
+                // Lưu thay đổi vào cơ sở dữ liệu
+                await _context.SaveChangesAsync();
+
+                return await _context.Loaisanphams.ToListAsync();
+                // Trả về Loại Sản phẩm sau khi chỉnh sửa thành công
+            }
+            else
+            {
+                return null; // Không tìm thấy Loại Sản phẩm với Id tương ứng
+            }
+        }
         public async Task<IEnumerable<Loaisanpham>> GetAll()
         {
             return await _context.Loaisanphams.ToListAsync();

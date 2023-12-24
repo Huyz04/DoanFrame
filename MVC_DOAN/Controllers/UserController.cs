@@ -88,6 +88,9 @@ namespace MVC_DOAN.Controllers
            diachis = await _iUser.GetDiachibyId(curUserId,name,mail);
 			return View(diachis);
 		}
-
+        public async Task<IActionResult> GetUser()
+        {
+            return View();
+        }
 	}
 }

@@ -51,33 +51,20 @@
                             <!-- logo -->
                             <!-- menu start -->
                             <nav class="main-menu">
-                                <ul>
+                                <ul style="float:right">
                                     <li class="@((ViewContext.RouteData.Values["controller"].ToString() == "Home") ? "current-list-item" : "")">
                                         <a asp-area="" asp-controller="Home" asp-action="Index">Trang chủ</a>
                                     </li>
                                     <li class="@((ViewContext.RouteData.Values["controller"].ToString() == "SanPham") ? "current-list-item" : "")">
                                         <a asp-area="" asp-controller="SanPham" asp-action="Index">Sản phẩm</a>
                                         </li>
-                                    <li class="@((ViewContext.RouteData.Values["controller"].ToString() == "User") ? "current-list-item" : "")">
-                                        <a asp-area="" asp-controller="User" asp-action="Index">User</a>
-                                        </li>
-                                    <li class="@((ViewContext.RouteData.Values["controller"].ToString() == "LoaiSanPham") ? "current-list-item" : "")">
-                                        <a asp-area="" asp-controller="LoaiSanPham" asp-action="Index">Loại Sản phẩm</a>
-                                        </li>
-                                    <li>
-                                        <a href="news.html">Cẩm nang</a>
+                                    <li class="@((ViewContext.RouteData.Values["controller"].ToString() == "Add") ? "current-list-item" : "")">
+                                        <a asp-area="" asp-controller="Add" asp-action="Index">Liên hệ</a>
                                     </li>
                                     <li class="@((ViewContext.RouteData.Values["controller"].ToString() == "Add") ? "current-list-item" : "")">
-                                        <a asp-area="" asp-controller="Add" asp-action="Index">Liên hệ</a></li>
-                                    <li>
-                                        <a href="shop.html">Đơn hàng của bạn</a>
-                                        <ul class="sub-menu">
-                                            <li><a href="shop.html">Shop</a></li>
-                                            <li><a href="checkout.html">Check Out</a></li>
-                                            <li><a href="single-product.html">Single Product</a></li>
-                                            <li><a href="cart.html">Cart</a></li>
-                                        </ul>
+                                        <a asp-area="" asp-controller="Add" asp-action="Index"></a>
                                     </li>
+                                    
                                     <li>
                                         <div class="header-icons">
                                             
@@ -116,13 +103,13 @@
     <div class="footer-area">
         <div class="container">
             <div class="row">
-                <div class="col-lg-3 col-md-6">
+                <div class="col-3 ">
                     <div class="footer-box about-widget">
                         <h2 class="widget-title">About us</h2>
                         <p>Ut enim ad minim veniam perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae.</p>
                     </div>
                 </div>
-                <div class="col-lg-3 col-md-6">
+                <div class="col-3 ">
                     <div class="footer-box get-in-touch">
                         <h2 class="widget-title">Get in Touch</h2>
                         <ul>
@@ -132,7 +119,7 @@
                         </ul>
                     </div>
                 </div>
-                <div class="col-lg-3 col-md-6">
+                <div class="col-3 ">
                     <div class="footer-box pages">
                         <h2 class="widget-title">Pages</h2>
                         <ul>
@@ -144,7 +131,7 @@
                         </ul>
                     </div>
                 </div>
-                <div class="col-lg-3 col-md-6">
+                <div class="col-3 ">
                     <div class="footer-box subscribe">
                         <h2 class="widget-title">Subscribe</h2>
                         <p>Subscribe to our mailing list to get the latest updates.</p>

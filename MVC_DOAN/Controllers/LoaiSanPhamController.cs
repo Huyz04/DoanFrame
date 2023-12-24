@@ -66,17 +66,17 @@ namespace MVC_DOAN.Controllers
             return View(LSP);
         }
         [HttpPost]
-        public async Task<IActionResult> Edit(Loaisanpham LSP)
+        public async Task<IActionResult> Edit([FromBody]EditLSP EDLSP)
         {
             
             if (!ModelState.IsValid)
             {
                 ModelState.AddModelError("", "Failed to edit LoaiSanPham");
-                return View("Edit", LSP);
+                return View("Edit", EDLSP);
             }
+            var LSPP = await _LSPI.Edit(EDLSP);
             
-            _LSPI.Update(LSP);
-            return RedirectToAction("Index");
+            return RedirectToAction("Index",LSPP);
         }
     }
 }

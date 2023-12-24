@@ -1,10 +1,9 @@
 ﻿@using MVC_DOAN.ViewModels
 @model DonHangUser
 
-
-<header>
-    <link rel="stylesheet" href="~/assets/css/style.css" />
-    <style>
+<div style="height: 100px; background-color: #051922;"></div>
+<link rel="stylesheet" href="~/assets/css/style.css" />
+<style>
 
         #sidebar {
             min-width: 250px;
@@ -269,11 +268,8 @@
         }
     </style>
 
-</header>
 
-<body>
-
-    <div id="preloader" class="container-fluid">
+<div class="container-fluid" style="margin-top:50px; margin-bottom:50px">
         <div class="container">
             <div class="main-body">
                 <div class="row">
@@ -293,7 +289,6 @@
                                         <ul class="list-unstyled components mb-5">
                                             <li>
                                                 <a asp-controller="User" asp-action="Detail">
-                                                    <i class="fas fa-user"></i>
                                                     <span class="nav-text">Thông tin tài khoản</span>
                                                 </a>
                                             </li>
@@ -479,6 +474,7 @@
                                                                         </div>
                                                                     </div>
                                                                 </a>
+
 
                                                                 <div class="not-approved-details" style="display: none">
                                                                     <hr />
@@ -674,4 +670,3 @@
             }
         });
     </script>
-</body>
